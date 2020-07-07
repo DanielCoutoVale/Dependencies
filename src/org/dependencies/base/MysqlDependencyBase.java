@@ -545,7 +545,7 @@ public class MysqlDependencyBase {
 		stmt.setString(2, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			return null;
+			throw new SQLException();
 		DepAnalysis analysis = new DepAnalysis();
 		analysis.setId(rs.getInt("id"));
 		analysis.setName(rs.getString("name"));
@@ -566,7 +566,7 @@ public class MysqlDependencyBase {
 		stmt.setString(1, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			return null;
+			throw new SQLException();
 		DepCorpus corpus = new DepCorpus();
 		corpus.setId(rs.getInt("id"));
 		corpus.setName(rs.getString("name"));
@@ -587,7 +587,7 @@ public class MysqlDependencyBase {
 		stmt.setString(1, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			return null;
+			throw new SQLException();
 		DepDescription description = new DepDescription();
 		description.setId(rs.getInt("id"));
 		description.setName(rs.getString("name"));
@@ -647,7 +647,7 @@ public class MysqlDependencyBase {
 		stmt.setString(1, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			return null;
+			throw new SQLException();
 		DepLanguage language = new DepLanguage();
 		language.setId(rs.getInt("id"));
 		language.setName(rs.getString("name"));
