@@ -1,0 +1,58 @@
+# ITTB VERB SYSTEMS
+# ASPECT: imp*, perf
+# CASE: perf
+# GENDER: fem, masc, neut
+# MOOD: imp, ind, sub
+# NUMBER: plur, sing
+# PERSON: 1, 2, 3
+# TENSE: fut, imp, past, pqp, pres
+# VERBFORM: fin, gdv, ger, inf, part
+# VOICE: act, pass
+
+[S:WORD-CLASS:verb] => +T:WORD-CLASS:verb
+
+# O-BRANCH
+[S:TENSE:imp S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:bā-branch
+[S:TENSE:imp S:MOOD:sub] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:rē-branch
+[S:TENSE:pres S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:unbranched +T:VERB-Ō-PARADIGMS:ō-1st-paradigm
+[S:TENSE:pres S:MOOD:imp] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:unbranched +T:VERB-Ō-PARADIGMS:ō-2nd-paradigm
+[S:TENSE:pres S:MOOD:sub] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:ē-branch
+[S:TENSE:fut S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:b-branch
+[S:VERBFORM:inf] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:re-branch
+[S:VERBFORM:part S:TENSE:pres] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nt-branch
+[S:VERBFORM:gdv] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nd-branch +T:VERB-CORE:ō-nd-core
+[S:VERBFORM:ger] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nd-branch
+[S:VERBFORM:ger S:CASE:acc] => +T:VERB-CORE:ō-ndum-core
+[S:VERBFORM:ger S:CASE:gen] => +T:VERB-CORE:ō-ndī-core
+[S:VERBFORM:ger S:CASE:dat] => +T:VERB-CORE:ō-ndō-core
+[S:VERBFORM:ger S:CASE:abl] => +T:VERB-CORE:ō-ndō-core
+
+# I-BRANCH
+[S:TENSE:pqp S:MOOD:ind] => +T:VERB-ASPECT:ī-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ī-BRANCH:erā-branch
+[S:TENSE:pqp S:MOOD:sub] => +T:VERB-ASPECT:ī-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ī-BRANCH:issē-branch
+[S:TENSE:past S:MOOD:ind] => +T:VERB-ASPECT:ī-aspect +T:VERB-BRANCHEDNESS:unbranched
+[S:TENSE:past S:MOOD:sub] => +T:VERB-ASPECT:ī-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ī-BRANCH:erī-branch
+[S:TENSE:fut S:ASPECT:perf] => -T:VERB-ASPECT:ō-aspect -T:VERB-Ō-BRANCH:b-branch
+[S:TENSE:fut S:ASPECT:perf] => +T:VERB-ASPECT:ī-aspect +T:VERB-Ī-BRANCH:er-branch
+[S:VERBFORM:inf S:ASPECT:perf] => -T:VERB-ASPECT:ō-aspect -T:VERB-Ō-BRANCH:re-branch
+[S:VERBFORM:inf S:ASPECT:perf] => +T:VERB-ASPECT:ī-aspect +T:VERB-Ī-BRANCH:isse-branch
+
+# U-BRANCH
+[S:VERBFORM:part S:TENSE:past] => +T:VERB-ASPECT:ū-aspect +T:VERB-BRANCHEDNESS:unbranched
+[S:VERBFORM:part S:TENSE:fut] => +T:VERB-ASPECT:ū-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ū-BRANCH:ūr-branch
+
+# OST SEAM
+[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:1] => +T:VERB-ŌST-SEAM:ō-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:2] => +T:VERB-ŌST-SEAM:s-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:3] => +T:VERB-ŌST-SEAM:t-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:1] => +T:VERB-ŌST-SEAM:mus-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:VERB-ŌST-SEAM:tis-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:VERB-ŌST-SEAM:nt-seam
+
+# AUMUS SEAM
+[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem] => +T:VERB-AUMUS-SEAM:a-am-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut] => +T:VERB-AUMUS-SEAM:um-um-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:masc] => +T:VERB-AUMUS-SEAM:us-um-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:fem] => +T:VERB-AUMUS-SEAM:ae-ās-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:neut] => +T:VERB-AUMUS-SEAM:a-a-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:masc] => +T:VERB-AUMUS-SEAM:ī-ōs-seam

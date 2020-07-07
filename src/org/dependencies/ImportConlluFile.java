@@ -19,7 +19,7 @@ public class ImportConlluFile {
 	public static void main(String[] args) {
 		if (args.length != 6) {
 			System.err.println("USAGE:");
-			System.err.println("java -jar import-conllu-file.jar [description] [file]");
+			System.err.println("java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]");
 		}
 		String corpusName = args[0];
 		String languageName = args[1];
