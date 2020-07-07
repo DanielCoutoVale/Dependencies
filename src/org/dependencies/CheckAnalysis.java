@@ -4,8 +4,6 @@ import java.sql.SQLException;
 
 import org.dependencies.model.DepAnalysisChecker;
 
-import static java.lang.System.*;
-
 /**
  * Checks whether an analysis is complete.
  * 
@@ -18,10 +16,11 @@ public class CheckAnalysis {
 	 * 
 	 * @param args the script arguments
 	 */
-	public static final void main(String[] args) {
+	public final static void main(String[] args) {
 		if (args.length != 5) {
-			err.println("check-analysis [description] [analysis] [corpus] [language] [text]");
-			exit(-1);
+			System.err.println("USAGE:");
+			System.err.println("java -jar check-analysis.jar [description] [analysis] [corpus] [language] [text]");
+			System.exit(-1);
 		}
 		String descriptionName = args[0];
 		String analysisName = args[1];

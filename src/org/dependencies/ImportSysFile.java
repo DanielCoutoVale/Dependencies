@@ -21,6 +21,7 @@ public class ImportSysFile {
 		if (args.length != 2) {
 			System.err.println("USAGE:");
 			System.err.println("java -jar import-sys-file.jar [description] [file]");
+			System.exit(-1);
 		}
 		String descriptionName = args[0];
 		String fileName = args[1];

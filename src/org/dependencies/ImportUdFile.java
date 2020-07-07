@@ -20,10 +20,11 @@ public class ImportUdFile {
 	 * 
 	 * @param args the script arguments
 	 */
-	public static final void main(String[] args) {
+	public final static void main(String[] args) {
 		if (args.length != 2) {
 			System.err.println("USAGE:");
 			System.err.println("java -jar import-ud-file.jar [description] [file]");
+			System.exit(-1);
 		}
 		UdFileImporter importer = new UdFileImporter();
 		String descriptionName = args[0];

@@ -16,10 +16,11 @@ public class ImportConlluFile {
 	 * 
 	 * @param args the script arguments
 	 */
-	public static void main(String[] args) {
+	public final static void main(String[] args) {
 		if (args.length != 6) {
 			System.err.println("USAGE:");
 			System.err.println("java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]");
+			System.exit(-1);
 		}
 		String corpusName = args[0];
 		String languageName = args[1];

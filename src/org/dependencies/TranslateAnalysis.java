@@ -20,6 +20,7 @@ public class TranslateAnalysis {
 		if (args.length != 5) {
 			System.err.println("USAGE:");
 			System.err.println("java -jar translate-analysis.jar [source-description] [source-analysis] [target-description] [target-analysis] [file]");
+			System.exit(-1);
 		}
 		String sourceDescriptionName = args[0];
 		String sourceAnalysisName = args[1];
