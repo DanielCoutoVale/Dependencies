@@ -1,6 +1,6 @@
 # ITTB VERB SYSTEMS
 # ASPECT: imp*, perf
-# CASE: perf
+# CASE: nom, voc, acc, gen, dat, abl, loc
 # GENDER: fem, masc, neut
 # MOOD: imp, ind, sub
 # NUMBER: plur, sing
