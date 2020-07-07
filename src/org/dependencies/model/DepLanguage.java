@@ -52,5 +52,10 @@ public class DepLanguage {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Override
+	public final String toString() {
+		return "Language #" + this.id + " #" + this.name;
+	}
 
 }

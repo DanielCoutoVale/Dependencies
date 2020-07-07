@@ -40,7 +40,7 @@ public class DepAnalyzedText extends DepText {
 	 * @return the wordings
 	 */
 	public final List<DepWording> getWordings() {
-		return this.wordings;
+		return new LinkedList<>(this.wordings);
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class DepAnalyzedText extends DepText {
 	/**
 	 * Inserts the specified wording at the specified index in this text.
 	 * 
-	 * @param index   the index of the wording
+	 * @param index   the index for the wording
 	 * @param wording the wording
 	 */
 	public final void addWording(int index, DepWording wording) {

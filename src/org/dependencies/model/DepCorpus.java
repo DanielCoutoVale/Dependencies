@@ -53,4 +53,9 @@ public class DepCorpus {
 		this.name = name;
 	}
 
+	@Override
+	public final String toString() {
+		return "Corpus #" + this.id + " #" + this.name;
+	}
+
 }

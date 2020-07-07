@@ -52,5 +52,10 @@ public class DepText {
 	public final void setTitle(String title) {
 		this.title = title;
 	}
+	
+	@Override
+	public final String toString() {
+		return "Text #" + this.id + " #" + this.title;
+	}
 
 }
