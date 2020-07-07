@@ -14,7 +14,7 @@ And a sample database.properties file:
 And you will find 5 JAR scripts:
 
 - import-ud-file.jar
-- import-systems-file.jar
+- import-sys-file.jar
 - import-conllu-file.jar
 - translate-analysis.jar
 - check-analysis.jar
