@@ -1,0 +1,77 @@
+system RANK
+> wording
+- clauses
+- groups-phrases
+- words
+- marks
+
+system WORD-CLASS
+> words
+- verb
+- noun
+
+system VERB-ASPECT
+> verb
+- ō-aspect
+- ī-aspect
+- ū-aspect
+
+system VERB-BRANCHEDNESS
+> verb
+- branched
+- unbranched
+
+system VERB-Ō-BRANCH
+> ō-aspect branched
+- bā-branch
+- b-branch
+- ē-branch
+- rē-branch
+- re-branch
+- tō-branch
+- ō-branch
+- nd-branch
+- nt-branch
+
+system VERB-Ō-PARADIGMS
+> ō-aspect unbranched
+- ō-1st-paradigm
+- ō-2nd-paradigm
+
+system VERB-Ī-BRANCH
+> ī-aspect branched
+- erā-branch
+- er-branch
+- erī-branch
+- issē-branch
+- isse-branch
+
+system VERB-Ū-BRANCH
+> ū-aspect branched
+- ūr-branch
+- ū-branch
+
+system VERB-ŌST-SEAM
+> bā-branch ∨ b-branch ∨ ē-branch ∨ rē-branch ∨ tō-branch ∨ ō-branch ∨ ō-1st-paradigm ∨ ō-2nd-paradigm  
+- ō-seam
+- s-seam
+- t-seam
+- mus-seam
+- tis-seam
+- nt-seam
+
+system VERB-CORE
+> nd-branch
+- ō-nd-core
+- ō-ndum-core
+- ō-ndī-core
+- ō-ndō-core
+
+system VERB-AUMUS-SEAM
+> ū-aspect unbranched ∨ ūr-branch ∨ nd-core
+- a-am-seam
+- um-um-seam
+- us-um-seam
+- ae-ās-seam
+- a-a-seam
+- ī-ōs-seam
