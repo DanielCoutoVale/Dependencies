@@ -1,5 +1,5 @@
 # Dependencies
-A library for ranked universal dependencies
+A library for ranked universal dependencies.
 
 This library includes scripts to load linguistic descriptions in UD and 
 SYS files and analyzed texts in CONLLU files into a MySQL base. It also
