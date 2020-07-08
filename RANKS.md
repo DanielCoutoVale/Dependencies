@@ -17,7 +17,7 @@ Languages differ in the amount of variation they offer for the rank of clauses a
 
 To understand which options one has at clause rank, students have to learn 'what goes instead of what' in a clause and this paradigmatic principle should be what guides what is a clause constituent. However, in dependency structure an argument such as *hoc vīnum* (*this wine*) depends on the process verb *faciātis* in the same way as the auxiliary verb *oportet*. This results in graphical representations like the following.
 
-![Dependency without ranks](README/Dependency01.png "Dependency without ranks")
+![Dependency without ranks](README/Dependency.png "Dependency without ranks")
 
 A better way for a learner to visualize this clause would be to separate the ranks at which dependencies occur. For instance, *hoc* depends on *vīnum* at the group rank. In the same way, *oportet* depends on *faciātis* at group rank. All other dependencies take place at clause rank. If dependencies are tagged for ranks, we are able to represent grammatical units at different ranks. At clause rank, we would have the following structure:
 
