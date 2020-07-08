@@ -21,8 +21,8 @@ To understand which options one has at clause rank, students have to learn 'what
 
 A better way for a learner to visualize this clause would be to separate the ranks at which dependencies occur. For instance, *hoc* depends on *vīnum* at the group rank. In the same way, *oportet* depends on *faciātis* at group rank. All other dependencies take place at clause rank. If dependencies are tagged for ranks, we are able to represent grammatical units at different ranks. At clause rank, we would have:
 
-| hoc vīnum | suāve | nōbis | oportet faciātis |
-|:---------:|:-----:|:-----:|:----------------:| 
-| Tail      | Tail  | Tail  | Head             | 
+| hoc vīnum        | suāve            | nōbis            | oportet faciātis |
+|:----------------:|:----------------:|:----------------:|:----------------:| 
+| Tail             | Tail             | Tail             | Head             | 
 
 And
