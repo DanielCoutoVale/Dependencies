@@ -51,6 +51,6 @@ In such cases, if we separate the clause rank from the clause complex rank, we a
 |:-------:|:----------:|:-------:|:--------------------------:|
 | Head... | Tail...    | ...Head | ...Tail                    |
 
-Such graphical representations where clauses are constituents are much simpler to understand than arrows relating different verbs in two structures. By viewing only the dependencies that take place at clause complex rank, students would be better able to focus on the logical relations between clauses than they currently can in the arrow representation.
+Such graphical representations where clauses are constituents are much simpler to understand than arrows relating different verbs in two structures. By viewing only the dependencies that take place at clause complex rank, students would be better able to focus on the logical relations between clauses than they currently are in the arrow representation.
 
   
