@@ -81,9 +81,9 @@ To add a text and a text analysis in a CONLLU file to a dependency base, you wil
 
 * the corpus name or a name for a new corpus
 * the language name or a name for a new language
-* the text title or a title for the text to add
+* a title for the text to add to the specified corpus-language pair
 * the description name (which must exist in the dependency base)
-* a name for the analysis to add
+* a name for the analysis to add to the specified description
 * the path to the CONLLU file
 
 The code was tested with the file `la_ittb-ud-dev.conllu` from the GIT repository `UD_Latin-ITTB`.
