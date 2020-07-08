@@ -112,11 +112,11 @@ java -jar translate-analysis.jar [source-description] [source-analysis] [target-
 
 Once translation is made, one can check a linguistic description for completion. This is achieved by running the script `check-analysis.jar`. Here one needs to specify:
 
-* the name of the description
-* the name of the analysis
-* the name of the corpus
-* the name of the language
-* the name of the text
+* the description name
+* the analysis name
+* the corpus name
+* the language name
+* the text title
 
 ```
 java -jar check-analysis.jar [description] [analysis] [corpus] [language] [text]
