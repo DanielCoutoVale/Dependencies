@@ -17,12 +17,28 @@ Languages differ in the amount of variation they offer for the rank of clauses a
 
 To understand which options one has at clause rank, students have to learn 'what goes instead of what' in a clause and this paradigmatic principle should be what guides what is a clause constituent. However, in dependency structure an argument such as *hoc vīnum* (*this wine*) depends on the process verb *faciātis* in the same way as the auxiliary verb *oportet*. This results in graphical representations like the following.
 
-![Dependency without ranks](README/Dependencies.png "Dependency without ranks")
+![Dependency without ranks](README/Dependency01.png "Dependency without ranks")
 
-A better way for a learner to visualize this clause would be to separate the ranks at which dependencies occur. For instance, *hoc* depends on *vīnum* at the group rank. In the same way, *oportet* depends on *faciātis* at group rank. All other dependencies take place at clause rank. If dependencies are tagged for ranks, we are able to represent grammatical units at different ranks. At clause rank, we would have:
+A better way for a learner to visualize this clause would be to separate the ranks at which dependencies occur. For instance, *hoc* depends on *vīnum* at the group rank. In the same way, *oportet* depends on *faciātis* at group rank. All other dependencies take place at clause rank. If dependencies are tagged for ranks, we are able to represent grammatical units at different ranks. At clause rank, we would have the following structure:
 
 | hoc vīnum        | suāve            | nōbis            | oportet faciātis |
 |:----------------:|:----------------:|:----------------:|:----------------:| 
 | Tail             | Tail             | Tail             | Head             | 
 
-And
+In turn, at the group rank we would have two structures:
+
+| hoc              | vīnum            |
+|:----------------:|:----------------:| 
+| Tail             | Head             |
+
+| oportet          | faciātis         |
+|:----------------:|:----------------:| 
+| Tail             | Head             |
+
+Of course, since we are the ones who create the linguistic descriptions, we can ascribe different labels to each tail constituent of a grammatical unit such as Subject, Object, Carrier, Attribute, Attributor, and the like. And we can still represent clauses in the original format as shown above. The only thing that changes when adding the rank is that we are able to represent different sets of dependencies at different times and thus let students concentrate at different grammatical phenomena in each representation.
+
+# The clause complex
+
+
+
+
