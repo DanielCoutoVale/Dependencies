@@ -35,7 +35,7 @@ In turn, at the group rank we would have two structures:
 |:----------------:|:----------------:| 
 | Tail             | Head             |
 
-Of course, since we are the ones who create the linguistic descriptions, we can ascribe different labels to each tail constituent of a grammatical unit such as Subject, Object, Carrier, Attribute, Attributor, and the like. And we can still represent clauses in the original format as shown above. The only thing that changes when adding the rank is that we are able to represent different sets of dependencies at different times and thus let students concentrate at different grammatical phenomena in each representation.
+Of course, since we are the ones who create the linguistic descriptions, we can ascribe different labels to each tail constituent of a grammatical unit: this would include labels such as Subject, Object, Carrier, Attribute, Attributor, and the like. Moreover, we can still represent clauses in the original graphical representation with arrows as shown above. There is no information loss when we add ranks to dependencies. The only thing that changes is that we become able to show different sets of dependencies at different times, thus letting students focus on different grammatical phenomena in each graphical representation.
 
 # The clause complex
 
