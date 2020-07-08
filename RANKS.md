@@ -41,14 +41,16 @@ Of course, since we are the ones who create the linguistic descriptions, we can 
 
 Though a student of historical languages starts at the clause, they cannot end their journey there. They must learn how to understand connected clauses in a text. Above the clause, we have clause relations of different types. Some clauses elaborate others, representing the same in another way. Other clauses expand the previous, listing what else is the case. Finally, another set of clauses enhance the previous temporally, causally, or conditionally. Together, these relations are known as expansions. From a different perspective, we have relations of projection whereby a mental or verbal process represented by a clause reflects the process represented by the other clause. For instance, if the clause complex *is, hoc vīnum, inquit, vōs oportet suāve faciātis* (*he said, notice how smooth this wine is*) is composed of two clauses: the clause *is inquit* (*he said*) represents a verbal process and the clause *hoc vīnum vōs oportet suāve faciātis* (*notice how smooth this wine is*) represents a relational process between the wine and its smoothness for someone and it is also a projection of the verbal process of the previous clause. Projections and relations are the two broadest kinds of clause relation.
 
-In dependency structure, clause relations can be represented as relations between process verbs. Assuming this is the case, if we separate the clause rank from the clause complex rank, we are able to represent clauses as constituents of logical relations as shown below:  
+In dependency structure, clause relations can be represented as relations between process verbs. Here is a graphical representation of this clause complex with arrows.
 
-| dum hunc dīligentius audiō, | nōn nōtāvī mihi Ascyltī fugam |
-|:---------------------------:|:-----------------------------:|
-| Tail                        | Head                          |
+![Dependency without ranks](README/Dependency2.png "Dependency without ranks")
+
+In such cases, if we separate the clause rank from the clause complex rank, we are able to represent clauses as constituents of logical relations as shown below:
 
 | is,     | hoc vīnum, | inquit, | vōs oportet suāve faciātis |
 |:-------:|:----------:|:-------:|:--------------------------:|
 | Head... | Tail...    | ...Head | ...Tail                    |
 
-Such graphical representations are much simpler to understand than arrows relating different verbs in two structures that are potentially intertwined like the example with the wine above. 
+Such graphical representations where clauses are constituents are much simpler to understand than arrows relating different verbs in two structures. By viewing only the dependencies that take place at clause complex rank, students would be better able to focus on the logical relations between clauses than they currently can in the arrow representation.
+
+  
