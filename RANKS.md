@@ -43,7 +43,7 @@ Though a student of historical languages starts at the clause, they cannot end t
 
 In dependency structure, clause relations can be represented as relations between process verbs. Here is a graphical representation of our example of clause complex using arrows.
 
-![Dependency without ranks](README/Dependency2.png "Dependency without ranks")
+![Dependency without ranks](README/Dependency3.png "Dependency without ranks")
 
 In such cases, if we separate the clause rank from the clause complex rank, we are able to represent clauses as constituents of logical relations as shown below:
 
