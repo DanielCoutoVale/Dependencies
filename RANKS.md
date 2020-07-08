@@ -43,9 +43,9 @@ Though a student of historical languages starts at the clause, they cannot end t
 
 In dependency structure, clause relations can be represented as relations between process verbs. Assuming this is the case, if we separate the clause rank from the clause complex rank, we are able to represent clauses as constituents of logical relations as shown below:  
 
-| dum hunc dīligentius audiō | nōn nōtāvī mihi Ascyltī fugam |
-|:--------------------------:|:-----------------------------:|
-| Tail                       | Head                          |
+| dum hunc dīligentius audiō, | nōn nōtāvī mihi Ascyltī fugam |
+|:---------------------------:|:-----------------------------:|
+| Tail                        | Head                          |
 
 | is,     | hoc vīnum, | inquit, | vōs oportet suāve faciātis |
 |:-------:|:----------:|:-------:|:--------------------------:|
