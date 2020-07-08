@@ -49,6 +49,6 @@ In dependency structure, clause relations can be represented as relations betwee
 
 | is,     | hoc vīnum, | inquit, | vōs oportet suāve faciātis |
 |:-------:|:----------:|:-------:|:--------------------------:|
-| Tail... | Head...    | ...Tail | ...Head                    |
+| Head... | Tail...    | ...Head | ...Tail                    |
 
 Such graphical representations are much simpler to understand than arrows relating different verbs in two structures that are potentially intertwined like the example with the wine above. 
