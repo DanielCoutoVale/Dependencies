@@ -9,7 +9,7 @@ In the context of teaching Latin, wordings are represented as dependency structu
 
 Ranks will improve the usability of dependency trees for all these purposes, but here I shall focus on how they improve graphical representation of grammatical units and how this can improve comprehension.
 
-# The clause
+## The clause
 
 The first grammatical unit one has to master in a historical language is an affirmative clause representing a present process. One example of such a clause in Latin is *hoc vīnum suāve est* (*this wine is smooth*). Variants of this clause include *hoc vīnum suāve fit* (*this wine feels smooth*) and *hoc vīnum suāve ego faciō* (*this wine feels smooth to me*). Variants of the last include *an hoc vīnum suāve vōs facitis* (*does this wine feel smooth to you*) and *hoc vīnum suāve vōs oportet faciātis* (*notice how smooth this wine feels*). Here we see that we can create variants in English with similar grammatical structures only up to a certain point. From that point on we need two clauses in English (*notice* + *how smooth this wine feels*) for one in Latin (*hoc vīnum suāve vōs oportet faciātis*).
 
@@ -37,7 +37,7 @@ In turn, at the group rank we would have two structures:
 
 Of course, since we are the ones who create the linguistic descriptions, we can ascribe different labels to each tail constituent of a grammatical unit: this would include labels such as Subject, Object, Carrier, Attribute, Attributor, and the like. Moreover, we can still represent clauses in the original graphical representation with arrows as shown above. There is no information loss when we add ranks to dependencies. The only thing that changes is that we become able to show different sets of dependencies at different times, thus letting students focus on different grammatical phenomena in each graphical representation.
 
-# The clause complex
+## The clause complex
 
 
 
