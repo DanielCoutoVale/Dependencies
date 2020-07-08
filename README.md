@@ -82,7 +82,7 @@ To add a text and a text analysis in a CONLLU file to a dependency base, you wil
 * the corpus name or a name for a new corpus
 * the language name or a name for a new language
 * a title for the text to add to the specified corpus-language pair
-* the description name (which must exist in the dependency base)
+* the description name
 * a name for the analysis to add to the specified description
 * the path to the CONLLU file
 
@@ -100,9 +100,9 @@ A text analysis can be translated from a linguistic description to another. A wa
 
 To translate a text analysis from a source description to a target description, one needs to run the script `translate-analysis.jar`, informing:
 
-* the name of the source description
-* the name of the source analysis
-* the name of the target description
+* the source description name
+* the source analysis name
+* the target description name
 * a name for the target analysis
 * the path to the DUX file
 
