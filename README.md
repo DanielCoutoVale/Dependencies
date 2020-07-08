@@ -52,18 +52,74 @@ Once you open a connection with a MySQL Server, you can import data. Specify tha
 Now you have to re-write the database.properties file. Make sure you specify the MySQL base name, the user name, and the password properly. Here is an example of the content:
 
 ```properties
-  DependencyBase.name=my-dependencies
-  DependencyBase.user=root
-  DependencyBase.password=123456789
+DependencyBase.name=my-dependencies
+DependencyBase.user=root
+DependencyBase.password=123456789
 ```
 
 Finally, you will have to download the MySQL driver for JAVA, a JAR file that needs to be in the scripts folder for the scripts to work.  I myself tested the scripts with the `mysql-connector-java-5.1.49.jar` file. Both this and newer versions should work fine.
 
 ## Linguistic Descriptions
 
+A `linguistic description` is a description of the options a writer has for making meaning in a language. In the end, a linguistic description is a description of human language as a system of options.
 
+A UD file contains a linguistic description in a linguistic theory that foregrounds the dependencies between words. In contrast, a SYS file contains a linguistic description in a linguistic theory that foregrounds the dependencies between systems of options. The latter is more general than the former. For instance, PERSON is a system of options that applies to verbs, but not all verbs. In a UD file, one can specify that 'verb' is a WORD-CLASS and that verbs *can* have a feature for PERSON. In a SYS file, one can specify that 'verb' is a WORD-CLASS, that 'personal-verb' is a VERB-CLASS and that personal verbs *must* have a feature for PERSON. In turn, this enables an analysis checker to state whether an analysis is complete or not. For instance, if a 'personal-verb' does not have a feature for PERSON, the analysis is incomplete. The linguistic description contained in a UD file only allows an analysis checker to tell whether the analysis is compliant or not.
+
+To add a linguistic description in a UD file to a dependency base, one has to run the script `import-ud-file.jar` in the command line. You need to specify the name you want to have for the description in your dependency base and the file path. The code was tested with the `stats.xml` file from the GIT repository `UD_Latin-ITTB`.
+
+```
+java -jar import-ud-file.jar [description] [file] 
+```
+
+A similar procedure applies for adding a linguistic description in a SYS file to a dependency base. Howver, one has to use the script `import-sys-file.jar` instead. A sample SYS file is provided in this repository. It is called `ip.sys`.
+
+```
+java -jar import-sys-file.jar [description] [file] 
+```
+
+To add a text and a text analysis in a CONLLU file to a dependency base, you will need to run the script `import-conllu-file.jar`. You will have to inform:
+
+* the corpus name or a name for a new corpus
+* the language name or a name for a new language
+* the text title or a title for the text to add
+* the description name (which must exist in the dependency base)
+* a name for the analysis to add
+* the path to the CONLLU file
+
+The code was tested with the file `la_ittb-ud-dev.conllu` from the GIT repository `UD_Latin-ITTB`.
+
+```
+java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]
+```
+
+Once an analysis is imported it can be translated and checked for completion.
 
 ## Text Analyses
 
+A text analysis can be translated from a linguistic description to another. A way of translating text analyses is specified in a DUX file. A sample DUX file is provided in this repository. It is called `ittb-ip.dux` and it translates a text analysis from the `ittb` description in the file `stats.xml` from the repository `UD_Latin-ITTB` to the `ip` description in the file `ip.sys` from this repository. The functions are not yet translated (coming soon).
 
+To translate a text analysis from a source description to a target description, one needs to run the script `translate-analysis.jar`, informing:
 
+* the name of the source description
+* the name of the source analysis
+* the name of the target description
+* a name for the target analysis
+* the path to the DUX file
+
+```
+java -jar translate-analysis.jar [source-description] [source-analysis] [target-description] [target-analysis] [file]
+```
+
+Once translation is made, one can check a linguistic description for completion. This is achieved by running the script `check-analysis.jar`. Here one needs to specify:
+
+* the name of the description
+* the name of the analysis
+* the name of the corpus
+* the name of the language
+* the name of the text
+
+```
+java -jar check-analysis.jar [description] [analysis] [corpus] [language] [text]
+```
+
+When an analysis check is run, every word that is incomplete is printed out together with information about which features are missing.
