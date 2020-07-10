@@ -57,7 +57,7 @@ system VERB-BRANCHEDNESS
 - unbranched
 
 system VERB-Ō-BRANCH
-> ō-aspect branched
+> ō-aspect branched verb
 - bā-branch
 - b-branch
 - ē-branch
@@ -69,12 +69,12 @@ system VERB-Ō-BRANCH
 - nt-branch
 
 system VERB-Ō-PARADIGMS
-> ō-aspect unbranched
+> ō-aspect unbranched verb
 - ō-1st-paradigm
 - ō-2nd-paradigm
 
 system VERB-Ī-BRANCH
-> ī-aspect branched
+> ī-aspect branched verb
 - erā-branch
 - er-branch
 - erī-branch
@@ -82,12 +82,24 @@ system VERB-Ī-BRANCH
 - isse-branch
 
 system VERB-Ū-BRANCH
-> ū-aspect branched
+> ū-aspect branched verb
 - ūr-branch
 - ū-branch
 
+system VERB-CORE
+> nd-branch verb
+- ō-nd-core
+- ō-ndum-core
+- ō-ndī-core
+- ō-ndō-core
+
+system SEAMEDNESS
+> adjective ∨ pronoun
+- seamed
+- unseamed
+
 system ŌST-SEAM
-> bā-branch ∨ b-branch ∨ ē-branch ∨ rē-branch ∨ tō-branch ∨ ō-branch ∨ ō-1st-paradigm ∨ ō-2nd-paradigm  
+> bā-branch ∨ b-branch verb ∨ ē-branch verb ∨ rē-branch verb ∨ tō-branch verb ∨ ō-branch verb ∨ ō-1st-paradigm verb ∨ ō-2nd-paradigm verb
 - ō-seam
 - s-seam
 - t-seam
@@ -95,15 +107,8 @@ system ŌST-SEAM
 - tis-seam
 - nt-seam
 
-system VERB-CORE
-> nd-branch
-- ō-nd-core
-- ō-ndum-core
-- ō-ndī-core
-- ō-ndō-core
-
 system AUMUS-SEAM
-> verb ū-aspect unbranched ∨ verb ūr-branch ∨ verb nd-core ∨ adjective
+> ū-aspect unbranched verb ∨ ūr-branch verb ∨ nd-core verb ∨ seamed adjective ∨ seamed pronoun
 - a-am-seam
 - um-um-seam
 - us-um-seam

@@ -711,17 +711,31 @@ public class MysqlDependencyBase {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("SELECT W.* \n");
 		buffer.append("FROM `word` W \n");
-		for (int i = 1; i <= wordFeatures.length; i++) {
-			buffer.append(makeWordFeatureJoinSql(i));
+		DepWordFeature lemma = null;
+		for (int i = 0; i < wordFeatures.length; i++) {
+			if (wordFeatures[i].getSystemName().equals("LEMMA")) {
+				lemma = wordFeatures[i];
+				continue;
+			}
+			buffer.append(makeWordFeatureJoinSql(i + 1));
+		}
+		if (lemma != null) {
+			buffer.append("WHERE W.`lemma` = ? \n");
 		}
 		String sql = buffer.toString();
 		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
 		int index = 1;
 		for (DepWordFeature wordFeature : wordFeatures) {
+			if (wordFeature.getSystemName().equals("LEMMA")) {
+				continue;
+			}
 			stmt.setString(index++, wordFeature.getAnalysisName());
 			stmt.setString(index++, wordFeature.getFeatureName());
 			stmt.setString(index++, wordFeature.getSystemName());
 			stmt.setString(index++, wordFeature.getDescriptionName());
+		}
+		if (lemma != null) {
+			stmt.setString(index++, lemma.getFeatureName());
 		}
 		ResultSet rs = stmt.executeQuery();
 		List<DepWord> words = new LinkedList<>();

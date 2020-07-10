@@ -10,10 +10,10 @@
 # VOICE: act, pass
 
 [S:WORD-CLASS:verb] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:process-verb
-[S:WORD-CLASS:adj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adjective
+[S:WORD-CLASS:adj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adjective +T:SEAMEDNESS:unseamed
 [S:WORD-CLASS:propn] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun
-[S:WORD-CLASS:pron] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[S:WORD-CLASS:noun] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
+[S:WORD-CLASS:noun] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[S:WORD-CLASS:pron] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:SEAMEDNESS:unseamed
 
 # O-BRANCH
 [S:TENSE:imp S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:bā-branch
@@ -66,3 +66,11 @@
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:fem] => +T:AUMUS-SEAM:ae-ās-seam
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a-a-seam
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī-ōs-seam
+
+# CLEANUP ADJECTIVES
+[S:LEMMA:necesse] => -T:SEAMEDNESS:seamed +T:SEAMEDNESS:unseamed
+[S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
+[S:LEMMA:tuus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
+[S:LEMMA:suus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
+[S:LEMMA:noster] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
+[S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
