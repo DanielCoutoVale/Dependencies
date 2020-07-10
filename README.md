@@ -3,6 +3,8 @@ A library for ranked universal dependencies.
 
 For an introduction to ranks, see [the motivation for ranks](RANKS.md).
 
+For an introduction to IP, see [the motivation for IP](IP.md).
+
 This library includes scripts to load linguistic descriptions in UD and 
 SYS files and analyzed texts in CONLLU files into a MySQL base. It also
 includes scripts to translate a text analysis from a linguistic description
