@@ -137,4 +137,18 @@ public class DepDescription {
 		return "Description #" + this.id + " #" + this.name;
 	}
 
+	public DepFeature getRank(String rankName) {
+		for (DepSystem system : this.systemMap.values()) {
+			String systemName = system.getName();
+			if (systemName.equals("RANK") || systemName.endsWith("-COMPLEXITY")) {
+				for (DepFeature feature : system) {
+					if (feature.getName().equals(rankName)) {
+						return feature;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
 }

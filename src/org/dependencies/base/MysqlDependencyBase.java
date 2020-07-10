@@ -13,6 +13,10 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.dependencies.model.DepAnalyzedText;
+import org.dependencies.dux.DuxFactory;
+import org.dependencies.dux.DuxFunction;
+import org.dependencies.dux.DuxMatch;
+import org.dependencies.dux.DuxWord;
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepCorpus;
 import org.dependencies.model.DepDescription;
@@ -25,6 +29,7 @@ import org.dependencies.model.DepSystem;
 import org.dependencies.model.DepText;
 import org.dependencies.model.DepWord;
 import org.dependencies.model.DepWordFeature;
+import org.dependencies.model.DepWordFunction;
 import org.dependencies.model.DepWording;
 
 import com.mysql.jdbc.PreparedStatement;
@@ -79,6 +84,49 @@ public class MysqlDependencyBase {
 				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder);
 	}
 
+	/**
+	 * Makes a word function join SQL.
+	 * 
+	 * @param order the order of the join SQL
+	 * @param wordIndex the word index of the join SQL
+	 * @param headIndex the head index of the join SQL
+	 * @return the SQL
+	 */
+	private static String makeWordFunctionJoinSql(Integer order, Integer wordIndex, Integer headIndex) {
+		return String.format("JOIN `word-function` WF%d ON \n"
+				+ "\t WF%d.`word-id` = W%d.`id` \n"
+				+ "\t AND WF%d.`head-id` = W%d.`id` \n"
+				+ "JOIN `function` WF%dF ON WF%dF.`id` = WF%d.`id` AND WF%dF.`name` = ? \n"
+				+ "JOIN `feature` WF%dFA ON WF%dFA.`id` = WF%d.`word-rank-id` AND WF%dFA.`name` = ? \n"
+				+ "JOIN `feature` WF%dFB ON WF%dFB.`id` = WF%d.`head-rank-id` AND WF%dFB.`name` = ? \n"
+				+ "JOIN `system` WF%dSA ON WF%dSA.`id` = WF%dFA.`system-id` AND (WF%dSA.`name` = 'RANK' OR WF%dSA.`name` LIKE '%s-COMPLEXITY') \n"
+				+ "JOIN `system` WF%dSB ON WF%dSB.`id` = WF%dFB.`system-id` AND (WF%dSB.`name` = 'RANK' OR WF%dSB.`name` LIKE '%s-COMPLEXITY') \n"
+				+ "JOIN `metafunction` WF%dM ON WF%dM.`id` = WF%dF.`metafunction-id` AND WF%dM.`name` = ? \n"
+				+ "JOIN `analysis` WF%dA ON WF%dA.`id` = WF%d.`analysis-id` AND WF%dA.`name` = ? \n"
+				+ "JOIN `description` WF%dD ON \n"
+				+ "\t WF%dD.`name` = ? \n"
+				+ "\t AND WF%dD.`id` = WF%dM.`description-id` \n"
+				+ "\t AND WF%dD.`id` = WF%dA.`description-id` \n"
+				+ "\t AND WF%dD.`id` = WF%dSA.`description-id` \n"
+				+ "\t AND WF%dD.`id` = WF%dSB.`description-id` \n",
+				order,
+				order, wordIndex,
+				order, headIndex,
+				order, order, order, order,
+				order, order, order, order,
+				order, order, order, order,
+				order, order, order, order, order, "%",
+				order, order, order, order, order, "%",
+				order, order, order, order,
+				order, order, order, order,
+				order, 
+				order, 
+				order, order, 
+				order, order, 
+				order, order, 
+				order, order);
+	}
+	
 	/**
 	 * The connection
 	 */
@@ -570,7 +618,7 @@ public class MysqlDependencyBase {
 		stmt.setString(1, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			throw new SQLException();
+			return null;
 		DepCorpus corpus = new DepCorpus();
 		corpus.setId(rs.getInt("id"));
 		corpus.setName(rs.getString("name"));
@@ -666,7 +714,7 @@ public class MysqlDependencyBase {
 		stmt.setString(1, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			throw new SQLException();
+			return null;
 		DepLanguage language = new DepLanguage();
 		language.setId(rs.getInt("id"));
 		language.setName(rs.getString("name"));
@@ -718,6 +766,39 @@ public class MysqlDependencyBase {
 		stmt.executeUpdate();
 		stmt.close();
 	}
+	
+	/**
+	 * Removes a function as a property of the specified word at the specified rank
+	 * relative to the specified head word at the specified rank in the specified
+	 * analysis in this dependency base.
+	 * 
+	 * @param analysisId the analysis id
+	 * @param id         the function id
+	 * @param wordId     the word id
+	 * @param wordRankId the word rank id
+	 * @param headId     the head word id
+	 * @param headRankId the head word rank id
+	 * @throws SQLException if the query fails
+	 */
+	public final void removeWordFunction(Integer analysisId, Integer id, Integer wordId, Integer wordRankId,
+			Integer headId, Integer headRankId) throws SQLException {
+		String sql = "DELETE FROM `word-function` \n"
+				+ "\t WHERE `analysis-id` = ? \n"
+				+ "\t AND `id` = ? \n"
+				+ "\t AND `word-id` = ? \n"
+				+ "\t AND `word-rank-id` = ? \n"
+				+ "\t AND `head-id` = ? \n"
+				+ "\t AND `head-rank-id` = ? \n";
+		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		stmt.setInt(1, analysisId);
+		stmt.setInt(2, id);
+		stmt.setInt(3, wordId);
+		stmt.setInt(4, wordRankId);
+		stmt.setInt(5, headId);
+		stmt.setInt(6, headRankId);
+		stmt.executeUpdate();
+		stmt.close();
+	}
 
 	/**
 	 * Search for words that have the specified features in this dependency base.
@@ -726,47 +807,120 @@ public class MysqlDependencyBase {
 	 * @return the words
 	 * @throws SQLException if the query fails
 	 */
-	public final List<DepWord> searchForWords(List<DepWordFeature> wordFeatures) throws SQLException {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("SELECT W1.* \n");
-		buffer.append("FROM `word` W1 \n");
-		DepWordFeature lemma = null;
-		for (int i = 0; i < wordFeatures.size(); i++) {
-			if (wordFeatures.get(i).getSystemName().equals("LEMMA")) {
-				lemma = wordFeatures.get(i);
-				continue;
+	public final List<List<DepWord>> searchForWords(DuxFactory factory, List<DuxMatch> matches) throws SQLException {
+		StringBuffer buffer1 = new StringBuffer();
+		for (int i = 0; i < matches.size(); i++) {
+			DuxMatch match = matches.get(i);
+			if (match instanceof DuxWord) {
+				if (buffer1.length() > 0) {
+					buffer1.append(", ");
+				}
+				String sql = "W%d.`id` AS `id%d`, "
+						+ "W%d.`form` AS `form%d`, "
+						+ "W%d.`backspaced` AS `backspaced%d`, "
+						+ "W%d.`lemma` AS `lemma%d`";
+				Integer index = i + 1;
+				buffer1.append(String.format(sql,
+						index, index,
+						index, index,
+						index, index, 
+						index, index));
 			}
-			buffer.append(makeWordFeatureJoinSql(1, i + 1));
 		}
-		if (lemma != null) {
-			buffer.append("WHERE W1.`lemma` = ? \n");
+		StringBuffer buffer = new StringBuffer();
+		buffer.append("SELECT " + buffer1 + " \n");
+		List<DepWordFeature> lemmata = new LinkedList<>();
+		for (int i = 0; i < matches.size(); i++) {
+			DuxMatch match = matches.get(i);
+			DepWordFeature lemma = null;
+			if (match instanceof DuxWord) {
+				if (i == 0) {
+					buffer.append("FROM `word` W1 \n");
+				} else {
+					buffer.append(String.format("JOIN `word` W%d \n", i + 1));
+				}
+				DuxWord word = (DuxWord) match;
+				List<DepWordFeature> wordFeatures = factory.makeWordFeatures(word);
+				for (int j = 0; j < wordFeatures.size(); j++) {
+					if (wordFeatures.get(j).getSystemName().equals("LEMMA")) {
+						lemma = wordFeatures.get(j);
+						continue;
+					}
+					buffer.append(makeWordFeatureJoinSql(i + 1, j + 1));
+				}
+			} else {
+				DuxFunction function = (DuxFunction) match;
+				buffer.append(makeWordFunctionJoinSql(i + 1, function.getWordIndex(), function.getHeadIndex()));
+			}
+			lemmata.add(lemma);
+		}
+		StringBuffer buffer2 = new StringBuffer();
+		for (int i = 0; i < lemmata.size(); i++) {
+			DepWordFeature lemma = lemmata.get(i);
+			if (lemma == null) continue;
+			if (buffer2.length() > 0) {
+				buffer2.append(" AND ");
+			}
+			buffer2.append(String.format("W%s.`lemma` = ?", i + 1));
+		}
+		if (buffer2.length() > 0) {
+			buffer.append("WHERE " + buffer2.toString() + " \n");
 		}
 		String sql = buffer.toString();
 		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
 		int index = 1;
-		for (DepWordFeature wordFeature : wordFeatures) {
-			if (wordFeature.getSystemName().equals("LEMMA")) {
-				continue;
+		for (DuxMatch match : matches) {
+			if (match instanceof DuxWord) {
+				DuxWord word = (DuxWord) match;
+				List<DepWordFeature> wordFeatures = factory.makeWordFeatures(word);
+				for (DepWordFeature wordFeature : wordFeatures) {
+					if (wordFeature.getSystemName().equals("LEMMA")) {
+						continue;
+					}
+					stmt.setString(index++, wordFeature.getAnalysisName());
+					stmt.setString(index++, wordFeature.getName());
+					stmt.setString(index++, wordFeature.getSystemName());
+					stmt.setString(index++, wordFeature.getDescriptionName());
+				}
+			} else {
+				DuxFunction function = (DuxFunction) match;
+				DepWordFunction wordFunction = factory.makeWordFunction(function);
+				stmt.setString(index++, wordFunction.getName());
+				stmt.setString(index++, wordFunction.getWordRankName());
+				stmt.setString(index++, wordFunction.getHeadRankName());
+				stmt.setString(index++, wordFunction.getMetafunctionName());
+				stmt.setString(index++, wordFunction.getAnalysisName());
+				stmt.setString(index++, wordFunction.getDescriptionName());
 			}
-			stmt.setString(index++, wordFeature.getAnalysisName());
-			stmt.setString(index++, wordFeature.getFeatureName());
-			stmt.setString(index++, wordFeature.getSystemName());
-			stmt.setString(index++, wordFeature.getDescriptionName());
 		}
-		if (lemma != null) {
-			stmt.setString(index++, lemma.getFeatureName());
+		for (DepWordFeature lemma : lemmata) {
+			if (lemma != null) {
+				stmt.setString(index++, lemma.getName());
+			}
 		}
+		System.out.println(stmt);
 		ResultSet rs = stmt.executeQuery();
-		List<DepWord> words = new LinkedList<>();
+		List<List<DepWord>> wordMatrix = new LinkedList<>();
 		while (rs.next()) {
-			DepWord word = new DepWord();
-			word.setId(rs.getInt("id"));
-			word.setForm(rs.getString("form"));
-			word.setBackspaced(rs.getBoolean("backspaced"));
-			word.setLemma(rs.getString("lemma"));
-			words.add(word);
+			List<DepWord> words = new LinkedList<>();
+			for (int i = 0; i < matches.size(); i++) {
+				DuxMatch match = matches.get(i);
+				if (match instanceof DuxFunction) {
+					words.add(null);
+					continue;
+				} else {
+					index = i + 1;
+					DepWord word = new DepWord();
+					word.setId(rs.getInt("id" + index));
+					word.setForm(rs.getString("form" + index));
+					word.setBackspaced(rs.getBoolean("backspaced" + index));
+					word.setLemma(rs.getString("lemma" + index));
+					words.add(word);
+				}
+			}
+			wordMatrix.add(words);
 		}
-		return words;
+		return wordMatrix;
 	}
 
 }

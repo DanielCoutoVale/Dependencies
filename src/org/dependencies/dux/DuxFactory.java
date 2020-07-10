@@ -7,6 +7,7 @@ import java.util.Map;
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepWordFeature;
+import org.dependencies.model.DepWordFunction;
 
 public class DuxFactory {
 
@@ -28,10 +29,21 @@ public class DuxFactory {
 			feature.setDescriptionName(descriptionMap.get(matchTag.getPrefix()).getName());
 			feature.setAnalysisName(analysisMap.get(matchTag.getPrefix()).getName());
 			feature.setSystemName(matchTag.getSystemName());
-			feature.setFeatureName(matchTag.getFeatureName());
+			feature.setName(matchTag.getFeatureName());
 			features.add(feature);
 		}
 		return features;
+	}
+
+	public DepWordFunction makeWordFunction(DuxFunction function) {
+		DepWordFunction depFunction = new DepWordFunction();
+		depFunction.setDescriptionName(descriptionMap.get(function.getPrefix()).getName());
+		depFunction.setAnalysisName(analysisMap.get(function.getPrefix()).getName());
+		depFunction.setMetafunctionName(function.getMetafunctionName());
+		depFunction.setName(function.getName());
+		depFunction.setWordRankName(function.getWordRankName());
+		depFunction.setHeadRankName(function.getHeadRankName());
+		return depFunction;
 	}
 }
 

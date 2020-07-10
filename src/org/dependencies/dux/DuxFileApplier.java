@@ -12,7 +12,6 @@ import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
 import org.dependencies.model.DepFunction;
 import org.dependencies.model.DepWord;
-import org.dependencies.model.DepWordFeature;
 
 /**
  * A DUX file applier.
@@ -37,11 +36,10 @@ public class DuxFileApplier {
 		DuxDocument document = builder.parse(file);
 		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
 		for (DuxCommand command : document) {
-			// FIXME Consider other words besides the first
-			DuxWord duxWord = (DuxWord)(command.getMatches().get(0));
-			List<DepWordFeature> wordFeatures = factory.makeWordFeatures(duxWord);
-			List<DepWord> words = base.searchForWords(wordFeatures);
-			for (DepWord word : words) {
+			List<List<DepWord>> wordMatrix = base.searchForWords(factory, command.getMatches());
+			for (List<DepWord> words : wordMatrix) {
+				// FIXME Consider other words
+				DepWord word = words.get(0);
 				for (DuxChange change : command.getMagisTags()) {
 					if (change instanceof DuxFeature) {
 						DuxFeature tag = (DuxFeature) change;
@@ -55,12 +53,16 @@ public class DuxFileApplier {
 					if (change instanceof DuxFunction) {
 						DuxFunction tag = (DuxFunction) change;
 						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						DepDescription description = descriptionMap.get(tag.getPrefix());
 						DepFunction function = descriptionMap
 								.get(tag.getPrefix())
 								.getMetafunction(tag.getMetafunctionName())
 								.getFunction(tag.getName());
-						// TODO Add a function to a word
-						System.out.println("+" + function);
+						DepWord tail = words.get(tag.getWordIndex() - 1);
+						DepFeature tailRank = description.getRank(tag.getWordRankName());
+						DepWord head = words.get(tag.getHeadIndex() - 1);
+						DepFeature headRank = description.getRank(tag.getHeadRankName());
+						base.addWordFunction(analysis.getId(), function.getId(), tail.getId(), tailRank.getId(), head.getId(), headRank.getId());
 					}
 				}
 				for (DuxChange change : command.getMinusTags()) {
@@ -76,12 +78,16 @@ public class DuxFileApplier {
 					if (change instanceof DuxFunction) {
 						DuxFunction tag = (DuxFunction) change;
 						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						DepDescription description = descriptionMap.get(tag.getPrefix());
 						DepFunction function = descriptionMap
 								.get(tag.getPrefix())
 								.getMetafunction(tag.getMetafunctionName())
 								.getFunction(tag.getName());
-						System.out.println("-" + function);
-						// TODO Add a function to a word
+						DepWord tail = words.get(tag.getWordIndex() - 1);
+						DepFeature tailRank = description.getRank(tag.getWordRankName());
+						DepWord head = words.get(tag.getHeadIndex() - 1);
+						DepFeature headRank = description.getRank(tag.getHeadRankName());
+						base.removeWordFunction(analysis.getId(), function.getId(), tail.getId(), tailRank.getId(), head.getId(), headRank.getId());
 					}
 				}
 			}

@@ -9,6 +9,16 @@ system CLAUSE-COMPLEXITY
 - clause-complex
 - clause
 
+system GROUPS-PHRASES-COMPLEXITY
+> groups-phrases
+- groups
+- phrases
+
+system PHRASE-COMPLEXITY
+> phrases
+- phrase-complex
+- phrase
+
 system GROUP-COMPLEXITY
 > groups
 - group-complex

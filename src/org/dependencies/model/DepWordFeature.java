@@ -25,7 +25,7 @@ public class DepWordFeature {
 	/**
 	 * The feature name.
 	 */
-	private String featureName;
+	private String name;
 
 	/**
 	 * Gets the name of the description to which this feature belongs.
@@ -86,17 +86,17 @@ public class DepWordFeature {
 	 * 
 	 * @return the feature name
 	 */
-	public final String getFeatureName() {
-		return this.featureName;
+	public final String getName() {
+		return this.name;
 	}
 
 	/**
 	 * Sets the name of this feature.
 	 * 
-	 * @param featureName the feature name
+	 * @param name the feature name
 	 */
-	public final void setFeatureName(String featureName) {
-		this.featureName = featureName;
+	public final void setName(String name) {
+		this.name = name;
 	}
 
 }
