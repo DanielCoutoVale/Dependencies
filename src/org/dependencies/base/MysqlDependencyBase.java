@@ -61,18 +61,22 @@ public class MysqlDependencyBase {
 	/**
 	 * Makes a word feature join SQL.
 	 * 
-	 * @param order the order of the join SQL
+	 * @param wOrder the word order of the join SQL
+	 * @param fOrder the feature order of the join SQL
 	 * @return the SQL
 	 */
-	private static final String makeWordFeatureJoinSql(Integer order) {
+	private static final String makeWordFeatureJoinSql(Integer wOrder, Integer fOrder) {
 		return String.format(
-				"JOIN `word-feature` WF%d ON WF%d.`word-id` = W.`id` \n"
-						+ "JOIN `analysis` A%d ON A%d.`id` = WF%d.`analysis-id` AND A%d.`name` = ? \n"
-						+ "JOIN `feature` F%d ON F%d.`id` = WF%d.`id` AND F%d.`name` = ? \n"
-						+ "JOIN `system` S%d ON S%d.`id` = F%d.`system-id` AND S%d.`name` = ? \n"
-						+ "JOIN `description` D%d ON D%d.`id` = S%d.`description-id` AND D%d.`name` = ? \n",
-				order, order, order, order, order, order, order, order, order, order, order, order, order, order, order,
-				order, order, order);
+				"JOIN `word-feature` W%dWF%d ON W%dWF%d.`word-id` = W%d.`id` \n"
+						+ "JOIN `analysis` W%dA%d ON W%dA%d.`id` = W%dWF%d.`analysis-id` AND W%dA%d.`name` = ? \n"
+						+ "JOIN `feature` W%dF%d ON W%dF%d.`id` = W%dWF%d.`id` AND W%dF%d.`name` = ? \n"
+						+ "JOIN `system` W%dS%d ON W%dS%d.`id` = W%dF%d.`system-id` AND W%dS%d.`name` = ? \n"
+						+ "JOIN `description` W%dD%d ON W%dD%d.`id` = W%dS%d.`description-id` AND W%dD%d.`name` = ? \n",
+				wOrder, fOrder, wOrder, fOrder, wOrder,
+				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
+				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
+				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
+				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder);
 	}
 
 	/**
@@ -724,18 +728,18 @@ public class MysqlDependencyBase {
 	 */
 	public final List<DepWord> searchForWords(List<DepWordFeature> wordFeatures) throws SQLException {
 		StringBuffer buffer = new StringBuffer();
-		buffer.append("SELECT W.* \n");
-		buffer.append("FROM `word` W \n");
+		buffer.append("SELECT W1.* \n");
+		buffer.append("FROM `word` W1 \n");
 		DepWordFeature lemma = null;
 		for (int i = 0; i < wordFeatures.size(); i++) {
 			if (wordFeatures.get(i).getSystemName().equals("LEMMA")) {
 				lemma = wordFeatures.get(i);
 				continue;
 			}
-			buffer.append(makeWordFeatureJoinSql(i + 1));
+			buffer.append(makeWordFeatureJoinSql(1, i + 1));
 		}
 		if (lemma != null) {
-			buffer.append("WHERE W.`lemma` = ? \n");
+			buffer.append("WHERE W1.`lemma` = ? \n");
 		}
 		String sql = buffer.toString();
 		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
