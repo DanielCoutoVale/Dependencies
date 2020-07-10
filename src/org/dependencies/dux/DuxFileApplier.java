@@ -35,19 +35,11 @@ public class DuxFileApplier {
 		File file = new File(fileName);
 		DuxDocumentBuilder builder = new DuxDocumentBuilder();
 		DuxDocument document = builder.parse(file);
+		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
 		for (DuxCommand command : document) {
 			// FIXME Consider other words besides the first
-			List<DuxFeature> matchTags = ((DuxWord)command.getMatches().get(0)).getMatchTags();
-			DepWordFeature[] wordFeatures = new DepWordFeature[matchTags.size()];
-			for (int i = 0; i < matchTags.size(); i++) {
-				DepWordFeature wordFeature = new DepWordFeature();
-				DuxFeature matchTag = matchTags.get(i);
-				wordFeature.setDescriptionName(descriptionMap.get(matchTag.getPrefix()).getName());
-				wordFeature.setAnalysisName(analysisMap.get(matchTag.getPrefix()).getName());
-				wordFeature.setSystemName(matchTag.getSystemName());
-				wordFeature.setFeatureName(matchTag.getFeatureName());
-				wordFeatures[i] = wordFeature;
-			}
+			DuxWord duxWord = (DuxWord)(command.getMatches().get(0));
+			List<DepWordFeature> wordFeatures = factory.makeWordFeatures(duxWord);
 			List<DepWord> words = base.searchForWords(wordFeatures);
 			for (DepWord word : words) {
 				for (DuxChange change : command.getMagisTags()) {
@@ -68,6 +60,7 @@ public class DuxFileApplier {
 								.getMetafunction(tag.getMetafunctionName())
 								.getFunction(tag.getName());
 						// TODO Add a function to a word
+						System.out.println("+" + function);
 					}
 				}
 				for (DuxChange change : command.getMinusTags()) {
@@ -87,6 +80,7 @@ public class DuxFileApplier {
 								.get(tag.getPrefix())
 								.getMetafunction(tag.getMetafunctionName())
 								.getFunction(tag.getName());
+						System.out.println("-" + function);
 						// TODO Add a function to a word
 					}
 				}

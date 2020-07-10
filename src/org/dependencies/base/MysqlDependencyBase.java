@@ -722,14 +722,14 @@ public class MysqlDependencyBase {
 	 * @return the words
 	 * @throws SQLException if the query fails
 	 */
-	public final List<DepWord> searchForWords(DepWordFeature... wordFeatures) throws SQLException {
+	public final List<DepWord> searchForWords(List<DepWordFeature> wordFeatures) throws SQLException {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("SELECT W.* \n");
 		buffer.append("FROM `word` W \n");
 		DepWordFeature lemma = null;
-		for (int i = 0; i < wordFeatures.length; i++) {
-			if (wordFeatures[i].getSystemName().equals("LEMMA")) {
-				lemma = wordFeatures[i];
+		for (int i = 0; i < wordFeatures.size(); i++) {
+			if (wordFeatures.get(i).getSystemName().equals("LEMMA")) {
+				lemma = wordFeatures.get(i);
 				continue;
 			}
 			buffer.append(makeWordFeatureJoinSql(i + 1));
