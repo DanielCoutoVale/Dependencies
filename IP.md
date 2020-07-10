@@ -77,7 +77,7 @@ As we can see in the table above, adjectives play various roles relative to word
 
 ### Step 1
 
-Let us focus on the most frequent dependency "amod" for a moment and let us look up what is going on in the second most frequent attachment of that dependency: namely, the attachment to a "verb". I shall get three examples that properly illustrate what was tagged in this way.
+Let us focus on the most frequent dependency "amod" for an adjective and let us look up what is going on in the second most frequent attachment of that dependency: namely, the attachment to a "verb". I shall get three examples that properly illustrate one of the linguistic phenomena that has been tagged in this way.
 
 FORM        |quod        |intelligere |dei         |est         |sua         |essentia
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
