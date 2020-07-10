@@ -27,7 +27,8 @@ public class UdFileImporter {
 		UdDocument document = builder.parse(file);
 		MysqlDependencyBase base = new MysqlDependencyBase();
 		DepDescription description = base.addDescription(descriptionName);
-		DepMetafunction metafunction = base.addMetafunction(description.getId(), "mixed");
+		DepMetafunction metafunction = base.addMetafunction(description.getId(), "MIXED");
+		description.addMetafunction(metafunction);
 		DepSystem rankSystem = base.addSystem(description.getId(), "RANK", "wording");
 		DepFeature rankFeature = base.addFeature(rankSystem.getId(), "word");
 		rankSystem.addFeature(rankFeature);
@@ -49,7 +50,7 @@ public class UdFileImporter {
 		}
 		for (UdDependency dep : document.getDeps()) {
 			DepFunction function = base.addFunction(metafunction.getId(), dep.getName());
-			description.addFunction(function);
+			metafunction.addFunction(function);
 		}
 		base.close();
 	}

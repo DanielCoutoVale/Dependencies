@@ -53,4 +53,9 @@ public class DepFunction {
 		this.name = name;
 	}
 
+	@Override
+	public final String toString() {
+		return this.name;
+	}
+
 }

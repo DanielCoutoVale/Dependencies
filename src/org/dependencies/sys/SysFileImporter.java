@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
+import org.dependencies.model.DepFunction;
+import org.dependencies.model.DepMetafunction;
 import org.dependencies.model.DepSystem;
 
 /**
@@ -28,6 +30,14 @@ public class SysFileImporter {
 			for (DepFeature docFeature : docSystem.getFeatures()) {
 				DepFeature feature = base.addFeature(system.getId(), docFeature.getName());
 				system.addFeature(feature);
+			}
+		}
+		for (DepMetafunction docMetafunction : document.getMetafunctions()) {
+			DepMetafunction metafunction = base.addMetafunction(description.getId(), docMetafunction.getName());
+			description.addMetafunction(metafunction);
+			for (DepFunction docFunction : docMetafunction.getFunctions()) {
+				DepFunction function = base.addFunction(metafunction.getId(), docFunction.getName());
+				metafunction.addFunction(function);
 			}
 		}
 	}

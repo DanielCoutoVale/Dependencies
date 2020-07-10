@@ -28,16 +28,16 @@ public class DepDescription {
 	private final Map<String, DepSystem> systemMap;
 
 	/**
-	 * The function map.
+	 * The metafunction map.
 	 */
-	private final Map<String, DepFunction> functionMap;
+	private final Map<String, DepMetafunction> metafunctionMap;
 
 	/**
 	 * Constructor
 	 */
 	public DepDescription() {
 		this.systemMap = new HashMap<>();
-		this.functionMap = new HashMap<>();
+		this.metafunctionMap = new HashMap<>();
 	}
 
 	/**
@@ -105,31 +105,31 @@ public class DepDescription {
 	}
 
 	/**
-	 * Adds a function to this description.
+	 * Adds a metafunction to this description.
 	 * 
-	 * @param function the function
+	 * @param metafunction the metafunction
 	 */
-	public final void addFunction(DepFunction function) {
-		this.functionMap.put(function.getName(), function);
+	public final void addMetafunction(DepMetafunction metafunction) {
+		this.metafunctionMap.put(metafunction.getName(), metafunction);
 	}
 
 	/**
-	 * Gets a function in this description by name.
+	 * Gets a metafunction in this description by name.
 	 * 
-	 * @param functionName the function name
+	 * @param metafunctionName the function name
 	 * @return the function
 	 */
-	public final DepFunction getFunction(String functionName) {
-		return this.functionMap.get(functionName);
+	public final DepMetafunction getMetafunction(String metafunctionName) {
+		return this.metafunctionMap.get(metafunctionName);
 	}
 
 	/**
-	 * Gets the functions in this description.
+	 * Gets the metafunctions in this description.
 	 * 
-	 * @return the functions
+	 * @return the metafunctions
 	 */
-	public final List<DepFunction> getFunctions() {
-		return new LinkedList<>(this.functionMap.values());
+	public final List<DepMetafunction> getMetafunctions() {
+		return new LinkedList<>(this.metafunctionMap.values());
 	}
 
 	@Override

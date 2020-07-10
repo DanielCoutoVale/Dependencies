@@ -131,3 +131,9 @@ system CASE-SEAM
 - genitive-seam
 - dative-seam
 - ablative-seam
+
+metafunction EXPERIENTIAL
+- Possessor
+- Carrier
+- Attribute
+- Attributor

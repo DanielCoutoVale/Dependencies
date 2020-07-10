@@ -1,17 +1,45 @@
 package org.dependencies.dux;
 
+/**
+ * A function
+ * 
+ * @author Daniel Couto-Vale
+ */
 public class DuxFunction implements DuxMatch, DuxChange {
 	
+	/**
+	 * The function prefix
+	 */
 	private String prefix;
 
+	/**
+	 * The metafunction name for this function
+	 */
+	private String metafunctionName;
+
+	/**
+	 * The function name 
+	 */
 	private String name;
 
+	/**
+	 * The word index
+	 */
 	private Integer wordIndex;
 
+	/**
+	 * The word rank name
+	 */
 	private String wordRankName;
 
+	/**
+	 * The head word index
+	 */
 	private Integer headIndex;
 
+	/**
+	 * The rank name for the head word 
+	 */
 	private String headRankName;
 
 	/**
@@ -21,11 +49,13 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	 */
 	public DuxFunction(String form) {
 		String[] A = form.split("#");
-		this.prefix = A[0];
+		String[] A0 = A[0].split(":");
+		this.prefix = A0[0];
+		this.metafunctionName = A0[1];
+		this.name = A0[2];
 		String[] A1 = A[1].split(":");
 		this.wordIndex = Integer.parseInt(A1[0]);
 		this.wordRankName = A1[1];
-		this.name = A1[2];
 		String[] A2 = A[2].split(":");
 		this.headIndex = Integer.parseInt(A2[0]);
 		this.headRankName = A2[1];
@@ -41,9 +71,9 @@ public class DuxFunction implements DuxMatch, DuxChange {
 		String[] A = token.split("#");
 		if (A.length != 3) return false;
 		String[] A0 = A[0].split(":");
-		if (A0.length != 1) return false;
+		if (A0.length != 3) return false;
 		String[] A1 = A[1].split(":");
-		if (A1.length != 3) return false;
+		if (A1.length != 2) return false;
 		String[] A2 = A[2].split(":");
 		if (A2.length != 2) return false;
 		return true;
@@ -65,6 +95,24 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	 */
 	public final void setPrefix(String prefix) {
 		this.prefix = prefix;
+	}
+
+	/**
+	 * Gets the name of the metafunction of this function.
+	 * 
+	 * @return the metafunction name
+	 */
+	public final String getMetafunctionName() {
+		return this.metafunctionName;
+	}
+
+	/**
+	 * Sets the name of the metafunction of this function.
+	 * 
+	 * @param metafunctionName the metafunction name
+	 */
+	public final void setMetafunctionName(String metafunctionName) {
+		this.metafunctionName = metafunctionName;
 	}
 
 	/**
@@ -159,9 +207,9 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	
 	@Override
 	public final String toString() {
-		return this.prefix + 
-				"#" + this.wordIndex + ":" + this.wordRankName + 
-				":" + this.headRankName +
+		return this.prefix +  
+				":" + this.metafunctionName + ":" + this.name +
+				"#" + this.wordIndex + ":" + this.wordRankName +
 				"#" + this.headIndex + ":" + this.headRankName;
 	}
 

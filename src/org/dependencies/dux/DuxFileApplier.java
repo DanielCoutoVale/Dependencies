@@ -65,6 +65,7 @@ public class DuxFileApplier {
 						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
 						DepFunction function = descriptionMap
 								.get(tag.getPrefix())
+								.getMetafunction(tag.getMetafunctionName())
 								.getFunction(tag.getName());
 						// TODO Add a function to a word
 					}
@@ -84,6 +85,7 @@ public class DuxFileApplier {
 						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
 						DepFunction function = descriptionMap
 								.get(tag.getPrefix())
+								.getMetafunction(tag.getMetafunctionName())
 								.getFunction(tag.getName());
 						// TODO Add a function to a word
 					}

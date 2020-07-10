@@ -619,7 +619,21 @@ public class MysqlDependencyBase {
 			system.addFeature(feature);
 		}
 		stmt.close();
-		sql = "SELECT S.* FROM `function` S " + "JOIN `metafunction` MF ON MF.`id` = S.`metafunction-id` "
+		sql = "SELECT MF.* FROM `metafunction` MF "
+				+ "WHERE MF.`description-id` = ?";
+		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		stmt.setInt(1, description.getId());
+		rs = stmt.executeQuery();
+		Map<Integer, DepMetafunction> metafunctionMap = new HashMap<>();
+		while (rs.next()) {
+			DepMetafunction metafunction = new DepMetafunction();
+			metafunction.setId(rs.getInt("id"));
+			metafunction.setName(rs.getString("name"));
+			description.addMetafunction(metafunction);
+			metafunctionMap.put(metafunction.getId(), metafunction);
+		}
+		stmt.close();
+		sql = "SELECT F.* FROM `function` F " + "JOIN `metafunction` MF ON MF.`id` = F.`metafunction-id` "
 				+ "WHERE MF.`description-id` = ?";
 		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
 		stmt.setInt(1, description.getId());
@@ -628,7 +642,8 @@ public class MysqlDependencyBase {
 			DepFunction function = new DepFunction();
 			function.setId(rs.getInt("id"));
 			function.setName(rs.getString("name"));
-			description.addFunction(function);
+			DepMetafunction metafunction = metafunctionMap.get(rs.getInt("metafunction-id"));
+			metafunction.addFunction(function);
 		}
 		stmt.close();
 		return description;

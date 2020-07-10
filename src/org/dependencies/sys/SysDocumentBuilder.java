@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 import org.dependencies.model.DepFeature;
+import org.dependencies.model.DepFunction;
+import org.dependencies.model.DepMetafunction;
 import org.dependencies.model.DepSystem;
 
 /**
@@ -34,6 +36,7 @@ public class SysDocumentBuilder {
 		Integer lineCount = 0;
 		int state = 0;
 		DepSystem system = null;
+		DepMetafunction metafunction = null;
 		while (null != (line = br.readLine())) {
 			line = line.trim();
 			lineCount++;
@@ -47,6 +50,12 @@ public class SysDocumentBuilder {
 					system.setName(line.substring(7).trim());
 					document.addSystem(system);
 					state = 1;
+					continue;
+				} else if (line.startsWith("metafunction ")) {
+					metafunction = new DepMetafunction();
+					metafunction.setName(line.substring(13).trim());
+					document.addMetafunction(metafunction);
+					state = 2;
 					continue;
 				} else if (line.length() != 0) {
 					System.err.println("Error: line " + lineCount);
@@ -65,12 +74,22 @@ public class SysDocumentBuilder {
 				}
 			case 2:
 				if (line.startsWith("- ")) {
-					DepFeature feature = new DepFeature();
-					feature.setName(line.substring(2).trim());
-					system.addFeature(feature);
-					state = 2;
-					continue;
+					if (system != null) {
+						DepFeature feature = new DepFeature();
+						feature.setName(line.substring(2).trim());
+						system.addFeature(feature);
+						state = 2;
+						continue;
+					} else if (metafunction != null) {
+						DepFunction function = new DepFunction();
+						function.setName(line.substring(2).trim());
+						metafunction.addFunction(function);
+						state = 2;
+						continue;
+					}
 				} else {
+					system = null;
+					metafunction = null;
 					state = 0;
 					continue;
 				}

@@ -1,3 +1,4 @@
+package org.dependencies.dux;
 import java.io.File;
 
 import org.dependencies.dux.DuxCommand;

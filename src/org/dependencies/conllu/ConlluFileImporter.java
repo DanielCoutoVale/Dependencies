@@ -11,6 +11,7 @@ import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
 import org.dependencies.model.DepFunction;
 import org.dependencies.model.DepLanguage;
+import org.dependencies.model.DepMetafunction;
 import org.dependencies.model.DepSystem;
 import org.dependencies.model.DepWord;
 import org.dependencies.model.DepWording;
@@ -22,8 +23,8 @@ import org.dependencies.model.DepWording;
  */
 public class ConlluFileImporter {
 
-	public final void importFile(String corpusName, String languageName, String textTitle,
-			String descriptionName, String analysisName, String fileName) throws SQLException {
+	public final void importFile(String corpusName, String languageName, String textTitle, String descriptionName,
+			String analysisName, String fileName) throws SQLException {
 		MysqlDependencyBase base = new MysqlDependencyBase();
 		DepCorpus corpus = base.getCorpus(corpusName);
 		if (corpus == null) {
@@ -49,7 +50,8 @@ public class ConlluFileImporter {
 			text.addWording(wording);
 			Integer orderInWording = 1;
 			for (ConlluWord uWord : sentence.words) {
-				DepWord word = base.addWord(wording.getId(), orderInWording++, uWord.form, uWord.backspaced, uWord.lemma);
+				DepWord word = base.addWord(wording.getId(), orderInWording++, uWord.form, uWord.backspaced,
+						uWord.lemma);
 				wording.addWord(word);
 				// Word features
 				{
@@ -72,10 +74,12 @@ public class ConlluFileImporter {
 				}
 				DepWord word = wording.getWords().get(uWord.order - 1);
 				DepWord head = wording.getWords().get(uWord.headOrder - 1);
-				DepFunction function = description.getFunction(uWord.functionName);
-				base.addWordFunction(analysis.getId(), function.getId(), word.getId(), rank.getId(), head.getId(), rank.getId());
+				DepMetafunction metafunction = description.getMetafunction("MIXED");
+				DepFunction function = metafunction.getFunction(uWord.functionName);
+				base.addWordFunction(analysis.getId(), function.getId(), word.getId(), rank.getId(), head.getId(),
+						rank.getId());
 			}
 		}
 	}
-	
+
 }

@@ -185,5 +185,19 @@ public class DepSystem implements Iterable<DepFeature> {
 	public final Iterator<DepFeature> iterator() {
 		return this.featureMap.values().iterator();
 	}
+	
+	@Override
+	public final String toString() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append("system " + this.name);
+		buffer.append("\n");
+		buffer.append("> " + this.entryCondition);
+		buffer.append("\n");
+		for (DepFeature feature : featureMap.values()) {
+			buffer.append("- " + feature);
+			buffer.append("\n");
+		}
+		return buffer.toString();
+	}
 
 }
