@@ -9,7 +9,11 @@
 # VERBFORM: fin, gdv, ger, inf, part
 # VOICE: act, pass
 
-[S:WORD-CLASS:verb] => +T:WORD-CLASS:verb
+[S:WORD-CLASS:verb] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:process-verb
+[S:WORD-CLASS:adj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adjective
+[S:WORD-CLASS:propn] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun
+[S:WORD-CLASS:pron] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[S:WORD-CLASS:noun] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
 
 # O-BRANCH
 [S:TENSE:imp S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:bā-branch
@@ -42,17 +46,23 @@
 [S:VERBFORM:part S:TENSE:fut] => +T:VERB-ASPECT:ū-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ū-BRANCH:ūr-branch
 
 # OST SEAM
-[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:1] => +T:VERB-ŌST-SEAM:ō-seam
-[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:2] => +T:VERB-ŌST-SEAM:s-seam
-[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:3] => +T:VERB-ŌST-SEAM:t-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:1] => +T:VERB-ŌST-SEAM:mus-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:VERB-ŌST-SEAM:tis-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:VERB-ŌST-SEAM:nt-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:1] => +T:ŌST-SEAM:ō-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:2] => +T:ŌST-SEAM:s-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:3] => +T:ŌST-SEAM:t-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:1] => +T:ŌST-SEAM:mus-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:ŌST-SEAM:tis-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:ŌST-SEAM:nt-seam
 
 # AUMUS SEAM
-[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem] => +T:VERB-AUMUS-SEAM:a-am-seam
-[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut] => +T:VERB-AUMUS-SEAM:um-um-seam
-[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:masc] => +T:VERB-AUMUS-SEAM:us-um-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:fem] => +T:VERB-AUMUS-SEAM:ae-ās-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:neut] => +T:VERB-AUMUS-SEAM:a-a-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:masc] => +T:VERB-AUMUS-SEAM:ī-ōs-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem] => +T:AUMUS-SEAM:a-am-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut] => +T:AUMUS-SEAM:um-um-seam
+[S:WORD-CLASS:verb S:NUMBER:sing S:GENDER:masc] => +T:AUMUS-SEAM:us-um-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:fem] => +T:AUMUS-SEAM:ae-ās-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a-a-seam
+[S:WORD-CLASS:verb S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī-ōs-seam
+[S:WORD-CLASS:adj S:NUMBER:sing S:GENDER:fem] => +T:AUMUS-SEAM:a-am-seam
+[S:WORD-CLASS:adj S:NUMBER:sing S:GENDER:neut] => +T:AUMUS-SEAM:um-um-seam
+[S:WORD-CLASS:adj S:NUMBER:sing S:GENDER:masc] => +T:AUMUS-SEAM:us-um-seam
+[S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:fem] => +T:AUMUS-SEAM:ae-ās-seam
+[S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a-a-seam
+[S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī-ōs-seam

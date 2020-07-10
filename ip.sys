@@ -3,12 +3,47 @@ system RANK
 - clauses
 - groups-phrases
 - words
-- marks
+
+system CLAUSE-COMPLEXITY
+> clauses
+- clause-complex
+- clause
+
+system GROUP-COMPLEXITY
+> groups
+- group-complex
+- group
+
+system WORD-COMPLEXITY
+> words
+- word-complex
+- word
 
 system WORD-CLASS
-> words
-- verb
+> word
 - noun
+- number
+- adjective
+- verb
+- conjunction
+- adverb
+- adposition
+
+system NOUN-CLASS
+> noun
+- proper-noun
+- common-noun
+- pronoun
+
+system VERB-CLASS
+> verb
+- process-verb
+- auxiliary-verb
+
+system CONJUNCTION-CLASS
+> conjunction
+- linker
+- binder
 
 system VERB-ASPECT
 > verb
@@ -51,7 +86,7 @@ system VERB-Ū-BRANCH
 - ūr-branch
 - ū-branch
 
-system VERB-ŌST-SEAM
+system ŌST-SEAM
 > bā-branch ∨ b-branch ∨ ē-branch ∨ rē-branch ∨ tō-branch ∨ ō-branch ∨ ō-1st-paradigm ∨ ō-2nd-paradigm  
 - ō-seam
 - s-seam
@@ -67,8 +102,8 @@ system VERB-CORE
 - ō-ndī-core
 - ō-ndō-core
 
-system VERB-AUMUS-SEAM
-> ū-aspect unbranched ∨ ūr-branch ∨ nd-core
+system AUMUS-SEAM
+> verb ū-aspect unbranched ∨ verb ūr-branch ∨ verb nd-core ∨ adjective
 - a-am-seam
 - um-um-seam
 - us-um-seam

@@ -545,7 +545,7 @@ public class MysqlDependencyBase {
 		stmt.setString(2, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			throw new SQLException();
+			return null;
 		DepAnalysis analysis = new DepAnalysis();
 		analysis.setId(rs.getInt("id"));
 		analysis.setName(rs.getString("name"));
