@@ -10,46 +10,44 @@ import java.util.List;
  * @author Daniel Couto-Vale
  */
 public class DuxCommand {
-
-	/**
-	 * The match tags.
-	 */
-	private final List<DuxFeature> matchTags;
+	
+	private final List<DuxMatch> matches;
 
 	/**
 	 * The magis tags.
 	 */
-	private final List<DuxFeature> magisTags;
+	private final List<DuxChange> magisTags;
 
 	/**
 	 * The minus tags.
 	 */
-	private final List<DuxFeature> minusTags;
+	private final List<DuxChange> minusTags;
 
 	/**
 	 * Constructor
 	 */
 	public DuxCommand() {
-		matchTags = new LinkedList<>();
+		matches = new LinkedList<>();
 		magisTags = new LinkedList<>();
 		minusTags = new LinkedList<>();
 	}
-
+	
 	/**
-	 * Adds a match tag.
+	 * Ads a match.
 	 * 
-	 * @param matchTag the match tag
+	 * @param match the match
 	 */
-	public final void addMatchTag(DuxFeature matchTag) {
-		matchTags.add(matchTag);
+	public final void addMatch(DuxMatch match) {
+		matches.add(match);
 	}
+	
 
 	/**
 	 * Adds a magis tag.
 	 * 
 	 * @param magisTag the magis tag
 	 */
-	public final void addMagisTag(DuxFeature magisTag) {
+	public final void addMagisTag(DuxChange magisTag) {
 		magisTags.add(magisTag);
 	}
 
@@ -58,27 +56,25 @@ public class DuxCommand {
 	 * 
 	 * @param minusTag the minus tag
 	 */
-	public final void addMinusTag(DuxFeature minusTag) {
+	public final void addMinusTag(DuxChange minusTag) {
 		minusTags.add(minusTag);
 	}
 
 	@Override
 	public final String toString() {
 		StringBuffer buffer = new StringBuffer();
-		buffer.append("[");
-		for (DuxFeature tag : matchTags) {
-			if (buffer.length() > 1) {
+		for (DuxMatch match : matches) {
+			if (buffer.length() > 0) {
 				buffer.append(" ");
 			}
-			buffer.append(tag);
+			buffer.append(match);
 		}
-		buffer.append("]");
 		buffer.append(" =>");
-		for (DuxFeature tag : magisTags) {
+		for (DuxChange tag : magisTags) {
 			buffer.append(" +");
 			buffer.append(tag);
 		}
-		for (DuxFeature tag : minusTags) {
+		for (DuxChange tag : minusTags) {
 			buffer.append(" -");
 			buffer.append(tag);
 		}
@@ -86,12 +82,12 @@ public class DuxCommand {
 	}
 
 	/**
-	 * Gets the match tags.
+	 * Gets the matches.
 	 * 
-	 * @return the match tags
+	 * @return the matches
 	 */
-	public final List<DuxFeature> getMatchTags() {
-		return new LinkedList<>(this.matchTags);
+	public List<DuxMatch> getMatches() {
+		return new LinkedList<>(this.matches);
 	}
 
 	/**
@@ -99,7 +95,7 @@ public class DuxCommand {
 	 * 
 	 * @return the magis tags
 	 */
-	public List<DuxFeature> getMagisTags() {
+	public List<DuxChange> getMagisTags() {
 		return new LinkedList<>(this.magisTags);
 	}
 
@@ -108,7 +104,7 @@ public class DuxCommand {
 	 * 
 	 * @return the minus tags
 	 */
-	public List<DuxFeature> getMinusTags() {
+	public List<DuxChange> getMinusTags() {
 		return new LinkedList<>(this.minusTags);
 	}
 

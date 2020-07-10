@@ -10,6 +10,7 @@ import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
+import org.dependencies.model.DepFunction;
 import org.dependencies.model.DepWord;
 import org.dependencies.model.DepWordFeature;
 
@@ -35,7 +36,8 @@ public class DuxFileApplier {
 		DuxDocumentBuilder builder = new DuxDocumentBuilder();
 		DuxDocument document = builder.parse(file);
 		for (DuxCommand command : document) {
-			List<DuxFeature> matchTags = command.getMatchTags();
+			// FIXME Consider other words besides the first
+			List<DuxFeature> matchTags = ((DuxWord)command.getMatches().get(0)).getMatchTags();
 			DepWordFeature[] wordFeatures = new DepWordFeature[matchTags.size()];
 			for (int i = 0; i < matchTags.size(); i++) {
 				DepWordFeature wordFeature = new DepWordFeature();
@@ -48,21 +50,43 @@ public class DuxFileApplier {
 			}
 			List<DepWord> words = base.searchForWords(wordFeatures);
 			for (DepWord word : words) {
-				for (DuxFeature tag : command.getMagisTags()) {
-					DepAnalysis analysis = analysisMap.get(tag.getPrefix());
-					DepFeature feature = descriptionMap
-							.get(tag.getPrefix())
-							.getSystem(tag.getSystemName())
-							.getFeature(tag.getFeatureName());
-					base.addWordFeature(analysis.getId(), feature.getId(), word.getId());
+				for (DuxChange change : command.getMagisTags()) {
+					if (change instanceof DuxFeature) {
+						DuxFeature tag = (DuxFeature) change;
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						DepFeature feature = descriptionMap
+								.get(tag.getPrefix())
+								.getSystem(tag.getSystemName())
+								.getFeature(tag.getFeatureName());
+						base.addWordFeature(analysis.getId(), feature.getId(), word.getId());
+					}
+					if (change instanceof DuxFunction) {
+						DuxFunction tag = (DuxFunction) change;
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						DepFunction function = descriptionMap
+								.get(tag.getPrefix())
+								.getFunction(tag.getName());
+						// TODO Add a function to a word
+					}
 				}
-				for (DuxFeature tag : command.getMinusTags()) {
-					DepAnalysis analysis = analysisMap.get(tag.getPrefix());
-					DepFeature feature = descriptionMap
-							.get(tag.getPrefix())
-							.getSystem(tag.getSystemName())
-							.getFeature(tag.getFeatureName());
-					base.removeWordFeature(analysis.getId(), feature.getId(), word.getId());
+				for (DuxChange change : command.getMinusTags()) {
+					if (change instanceof DuxFeature) {
+						DuxFeature tag = (DuxFeature) change;
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						DepFeature feature = descriptionMap
+								.get(tag.getPrefix())
+								.getSystem(tag.getSystemName())
+								.getFeature(tag.getFeatureName());
+						base.removeWordFeature(analysis.getId(), feature.getId(), word.getId());
+					}
+					if (change instanceof DuxFunction) {
+						DuxFunction tag = (DuxFunction) change;
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						DepFunction function = descriptionMap
+								.get(tag.getPrefix())
+								.getFunction(tag.getName());
+						// TODO Add a function to a word
+					}
 				}
 			}
 		}

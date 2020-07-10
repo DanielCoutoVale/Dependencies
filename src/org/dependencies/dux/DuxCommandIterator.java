@@ -75,27 +75,49 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 		if (!this.hasNext())
 			return null;
 		DuxCommand command = new DuxCommand();
-		String[] split = line.split("=>");
-		if (split.length != 2) {
+		String[] A = line.split("=>");
+		if (A.length != 2) {
 			System.err.println("Error: " + line);
 			this.advance();
 			return null;
 		}
-		String A0 = split[0].trim();
-		String A1 = split[1].trim();
-		if (!(A0.startsWith("[") && A0.endsWith("]"))) {
+		String A0 = A[0].trim();
+		String A1 = A[1].trim();
+		String[] B = A0.split("[\\[]");
+		for (int i = 0; i < B.length; i++) {
+			B[i] = B[i].trim();
+		}
+		if (B[0].length() != 0) {
 			System.err.println("Error: " + line);
 			this.advance();
 			return null;
 		}
-		A0 = A0.substring(1, A0.length() - 1);
-		for (String token : A0.split(" ")) {
-			token = token.trim();
-			if (token.length() == 0)
-				continue;
-			if (!DuxFeature.matches(token))
-				continue;
-			command.addMatchTag(new DuxFeature(token));
+		for (int i = 1; i < B.length; i++) {
+			String C[] = (B[i] + " ").split("]");
+			if (C.length != 2) {
+				System.err.println("Error2: " + line);
+				this.advance();
+				return null;
+			}
+			String C0 = C[0].trim();
+			String C1 = C[1].trim();
+			DuxWord word = new DuxWord();
+			for (String token : C0.split(" ")) {
+				token = token.trim();
+				if (token.length() == 0)
+					continue;
+				if (!DuxFeature.matches(token))
+					continue;
+				word.addMatchTag(new DuxFeature(token));
+			}
+			command.addMatch(word);
+			for (String token : C1.split(" ")) {
+				if (token.length() == 0)
+					continue;
+				if (!DuxFunction.matches(token))
+					continue;
+				command.addMatch(new DuxFunction(token));
+			}
 		}
 		for (String token : A1.split(" ")) {
 			token = token.trim();
@@ -103,15 +125,21 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 				continue;
 			if (token.startsWith("+")) {
 				token = token.substring(1);
-				if (!DuxFeature.matches(token))
-					continue;
-				command.addMagisTag(new DuxFeature(token));
+				if (DuxFeature.matches(token)) {
+					command.addMagisTag(new DuxFeature(token));
+				}
+				if (DuxFunction.matches(token)) {
+					command.addMagisTag(new DuxFunction(token));
+				}
 			}
 			if (token.startsWith("-")) {
 				token = token.substring(1);
-				if (!DuxFeature.matches(token))
-					continue;
-				command.addMinusTag(new DuxFeature(token));
+				if (DuxFeature.matches(token)) {
+					command.addMinusTag(new DuxFeature(token));
+				}
+				if (DuxFunction.matches(token)) {
+					command.addMinusTag(new DuxFunction(token));
+				}
 			}
 		}
 		this.advance();

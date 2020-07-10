@@ -5,7 +5,7 @@ package org.dependencies.dux;
  * 
  * @author Daniel Couto-Vale
  */
-public class DuxFeature {
+public class DuxFeature implements DuxChange {
 
 	/**
 	 * The prefix, which stands for a description and an analysis.
@@ -47,7 +47,7 @@ public class DuxFeature {
 	/**
 	 * Gets the prefix of this feature.
 	 * 
-	 * @return the feature tag prefix
+	 * @return the feature prefix
 	 */
 	public final String getPrefix() {
 		return this.prefix;
