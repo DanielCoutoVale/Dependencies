@@ -1,13 +1,14 @@
 # Intelligentī Pauca
 A systemic network for ranked universal dependencies
 
-Latin corpora such as ITTB, AGLDT, and PROIEL have been annotated with word classes and dependencies from the cross-linguistic description called **Universal Dependencies** (UD). These classes and dependencies are meant to be universal across all languages. However, despite the enormous impact in comparability of study results, text analyses with this linguistic description lack a grounding on ideational, interpersonal, and textual semantics. In turn, from a pedagogical perspective, the low groundedness of this linguistic description can have a negative impact in the utility of parsing results for teaching Latin; and from a computational perspective, text analyses in this linguistic description are hard to learn automatically and this low learnability adds a toll to the reliability of parsers for languages such as Latin for which linguistic data is scarce. In this section, I shall illustrate the issues I am referring to -- namely, low groundedness and low learnability -- and I shall demonstrate how to solve them by translating current text analyses from Universal Dependencies into a new Latin description that I am calling **Intelligentī Pauca** (IP).
+Latin corpora such as ITTB, AGLDT, and PROIEL have been annotated with word classes and dependencies from the cross-linguistic description called **Universal Dependencies** (UD). These classes and dependencies are meant to be universal across all languages. However, despite the enormous impact in comparability of study results, text analyses with this linguistic description lack a grounding on ideational, interpersonal, and textual semantics. In turn, from a pedagogical perspective, the low groundedness of this linguistic description can have a negative impact in the utility of parsing results for teaching Latin; and from a computational perspective, text analyses in this linguistic description are hard to learn automatically. In particular, this low learnability adds a toll to the reliability of parsers for languages such as Latin for which linguistic data is scarce. In this section, I shall illustrate the issues I am referring to -- namely, low groundedness and low learnability -- and I shall demonstrate how to solve them by translating current text analyses from Universal Dependencies into a new Latin description that I am calling **Intelligentī Pauca** (IP).
 
 ## Learnability
 
 Statistical parsers often rely on the sequence of word classes and cases to determine 1) which word depends on which (attachment) and 2) which role the tail word plays relative to the head one (labeling). This means that a linguistic description that results in less attachment options and less labeling options for the same sequence of word classes will be learned with less data than a linguistic description that results in more options. Taking this into consideration, let us take a look at the number of attachments + labelings that exist for a tail adjective in ITTB dev corpus.
 
-Frequency|Tail class|Dependency|Head class 
+Frequency   |Tail class  |Dependency  |Head class 
+:----------:|:----------:|:----------:|:----------:
 1041|adj|Amod|noun
 97|adj|Xcomp|verb
 80|adj|Obl|verb
@@ -78,22 +79,22 @@ As we can see in the table above, adjectives play various roles relative to word
 
 Let us focus on the most frequent dependency "amod" for a moment and let us look up what is going on in the second most frequent attachment of that dependency: namely, the attachment to a "verb". I shall get three examples that properly illustrate what was tagged in this way.
 
-that his intelligence is his essence
-FORM|quod|suum|intelligere|sit|sua|essentia
-WORD-CLASS|sconj|adj|verb|aux|adj|noun
-CASE| |nom| | |nom|nom
+FORM        |quod        |intelligere |dei         |est         |sua         |essentia
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |verb        |propn       |aux         |adj         |noun
+CASE|       |nom         |gen         |            |            |nom         |nom
 
-that God's intelligence is his essence
-FORM|quod|intelligere|dei|est|sua|essentia
-WORD-CLASS|sconj|verb|propn|aux|adj|noun
-CASE| |nom|gen| |nom|nom
+FORM        |quod        |suum        |intelligere |sit         |sua         |essentia
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |adj         |verb        |aux         |adj         |noun
+CASE        |            |nom         |            |            |nom         |nom
 
-that his intelligence is simple
-FORM|quod|intelligere|eius|sit|simplex
-WORD-CLASS|sconj|verb|pron|aux|adj
-CASE| |nom|gen| |nom
+FORM        |quod        |intelligere |eius        |sit         |simplex
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |verb        |pron        |aux         |adj
+CASE        |            |            |gen         |            |nom
 
-Here we see that *intelligere* (*intelligence*) is a verb and that *essentia* (*essence*) is a noun. The words *suum* and *sua* (*his*) are adjectives whereas the word (*eius*) is a pronoun. In turn, the word *dei* (*God's*) is a proper noun. There is no overlap between the sequences of word classes despite the fact that *God's intelligence*, *his intelligence*, and *his essence* are one and the same thing, that *God* and *he* are one and the same person, and that the relation between *God* and *his intelligence*/*essence* is the same in all examples.
+The three examples read respectively *that God's intelligence is his essence*, *that his intelligence is his essence*, and *that his intelligence is simple*. In the analysis, we see that *intelligere* (*intelligence*) is a verb and that *essentia* (*essence*) is a noun. The words *suum* and *sua* (*his*) are adjectives whereas the word (*eius*) is a pronoun. In turn, the word *dei* (*God's*) is a proper noun. There is no overlap between the sequences of word classes despite the fact that *God's intelligence*, *his intelligence*, and *his essence* are one and the same thing, that *God* and *he* are one and the same person, and that the relation between *God* and *his intelligence*/*essence* is the same in all examples.
 
 When it comes to cases, some of the words modifying *intelligere* and *essentia* are nominative (*suum* and *sua*) and the others are genitive (*dei* and *eius*). As a consequence, despite the fact that these wordings are extremely similar grammatically and semantically, these similarities are not reflected by the classes of words and their cases.
 
