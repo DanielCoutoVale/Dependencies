@@ -129,7 +129,7 @@ To achieve this higher learnability, the linguistic description must have two fe
 
 1. There must be at least two classification layers for words: one for word classes, and another for noun classes. This makes a parser learn rules applicable to all nouns with less examples without wrongly broadening the rules that should apply to a single class of nouns.
 
-2. There must be at least two layers of case: 1) the primary case of a tail word which is determined by a dependency label and 2) the secondary case of any word, which agrees with the primary case of another word. This separation allows the parser to count on the primary case for determining attachment and labeling without wrongly loosing the restriction that words must agree with each other in case.
+2. There must be at least two layers of case: 1) the primary case of a tail word which is determined by a dependency label and 2) the secondary case of a word, which agrees with the primary case of another word. This separation allows the parser to count on the primary case for determining attachment and labeling without wrongly loosing the restriction that words must agree with each other in case.
 
 In turn, the text analysis must be grounded in experiential semantics in the following two ways:
 

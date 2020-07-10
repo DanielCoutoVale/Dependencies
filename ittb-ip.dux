@@ -97,17 +97,17 @@
 [S:LEMMA:noster] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 
-#[T:CASE:genitive T:WORD-CLASS:noun S#1:word:Nmod#2:word [T:WORD-CLASS:common-noun]] => +T#1:groups:Possessor#2:group
-#[T:CASE:genitive T:WORD-CLASS:noun S#1:word:Amod#2:word [T:WORD-CLASS:common-noun]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:meus S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:tuus S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:suus S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:noster S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:vester S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:meus S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:tuus S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:suus S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:noster S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
-#[S:LEMMA:vester S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
+[T:CASE:genitive T:WORD-CLASS:noun] [T:WORD-CLASS:common-noun] S#1:word:Nmod#2:word => +T#1:groups:Possessor#2:group
+[T:CASE:genitive T:WORD-CLASS:noun] [T:WORD-CLASS:common-noun] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:meus] [S:WORD-CLASS:verb] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:tuus] [S:WORD-CLASS:verb] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:suus] [S:WORD-CLASS:verb] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:noster] [S:WORD-CLASS:verb] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:vester] [S:WORD-CLASS:verb] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:meus] [S:WORD-CLASS:adjective] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:tuus] [S:WORD-CLASS:adjective] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:suus] [S:WORD-CLASS:adjective] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:noster] [S:WORD-CLASS:adjective] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
+[S:LEMMA:vester] [S:WORD-CLASS:adjective] S#1:word:Amod#2:word => +T#1:groups:Possessor#2:group
 
 
