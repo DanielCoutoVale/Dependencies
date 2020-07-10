@@ -102,19 +102,19 @@ When it comes to cases, some of the words modifying *intelligere* and *essentia*
 
 Based on this observation, I shall propose another way to classify these words, aiming at improving the learnability for parsing.
 
-FORM        |quod        |suum        |intelligere |sit         |sua         |essentia
-:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
-WORD-CLASS  |            |noun        |noun        |verb        |noun        |noun
-NOUN-CLASS  |            |pronoun     |common noun |            |pronoun     |common noun
-CASE        |            |genitive    |nominative  |            |genitive    |nominative
-CASE-SEAM   |            |nominative2 |            |            |nominative2 |
-
 FORM        |quod        |intelligere |dei         |est         |sua         |essentia
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |            |noun        |noun        |verb        |noun        |noun
 NOUN-CLASS  |            |common noun |proper noun |            |pronoun     |common noun
 CASE        |            |nominative  |genitive    |            |genitive    |nominative
 CASE-SEAM   |            |            |            |            |nominative2 |
+
+FORM        |quod        |suum        |intelligere |sit         |sua         |essentia
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |noun        |verb        |noun        |noun
+NOUN-CLASS  |            |pronoun     |common noun |            |pronoun     |common noun
+CASE        |            |genitive    |nominative  |            |genitive    |nominative
+CASE-SEAM   |            |nominative2 |            |            |nominative2 |
 
 FORM        |quod        |intelligere |eius        |sit         |simplex
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:
