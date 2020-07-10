@@ -67,10 +67,47 @@
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a-a-seam
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī-ōs-seam
 
-# CLEANUP ADJECTIVES
+# CASE
+[S:WORD-CLASS:adj S:CASE:nom] => +T:CASE-SEAM:nominative-seam
+[S:WORD-CLASS:adj S:CASE:acc] => +T:CASE-SEAM:accusative-seam
+[S:WORD-CLASS:adj S:CASE:gen] => +T:CASE-SEAM:genitive-seam
+[S:WORD-CLASS:adj S:CASE:dat] => +T:CASE-SEAM:dative-seam
+[S:WORD-CLASS:adj S:CASE:abl] => +T:CASE-SEAM:ablative-seam
+[S:WORD-CLASS:noun S:CASE:nom] => +T:CASE:nominative
+[S:WORD-CLASS:noun S:CASE:acc] => +T:CASE:accusative
+[S:WORD-CLASS:noun S:CASE:gen] => +T:CASE:genitive
+[S:WORD-CLASS:noun S:CASE:dat] => +T:CASE:dative
+[S:WORD-CLASS:noun S:CASE:abl] => +T:CASE:ablative
+[S:WORD-CLASS:pron S:CASE:nom] => +T:CASE:nominative
+[S:WORD-CLASS:pron S:CASE:acc] => +T:CASE:accusative
+[S:WORD-CLASS:pron S:CASE:gen] => +T:CASE:genitive
+[S:WORD-CLASS:pron S:CASE:dat] => +T:CASE:dative
+[S:WORD-CLASS:pron S:CASE:abl] => +T:CASE:ablative
+[S:WORD-CLASS:propn S:CASE:nom] => +T:CASE:nominative
+[S:WORD-CLASS:propn S:CASE:acc] => +T:CASE:accusative
+[S:WORD-CLASS:propn S:CASE:gen] => +T:CASE:genitive
+[S:WORD-CLASS:propn S:CASE:dat] => +T:CASE:dative
+[S:WORD-CLASS:propn S:CASE:abl] => +T:CASE:ablative
+
+# ADJECTIVES #STEP 1
 [S:LEMMA:necesse] => -T:SEAMEDNESS:seamed +T:SEAMEDNESS:unseamed
-[S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
-[S:LEMMA:tuus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
-[S:LEMMA:suus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
-[S:LEMMA:noster] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
-[S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun
+[S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
+[S:LEMMA:tuus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
+[S:LEMMA:suus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
+[S:LEMMA:noster] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
+[S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
+
+#[T:CASE:genitive T:WORD-CLASS:noun S#1:word:Nmod#2:word [T:WORD-CLASS:common-noun]] => +T#1:groups:Possessor#2:group
+#[T:CASE:genitive T:WORD-CLASS:noun S#1:word:Amod#2:word [T:WORD-CLASS:common-noun]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:meus S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:tuus S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:suus S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:noster S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:vester S#1:word:Amod#2:word [S:WORD-CLASS:verb]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:meus S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:tuus S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:suus S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:noster S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
+#[S:LEMMA:vester S#1:word:Amod#2:word [S:WORD-CLASS:adjective]] => +T#1:groups:Possessor#2:group
+
+

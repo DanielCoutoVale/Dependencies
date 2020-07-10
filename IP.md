@@ -80,17 +80,17 @@ Let us focus on the most frequent dependency "amod" for a moment and let us look
 
 that his intelligence is his essence
 FORM|quod|suum|intelligere|sit|sua|essentia
-CLASS|sconj|adj|verb|aux|adj|noun
+WORD-CLASS|sconj|adj|verb|aux|adj|noun
 CASE| |nom| | |nom|nom
 
 that God's intelligence is his essence
 FORM|quod|intelligere|dei|est|sua|essentia
-CLASS|sconj|verb|propn|aux|adj|noun
+WORD-CLASS|sconj|verb|propn|aux|adj|noun
 CASE| |nom|gen| |nom|nom
 
 that his intelligence is simple
 FORM|quod|intelligere|eius|sit|simplex
-CLASS|sconj|verb|pron|aux|adj
+WORD-CLASS|sconj|verb|pron|aux|adj
 CASE| |nom|gen| |nom
 
 Here we see that *intelligere* (*intelligence*) is a verb and that *essentia* (*essence*) is a noun. The words *suum* and *sua* (*his*) are adjectives whereas the word (*eius*) is a pronoun. In turn, the word *dei* (*God's*) is a proper noun. There is no overlap between the sequences of word classes despite the fact that *God's intelligence*, *his intelligence*, and *his essence* are one and the same thing, that *God* and *he* are one and the same person, and that the relation between *God* and *his intelligence*/*essence* is the same in all examples.
@@ -99,23 +99,26 @@ When it comes to cases, some of the words modifying *intelligere* and *essentia*
 
 Based on this observation, I shall propose another way to classify these words, aiming at improving the learnability for parsing.
 
-FORM|quod|suum|intelligere|sit|sua|essentia
-CLASS |  |noun|noun|verb|noun|noun
-CLASS2|  |pronoun|common noun| |pronoun|common noun
-CASE  |  |gen |nom |    |gen |nom
-CASE2 |  |nom2|    |    |nom2|
+FORM        |quod        |suum        |intelligere |sit         |sua         |essentia
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |noun        |verb        |noun        |noun
+NOUN-CLASS  |            |pronoun     |common noun |            |pronoun     |common noun
+CASE        |            |genitive    |nominative  |            |genitive    |nominative
+CASE-SEAM   |            |nominative2 |            |            |nominative2 |
 
-FORM|quod|intelligere|dei|est|sua|essentia
-CLASS|  |noun|noun|verb|noun|noun
-CLASS2|  |common noun|proper noun| |pronoun|common noun
-CASE |  |nom |gen |    |gen |nom
-CASE2|  |    |    |    |nom2|
+FORM        |quod        |intelligere |dei         |est         |sua         |essentia
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |noun        |verb        |noun        |noun
+NOUN-CLASS  |            |common noun |proper noun |            |pronoun     |common noun
+CASE        |            |nominative  |genitive    |            |genitive    |nominative
+CASE-SEAM   |            |            |            |            |nominative2 |
 
-FORM|quod|intelligere|eius|sit|simplex
-CLASS|  |noun|noun|verb|adjective
-CLASS2|  |common noun|pronoun| |
-CASE |  |nom |gen |    |
-CASE2|  |    |    |    |nom2
+FORM        |quod        |intelligere |eius        |sit         |simplex
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |noun        |verb        |adjective
+NOUN-CLASS  |            |common noun |pronoun     |            |
+CASE        |            |nominative  |genitive    |            |
+CASE-SEAM   |            |            |            |            |nominative2 |
 
 In the new analysis, a parser can learn that a genitive noun always modifies a common noun in these examples and that, if the genitive noun has a secondary case, this case agrees with the primary case of the common noun. These dependency rules are much easier to learn than the previous ones. There are fewer rules: namely, two.
 
@@ -135,5 +138,8 @@ Once words such as *suum* and *sua* (*his*) and words like *intelligere* (*intel
 
 ### Step 2
 
+TODO
 
+*deus igitur cum sit primum movens immobile, est primum desideratum.*
 
+TODO

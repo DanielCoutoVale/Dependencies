@@ -115,3 +115,19 @@ system AUMUS-SEAM
 - ae-ās-seam
 - a-a-seam
 - ī-ōs-seam
+
+system CASE
+> noun
+- nominative
+- accusative
+- genitive
+- dative
+- ablative 
+
+system CASE-SEAM
+> seamed adjective ∨ seamed pronoun
+- nominative-seam
+- accusative-seam
+- genitive-seam
+- dative-seam
+- ablative-seam
