@@ -71,7 +71,7 @@ Frequency   |Tail class  |Dependency  |Head class
 1|adj|Csubj|noun
 1|adj|Acl|verb
 
-As we can see in the table above, adjectives play various roles relative to words of various classes in ITTB. In total, the current annotation of ITTB has 62 attachment-labeling options for adjectives, half of which occur less than 5 times. Such an annotation is much more difficult to learn than one that has a single option. In the following, I shall demonstrate that this is not only doable, but also that the parsing results shall become more useful for multiple tasks.
+As we can see in the table above, adjectives play various roles relative to words of various classes in ITTB. In total, the current annotation of ITTB has 62 attachment-labeling options for adjectives, half of which occur less than 5 times. Such an annotation is much more difficult to learn than one that has a single option. In the following, I shall demonstrate that reducing the number of attachment and labeling options is not only doable, but also that the parsing results shall become more useful for multiple tasks.
 
 ## Adjectives
 
