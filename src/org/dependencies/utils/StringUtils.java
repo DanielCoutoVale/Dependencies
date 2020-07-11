@@ -13,11 +13,11 @@ public class StringUtils {
 	 * @param tokens the tokens
 	 * @return the camel case colon-separated string
 	 */
-	public static String toColonCamelCase(String... tokens) {
+	public static String toHyphenCamelCase(String... tokens) {
 		StringBuffer buffer = new StringBuffer();
 		for (String part : tokens) {
 			if (buffer.length() > 0) {
-				buffer.append(":");
+				buffer.append("-");
 			}
 			buffer.append(part.substring(0, 1).toUpperCase());
 			buffer.append(part.substring(1));

@@ -9,11 +9,30 @@
 # VERBFORM: fin, gdv, ger, inf, part
 # VOICE: act, pass
 
+# WORD CLASS
 [S:WORD-CLASS:verb] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:process-verb
-[S:WORD-CLASS:adj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adjective +T:SEAMEDNESS:unseamed
+[S:WORD-CLASS:aux] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:process-verb
+[S:WORD-CLASS:adj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed
 [S:WORD-CLASS:propn] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun
 [S:WORD-CLASS:noun] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [S:WORD-CLASS:pron] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:SEAMEDNESS:unseamed
+[S:WORD-CLASS:adv] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adverb
+[S:WORD-CLASS:adp] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adposition
+[S:WORD-CLASS:cconj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:conjunction +T:CONJUNCTION-CLASS:linker
+[S:WORD-CLASS:sconj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:conjunction +T:CONJUNCTION-CLASS:binder
+[S:WORD-CLASS:punct] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:punctuation
+
+[S:LEMMA:unus] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:cardinal +T:SEAMEDNESS:seamed
+[S:LEMMA:duo] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:cardinal +T:SEAMEDNESS:seamed
+[S:LEMMA:tres] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:cardinal +T:SEAMEDNESS:unseamed
+[S:LEMMA:quator] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:cardinal +T:SEAMEDNESS:unseamed
+[S:LEMMA:quatuor] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:cardinal +T:SEAMEDNESS:unseamed
+[S:LEMMA:num._rom.] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:roman
+[S:LEMMA:num._arab.] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMBER-KIND:arabic
+[S:LEMMA:vox_breviata] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:source
+[S:LEMMA:breviata_loci_notatio] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:source
+[S:LEMMA:decuplus] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:decuplus
+[S:LEMMA:quam] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:quam
 
 # O-BRANCH
 [S:TENSE:imp S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:bā-branch
@@ -67,6 +86,9 @@
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a-a-seam
 [S:WORD-CLASS:adj S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī-ōs-seam
 
+# ADJECTIVE STEP 2
+[S:LEMMA:immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+
 # CASE
 [S:WORD-CLASS:adj S:CASE:nom] => +T:CASE-SEAM:nominative-seam
 [S:WORD-CLASS:adj S:CASE:acc] => +T:CASE-SEAM:accusative-seam
@@ -90,6 +112,7 @@
 [S:WORD-CLASS:propn S:CASE:abl] => +T:CASE:ablative
 
 # ADJECTIVES #STEP 1
+
 [S:LEMMA:necesse] => -T:SEAMEDNESS:seamed +T:SEAMEDNESS:unseamed
 [S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [S:LEMMA:tuus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
@@ -99,13 +122,30 @@
 
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:WORD-CLASS:verb] [S:LEMMA:meus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
-[S:WORD-CLASS:verb] [S:LEMMA:tuus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
-[S:WORD-CLASS:verb] [S:LEMMA:suus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
-[S:WORD-CLASS:verb] [S:LEMMA:noster] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
-[S:WORD-CLASS:verb] [S:LEMMA:vester] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
-[S:WORD-CLASS:adjective] [S:LEMMA:meus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
-[S:WORD-CLASS:adjective] [S:LEMMA:tuus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
-[S:WORD-CLASS:adjective] [S:LEMMA:suus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
-[S:WORD-CLASS:adjective] [S:LEMMA:noster] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
-[S:WORD-CLASS:adjective] [S:LEMMA:vester] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
+[S:WORD-CLASS:verb] [S:WORD-CLASS:adj T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+[S:WORD-CLASS:adj] [S:WORD-CLASS:adj T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+
+# ADJECTIVES #STEP 2
+
+[S:LEMMA:primus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:ordinal
+[S:LEMMA:secundus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:ordinal
+[S:LEMMA:tertius] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:ordinal
+[S:LEMMA:quartus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:ordinal
+[S:LEMMA:quintus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:ordinal
+[S:LEMMA:decimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:ordinal
+
+[T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
+[T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
+[T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => +T:EXPERIENTIAL:Actor#1:groups#2:clause
+[T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Nsubj-Pass#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
+[T:WORD-CLASS:number T:NUMBER-KIND:ordinal T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
+[T:WORD-CLASS:number T:NUMBER-KIND:cardinal T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
+
+[T:WORD-CLASS:number T:NUMBER-KIND:ordinal] [T:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Ordinator#1:groups#2:clause
+[T:WORD-CLASS:number T:NUMBER-KIND:ordinal] [T:WORD-CLASS:noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Ordinator#1:groups#2:group 
+
+# ADJECTIVES #STEP 3
+ 
+[S:WORD-CLASS:aux] [S:WORD-CLASS:adj] S:MIXED:Cop#1:word#2:word [S:WORD-CLASS:noun] S:MIXED:Nsubj#4:word#2:word => S:EXPERIENTIAL:Carrier#4:groups#1:clause S:EXPERIENTIAL:Attribute#2:groups#1:clause
+[S:WORD-CLASS:aux] [S:WORD-CLASS:noun] S:MIXED:Cop#1:word#2:word [S:WORD-CLASS:noun] S:MIXED:Nsubj#4:word#2:word => S:EXPERIENTIAL:Carrier#4:groups#1:clause S:EXPERIENTIAL:Attribute#2:groups#1:clause
+[S:WORD-CLASS:aux] [S:WORD-CLASS:pron] S:MIXED:Cop#1:word#2:word [S:WORD-CLASS:noun] S:MIXED:Nsubj#4:word#2:word => S:EXPERIENTIAL:Carrier#4:groups#1:clause S:EXPERIENTIAL:Attribute#2:groups#1:clause

@@ -96,7 +96,7 @@ public class MysqlDependencyBase {
 		return String.format("JOIN `word-function` WF%d ON \n"
 				+ "\t WF%d.`word-id` = W%d.`id` \n"
 				+ "\t AND WF%d.`head-id` = W%d.`id` \n"
-				+ "JOIN `function` WF%dF ON WF%dF.`id` = WF%d.`id` AND WF%dF.`name` = ? \n"
+				+ "JOIN `function` WF%dF ON WF%dF.`id` = WF%d.`id` AND WF%dF.`name` LIKE ? \n"
 				+ "JOIN `feature` WF%dFA ON WF%dFA.`id` = WF%d.`word-rank-id` AND WF%dFA.`name` = ? \n"
 				+ "JOIN `feature` WF%dFB ON WF%dFB.`id` = WF%d.`head-rank-id` AND WF%dFB.`name` = ? \n"
 				+ "JOIN `system` WF%dSA ON WF%dSA.`id` = WF%dFA.`system-id` AND (WF%dSA.`name` = 'RANK' OR WF%dSA.`name` LIKE '%s-COMPLEXITY') \n"

@@ -38,6 +38,10 @@ system WORD-CLASS
 - conjunction
 - adverb
 - adposition
+- source
+- decuplus
+- quam
+- punctuation
 
 system NOUN-CLASS
 > noun
@@ -107,6 +111,8 @@ system NUMBER-KIND
 > number
 - cardinal
 - ordinal
+- roman
+- arabic
 
 system SEAMEDNESS
 > adjective ∨ pronoun
@@ -152,3 +158,6 @@ metafunction EXPERIENTIAL
 - Carrier
 - Attribute
 - Attributor
+- Actor
+- Goal
+- Ordinator

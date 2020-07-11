@@ -30,7 +30,7 @@ public class UdDependency {
 	 * @return the dependency name
 	 */
 	public final String getName() {
-		return StringUtils.toColonCamelCase(element.getAttribute("name").split(":"));
+		return StringUtils.toHyphenCamelCase(element.getAttribute("name").split(":"));
 	}
 
 	/**
