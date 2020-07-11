@@ -99,15 +99,13 @@
 
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:meus] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:tuus] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:suus] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:noster] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:vester] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:meus] [S:WORD-CLASS:adjective] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:tuus] [S:WORD-CLASS:adjective] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:suus] [S:WORD-CLASS:adjective] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:noster] [S:WORD-CLASS:adjective] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[S:LEMMA:vester] [S:WORD-CLASS:adjective] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-
-
+[S:WORD-CLASS:verb] [S:LEMMA:meus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+[S:WORD-CLASS:verb] [S:LEMMA:tuus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+[S:WORD-CLASS:verb] [S:LEMMA:suus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+[S:WORD-CLASS:verb] [S:LEMMA:noster] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+[S:WORD-CLASS:verb] [S:LEMMA:vester] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
+[S:WORD-CLASS:adjective] [S:LEMMA:meus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
+[S:WORD-CLASS:adjective] [S:LEMMA:tuus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
+[S:WORD-CLASS:adjective] [S:LEMMA:suus] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
+[S:WORD-CLASS:adjective] [S:LEMMA:noster] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
+[S:WORD-CLASS:adjective] [S:LEMMA:vester] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
