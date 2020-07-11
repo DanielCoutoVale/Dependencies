@@ -103,6 +103,11 @@ system VERB-CORE
 - ō-ndī-core
 - ō-ndō-core
 
+system NUMBER-KIND
+> number
+- cardinal
+- ordinal
+
 system SEAMEDNESS
 > adjective ∨ pronoun
 - seamed

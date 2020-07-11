@@ -168,7 +168,7 @@ FORM        | sed        | primum     | movens     | seipsum    | movetur    | s
 CLASS       |            |number      |verb        |noun        |verb        |adverb
 NOUN-CLASS  |            |            |            |pronon      |            |
 CASE        |            |            |            |accusative  |            |
-CASE-SEAM   |            |accusative-seam|         |            |            |
+CASE-SEAM   |            |accusative2 |         |            |            |
 KIND        |            |ordinal     |            |            |            |
 FOLIAGE     |            |            |ō-foliage   |            |or-foliage  |
 
@@ -177,7 +177,7 @@ FORM        | deus       | cum        | sit        | primum     | movens     | i
 CLASS       |noun        |            |verb        |number      |verb        |noun
 NOUN-CLASS  |proper noun |            |            |            |            |common noun
 CASE        |nominative  |            |            |accusative  |            |accusative
-CASE-SEAM   |            |            |            |accusative-seam|         |
+CASE-SEAM   |            |            |            |accusative2 |         |
 KIND        |            |            |            |ordinal     |            |
 FOLIAGE     |            |            |ō-foliage   |            |ō-foliage   |
 
@@ -186,7 +186,7 @@ FORM        | cum        | ipse       | sit        | primum     | movens
 CLASS       |            |noun        |verb        |number      |verb        
 NOUN-CLASS  |            |pronoun     |            |            |            
 CASE        |            |nominative  |            |            |            
-CASE-SEAM   |            |            |            |accusative-seam|
+CASE-SEAM   |            |            |            |accusative2 |
 KIND        |            |            |            |ordinal     |            
 FOLIAGE     |            |            |ō-foliage   |            |ō-foliage
 
@@ -195,7 +195,7 @@ FORM        | qui        | est        | primum     | movens
 CLASS       |noun        |verb        |number      |verb
 NOUN-CLASS  |pronoun     |            |            |
 CASE        |nominative  |            |            |
-CASE-SEAM   |            |            |accusative-seam|
+CASE-SEAM   |            |            |accusative2 |
 KIND        |            |            |ordinal     |
 FOLIAGE     |            |ō-foliage   |            |ō-foliage
 
@@ -221,7 +221,7 @@ The examples read *the third drawback is that...*, *my third objection is that..
 - _ex **tertio vero** sequitur quod..._
 - _ex quo **tertia ratio** solvitur_
 
-The examples read *the third proof takes us to the same conclusion, even if...*, *from the third true statement, it follows that...*, *from which the third problem is solved*. In these wordings, the author refers back to an argument that was numbered previously.
+The examples read *the third proof takes us to the same conclusion, even if...*, *from the third fact, it follows that...*, *from which the third problem is solved*. In these wordings, the author refers back to an argument that was numbered previously.
 
 In all these cases, the ordinal number functions as an Ordinator within a nominal group. In turn, the nominal group serves as an Attribute for a clause in a clause complex when the author is numbering arguments and it serves as an Argument for a verb in a clause when the author is referring back to numbered arguments. These functions are covered by the transformations proposed above as they stand.
 
