@@ -1,83 +1,35 @@
 # Intelligentī Pauca
 A systemic network for ranked universal dependencies
 
-Latin corpora such as ITTB, AGLDT, and PROIEL have been annotated with classes and functions from the cross-linguistic description called **Universal Dependencies** (UD). These classes and functions are meant to be universal across all languages. However, despite the enormous impact this universality has to comparability of study results, grammatical structures in this linguistic description lack a grounding on both semantics and expression. From a pedagogical perspective, the fact that grammatical similarities do not reflect semantic similarities in this linguistic description can render the grammatical structures less useful for teaching Latin; and from a computational perspective, the fact that grammatical similarities do not reflect formal similarities makes this linguistic description hard to learn automatically. In particular, this low learnability adds a toll to the reliability of parsers for languages such as Latin for which linguistic data is scarce. In this section, I shall illustrate the issues I am referring to -- namely, low groundedness and low learnability -- and I shall demonstrate how to solve them by translating current text analyses from Universal Dependencies into a new Latin description that I am calling **Intelligentī Pauca** (IP). In the next section, I shall present the issue regarding low learnability in more detail. In the remainder of this page, I shall present how to improve the learnability of structures for four parts of speech: namely, adjectives, verbs, nouns, and conjunctions.
+Latin corpora such as ITTB, AGLDT, and PROIEL have been annotated with classes and functions from the cross-linguistic description called **Universal Dependencies** (UD). These classes and functions are meant to be universal across all languages. However, despite the enormous impact this universality has to comparability of study results, grammatical structures in this linguistic description lack a grounding on both semantics and expression. From a pedagogical perspective, the fact that grammatical similarities do not reflect semantic similarities in this linguistic description can render the grammatical structures less useful for teaching Latin; and from a computational perspective, the fact that grammatical similarities do not reflect formal similarities makes this linguistic description hard to learn automatically. In particular, this low learnability adds a toll to the reliability of parsers for languages such as Latin for which linguistic data is scarce. In this section, I shall illustrate the issues I am referring to -- namely, low groundedness and low learnability -- and I shall demonstrate how to solve them by translating current text analyses from Universal Dependencies into a new Latin description that I am calling **Intelligentī Pauca** (IP). In the next section, I shall present the issue regarding low learnability in more detail. And in the remainder of this page, I shall present how to improve the learnability of structures for four parts of speech: namely, adjectives, verbs, nouns, and conjunctions.
 
 ## Learnability
 
-Statistical parsers often rely on the sequence of word classes/features to determine 1) which word depends on which (**attachment**) and 2) which role the tail word plays relative to the head one (**labeling**). This means that a linguistic description that results in less attachment options and less labeling options for the same sequence of word classes will be learned with less data than a linguistic description that results in more options. Taking this into consideration, let us take a look at the number of attachment and labeling options (**anchors**) that exist for a tail adjective in ITTB dev corpus.
+Statistical parsers often rely on the sequence of word classes/features to determine 1) which word depends on which (**attachment**) and 2) which role the tail word plays relative to the head one (**labeling**). This means that a linguistic description that results in less attachment options and less labeling options for the same sequence of word classes will be learned with less data than a linguistic description that results in more options. Taking this into consideration, let us take a look at five most frequent attachment and labeling options (**anchors**) that exist for a tail adjective in ITTB dev corpus.
 
-Frequency   |Tail class  |Dependency  |Head class 
-:----------:|:----------:|:----------:|:----------:
-1041|adj|Amod|noun
-97|adj|Xcomp|verb
-80|adj|Obl|verb
-70|adj|Amod|verb
-64|adj|Conj|adj
-51|adj|Amod|pron
-48|adj|Nsubj|verb
-44|adj|Nmod|noun
-42|adj|Csubj|verb
-39|adj|Advcl|verb
-36|adj|Nsubj:Pass|verb
-32|adj|Obj|verb
-26|adj|Acl:Relcl|pron
-20|adj|Conj|verb
-17|adj|Obl:Arg|verb
-16|adj|Ccomp|verb
-15|adj|Conj|noun
-13|adj|Amod|adj
-13|adj|Csubj:Pass|verb
-11|adj|Acl:Relcl|noun
-11|adj|Nsubj|adj
-10|adj|Advcl|adj
-9|adj|Nsubj|noun
-7|adj|Amod|num
-7|adj|Nmod|adj
-7|adj|Csubj|adj
-6|adj|Amod|propn
-6|adj|Obl|adj
-5|adj|Conj|pron
-5|adj|Nmod|pron
-4|adj|Amod:Advmod|noun
-4|adj|Acl|pron
-4|adj|Advcl|noun
-4|adj|Acl:Relcl|verb
-3|adj|Acl|noun
-3|adj|Amod:Advmod|pron
-3|adj|Acl:Relcl|adj
-3|adj|Advcl|adv
-3|adj|Csubj|pron
-3|adj|Nmod|num
-3|adj|Advcl|pron
-2|adj|Iobj|verb
-2|adj|Ccomp|noun
-2|adj|Conj|num
-2|adj|Nsubj|pron
-2|adj|Obl|noun
-2|adj|Nmod|verb
-2|adj|Conj|adv
-1|adj|Orphan|verb
-1|adj|Appos|noun
-1|adj|Conj|propn
-1|adj|Nmod:Appos|adj
-1|adj|Amod:Advmod|propn
-1|adj|Acl|adj
-1|adj|Advmod:Emph|noun
-1|adj|Advmod:Emph|verb
-1|adj|Obl|pron
-1|adj|Obl|adv
-1|adj|Acl:Relcl|propn
-1|adj|Csubj|noun
-1|adj|Acl|verb
+A-Frequency |R-Frequency |Tail class  |Head class  |Dependency   
+:----------:|:----------:|:----------:|:----------:|:----------:
+1041        |48.76%      |adj         |noun        |Amod
+97          |04.54%      |adj         |verb        |Xcomp
+80          |03.75%      |adj         |verb        |Obl
+70          |03.28%      |adj         |verb        |Amod
+64          |03.00%      |adj         |adj         |Conj
 
-As we can see in the table above, adjectives play various roles relative to words of various classes in ITTB. In total, the current annotation of ITTB has 62 attachment-labeling options for adjectives, half of which occur less than 5 times. Such an annotation is much more difficult to learn than one that has a single option. In the following, I shall demonstrate that reducing the number of attachment and labeling options is not only doable, but also that the parsing results shall become more useful for multiple tasks.
+As we can see in the table above, adjectives play various roles relative to words of various classes in ITTB. However, half of the dependencies are attachments to a noun with the label "Amod". In total, the current annotation of ITTB has 62 anchors for adjectives, half of which occur less than 5 times (less than 0.19%). Such an annotation is much more difficult to learn than one that has a smaller number of anchors with similar frequencies. In the following, I shall demonstrate that reducing the number of attachment and labeling options is not only doable, but also that by doing so the parsing results shall better reflect semantic similarities, thus becoming more useful for multiple tasks.
 
 ## Adjectives
 
+Adjectives have 62 anchors in ITTB. In this section, our goal is to reduce the number of anchors to less than 10 and to achieve a better distribution of frequencies between different anchors. The goal is to achieve a compromise between distribution and meaningfulness. The analysis translation shall be achieved in 5 steps, covering 5 linguistic phenomena:
+
+1. "adj" words that should be considered nouns
+2. "adj" words that should be considered numbers
+3. how to split "Amod" into 5 functions in a meaningful way 
+4. how to describe attributive clauses systemically
+5. how to cover the remainder of the adjectives
+
 ### Step 1
 
-Let us focus on the most frequent dependency "amod" for an adjective and let us look up what is going on in the second most frequent attachment of that dependency: namely, the attachment to a "verb". I shall get three examples that properly illustrate one of the linguistic phenomena that has been tagged in this way.
+Let us focus on the most frequent function "amod" for an adjective and let us look up what is going on in the second most frequent attachment of that function: namely, the attachment to a "verb". I shall get three examples that properly illustrate one of the linguistic phenomena that has been tagged in this way.
 
 FORM        |quod        |intelligere |dei         |est         |sua         |essentia
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
