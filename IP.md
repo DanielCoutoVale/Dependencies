@@ -303,7 +303,7 @@ WORD-CLASS  |            |noun        |verb        |adjective
 NOUN-CLASS  |            |pronoun     |            |
 CASE        |            |nominative  |            |
 CASE-SEAM   |            |            |            |nominative-seam
-STRUCTURE   |            |Nsubj       |Cop         |Head
+STRUCTURE   |            |Carrier     |Head        |Attribute
 
 FROM        |et          |hoc         |videtur     |probabile
 :----------:|:----------:|:----------:|:----------:|:----------:
@@ -311,7 +311,7 @@ WORD-CLASS  |            |noun        |verb        |adjective
 NOUN-CLASS  |            |pronoun     |            |
 CASE        |            |nominative  |            |
 CASE-SEAM   |            |            |            |nominative-seam
-STRUCTURE   |            |Nsubj-Pass  |Head        |XComp
+STRUCTURE   |            |Carrier     |Head        |Attribute
 
 
 FROM        |hoc         |autem       |habet       |aristoteles |pro         |impossibili
