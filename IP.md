@@ -250,7 +250,7 @@ FROM        |ratione     |cuius       |sol         |calidus     |dicitur
 WORD-CLASS  |noun        |pron        |noun        |adj         |verb
 STRUCTURE   |            |            |Nsubj-Pass  |Xcomp       |Head
 
-The examples read *that God is good*, *which is good*, and *for which reason the Sun is deemed hot*. Here we see two clauses that are very similar in meaning, but which differ in syntagma and structure. The syntagmata are **[(propn) (aux) (adj)]**, **[(pron) (aux) (adj)]** and **[(noun) (adj) (verb)]** and they correspond to the structures **[(Nsubj) (Cop) (Head)]** and [(Nsubj-Pass) (Xcomp) (Head)]. In Step #1, we fixed the classification of nouns by making proper nouns, common nouns, and pronouns be classes of nouns. This solves the issue of learning a structure such as **[(Nsubj) (Cop) (Head)]** for different noun classes as we have seen above. However, the semantic similarities between clauses with the verb "sum" and those with the verb "dicitur" is not reflected by a grammatical similarity in structure and syntagma. Having this in mind, I propose the following change in word classes and functions:
+The examples read *that God is good*, *which is good*, and *for which reason the Sun is deemed hot*. Here we see three clauses that are very similar in meaning, but which differ in syntagma and structure. The syntagmata are **[(propn) (aux) (adj)]**, **[(pron) (aux) (adj)]** and **[(noun) (adj) (verb)]** and they correspond to the structures **[(Nsubj) (Cop) (Head)]** and **[(Nsubj-Pass) (Xcomp) (Head)]**. In Step #1, we fixed the classification of nouns by making proper nouns, common nouns, and pronouns be classes of nouns. This solves the issue of learning a structure such as **[(Nsubj) (Cop) (Head)]** for different noun classes as we have seen above. However, the semantic similarities between clauses with the verb "sum" and those with the verb "dicitur" is not reflected by a grammatical similarity in structure and syntagma. Having this in mind, I propose the following change in word classes and functions:
 
   
 FROM        |quod        |deus        |est         |bonus 
@@ -322,10 +322,48 @@ CASE        |accusative  |            |            |nominative  |            |
 CASE-SEAM   |            |            |            |            |            |ablative-seam
 STRUCTURE   |Carrier     |            |Head        |Attributor  |Mark        |Attribute
 
-The transitive structure follows the same pattern as the intransitive ones. Here the **(accusative noun)** is the Carrier, the **(nominative noun)** is the Attributor, and the **(adjective)** is the Attribute. This transitive structure is supported by a handful of verbs, which are analogous with the ones in the intransitive. The opposition may occur in the lemma as in *est* and *habet* or *fit* and *facit*, or else it takes place in the foliage as in *dicitur* and *dicit*, *nominatur* and *nominat*, or *vocatur* and *vocat*. This means that a parser can transfer some of the lemma collocations learned for intransitive structure to the parsing of transitive ones. It can also transfer the associations between word classes and functions to from the intransitive to the transitive. This transfer is especially relevant because the number of transitive structures for attributive clauses is quite small. Finally, I opted to raise the adposition to the clause level because it is part of the lexical word _**habet** quid **pro** quo_ (_**holds** something **for** something_). This shall improve the parsing down the line because it will reduce the number of syntagma and labeling options available for the phrase _**pro** quo_ (_**for** something_).
+The transitive structure follows the same pattern as the intransitive ones. Here the **(accusative noun)** is the Carrier, the **(nominative noun)** is the Attributor, and the **(adjective)** is the Attribute. This transitive structure is supported by a handful of verbs, which are analogous with the ones in the intransitive. The opposition may occur in the lemma as in *est* and *habet* or *fit* and *facit*, or else it takes place in the foliage as in *dicitur* and *dicit*, *nominatur* and *nominat*, or *vocatur* and *vocat*. This means that a parser can transfer some of the lemma collocations learned for intransitive structure to the parsing of transitive ones. It can also transfer the associations between word classes and functions to from the intransitive to the transitive. This transfer is especially relevant because the number of transitive structures for attributive clauses is quite small. Finally, I opted to raise the adposition to the clause level because it is part of the lexical word _**habet** quid **pro** quo_ (_**holds** something **for** something_). This shall improve the parsing down the line because it will reduce the number of syntagma and labeling options available for the phrase _**pro** quo_ (_**for** something_). 
+
+### Step 5
+
+The other functions of the adjective in the ITTB corpus are so infrequent that they cannot be learned automatically.
+
+TODO
+
+This completes the reduction of adjective anchoring options. The result can be seen in the tables below:
+
+#### Number of adjectives and anchoring options 
+
+Description |Word class  |Frequency   |Options     |Options > 1%
+:----------:|:----------:|:----------:|:----------:|:----------:
+UD          |adj         |2135        |62          |13
+IP          |adjective   |1561        |10          |6
+
+#### Frequency of anchoring options in UD
+Frequency   |Tail class  |Head class  |Dependency   
+:----------:|:----------:|:----------:|:----------:
+48.76%      |adj         |noun        |Amod
+04.54%      |adj         |verb        |Xcomp
+03.75%      |adj         |verb        |Obl
+03.28%      |adj         |verb        |Amod
+03.00%      |adj         |adj         |Conj
+
+#### Frequency of anchoring options in IP
+Frequency   |Tail class  |Head class  |Dependency   
+:----------:|:----------:|:----------:|:----------:
+53.94%      |adjective   |noun        |Classifier
+19.22%      |adjective   |verb        |Attribute
+17.17%      |adjective   |noun        |Qualifier
+04.37%      |adjective   |noun        |Quantifier
+03.40%      |adjective   |noun        |Deictic
+
+**Partial results missing step 5**
+
+### Final remark
+
+The number of adjectives in the corpus was drastically reduced. However, by the end of the translation, we ended up with a better frequency distribution between the anchors. In addition, we ended up with a better mapping between syntagma and structure. Both of these analysis features are likely to improve statistical parsers. As for teaching, a parsing result that foregrounds the grammatical similarities that are relevant for meaning is likely to be more useful.
+
+These statistics can be created with the queries in `adjective-check.sql`.
 
 
 
-
-
- 
