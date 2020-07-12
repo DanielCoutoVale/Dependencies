@@ -93,7 +93,7 @@ Once words such as *suum* and *sua* (*his*) and words like *intelligere* (*intel
 
 ### Step 2
 
-Let us continue paying attention to adjectives that depend on verbs as "amod" according to ITTB annotation. Here we find another kind of linguistic phenomenon that deserves our attention as for how words have been classified. More than half of the adjectives with this anchoring (attachment + labeling) have the lemma *primus* (37 out of 70) and more than a sixth have the lemma *immobilis* (12 out of 70). Let us look at the two types of grammatical structure where *primus* (*first*) and *immobilis* (*the non-moving*) take this role, starting with those cases where the author answers to the question "*who did it first?*".
+Let us continue paying attention to adjectives that depend on verbs as "amod" according to ITTB annotation. Here we find another kind of linguistic phenomenon that deserves our attention as for how words have been classified. More than half of the adjectives with this anchor have the lemma *primus* (37 out of 70) and more than a sixth have the lemma *immobilis* (12 out of 70). Let us look at the two types of grammatical structure where *primus* (*first*) and *immobilis* (*the non-moving*) take this role, starting with those cases where the author answers to the question "*who did it first?*".
 
 FORM        | sed        | primum     | movens     | seipsum    | movetur    | semper
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
@@ -111,7 +111,7 @@ FORM        | deus       | qui        | est        | primum     | movens
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 CLASS       |propn       |pron        |aux         |adj         |verb
 
-The examples read *but the one who first moves moves forever*, *if God is the one who first moves the non-moving*, *when he is the one who first moves*, *as God is the one who first moves*. In all these examples, the word *primum* (*first*) sorts ('ordinates') all processes of moving and picks out ('superfers') the one that happened the earliest in time. In that sense, we are talking about an 'ordinal' number 1, which opposes *ultimus* (*last*) in temporal direction: the earliest vs the latest, the second earliest vs the second latest, etc.. It also opposes *secundum* (*second*), *tertium* (*third*), *quartum* (*fourth*)... In this sense, *primum* is an ordinal number, a kind of number that opposes cardinal numbers such as *unum* (*one*). In this case, it is used here to sort processes in a timeline. In addition, both *seipsum* (*himself*) and *immobile* (*the non-moving*) are the things being moved. The transitive verb *movens* in *movens seipsum* is synonymous to the intransitive verb *movetur* (*moving on one's own*). The intransitive verb *movens* (*moving*) is more general and includes both non-affecting verb *movens seipsum*/*movetur* (*moving on one's own*) and the affecting verb *movens immobile* (*moving the non-moving*). These categories of verbs and complements have no correspondence in the syntagma below them (sequence of word classes).
+The examples read *but the one who first moves moves forever*, *if God is the one who first moves the non-moving*, *when he is the one who first moves*, *as God is the one who first moves*. In all these examples, the word *primum* (*first*) sorts all processes of moving and picks out the one that happened the earliest in time. In that sense, we are talking about an 'ordinal' number 1, which opposes *ultimus* (*last*) in temporal direction: the earliest vs the latest, the second earliest vs the second latest, etc.. It also opposes *secundum* (*second*), *tertium* (*third*), *quartum* (*fourth*)... In this sense, *primum* is an ordinal number, a kind of number that opposes cardinal numbers such as *unum* (*one*). In this case, it is used here to sort processes in a timeline. In addition, both *seipsum* (*himself*) and *immobile* (*the non-moving*) are the things being moved. The transitive verb *movens* in *movens seipsum* is synonymous to the intransitive verb *movetur* (*moving on one's own*). The intransitive verb *movens* (*moving*) is more general and includes both non-affecting verb *movens seipsum*/*movetur* (*moving on one's own*) and the affecting verb *movens immobile* (*moving the non-moving*). These categories of verbs and complements have no correspondence in the syntagma below them, thus they are hard to learn automatically.
 
 Taking these considerations into account, I shall propose new classes for these words.
 
@@ -120,7 +120,7 @@ FORM        | sed        | primum     | movens     | seipsum    | movetur    | s
 CLASS       |            |number      |verb        |noun        |verb        |adverb
 NOUN-CLASS  |            |            |            |pronon      |            |
 CASE        |            |            |            |accusative  |            |
-CASE-SEAM   |            |accusative2 |         |            |            |
+CASE-SEAM   |            |accusative2 |            |            |            |
 KIND        |            |ordinal     |            |            |            |
 FOLIAGE     |            |            |ō-foliage   |            |or-foliage  |
 
@@ -129,7 +129,7 @@ FORM        | deus       | cum        | sit        | primum     | movens     | i
 CLASS       |noun        |            |verb        |number      |verb        |noun
 NOUN-CLASS  |proper noun |            |            |            |            |common noun
 CASE        |nominative  |            |            |accusative  |            |accusative
-CASE-SEAM   |            |            |            |accusative2 |         |
+CASE-SEAM   |            |            |            |accusative2 |            |
 KIND        |            |            |            |ordinal     |            |
 FOLIAGE     |            |            |ō-foliage   |            |ō-foliage   |
 
@@ -151,7 +151,7 @@ CASE-SEAM   |            |            |accusative2 |
 KIND        |            |            |ordinal     |
 FOLIAGE     |            |ō-foliage   |            |ō-foliage
 
-With these syntagma, *seipsum* (*himself*) and *immobile* (*the non-moving*) are nouns and they can serve as Object or Goal for the action of moving. Since **(accusative noun)** is the standard class for Objects/Goals, the backward dependency in **[(ō-foliage verb) (accusative noun)]** can be extrapolated from the two first examples together with many other examples in the corpus. In turn, verb transitivity can be inferred from the presence or absence of an object. This means that **[(verb) (Goal:seipsum)]** and **[(or-foliage verb)]** can be interpreted as non-affecting, **[(verb) (Goal:-seipsum)]** as affecting, and **[(ō-foliage verb)]** as both.
+With these syntagmata, *seipsum* (*himself*) and *immobile* (*the non-moving*) are nouns and they can serve as Object or Goal for the action of moving. Since **(accusative noun)** is the standard class for Objects/Goals, the backward dependency in **[(ō-foliage verb) (accusative noun)]** can be extrapolated from the two first examples together with many other examples in the corpus. In turn, verb transitivity can be inferred from the presence or absence of an object. This means that **[(verb) (Goal:seipsum)]** and **[(or-foliage verb)]** can be interpreted as non-affecting, **[(verb) (Goal:-seipsum)]** as affecting, and **[(ō-foliage verb)]** as both.
 
 Moreover, the verb *movens* is embedded in a nominal group and it represents *the one who moves*. For this reason, it can be the a argument for verbs such as *est*, *sit* and *movetur* as a nominal group (see discussion on ranks). And, finally, an **(accusative ordinal number)** is always dependent on a verb in the syntagma **[(accusative ordinal number) (verb)]**. When searching for the attachments with nouns for *primus*, we find wordings such as *primus motus* (*the first movement*) and *primus motor* (*the first mover*). In all those cases, we can see *primus* functioning as an Ordinator. For lemmata such as *movere* (*move*), *motus* (*movement*) and *motor* (*mover*), the process is ordered in time. For nouns representing material things such as *motor* (*mover*), *auctor* (*actor*), and *corpus* (*body*), there is a linguistic potential for an order in space (*the first/second drawer from left to right*) or in scale (*the [second] largest mountain*). This is however absent in the corpus. In Thomas's work, all nouns represent things as participants in actions, therefore *primum corpus* (*the first body*) is the body that was first created, not the first body in a spatial order. The attachment to nouns can be learned from the syntagma **[(ordinal number) (common noun)]**. All of these dependencies are easy to learn with the proposed word classification. The transformations for step 2 can also be found in the file `ittb-ip.dux`.
 
