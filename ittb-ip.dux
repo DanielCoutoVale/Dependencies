@@ -311,4 +311,12 @@
 
 # ADJECTIVE # STEP 4
 
+# (Cop) (Head) (Nsubj) => (Head) (Attribute) (Carrier)
 [] [] [] S:MIXED:Cop#1:word#2:word S:MIXED:Nsubj#3:word#2:word => +T:EXPERIENTIAL:Attribute#2:groups#1:clause +T:EXPERIENTIAL:Carrier#3:groups#1:clause
+
+# (XComp) (Head) (Nsubj-Pass) => (Attribute) (Head) (Carrier)
+[] [] [] S:MIXED:XComp#1:word#2:word S:MIXED:Nsubj-Pass#3:word#2:word => +T:EXPERIENTIAL:Attribute#1:groups#2:clause +T:EXPERIENTIAL:Carrier#3:groups#2:clause
+
+# (XComp) (Head) (Obj) => (Attribute) (Head) (Carrier)
+[] [] [] S:MIXED:XComp#1:word#2:word S:MIXED:Obj#3:word#2:word => +T:EXPERIENTIAL:Attribute#1:groups#2:clause +T:EXPERIENTIAL:Carrier#3:groups#2:clause
+

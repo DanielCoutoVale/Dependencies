@@ -227,4 +227,105 @@ In all these cases, the ordinal number functions as an Ordinator within a nomina
 
 ### Step 3
 
-TODOO
+TODO
+
+In this step, we completed the translation of all "Amod" relations.
+
+### Step 4
+
+Let us now move our attention to the other three major functions an adjective has in the ITTB corpus: namely, head of "Cop", head of "Nsubj", and tail of "Xcomp". From the multiple structures we see in the corpus including these functions, I shall pick out one linguistic phenomenon where these functions occur: namely, attributive clauses.
+
+FROM        |quod        |deus        |est         |bonus 
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |propn       |aux         |adj
+STRUCTURE   |            |Nsubj       |Cop         |Head
+
+FROM        |quod        |est         |bonum 
+:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |pron        |aux         |adj
+STRUCTURE   |Nsubj       |Cop         |Head
+
+FROM        |ratione     |cuius       |sol         |calidus     |dicitur
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------: 
+WORD-CLASS  |noun        |pron        |noun        |adj         |verb
+STRUCTURE   |            |            |Nsubj-Pass  |Xcomp       |Head
+
+The examples read *that God is good*, *which is good*, and *for which reason the Sun is deemed hot*. Here we see two clauses that are very similar in meaning, but which differ in syntagma and structure. The syntagmata are **[(propn) (aux) (adj)]**, **[(pron) (aux) (adj)]** and **[(noun) (adj) (verb)]** and they correspond to the structures **[(Nsubj) (Cop) (Head)]** and [(Nsubj-Pass) (Xcomp) (Head)]. In Step #1, we fixed the classification of nouns by making proper nouns, common nouns, and pronouns be classes of nouns. This solves the issue of learning a structure such as **[(Nsubj) (Cop) (Head)]** for different noun classes as we have seen above. However, the semantic similarities between clauses with the verb "sum" and those with the verb "dicitur" is not reflected by a grammatical similarity in structure and syntagma. Having this in mind, I propose the following change in word classes and functions:
+
+  
+FROM        |quod        |deus        |est         |bonus 
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |verb        |adjective
+NOUN-CLASS  |            |proper noun |            |
+STRUCTURE   |            |Carrier     |Head        |Attribute
+
+FROM        |quod        |est         |bonum 
+:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |noun        |verb        |adjective
+NOUN-CLASS  |pronoun     |            |
+STRUCTURE   |Carrier     |Head        |Attribute
+
+FROM        |ratione     |cuius       |sol         |calidus     |dicitur
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------: 
+WORD-CLASS  |            |            |noun        |adjective   |verb
+NOUN-CLASS  |            |            |common noun |            |
+STRUCTURE   |            |            |Carrier     |Attribute   |Head
+
+With these changes, the word classes **(noun) (adjective) (verb)**, **(noun) (noun) (verb)**, **(noun) (adposition) (verb)**, and **(noun) (adverb) (verb)** will correspond to the structure **(Carrier) (Attribute) (Head)** for a select list of verbs including *est*, *dicitur*, *videtur*, *invenitur*, *fit*, *proponitur*, *ponitur*, *nominatur*, *conspicitur*. For the parser to be successful in recognizing these structures, it will need to balance the structuring power between the syntagmata, the verb lemmata, and inflectional features of the verb such as the opposition between "ō-foliage" versus "or-foliage". Some learning algorithms are better at this than others, and this should be taken into consideration when choosing one. 
+
+Moving on, there is another structure for attributive clauses in the data, which includes the Attributor, the person who does the attribution. Here is one can see the syntagmata and the structures we find in the corpus as it stands. 
+
+FROM        |sed         |hoc         |est         |impossibile
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |cconj       |pron        |aux         |adj
+CASE        |            |nom         |            |nom
+STRUCTURE   |            |Nsubj       |Cop         |Head
+
+
+FROM        |et          |hoc         |videtur     |probabile
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |cconj       |pron        |verb        |adj
+CASE        |            |nom         |            |nom
+STRUCTURE   |            |Nsubj-Pass  |Head        |XComp
+
+
+FROM        |hoc         |autem       |habet       |aristoteles |pro         |impossibili
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |pron        |cconj       |verb        |propn       |adp         |adj
+CASE        |acc         |            |            |nom         |            |abl
+STRUCTURE   |Obj         |            |Head        |Nsubj       |            |XComp
+
+These examples read *but that is impossible*, *and that seems probable*, *Aristotle, on the other hand, holds that for impossible*. Again, these examples are similar in meaning, but that similarity is not reflected in the syntagmata and structures proposed for the wording. In turn, this makes machine learning difficult. The first two examples are already simpler in the proposed analysis. We only need a new analysis for the third one. Here is one that is likely to provide a good result in both parsing and visualization.
+
+FROM        |sed         |hoc         |est         |impossibile
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |verb        |adjective
+NOUN-CLASS  |            |pronoun     |            |
+CASE        |            |nominative  |            |
+CASE-SEAM   |            |            |            |nominative-seam
+STRUCTURE   |            |Nsubj       |Cop         |Head
+
+FROM        |et          |hoc         |videtur     |probabile
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |            |noun        |verb        |adjective
+NOUN-CLASS  |            |pronoun     |            |
+CASE        |            |nominative  |            |
+CASE-SEAM   |            |            |            |nominative-seam
+STRUCTURE   |            |Nsubj-Pass  |Head        |XComp
+
+
+FROM        |hoc         |autem       |habet       |aristoteles |pro         |impossibili
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |noun        |            |verb        |noun        |adposition  |adjective
+NOUN-CLASS  |pronoun     |            |            |proper noun |            |
+CASE        |accusative  |            |            |nominative  |            |
+CASE-SEAM   |            |            |            |            |            |ablative-seam
+STRUCTURE   |Carrier     |            |Head        |Attributor  |Mark        |Attribute
+
+The transitive structure follows the same pattern as the intransitive ones. Here the **(accusative noun)** is the Carrier, the **(nominative noun)** is the Attributor, and the **(adjective)** is the Attribute. This transitive structure is supported by a handful of verbs, which are analogous with the ones in the intransitive. The opposition may occur in the lemma as in *est* and *habet* or *fit* and *facit*, or else it takes place in the foliage as in *dicitur* and *dicit*, *nominatur* and *nominat*, or *vocatur* and *vocat*. This means that a parser can transfer some of the lemma collocations learned for intransitive structure to the parsing of transitive ones. It can also transfer the associations between word classes and functions to from the intransitive to the transitive. This transfer is especially relevant because the number of transitive structures for attributive clauses is quite small. Finally, I opted to raise the adposition to the clause level because it is part of the lexical word _**habet** quid **pro** quo_ (_**holds** something **for** something_). This shall improve the parsing down the line because it will reduce the number of syntagma and labeling options available for the phrase _**pro** quo_ (_**for** something_).
+
+
+
+
+
+ 
