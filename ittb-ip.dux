@@ -311,4 +311,4 @@
 
 # ADJECTIVE # STEP 4
 
-[] [] [] S:MIXED:Cop#1:word#2:word S:MIXED:Nsubj#3:word#2:word => +T:EXPERIENTIAL:Attribute#2:groups#1:clause +T:EXPERIENTIAL:Attribute#3:groups#1:clause
+[] [] [] S:MIXED:Cop#1:word#2:word S:MIXED:Nsubj#3:word#2:word => +T:EXPERIENTIAL:Attribute#2:groups#1:clause +T:EXPERIENTIAL:Carrier#3:groups#1:clause
