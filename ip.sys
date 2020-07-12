@@ -154,10 +154,16 @@ system CASE-SEAM
 - ablative-seam
 
 metafunction EXPERIENTIAL
-- Possessor
 - Carrier
 - Attribute
 - Attributor
 - Actor
 - Goal
+- Deictic
 - Ordinator
+- Nominator
+- Quantifier
+- Classifier
+- Qualifier
+- Possessor
+- Circumscriber

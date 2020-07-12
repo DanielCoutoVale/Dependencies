@@ -48,6 +48,14 @@ public class DuxFileApplier {
 								.get(tag.getPrefix())
 								.getSystem(tag.getSystemName())
 								.getFeature(tag.getFeatureName());
+						if (analysis == null) {
+							System.err.println("Error: Analysis not found for +" + tag);
+							continue;
+						}
+						if (feature == null) {
+							System.err.println("Error: Feature not found for +" + tag);
+							continue;
+						}
 						base.addWordFeature(analysis.getId(), feature.getId(), word.getId());
 					}
 					if (change instanceof DuxFunction) {
@@ -73,6 +81,14 @@ public class DuxFileApplier {
 								.get(tag.getPrefix())
 								.getSystem(tag.getSystemName())
 								.getFeature(tag.getFeatureName());
+						if (analysis == null) {
+							System.err.println("Error: Analysis not found for -" + tag);
+							continue;
+						}
+						if (feature == null) {
+							System.err.println("Error: Feature not found for -" + tag);
+							continue;
+						}
 						base.removeWordFeature(analysis.getId(), feature.getId(), word.getId());
 					}
 					if (change instanceof DuxFunction) {
