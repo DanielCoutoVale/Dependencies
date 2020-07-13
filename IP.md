@@ -157,27 +157,9 @@ Moreover, the verb *movens* is embedded in a nominal group and it represents *th
 
 NOTE: A variant of *primum* is *ad primum*.
 
-Another two functions of ordinal numbers can be seen in this corpus. Numbering arguments and referring back to numbered arguments.
-
-#### Numbering arguments
-
-- _**tertium inconveniens** est quod..._
-- _**tertia objectio** est quia..._
-- _**tertium** quod..._
-
-The examples read *the third drawback is that...*, *my third objection is that...*, *third that...*. These themes (headings) place the coming arguments in a textual list for future reference. Here the argument starting with *quod* or *quia* receives an attribute, which is either the ordinal number alone, or the ordinal number plus a category.
-
-### Referring back to numbered arguments
-
-- _**tertia probatio** in idem redit, nisi..._
-- _ex **tertio vero** sequitur quod..._
-- _ex quo **tertia ratio** solvitur_
-
-The examples read *the third proof takes us to the same conclusion, even if...*, *from the third fact, it follows that...*, *from which the third problem is solved*. In these wordings, the author refers back to an argument that was numbered previously.
-
-In all these cases, the ordinal number functions as an Ordinator within a nominal group. In turn, the nominal group serves as an Attribute for a clause in a clause complex when the author is numbering arguments and it serves as an Argument for a verb in a clause when the author is referring back to numbered arguments. These functions are covered by the transformations proposed above as they stand.
-
 ### Step 3
+
+In Steps 1 and 2, we reclassified "adj" words that are easier to learn as nouns and numbers. Now we can move on to the remainder of adjectives that depend on nouns. These adjectives can have multiple functions within a nominal group as we shall see below. A special group of adjectives are the ones that function as imprecise Quantifiers. These include expressions such as the ones below:
 
 TODO
 
