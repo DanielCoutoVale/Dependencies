@@ -13,7 +13,7 @@ Adjectives have 62 anchors in ITTB. In this section, our goal is to reduce the n
 2. "adj" words that should be considered numbers
 3. how to split "Amod" into 5 functions in a meaningful way 
 4. how to describe attributive clauses systemically
-5. how to cover the remainder of the adjectives
+5. how to cover group complexes for adjectives
 
 ### Step 1
 
