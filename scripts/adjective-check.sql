@@ -6,7 +6,7 @@ SELECT count(`id`), `class` FROM dependencies.`ip-word`
 WHERE `class` = 'adjective'
 GROUP BY `class`;#1511
 
-SELECT count(distinct(`class2`)), `class1` FROM `ip-anchor`
+SELECT count(distinct(concat(`class2`,':',`function`))), `class1` FROM `ittb-anchor`
 GROUP BY `class1`;
 
 SELECT count(`id1`) AS `a-frequency`, (100 * count(`id1`)) / 2135 AS `r-frequency`, `class1`, `class2`, `function` FROM `ittb-anchor`
