@@ -111,6 +111,7 @@ system NUMBER-KIND
 > number
 - cardinal
 - ordinal
+- multiplicative
 - roman
 - arabic
 
@@ -163,7 +164,13 @@ metafunction EXPERIENTIAL
 - Ordinator
 - Nominator
 - Quantifier
+- Multiplier
 - Classifier
-- Qualifier
+- Epithet
 - Possessor
 - Circumscriber
+
+metafunction LOGICAL
+- Elaborator
+- Extender
+- Enhancer

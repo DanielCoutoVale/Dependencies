@@ -11,6 +11,8 @@ import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
 import org.dependencies.model.DepFunction;
+import org.dependencies.model.DepMetafunction;
+import org.dependencies.model.DepSystem;
 import org.dependencies.model.DepWord;
 
 /**
@@ -43,29 +45,54 @@ public class DuxFileApplier {
 				for (DuxChange change : command.getMagisTags()) {
 					if (change instanceof DuxFeature) {
 						DuxFeature tag = (DuxFeature) change;
-						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
-						DepFeature feature = descriptionMap
-								.get(tag.getPrefix())
-								.getSystem(tag.getSystemName())
-								.getFeature(tag.getFeatureName());
-						if (analysis == null) {
-							System.err.println("Error: Analysis not found for +" + tag);
+						DepDescription description = descriptionMap.get(tag.getPrefix());
+						if (description == null) {
+							System.err.println("Error: Description not found for +" + tag);
 							continue;
 						}
+						DepSystem system = description
+								.getSystem(tag.getSystemName());
+						if (system == null) {
+							System.err.println("Error: System not found for +" + tag);
+							continue;
+						}
+						DepFeature feature = system
+								.getFeature(tag.getFeatureName());
 						if (feature == null) {
 							System.err.println("Error: Feature not found for +" + tag);
+							continue;
+						}
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						if (analysis == null) {
+							System.err.println("Error: Analysis not found for +" + tag);
 							continue;
 						}
 						base.addWordFeature(analysis.getId(), feature.getId(), word.getId());
 					}
 					if (change instanceof DuxFunction) {
 						DuxFunction tag = (DuxFunction) change;
-						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
 						DepDescription description = descriptionMap.get(tag.getPrefix());
-						DepFunction function = descriptionMap
-								.get(tag.getPrefix())
-								.getMetafunction(tag.getMetafunctionName())
+						if (description == null) {
+							System.err.println("Error: Description not found for +" + tag);
+							continue;
+						}
+						DepMetafunction metafunction = description
+								.getMetafunction(tag.getMetafunctionName());
+						if (metafunction == null) {
+							System.err.println("Error: Metafunction not found for " + tag);
+							continue;
+						}
+						DepFunction function = metafunction
 								.getFunction(tag.getName());
+						if (function == null) {
+							System.err.println("Error: Function not found for " + tag);
+							continue;
+						}
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						if (analysis == null) {
+							System.err.println("Error: Analysis not found for +" + tag);
+							continue;
+						}
 						DepWord tail = words.get(tag.getWordIndex() - 1);
 						DepFeature tailRank = description.getRank(tag.getWordRankName());
 						DepWord head = words.get(tag.getHeadIndex() - 1);
@@ -76,29 +103,54 @@ public class DuxFileApplier {
 				for (DuxChange change : command.getMinusTags()) {
 					if (change instanceof DuxFeature) {
 						DuxFeature tag = (DuxFeature) change;
-						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
-						DepFeature feature = descriptionMap
-								.get(tag.getPrefix())
-								.getSystem(tag.getSystemName())
-								.getFeature(tag.getFeatureName());
-						if (analysis == null) {
-							System.err.println("Error: Analysis not found for -" + tag);
+						DepDescription description = descriptionMap.get(tag.getPrefix());
+						if (description == null) {
+							System.err.println("Error: Description not found for +" + tag);
 							continue;
 						}
+						DepSystem system = description
+								.getSystem(tag.getSystemName());
+						if (system == null) {
+							System.err.println("Error: System not found for +" + tag);
+							continue;
+						}
+						DepFeature feature = system
+								.getFeature(tag.getFeatureName());
 						if (feature == null) {
-							System.err.println("Error: Feature not found for -" + tag);
+							System.err.println("Error: Feature not found for +" + tag);
+							continue;
+						}
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						if (analysis == null) {
+							System.err.println("Error: Analysis not found for +" + tag);
 							continue;
 						}
 						base.removeWordFeature(analysis.getId(), feature.getId(), word.getId());
 					}
 					if (change instanceof DuxFunction) {
 						DuxFunction tag = (DuxFunction) change;
-						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
 						DepDescription description = descriptionMap.get(tag.getPrefix());
-						DepFunction function = descriptionMap
-								.get(tag.getPrefix())
-								.getMetafunction(tag.getMetafunctionName())
+						if (description == null) {
+							System.err.println("Error: Description not found for +" + tag);
+							continue;
+						}
+						DepMetafunction metafunction = description
+								.getMetafunction(tag.getMetafunctionName());
+						if (metafunction == null) {
+							System.err.println("Error: Metafunction not found for " + tag);
+							continue;
+						}
+						DepFunction function = metafunction
 								.getFunction(tag.getName());
+						if (function == null) {
+							System.err.println("Error: Function not found for " + tag);
+							continue;
+						}
+						DepAnalysis analysis = analysisMap.get(tag.getPrefix());
+						if (analysis == null) {
+							System.err.println("Error: Analysis not found for +" + tag);
+							continue;
+						}
 						DepWord tail = words.get(tag.getWordIndex() - 1);
 						DepFeature tailRank = description.getRank(tag.getWordRankName());
 						DepWord head = words.get(tag.getHeadIndex() - 1);
