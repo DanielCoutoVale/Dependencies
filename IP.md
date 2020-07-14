@@ -5,7 +5,7 @@ Latin corpora such as ITTB, AGLDT, and PROIEL have been annotated with classes a
 
 ## Learnability
 
-Statistical parsers often rely on the sequence of word classes/features to determine 1) which word depends on which (**attachment**) and 2) which role the tail word plays relative to the head one (**labeling**). This means that a linguistic description that results in less attachment options and less labeling options for the same sequence of word classes will be learned with less data than a linguistic description that results in more options. Taking this into consideration, let us take a look at five most frequent attachment and labeling options (**anchors**) that exist for a tail adjective in ITTB dev corpus.
+Statistical parsers often rely on the sequence of word classes/features to determine 1) which word depends on which (**attachment**) and 2) which role the tail word plays relative to the head one (**labeling**). This means that a linguistic description that results in less attachment options and less labeling options for the same sequence of word classes will be learned with less data than a linguistic description that results in more options. Taking this into consideration, let us take a look at the five most frequent attachment and labeling options (**anchors**) that exist for a tail adjective in ITTB dev corpus.
 
 A-Frequency |R-Frequency |Tail class  |Head class  |Dependency   
 :----------:|:----------:|:----------:|:----------:|:----------:
