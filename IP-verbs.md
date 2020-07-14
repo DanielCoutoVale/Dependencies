@@ -91,7 +91,7 @@ CLAUSE      |            |            |            |Carrier     |            |He
 
 In the new proposal, *non* (*no*), an **(adverb)**, always serves as an Adjunct for the **(lexical verb)**. In addition, *potest* (*can*), an **(auxiliary verb)**, always serves as an Auxiliary for the **(lexical verb)**. This creates a stable mapping between word classes and structure at the rank of groups. In turn, the verb *esse* may represent an existential process when it is followed by a **(noun)**, and it may represent an attributive process when it is preceded by a **(noun)** and followed by an **(adjective)**. Therefore, the mappings between the syntagma and the structure can be transferred between clauses with and without *potest*. The actual translation rules are provided in the `ittb-ip.dux` file.
 
-In particular, there are auxiliary verbs such as *necesse est* and *possibile est*, which function like an attributive clause embedded in the verbal group. Here are the syntagmata and the structures according to UD and IP description.
+In particular, there are auxiliary verbs such as *necesse est* and *possibile est*, which function like an attributive clause embedded in the verbal group. Here are the syntagmata and the structures according to UD and IP descriptions.
 
 FORM        |omne        |corpus      |...         |possibile   |est         |non         |moveri
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
@@ -107,7 +107,7 @@ CLAUSE-1    |            |            |            |Attribute   |Head        |  
 GROUP       |Deictic >   |Head        |            |            |Auxiliary > |Adjunct >   |Head
 CLAUSE-2    |            |Goal        |            |            |            |            |Head
 
-The altered verbal group has an embedded clause. This dependency structures according to IP can be visualized in the following way:
+In the IP analysis, an attributive clause is embedded in the verbal group. This dependency structures according to IP can be visualized in the following way:
 
 #### Groups
 
@@ -133,5 +133,5 @@ With these changes, we achieve a full separation between auxiliary and lexical v
 
 ### Step 2 
 
-
+Let us now move towards the other end of the verbal group and let us identify the last verb in that chain. 
 
