@@ -6,7 +6,7 @@ This section explains the translation of anchors for verbs.
 For an introduction to IP, see [the motivation for IP](IP.md).
 
 ## Verbs
-There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3 (42) happen less than 1% of the time. Our goal is to reduce the number of anchors with frequency higher than 1% to under 10. To accommodate the relations between verbs, we shall cover five linguistic phenomena:
+There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3 (42) happen for less than 1% of the verbs. Our goal is to reduce the number of anchors with frequency higher than 1% to under 10. To accommodate the relations between verbs, we shall cover five linguistic phenomena:
 
 1. Auxiliaries versus process verbs 
 2. Finitive versus infinitive verbs
