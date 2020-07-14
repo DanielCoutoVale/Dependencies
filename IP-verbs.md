@@ -108,7 +108,7 @@ CLAUSE-2    |            |Goal        |            |            |            |  
 
 An IP analysis results in a more stable syntagma-structure mapping. Here we see an attributive clause embedded in a verbal group, which means we rank a clause *possibile est* down to the word rank, so that we can take it as an alternative option to the auxiliary verb *potest*. For this to be achieved, a small class of adjectives needs to be either manually created or automatically learned based on the lemmata. This class should include modal adjectives such as *possibile* (*possible*), *impossibile* (*impossible*), and *necesse* (*necessary*) as well as truth adjectives such as *verum* (*true*) and *falsum* (*false*).
 
-There are four grammatical structures in this dependency tree and we can be represent them graphically in the following way: 
+There are four grammatical structures in this dependency tree and we can represent them graphically in the following way: 
 
 #### Groups
 
@@ -153,7 +153,7 @@ STRUCTURE-1 |            |Xcomp       |Head        |            |
 STRUCTURE-2 |            |            |Xcomp       |Head        |
 STRUCTURE-3 |Nsubj-Pass  |            |            |Xcomp       |Head
 
-The examples read *that is said perfect*, *that can be said perfect*, and *that seems to be possibly said perfect*. There are multiple issues with this analysis as for teaching and automatic learning. The first is the fact that for each new verb the grammatical structure gets one level deeper. The second is the fact that the pronoun *quod* (*that*) switches between being a subject and a passive subject with the finite verb, loosing its dependency with the previous verb. The third is the fact that this pronoun serves as subject for a different lemma in each example. Finally, the attachments of the adjective *perfectus* and the verb *dico* are also unstable. The adjective is either attached to the verb *potest* or to the verb *dico* and the verb *dico* is either the head, an Xcomp of the verb *potest* or an Xcomp of the verb videtur. If this is the intended analysis, it is difficult to learn automatically. If it does not correspond to the annotator's intent, the parsing results are shown to be incorrect even for small grammatical variations. Either way, these structures are hard to use effectively for teaching Latin.
+The examples read *that is said perfect*, *that can be said perfect*, and *that seems to be possibly said perfect*. There are multiple issues with this analysis for both teaching and automatic learning. The first is the fact that, for each new verb inserted, the grammatical structure gets one level higher. The second is the fact that the pronoun *quod* (*that*) switches between being a subject and a passive subject depending on the lemma of the newly inserted finite verb, loosing its dependency on the previous verbs. The third is the fact that this pronoun serves as subject for a different lemma in each example. Finally, the attachments of the adjective *perfectus* and the verb *dico* are also unstable. The adjective is either attached to the verb *potest* or to the verb *dico* and the verb *dico* is either the head, an Xcomp of the verb *potest* or an Xcomp of the verb videtur. If this is the intended analysis, it is difficult to learn automatically. If it does not correspond to the annotator's intent, the parsing results are shown to be incorrect even for small grammatical variations. Either way, these structures are hard to use effectively for teaching Latin.
 
 Based on this, I shall propose a different way of dealing with finite and non-finite verbs within a verbal group, aiming at achieving a stronger mapping between word classes and word functions.
 
@@ -182,4 +182,6 @@ GROUP       |            |            |Auxiliary2  |Head        |Auxiliary
 CLAUSE      |Carrier     |Attribute   |            |Head
 
 In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functions as the head of the verbal group and of the clause. If the verbal group has no auxiliaries, it is **(finite)**. If the group has auxiliaries, the verb *dico* is **(non-finite)**. The **(finite auxiliary verb)** always functions as Auxiliary, and a **(non-finite auxiliary verb)** can function as Auxiliary 2, Auxiliary 3, and so on depending on its other features and relative position to other words. All functions are stable towards the classes of words and the lemmata across examples.
-  
+
+### Step 3
+
