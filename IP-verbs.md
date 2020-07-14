@@ -100,9 +100,9 @@ omne        |corpus
 :----------:|:----------:
 Deicitc     |Head
 
-omne        |corpus
-:----------:|:----------:
-Deicitc     |Head
+possibile est |non         |moveri
+:------------:|:----------:|:----------:
+Auxiliary     |Adjunct     |Head
 
 #### Clauses
 
@@ -110,9 +110,9 @@ possibile   |est
 :----------:|:----------:
 Attribute   |Head
 
-possibile est |non         |moveri
-:------------:|:----------:|:----------:
-Auxiliary     |Adjunct     |Head
+omne corpus             |possibile est non moveri
+:----------------------:|:----------------------:
+Goal                    |Head
 
 With these changes, we achieve a full separation between auxiliary and lexical verbs.
 
