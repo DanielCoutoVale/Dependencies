@@ -1,5 +1,7 @@
 package org.dependencies;
 
+import static java.lang.String.format;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -27,7 +29,9 @@ public class ImportSysFile {
 		String fileName = args[1];
 		SysFileImporter importer = new SysFileImporter();
 		try {
+			System.out.println(format("Importing %s as %s", fileName, descriptionName));
 			importer.importFile(descriptionName, fileName);
+			System.out.println("Imported!");
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
 			System.err.println("There is a bug in this script.");

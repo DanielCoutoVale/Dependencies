@@ -107,4 +107,14 @@ public class DepWording implements Iterable<DepWord> {
 		return "Wording #" + this.id + " '" + this.form + "' ";
 	}
 
+	/**
+	 * Returns the order of the word in the wording.
+	 * 
+	 * @param word the word
+	 * @return the order of the word
+	 */
+	public final int orderOf(DepWord word) {
+		return this.words.indexOf(word) + 1;
+	}
+
 }

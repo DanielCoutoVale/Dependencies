@@ -23,6 +23,17 @@ import org.dependencies.model.DepWording;
  */
 public class ConlluFileImporter {
 
+	/**
+	 * Imports the file as an analyzed text. The analysis is created if there are none.
+	 * 
+	 * @param corpusName the corpus name
+	 * @param languageName the language name
+	 * @param textTitle the text title
+	 * @param descriptionName the description name
+	 * @param analysisName the analysis name
+	 * @param fileName the file name
+	 * @throws SQLException if analyzed text cannot be stored in the dependency base
+	 */
 	public final void importFile(String corpusName, String languageName, String textTitle, String descriptionName,
 			String analysisName, String fileName) throws SQLException {
 		MysqlDependencyBase base = new MysqlDependencyBase();
@@ -35,9 +46,9 @@ public class ConlluFileImporter {
 			language = base.addLanguage(languageName);
 		}
 		DepDescription description = base.getDescription(descriptionName);
-		DepAnalysis analysis = base.addAnalysis(description.getId(), analysisName);
-		if (language == null) {
-			language = base.addLanguage(languageName);
+		DepAnalysis analysis = base.getAnalysis(description.getId(), analysisName);
+		if (analysis == null) {
+			analysis = base.addAnalysis(description.getId(), analysisName);
 		}
 		DepAnalyzedText text = new DepAnalyzedText(base.addText(corpus.getId(), language.getId(), textTitle));
 		File file = new File(fileName);

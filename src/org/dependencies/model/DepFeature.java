@@ -77,7 +77,7 @@ public class DepFeature implements Comparable<DepFeature> {
 			return false;
 		}
 		DepFeature feature = (DepFeature) object;
-		return this.id == feature.id;
+		return this.name.equals(feature.name);
 	}
 
 }

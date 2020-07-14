@@ -28,6 +28,11 @@ public class DepDescription {
 	private final Map<String, DepSystem> systemMap;
 
 	/**
+	 * Lazy system map.
+	 */
+	private final Map<DepFeature, DepSystem> systemMapByFeature;
+
+	/**
 	 * The metafunction map.
 	 */
 	private final Map<String, DepMetafunction> metafunctionMap;
@@ -37,6 +42,7 @@ public class DepDescription {
 	 */
 	public DepDescription() {
 		this.systemMap = new HashMap<>();
+		this.systemMapByFeature = new HashMap<>();
 		this.metafunctionMap = new HashMap<>();
 	}
 
@@ -137,7 +143,7 @@ public class DepDescription {
 		return "Description #" + this.id + " #" + this.name;
 	}
 
-	public DepFeature getRank(String rankName) {
+	public final DepFeature getRank(String rankName) {
 		for (DepSystem system : this.systemMap.values()) {
 			String systemName = system.getName();
 			if (systemName.equals("RANK") || systemName.endsWith("-COMPLEXITY")) {
@@ -149,6 +155,15 @@ public class DepDescription {
 			}
 		}
 		return null;
+	}
+
+	public final DepSystem getSystem(DepFeature feature) {
+		DepSystem system = systemMapByFeature.get(feature);
+		if (system == null) {
+			systemMap.values().forEach(value -> value.getFeatures().forEach(key -> systemMapByFeature.put(key, value)));
+			system = systemMapByFeature.get(feature);
+		}
+		return system;
 	}
 
 }

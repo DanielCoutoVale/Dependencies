@@ -2,16 +2,14 @@ package org.dependencies;
 
 import static java.lang.String.format;
 
-import java.sql.SQLException;
-
-import org.dependencies.conllu.ConlluFileImporter;
+import org.dependencies.conllu.ConlluFileExporter;
 
 /**
- * Imports a CONLLU file.
+ * Exports a CONLLU file.
  * 
  * @author Daniel Couto-Vale
  */
-public class ImportConlluFile {
+public class ExportConlluFile {
 
 	/**
 	 * Main
@@ -21,7 +19,7 @@ public class ImportConlluFile {
 	public final static void main(String[] args) {
 		if (args.length != 6) {
 			System.err.println("USAGE:");
-			System.err.println("java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]");
+			System.err.println("java -jar export-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]");
 			System.exit(-1);
 		}
 		String corpusName = args[0];
@@ -30,12 +28,12 @@ public class ImportConlluFile {
 		String descriptionName = args[3];
 		String analysisName = args[4];
 		String fileName = args[5];
-		ConlluFileImporter importer = new ConlluFileImporter();
+		ConlluFileExporter exporter = new ConlluFileExporter();
 		try {
-			System.out.println(format("Importing %s as %s", fileName, textTitle));
-			importer.importFile(corpusName, languageName, textTitle, descriptionName, analysisName, fileName);
-			System.out.println("Imported!");
-		} catch (SQLException e) {
+			System.out.println(format("Exporting %s to %s", textTitle, fileName));
+			exporter.exportFile(corpusName, languageName, textTitle, descriptionName, analysisName, fileName);
+			System.out.println("Exported!");
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("There is a bug in this script.");
 		}

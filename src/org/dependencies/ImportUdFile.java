@@ -1,5 +1,7 @@
 package org.dependencies;
 
+import static java.lang.String.format;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -30,7 +32,9 @@ public class ImportUdFile {
 		String descriptionName = args[0];
 		String fileName = args[1];
 		try {
+			System.out.println(format("Importing %s as %s", fileName, descriptionName));
 			importer.importFile(descriptionName, fileName);
+			System.out.println("Imported");
 		} catch (ParserConfigurationException | SAXException | IOException | SQLException e) {
 			e.printStackTrace();
 			System.err.println("There is a bug in this script.");
