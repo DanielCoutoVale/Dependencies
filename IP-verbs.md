@@ -181,5 +181,5 @@ FINITENESS  |            |            |non-finite  |non-finite  |finite
 GROUP       |            |            |Auxiliary2  |Head        |Auxiliary
 CLAUSE      |Carrier     |Attribute   |            |Head
 
-In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functions as the head of the verbal group and of the clause. If the verbal group has no auxiliaries, it is **(finite)**. If the group has auxiliaries, the verb *dico* is **(non-finite)**. The **(finite auxiliary verb)** always functions as Auxiliary, and a **(non-finite auxiliary verb)** can function as Auxiliary2, Auxiliary 3, and so on depending on its other features and relative position. All functions are stable towards the classes of words and the lemmata acros examples.
+In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functions as the head of the verbal group and of the clause. If the verbal group has no auxiliaries, it is **(finite)**. If the group has auxiliaries, the verb *dico* is **(non-finite)**. The **(finite auxiliary verb)** always functions as Auxiliary, and a **(non-finite auxiliary verb)** can function as Auxiliary 2, Auxiliary 3, and so on depending on its other features and relative position to other words. All functions are stable towards the classes of words and the lemmata across examples.
   
