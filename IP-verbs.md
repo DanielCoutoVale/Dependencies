@@ -10,8 +10,8 @@ There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3
 
 1. Auxiliary versus lexical verbs 
 2. Finite versus non-finite verbs
-3. Junctive versus injunctive verbs
-4. Verbal groups in non-finite clauses
+3. Free versus bound clauses
+4. Finite versus non-finite bound clauses
 5. Clause contacts
 
 ### Step 1
