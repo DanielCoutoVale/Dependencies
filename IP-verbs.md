@@ -134,7 +134,7 @@ The commands for translating an analysis from UD to IP as shown above can be fou
 
 ### Step 2 
 
-Let us now move towards the other end of the verbal group and let us identify the last verb in that chain. Except for the last example, I shall be using parsing results, not original texts for these examples. The original sentence for these variants is *quod ... nec perfectum posse dici videtur* (*that does not seem to be possibly said perfect*).
+Let us now move towards the other end of the verbal group and let us identify the last verb in that chain. We shall be using parsing results, not original texts for these examples. The original sentence from which these variants were created is *quod ... nec perfectum posse dici videtur* (*that does not seem to be possibly said perfect*).
 
 FORM        |quod        |perfectum   |dicitur
 :----------:|:----------:|:----------:|:----------:
