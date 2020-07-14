@@ -8,10 +8,10 @@ For an introduction to IP, see [the motivation for IP](IP.md).
 ## Verbs
 There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3 (42) happen for less than 1% of the verbs. Our goal is to reduce the number of anchors with frequency higher than 1% to under 10. To accommodate the relations between verbs, we shall cover five linguistic phenomena:
 
-1. Auxiliaries versus process verbs 
+1. Auxiliary versus lexical verbs 
 2. Finite versus non-finite verbs
-3. Verb modes
-4. Free and bound clauses
+3. Junctive versus injunctive verbs
+4. Verbal groups in non-finite clauses
 5. Clause contacts
 
 ### Step 1
@@ -185,3 +185,16 @@ In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functi
 
 ### Step 3
 
+Up to now, we have described only verbal groups that could potentially be the verbal group of a free declarative clause, a clause that can be sent as a complete message on its own (injunctive mode). There is another class of verbal groups that can only be used in bound clauses, clauses that do not count as a complete message. These are the bound verbal groups (junctive modes).
+
+
+
+
+
+
+
+
+ 
+
+
+ 
