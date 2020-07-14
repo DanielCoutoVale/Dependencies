@@ -30,7 +30,7 @@ impossibile est |esse
 :--------------:|:----------:
 Auxiliary       |Head
 
-In the UD description, we do not have the necessary dependencies for a verbal group. Let us look into some examples of the mapping between syntagma and structure for cases where there are auxiliary verbs and cases where there are none in the ITTB corpus.
+In the UD description, we do not have the necessary dependencies for a verbal group. Let us look into some examples of the mapping between syntagma and structure in the ITTB corpus, contrasting clauses where we find auxiliary verbs with those where there are none.
 
 FORM        |quod        |in          |deo         |non         |est         |accidens
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
