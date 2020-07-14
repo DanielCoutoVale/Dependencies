@@ -107,7 +107,9 @@ CLAUSE-1    |            |            |            |Attribute   |Head        |  
 GROUP       |Deictic >   |Head        |            |            |Auxiliary > |Adjunct >   |Head
 CLAUSE-2    |            |Goal        |            |            |            |            |Head
 
-In the IP analysis, an attributive clause is embedded in the verbal group. This dependency structures according to IP can be visualized in the following way:
+An IP analysis results in a more stable syntagma-structure mapping. Here we see an attributive clause embedded in a verbal group, which means we rank a clause *possibile est* down to the word rank, so that we can take it as an alternative option to the auxiliary verb *potest*. For this to be achieved, a small class of adjectives needs to be either manually created or automatically learned based on the lemmata. This class should include modal adjectives such as *possibile* (*possible*), *impossibile* (*impossible*), and *necesse* (*necessary*) as well as truth adjectives such as *verum* (*true*) and *falsum* (*false*).
+
+There are four grammatical structures in this dependency tree and we can be represent them graphically in the following way: 
 
 #### Groups
 
@@ -129,7 +131,7 @@ omne corpus             |possibile est non moveri
 :----------------------:|:----------------------:
 Goal                    |Head
 
-With these changes, we achieve a full separation between auxiliary and lexical verbs. 
+The commands for translating an analysis from UD to IP as shown above can be found in the `ittb-ip.dux` file.
 
 ### Step 2 
 
