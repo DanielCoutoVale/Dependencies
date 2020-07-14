@@ -16,7 +16,22 @@ There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3
 
 ### Step 1
 
-Let us start by focusing on verbal groups in which one verb represents a process with participants and the other verb modulates the statement. Here are some examples of the mapping between syntagma and structure for such cases in the ITTB corpus.
+Let us start by focusing on verbal groups. As mentioned in the motivation of the IP description, one of our aims is to provide teachers with grammatical structures that are useful for teaching the options in meaning that authors encounter in Latin. These grammatical structures must be represented graphically on a computer screen and they should trigger students to make the right analogies between words. For instance, one aspect of verbal groups that students must master is that, usually, one verb represents a process in which 
+people and other things take part while the other verbs are responsible for determining the subject, determining polarity (true, false), modulating the statement (possibly true, probably true, certainly true), and setting the time of this process relative to the time of interaction (happened, is happening, will happen). We say that the verb representing the process is the lexical verb and that the other verbs are its auxiliaries. Here is an example of the graphical representation we are aiming at.
+
+non           |potest      |esse
+:------------:|:----------:|:----------:
+Adjunct       | Auxiliary  |Head
+
+possibile est |non         |moveri
+:------------:|:----------:|:----------:
+Auxiliary     |Adjunct     |Head
+
+impossibile est |esse
+:--------------:|:----------:
+Auxiliary       |Head
+
+In the UD description, we do not have the necessary dependencies for a verbal group. Let us look into some examples of the mapping between syntagma and structure for cases where there are auxiliary verbs and cases where there are none in the ITTB corpus.
 
 FORM        |quod        |in          |deo         |non         |est         |accidens
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
@@ -42,7 +57,7 @@ WORD-CLASS  |sconj       |adp         |propn       |pron        |verb        |au
 STRUCTURE-1 |            |Case >      |Head        |            |            |Cop >       |Head
 STRUCTURE-2 |Mark        |            |Obl         |Nsub        |Head        |            |Xcomp
 
-The examples above read *that in God there is no flaw*, *that in God there can be no evil*, *that in God nothing is violent*, and *that in God nothing can be violent*. The finite verb is always the head of the clause. In existential clauses, the noun is the subject of the verb *est* only when it is finite. If a finite verb such as *potest* is inserted, it becomes the subject of that verb instead. The infinitive verb is an 'Xcomp' of the finite verb. As for attributive clauses, the adjective is the head of the clause if there are no finite verbs. The noun is its subject and the auxiliary is its copula. When a finite verb such as *potest* is inserted, the noun becomes its subject and the adjective becomes its 'Xcomp'. As we can see, there is very little stability between word classes and the anchors associated with them.
+The examples above read *that in God there is no flaw*, *that in God there can be no evil*, *that in God nothing is violent*, and *that in God nothing can be violent*. Using UD terminology, the finite verb is always the head of the clause. In existential clauses, the noun is the subject of the verb *est* only when it is finite. If a finite verb such as *potest* is inserted, it becomes the subject of that verb instead. The infinitive verb is an 'Xcomp' of the finite verb. As for attributive clauses, the adjective is the head of the clause if there are no finite verbs. The noun is its subject and the auxiliary is its copula. When a finite verb such as *potest* is inserted, the noun becomes its subject and the adjective becomes its 'Xcomp'. As we can see, there is very little stability between word classes and the anchors associated with them.
 
 Taking this observation into consideration, I shall propose another structure and other word classes so as to forge a stability between class and function, thus increasing the number of rules that can be transferred between examples.
 
@@ -114,7 +129,7 @@ omne corpus             |possibile est non moveri
 :----------------------:|:----------------------:
 Goal                    |Head
 
-With these changes, we achieve a full separation between auxiliary and lexical verbs.
+With these changes, we achieve a full separation between auxiliary and lexical verbs. 
 
 ### Step 2 
 
