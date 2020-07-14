@@ -9,9 +9,9 @@ For an introduction to IP, see [the motivation for IP](IP.md).
 There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3 (42) happen for less than 1% of the verbs. Our goal is to reduce the number of anchors with frequency higher than 1% to under 10. To accommodate the relations between verbs, we shall cover five linguistic phenomena:
 
 1. Auxiliaries versus process verbs 
-2. Finitive versus infinitive verbs
+2. Finite versus non-finite verbs
 3. Verb modes
-4. Finite and non-finite clauses
+4. Free and bound clauses
 5. Clause contacts
 
 ### Step 1
@@ -134,5 +134,52 @@ The commands for translating an analysis from UD to IP as shown above can be fou
 
 ### Step 2 
 
-Let us now move towards the other end of the verbal group and let us identify the last verb in that chain. 
+Let us now move towards the other end of the verbal group and let us identify the last verb in that chain. Except for the last example, I shall be using parsing results, not original texts for these examples. The original sentence for these variants is *quod ... nec perfectum posse dici videtur* (*that does not seem to be possibly said perfect*).
 
+FORM        |quod        |perfectum   |dicitur
+:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |pron        |adj         |verb
+STRUCTURE   |Nsubj-Pass  |Xcomp       |Head
+
+FORM        |quod        |perfectum   |potest      |dici
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |pron        |adj         |verb        |verb
+STRUCTURE-1 |            |Xcomp       |            |Head
+STRUCTURE-2 |Nsubj       |            |Head        |Xcomp
+
+FORM        |quod        |perfectum   |posse       |dici        |videtur
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+STRUCTURE-1 |            |Xcomp       |Head        |            |    
+STRUCTURE-2 |            |            |Xcomp       |Head        |
+STRUCTURE-3 |Nsubj-Pass  |            |            |Xcomp       |Head
+
+The examples read *that is said perfect*, *that can be said perfect*, and *that seems to be possibly said perfect*. There are multiple issues with this analysis as for teaching and automatic learning. The first is the fact that for each new verb the grammatical structure gets one level deeper. The second is the fact that the pronoun *quod* (*that*) switches between being a subject and a passive subject with the finite verb, loosing its dependency with the previous verb. The third is the fact that this pronoun serves as subject for a different lemma in each example. Finally, the attachments of the adjective *perfectus* and the verb *dico* are also unstable. The adjective is either attached to the verb *potest* or to the verb *dico* and the verb *dico* is either the head, an Xcomp of the verb *potest* or an Xcomp of the verb videtur. This amounts to a parsing result that is difficult to learn automatically, is potentially incorrect according to annotator's intent, and is hard to use for teaching Latin.
+
+Based on this, I shall propose a different way of dealing with finite and non-finite verbs within a verbal group, aiming at achieving a stronger mapping between word classes and word functions.
+
+FORM        |quod        |perfectum   |dicitur
+:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |noun        |adjective   |verb
+VERB-CLASS  |            |            |lexical
+FINITENESS  |            |            |finite
+GROUP       |            |            |
+CLAUSE      |Carrier     |Attribute   |Head
+
+FORM        |quod        |perfectum   |potest      |dici
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |noun        |adjective   |verb        |verb
+VERB-CLASS  |            |            |auxiliary   |lexical
+FINITENESS  |            |            |finite      |non-finite
+GROUP       |            |            |Auxiliary   |Head
+CLAUSE      |Carrier     |Attribute   |            |Head
+
+FORM        |quod        |perfectum   |posse       |dici        |videtur
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |noun        |adjective   |verb        |verb        |verb
+VERB-CLASS  |            |            |auxiliary   |lexical     |auxiliary
+FINITENESS  |            |            |non-finite  |non-finite  |finite
+GROUP       |            |            |Auxiliary2  |Head        |Auxiliary
+CLAUSE      |Carrier     |Attribute   |            |Head
+
+In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functions as the head of the verbal group and of the clause. If the verbal group has no auxiliaries, it is **(finite)**. If the group has auxiliaries, the verb *dico* is **(non-finite)**. The **(finite auxiliary verb)** always functions as Auxiliary, and a **(non-finite auxiliary verb)** can function as Auxiliary2, Auxiliary 3, and so on depending on its other features and relative position. All functions are stable towards the classes of words and the lemmata acros examples.
+  
