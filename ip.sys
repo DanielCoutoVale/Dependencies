@@ -51,7 +51,7 @@ system NOUN-CLASS
 
 system VERB-CLASS
 > verb
-- process-verb
+- lexical-verb
 - auxiliary-verb
 
 system CONJUNCTION-CLASS
@@ -174,3 +174,7 @@ metafunction LOGICAL
 - Elaborator
 - Extender
 - Enhancer
+- Adjunct
+- Auxiliary
+- Auxiliary2
+- Property
