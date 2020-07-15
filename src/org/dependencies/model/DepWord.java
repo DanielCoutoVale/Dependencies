@@ -38,10 +38,16 @@ public class DepWord {
 	private final Map<String, DepFeature> featureMap;
 
 	/**
+	 * The word features.
+	 */
+	private final Map<String, DepDependency> dependencyMap;
+
+	/**
 	 * Constructor
 	 */
 	public DepWord() {
 		this.featureMap = new HashMap<>();
+		this.dependencyMap = new HashMap<>();
 	}
 
 	/**
@@ -144,6 +150,34 @@ public class DepWord {
 	 */
 	public final List<DepFeature> getFeatures() {
 		return new LinkedList<>(this.featureMap.values());
+	}
+
+	/**
+	 * Adds a dependency to this word.
+	 * 
+	 * @param dependency the dependency
+	 */
+	public final void addDependency(DepDependency dependency) {
+		this.dependencyMap.put(dependency.getFunction().getName(), dependency);
+	}
+
+	/**
+	 * Gets a dependency in this word by name
+	 * 
+	 * @param functionName the function name
+	 * @return the dependency
+	 */
+	public final DepDependency getDependency(String functionName) {
+		return this.dependencyMap.get(functionName);
+	}
+
+	/**
+	 * Gets the dependencies in this word.
+	 * 
+	 * @return the dependencies
+	 */
+	public final List<DepDependency> getDependencies() {
+		return new LinkedList<>(this.dependencyMap.values());
 	}
 
 	@Override

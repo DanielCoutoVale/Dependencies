@@ -16,6 +16,7 @@ import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepAnalyzedText;
 import org.dependencies.model.DepCorpus;
+import org.dependencies.model.DepDependency;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
 import org.dependencies.model.DepLanguage;
@@ -80,7 +81,7 @@ public class ConlluFileExporter {
 			pw.println(format("# wording-id = %s-%s-%d", descriptionName, analysisName, wording.getId()));
 			pw.println(format("# wording-form = %s", wording.getForm()));
 			for (DepWord word : wording) {
-				pw.print(wording.orderOf(word) + 1);
+				pw.print(wording.orderOf(word));
 				pw.print("\t");
 				pw.print(word.getForm());
 				pw.print("\t");
@@ -99,7 +100,8 @@ public class ConlluFileExporter {
 				StringBuffer featureBuffer = new StringBuffer();
 				features = word.getFeatures();
 				features.removeAll(wordClasses.getFeatures());
-				for (DepFeature feature : word.getFeatures()) {
+				features.sort((a, b) -> a.compareTo(b));
+				for (DepFeature feature : features) {
 					if (featureBuffer.length() != 0) {
 						featureBuffer.append("|");
 					}
@@ -112,12 +114,26 @@ public class ConlluFileExporter {
 				}
 				pw.print(featureBuffer.toString());
 				pw.print("\t");
-				pw.print("0"); // head order
-				pw.print("\t");
-				pw.print("root"); // function
-				pw.print("\t");
-				pw.print("-");
-				pw.print("\t");
+				List<DepDependency> dependencies = word.getDependencies();
+				if (dependencies.size() == 0) {
+					pw.print("0");
+					pw.print("\t");
+					pw.print("root");
+					pw.print("\t");
+				} else if (dependencies.size() >= 1) {
+					DepDependency dependency = dependencies.get(0);
+					pw.print(dependency.getHeadOrder());
+					pw.print("\t");
+					pw.print(dependency.getFunction().getName());
+					pw.print("\t");
+				}
+				if (dependencies.size() <= 1) {
+					pw.print("-");
+					pw.print("\t");					
+				} else {
+					pw.print("MULTIDEP=Yes");
+					pw.print("\t");
+				}
 				pw.print(word.isBackspaced() ? "-" : "SpaceAfter=No");
 				pw.print("\n");
 			}

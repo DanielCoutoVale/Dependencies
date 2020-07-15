@@ -19,6 +19,7 @@ import org.dependencies.dux.DuxMatch;
 import org.dependencies.dux.DuxWord;
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepCorpus;
+import org.dependencies.model.DepDependency;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepEntryCondition;
 import org.dependencies.model.DepFeature;
@@ -576,6 +577,27 @@ public class MysqlDependencyBase {
 			feature.setName(rs.getString("name"));
 			DepWord word = wordMap.get(rs.getInt("word-id"));
 			word.addFeature(feature);
+		}
+		stmt.close();
+		sql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order` FROM `function` F " 
+				+ "JOIN `word-function` WF ON WF.`id` = F.`id` "
+				+ "JOIN `word` W ON W.`id` = WF.`word-id` " 
+				+ "JOIN `word` H ON H.`id` = WF.`word-id` " 
+				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
+		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		stmt.setInt(1, text.getId());
+		stmt.setInt(2, analysisId);
+		rs = stmt.executeQuery();
+		while (rs.next()) {
+			DepFunction function = new DepFunction();
+			function.setId(rs.getInt("id"));
+			function.setName(rs.getString("name"));
+			DepDependency dependency = new DepDependency();
+			dependency.setHeadOrder(rs.getInt("head-order"));
+			dependency.setFunction(function);
+			DepWord word = wordMap.get(rs.getInt("word-id"));
+			word.addDependency(dependency);
 		}
 		stmt.close();
 		return text;
