@@ -20,11 +20,12 @@ And a sample PROPERTIES file:
 
 - database.properties
 
-And you will find 5 JAR scripts:
+And you will find 6 JAR scripts:
 
 - import-ud-file.jar
 - import-sys-file.jar
 - import-conllu-file.jar
+- export-conllu-file.jar
 - translate-analysis.jar
 - check-analysis.jar
 
@@ -96,7 +97,13 @@ The code was tested with the file `la_ittb-ud-dev.conllu` from the GIT repositor
 java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]
 ```
 
-Once an analysis is imported it can be translated and checked for completion.
+Once an analysis is imported, it can be export ported back as a CONLLU file with the following command.
+
+```
+java -jar export-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]
+```
+
+A text analysis in a dependency base can be translated and checked for completion as we shall see next.
 
 ## Text Analyses
 
