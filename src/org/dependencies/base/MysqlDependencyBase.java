@@ -582,7 +582,7 @@ public class MysqlDependencyBase {
 		sql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order` FROM `function` F " 
 				+ "JOIN `word-function` WF ON WF.`id` = F.`id` "
 				+ "JOIN `word` W ON W.`id` = WF.`word-id` " 
-				+ "JOIN `word` H ON H.`id` = WF.`word-id` " 
+				+ "JOIN `word` H ON H.`id` = WF.`head-id` " 
 				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
 				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
 		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
