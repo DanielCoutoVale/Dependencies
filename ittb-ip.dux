@@ -335,4 +335,10 @@
 [] [] T:LOGICAL:Auxiliary#1:groups#2:group => -T:VERB-CLASS:lexical-verb +T:VERB-CLASS:auxiliary-verb
 [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary#1:groups#2:group T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Auxiliary#1:groups#2:group +T:LOGICAL:Auxiliary#1:groups#3:group -T:LOGICAL:Auxiliary#2:groups#3:group +T:LOGICAL:Auxiliary2#2:groups#3:group
 
+# VERBS STEP 3
+
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +S:LOGICAL:Enhancer#1:clauses#2:clause
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj#1:word#2:word => +S:LOGICAL:Extension#1:clauses#2:clause
+
+
 

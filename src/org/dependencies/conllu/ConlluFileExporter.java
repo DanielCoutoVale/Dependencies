@@ -78,8 +78,8 @@ public class ConlluFileExporter {
 		PrintWriter pw = new PrintWriter(bw);
 		DepSystem wordClasses = description.getSystem("WORD-CLASS");
 		for (DepWording wording : text.getWordings()) {
-			pw.println(format("# wording-id = %s-%s-%d", descriptionName, analysisName, wording.getId()));
-			pw.println(format("# wording-form = %s", wording.getForm()));
+			pw.println(format("# sent_id = %s-%s-s%d", descriptionName, analysisName, wording.getId()));
+			pw.println(format("# text = %s", wording.getForm()));
 			for (DepWord word : wording) {
 				pw.print(wording.orderOf(word));
 				pw.print("\t");

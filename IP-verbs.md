@@ -185,10 +185,16 @@ In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functi
 
 ### Step 3
 
-Up to now, we have described only verbal groups that could potentially be the verbal group of a free declarative clause, a clause that can be sent as a complete message on its own (injunctive mode). There is another class of verbal groups that can only be used in bound clauses, clauses that do not count as a complete message. These are the bound verbal groups (junctive modes).
+Up to now, we have described only verbal groups that could potentially be the verbal group of a free declarative clause, a clause that can be sent as a complete message on its own (injunctive mode). There is another class of verbal groups that can only be used in bound clauses, clauses that do not count as a complete message. These are the bound verbal groups known as (sub/con)-junctive modes.
+
+FORM        |huiusmodi   |autem       |est         |hoc         |quod        |dicimus     |deum        |esse 
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 
 
+FORM        |et          |sic         |nihil       |inconveniens|accidit     |ponentibus  |deum        |non         |esse: 
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 
+The examples read *so this is the way we say god is* and *and so there is no inconvenient, which makes god be*.
 
 
 
