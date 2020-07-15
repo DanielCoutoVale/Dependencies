@@ -203,7 +203,7 @@ FORM        |uni         |simplici    |rei
 WORD-CLASS  |num         |adj         |noun
 STRUCTURE   |Nummod      |Amod        |Head
 
-FORM        |per         |formas      |diverssas
+FORM        |per         |formas      |diversas
 :----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |adp         |noun        |adj         
 STRUCTURE   |            |Head        |Amod
@@ -233,7 +233,7 @@ WORD-CLASS  |number      |number      |noun
 NUMBER-KIND |cardinal    |multiplicative|
 STRUCTURE   |Quantifier  |Multiplier  |Head
 
-FORM        |per         |formas      |diverssas
+FORM        |per         |formas      |diversas
 :----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |adposition  |noun        |adjective   
 NUMBER-KIND |            |            |      

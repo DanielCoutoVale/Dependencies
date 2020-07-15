@@ -337,8 +337,15 @@
 
 # VERBS STEP 3
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +S:LOGICAL:Enhancer#1:clauses#2:clause
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj#1:word#2:word => +S:LOGICAL:Extension#1:clauses#2:clause
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +T:LOGICAL:Enhancer#1:clauses#2:clause
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Enhancer#1:clauses#2:clause
 
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:clauses#2:clause
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Conj#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Extender#1:clauses#2:clause
 
+[S:WORD-CLASS:cconj] [T:WORD-CLASS:verb] S:MIXED:Cc#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:cconj] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
+
+[S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] [] S:MIXED:Mark#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
 

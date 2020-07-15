@@ -185,4 +185,11 @@ public class DepWord {
 		return this.form + " #" + this.lemma + " " + this.featureMap.values();
 	}
 
+	/**
+	 * Clears the dependencies.
+	 */
+	public void clearDependencies() {
+		this.dependencyMap.clear();
+	}
+
 }

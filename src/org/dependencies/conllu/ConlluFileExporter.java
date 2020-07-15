@@ -10,7 +10,9 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.model.DepAnalysis;
@@ -19,9 +21,11 @@ import org.dependencies.model.DepCorpus;
 import org.dependencies.model.DepDependency;
 import org.dependencies.model.DepDescription;
 import org.dependencies.model.DepFeature;
+import org.dependencies.model.DepFunction;
 import org.dependencies.model.DepLanguage;
 import org.dependencies.model.DepSystem;
 import org.dependencies.model.DepWord;
+import org.dependencies.model.DepNode;
 import org.dependencies.model.DepWording;
 
 /**
@@ -80,6 +84,41 @@ public class ConlluFileExporter {
 		for (DepWording wording : text.getWordings()) {
 			pw.println(format("# sent_id = %s-%s-s%d", descriptionName, analysisName, wording.getId()));
 			pw.println(format("# text = %s", wording.getForm()));
+			Map<Integer, DepNode> nodeMap = new HashMap<>();
+			nodeMap.put(0, new DepNode(null));
+			for (DepWord word : wording) {
+				DepNode node = new DepNode(word);
+				nodeMap.put(wording.orderOf(word), node);
+			}
+			for (DepWord word : wording) {
+				DepNode node = nodeMap.get(wording.orderOf(word));
+				List<DepDependency> dependencies = word.getDependencies();
+				if (dependencies.size() == 0) {
+					DepNode head = nodeMap.get(0);
+					if (head.getTails().size() == 0) {
+						head.addTail(node);
+						node.setHead(head);
+					} else {
+						DepDependency dependency = new DepDependency();
+						DepFunction function = new DepFunction();
+						function.setName("Follower");
+						dependency.setFunction(function);
+						dependency.setHeadOrder(wording.orderOf(word) - 1);
+						word.addDependency(dependency);
+						head = nodeMap.get(dependency.getHeadOrder());
+						head.addTail(node);
+						node.setHead(head);
+					}
+				} else {
+					DepDependency dependency = dependencies.get(0);
+					DepNode head = nodeMap.get(dependency.getHeadOrder());
+					head.addTail(node);
+					node.setHead(head);
+				}
+			}
+			if (nodeMap.get(0).getTails().size() == 0) {
+				nodeMap.get(1).asWord().clearDependencies();
+			}
 			for (DepWord word : wording) {
 				pw.print(wording.orderOf(word));
 				pw.print("\t");
