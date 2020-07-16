@@ -192,9 +192,9 @@ A conjunctive verbal group differs from an non-conjunctive verbal group in form.
 
 --          |non-conjunctive   |conjunctive
 :----------:|:----------------:|:---------------:
-past        |similata sunt     |similata sint
+past        |similata sunt     |similarentur
 present     |similantur        |similentur
-future      |similabuntur      |similarentur
+future      |similabuntur      |similentur
 
 --          |non-conjunctive   |conjunctive
 :----------:|:----------------:|:---------------:
