@@ -346,7 +346,7 @@ Now we shall turn our attention to references to participants of a process and r
 4. Goal
     - *motum [[ dei ]]*
     - *hoc motum [[ dei ]]*
-5. Moveri
+5. Process as thing
     - *movere [[ dei immobilis ]]*
     - *hoc movere [[ dei immobilis ]]*
 
