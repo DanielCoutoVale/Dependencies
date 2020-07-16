@@ -285,7 +285,7 @@ In the ITTB corpus, there are three styles of non-finite bound clause:
    - *[ temporalibus ] administrandis* (*by governing the temporary things*)
    - *agendo* (*by acting*)
 
-These verbs are non-finite and they agree with the object if the verb is transitive. The subject in non-finite clauses is always missing and it can be recovered from the other clause to which these are bound. Here we must be aware that Latin had a larger variety of non-finite clauses including *ab [ urbe ] condita* (*since founding the city*), *usque ad [ haec ] facienda* (*until doing that*) *inter [ haec ] facienda* (*while doing that*), *post [ haec ] facta* (*after doing that*), *ante [ haec ] facienda* (*before doing that*), and so on. A parser created with analyses of ITTB corpus will not parse these other non-finite clauses correctly.
+These verbs are non-finite and they agree with the object if the verb is transitive. The subject in non-finite clauses is always missing and it can be recovered from the other clause to which these are bound. Here we must be aware that Latin had a larger variety of non-finite clauses including *ab [ urbe ] condita* (*since founding the city*), *usque ad [ haec ] facienda* (*until doing that*), *inter [ haec ] facienda* (*while doing that*), *post [ haec ] facta* (*after doing that*), *ante [ haec ] facienda* (*before doing that*), and so on. A parser created with analyses of ITTB corpus will not parse these other non-finite clauses correctly.
 
 That said, the analysis of non-finite clauses differ significantly from UD to IP descriptions. Here are two examples for each.
 
