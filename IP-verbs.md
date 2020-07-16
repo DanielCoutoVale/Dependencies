@@ -12,7 +12,8 @@ There are 60 anchors for verbs ('aux' or 'verb') in the ITTB corpus of which 2/3
 2. Finite versus non-finite verbs
 3. Free versus bound clauses
 4. Finite versus non-finite bound clauses
-5. Clause contacts
+5. Embedded clauses
+5. Predicated themes
 
 ### Step 1
 
@@ -208,11 +209,14 @@ FORM        |ut          |sic         |omnes       |possent     |divinae     |co
 WORD-CLASS  |sconj       |adv         |            |verb        |            |            |            |aux            
 VERBFORM    |            |            |            |fin         |            |            |            |inf
 MOOD        |            |            |            |sub         |            |            |            |
+STRUCTURE-1 |            |            |            |            |            |            |Head        |Cop
+STRUCTURE-2 |Mark        |Advmod      |            |Head        |            |            |Xcomp       |
 
 FORM        |ut          |ei          |secundum    |formas      |multiplices |aliqua      |similari    |possint
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |sconj       |            |            |            |            |            |verb        |verb
 MOOD        |            |            |            |            |            |            |inf         |subj
+STRUCTURE |Mark        |            |            |            |            |            |Xcomp       |Head
 
 FORM        |ut          |sic         |omnes       |possent     |divinae     |cognitionis |participes  |esse
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
@@ -221,7 +225,7 @@ VERB-CLASS  |            |            |            |auxiliary   |            |  
 FINITENESS  |            |            |            |finite      |            |            |            |non-finite
 FINITE-MODE |            |            |            |conjunctive |            |            |            |
 GROUP       |            |            |            |Auxiliary   |            |            |            |Head
-CLAUSE      |Marker      |Marker      |Carrier     |            |            |            |Attribute   |Head
+CLAUSE      |Marker      |Marker      |            |            |            |            |            |Head
 
 FORM        |ut          |ei          |secundum    |formas      |multiplices |aliqua      |similari    |possint            
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
@@ -230,11 +234,13 @@ VERB-CLASS  |            |            |            |            |            |  
 FINITENESS  |            |            |            |            |            |            |non-finite  |finite
 FINITE-MODE |            |            |            |            |            |            |            |conjunctive
 GROUP       |            |            |            |            |            |            |Head        |Auxiliary
-CLAUSE      |Marker      |            |            |            |            |Goal        |Head        |
+CLAUSE      |Marker      |            |            |            |            |            |Head        |
 
-Examples read *so that in this manner every one could be a participant in the knowledge of God* and *so that something can be learned about Him from his multiple forms*.
+Examples read *so that in this manner every one could be a participant in the knowledge of God* and *so that something can be learned about Him from his multiple forms*. The two text analyses are similar at this level regarding which verbs are considered conjunctive/subjunctive. However, in the IP analysis differs from the UD analysis regarding the other verbs. In the IP analysis all verbs that are not conjunctive are non-conjunctive and a **(non-conjunctive verb)** is enough evidence for the corresponding **(lexical verb)** to be a candidate root for the wording. In the UD analysis, this is not the case. Besides the subjunctive mood ("Sub"), there are two other moods: namely the indicative ("Ind") and the imperative ("Imp"). This means that the fact that **(indicative verbs)** are candidate roots will not be transferred to **(imperative verbs)**, which are rare in this corpus. In the IP description, the information whether a verb is indicative or imperative is kept not in the system of FINITE-MODE, but in a separate one: namely, that of NON-CONJUNCTIVE-MODE.
 
 ### Step 4
+
+### Step 5
 
 FORM        |huiusmodi   |autem       |est         |hoc         |quod        |dicimus     |deum        |esse 
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
