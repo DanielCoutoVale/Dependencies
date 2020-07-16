@@ -273,8 +273,57 @@ Finite verbal groups are those verbal groups that can occur in clauses that have
 
 Here we find another context-based classification. If a finite verbal group is a verbal group that makes a clause be finite and not all finite clauses are free clauses as we pointed out above, we need to account for the fact that re-branch verbs such as *esse*, *similari*, and *similare* can be either a finite verb as in *esse* or a non-finite verb as in *potest esse* or *posse esse*. Since this difference can be detected by a tagger based on the context of wording, we can let the tagger distinguish whether a particular occurrence of *esse* is finite or not.
 
+In the ITTB corpus, there are three styles of non-finite bound clause:
 
+1. *ad* + andum (*circa*)
+    - *ad [ eorum errores ] destruendos* (*for destroying their errors*)
+    - *ad sciendum* (*for knowing*)
+2. *in* + endo (*ab*)
+    - *in [ rebus ] cognoscendis* (*in getting to know things*)
+    - *in judicando* (*in judging*)
+3. endo
+   - *[ temporalibus ] administrandis* (*by governing the temporary things*)
+   - *agendo* (*by acting*)
 
+These verbs are non-finite and they agree with the object if the verb is transitive. The subject in non-finite clauses is always missing and it can be recovered from the other clause to which these are bound. Here we must be aware that Latin had a larger variety of non-finite clauses including *ab [ urbe ] condita* (*since founding the city*), *usque ad [ haec ] facta* (*until doing that*) *inter [ haec ] facta* (*while doing that*), *post [ haec ] facta* (*after doing that*), *ante [ haec ] facienda* (*before doing that*), and so on. A parser created with analyses of ITTB corpus will not parse these other non-finite clauses correctly.
+
+That said, the analysis of non-finite clauses differ significantly from UD to IP descriptions. Here are two examples for each.
+
+FORM        |ad          |eorum       |errores     |destruendos
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |adp         |pron        |noun        |verb
+VERB-FORM   |            |            |            |gdv
+CASE        |            |gen         |acc         |gen
+STRUCTURE   |Mark        |            |Subj-Pass   |Head
+
+FORM        |ad          |sciendum
+:----------:|:----------:|:----------:
+WORD-CLASS  |adp         |verb
+VERB-FORM   |            |ger
+CASE        |            |acc
+STRUCTURE   |Mark        |Head
+
+FORM        |ad          |eorum       |errores     |destruendos
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |adposition  |noun        |noun        |verb
+VERB-CLASS  |            |            |            |lexical
+FINITENESS  |            |            |            |non-finite
+SEAMEDNESS  |            |            |            |seamed
+VERB-CORE   |            |            |            |ō-nd-core
+VERB-FOLIAGE|            |            |            |am-foliage
+CASE        |            |genitive    |accusative  |
+
+FORM        |ad          |sciendum
+:----------:|:----------:|:----------:
+WORD-CLASS  |adposition  |verb
+VERB-CLASS  |            |lexical
+FINITENESS  |            |non-finite
+SEAMEDNESS  |            |unseamed
+VERB-CORE   |            |ō-ndum-core
+VERB-FOLIAGE|            |
+CASE        |            |
+
+In the UD description, *destruendos* and *sciendum* are two different verb forms, namely 'gerundive' and 'gerund'. No transfer is enabled from one to the other. However, transfer is enabled between gerundive verbs or gerund verbs in different cases. In the IP description, *destruendos* and *sciendum* are both non-finite, thus they have no subject. Both of them share the remainder of their attachments with their respective finite counterparts. If they agree with the object, they are 'seamed'. If there is no object for them to agree with, they are 'unseamed'. This opposition between seamed and unseamed verbs shall do the opposition between 'gerundive' and 'gerund' verbs. However, it is capable of transferring some rules to non-finite clauses with *destructos* and *scitum* in case the corpus has some of them. Finally, the unseamed verb consists a single core composed of an ō-aspect stem, an nd-branch and an um-leaf whereas the seamed verb is composed of a composed of a core and a seam: the core is composed of an ō-aspect stem, an nd-branch while the seam is one of six leaves from the am-foliage. With this further formal specification, the verb does not need to agree with the object in case. This forces the parser to learn the nominal case as dependent of the verb: nominative subject for *destruit*, accusative subject for *destruere*, but no subject for *destruendos* and *destruendis* (non-finite); and accusative object for *destruit*, *destruere*, and *destruendos*, but ablative object for *destruendis*. These rules will apply across all verbs whether or not the noun is preceded by an adposition, which is likely to improve rule transfer.
 ### Step 5
 
 FORM        |huiusmodi   |autem       |est         |hoc         |quod        |dicimus     |deum        |esse 
