@@ -90,12 +90,14 @@ public class ConlluFileExporter {
 				DepNode node = new DepNode(word);
 				nodeMap.put(wording.orderOf(word), node);
 			}
+			Integer followedId = 1;
 			for (DepWord word : wording) {
 				DepNode node = nodeMap.get(wording.orderOf(word));
 				List<DepDependency> dependencies = word.getDependencies();
 				if (dependencies.size() == 0) {
 					DepNode head = nodeMap.get(0);
 					if (head.getTails().size() == 0) {
+						followedId = wording.orderOf(word);
 						head.addTail(node);
 						node.setHead(head);
 					} else {
@@ -103,7 +105,7 @@ public class ConlluFileExporter {
 						DepFunction function = new DepFunction();
 						function.setName("Follower");
 						dependency.setFunction(function);
-						dependency.setHeadOrder(wording.orderOf(word) - 1);
+						dependency.setHeadOrder(followedId);
 						word.addDependency(dependency);
 						head = nodeMap.get(dependency.getHeadOrder());
 						head.addTail(node);

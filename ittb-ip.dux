@@ -120,10 +120,13 @@
 [T:WORD-CLASS:adjective S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective S:LEMMA:divinus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun +T:CASE:genitive
 
+[T:WORD-CLASS:adjective S:LEMMA:sapiens] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+
+[T:WORD-CLASS:verb S:VERBFORM:inf] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => -T:WORD-CLASS:verb +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:verb S:VERBFORM:inf] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => -T:WORD-CLASS:verb +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun]  S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group
-[T:WORD-CLASS:verb] [S:WORD-CLASS:adj T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:verb +T:WORD-CLASS:noun
 [T:WORD-CLASS:adjective] [S:WORD-CLASS:adj T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
 
 # ADJECTIVES #STEP 2
@@ -242,6 +245,8 @@
 [T:LEMMA:intellectivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Epithet#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
 
 # Deictic
+[T:WORD-CLASS:adv] [] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
+[T:NOUN-CLASS:pronoun] [] S:MIXED:Det#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
 [T:LEMMA:certus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Deictic#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
 [T:LEMMA:contrarius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Deictic#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
 [T:LEMMA:inferus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Deictic#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
@@ -287,6 +292,7 @@
 
 # (Cop) (Head) (Nsubj) => (Head) (Attribute) (Carrier)
 [] [] [] S:MIXED:Cop#1:word#2:word T:EXPERIENTIAL:Attribute#2:groups#1:clause S:MIXED:Nsubj#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#1:clause
+[] [] [T:WORD-CLASS:noun] S:MIXED:Cop#1:word#2:word T:EXPERIENTIAL:Attribute#2:groups#1:clause S:MIXED:Csubj#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#1:clause
 
 # (XComp) (Head)
 [] [] S:MIXED:XComp#1:word#2:word => +T:EXPERIENTIAL:Attribute#1:groups#2:clause
@@ -294,22 +300,21 @@
 
 # (XComp) (Head) (Nsubj-Pass) => (Attribute) (Head) (Carrier)
 [] [] [] S:MIXED:XComp#1:word#2:word T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Nsubj-Pass#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#2:clause
+[] [] [T:WORD-CLASS:noun] S:MIXED:XComp#1:word#2:word T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Csubj-Pass#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#2:clause
 
 # (XComp) (Head) (Obj) => (Attribute) (Head) (Carrier)
 [] [] [] S:MIXED:XComp#1:word#2:word T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Obj#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#2:clause
+[] [] [T:WORD-CLASS:noun] S:MIXED:XComp#1:word#2:word T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Cobj#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#2:clause
 
 # (XComp) (Head) (Obj) => (Attribute) (Head) (Attributor)
 [] [] [] S:MIXED:XComp#1:word#2:word T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Subj#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#2:clause
+[] [] [T:WORD-CLASS:noun] S:MIXED:XComp#1:word#2:word T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Csubj#3:word#2:word => +T:EXPERIENTIAL:Carrier#3:groups#2:clause
 
 # ADJECTIVES STEP 5
 
 # (Conj) (Head) => (Extender) (Head)
 [T:WORD-CLASS:adjective] [] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:groups#2:group-complex
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-
-
-
-
 
 # VERBS STEP 1
 
@@ -330,10 +335,52 @@
 [S:VERBFORM:gdv] [S:LEMMA:sum] S:MIXED:Aux-Pass#2:word#1:word => +T:LOGICAL:Auxiliary#2:groups#1:group
 [S:VERBFORM:ger] [S:LEMMA:sum] S:MIXED:Aux-Pass#2:word#1:word => +T:LOGICAL:Auxiliary#2:groups#1:group
 
+[] [] [S:LEMMA:cogito] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:confiteor] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:dico] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:intellego] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:ostendo] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:pateo] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:pono] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:possum] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:suppono] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:video] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Xcomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+
+[] [] [S:LEMMA:cogito] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:confiteor] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:dico] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:intellego] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:ostendo] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:pateo] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:pono] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:possum] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:suppono] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+[] [] [S:LEMMA:video] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
+
 # VERBS STEP 2
 
 [] [] T:LOGICAL:Auxiliary#1:groups#2:group => -T:VERB-CLASS:lexical-verb +T:VERB-CLASS:auxiliary-verb
 [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary#1:groups#2:group T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Auxiliary#1:groups#2:group +T:LOGICAL:Auxiliary#1:groups#3:group -T:LOGICAL:Auxiliary#2:groups#3:group +T:LOGICAL:Auxiliary2#2:groups#3:group
+
+[] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Goal#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Goal#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Attribute#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Attribute#1:groups#2:clause +T:EXPERIENTIAL:Attribute#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Attribute#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Attribute#1:groups#2:clause +T:EXPERIENTIAL:Attribute#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Attributor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Attributor#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Attributor#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Attributor#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Carrier#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Carrier#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Carrier#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Carrier#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#3:clause
+
+[] [S:LEMMA:sum] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#2:clause
+[] [S:LEMMA:sum] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#2:clause
+[] [S:VOICE:pass] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#2:clause
+[] [S:VOICE:pass] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#2:clause
+[T:CASE:accusative] [S:VOICE:act] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#2:clause
+[T:CASE:accusative] [S:VOICE:act] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#2:clause
+[] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#2:clause
+[] [] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#2:clause
 
 # VERBS STEP 3
 

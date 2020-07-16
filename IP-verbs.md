@@ -185,7 +185,56 @@ In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functi
 
 ### Step 3
 
-Up to now, we have described only verbal groups that could potentially be the verbal group of a free declarative clause, a clause that can be sent as a complete message on its own (injunctive mode). There is another class of verbal groups that can only be used in bound clauses, clauses that do not count as a complete message. These are the bound verbal groups known as (sub/con)-junctive modes.
+Up to now, we have described only verbal groups that could potentially be found in a free declarative clause, a clause that can be sent as a complete message on its own (non-conjunctive mode). There is another mode of representing a process, namely representing it as something that takes place together with another process. When a clause represents a process in such a (conjunctive) mode, it cannot be sent on its own as a message. It must accompany another injunctive clause. One way whereby a clause can be junctive is by having a marker such as *ut* (*so that*) and *sic* (*in this manner*). Another way whereby it can be junctive is by having a junctive verbal group.
+
+A junctive verbal group differs from an injunctive verbal group in form. In Latin, this difference concentrates in the finite verb. Here are some examples of verbal groups with and without auxiliaries. Notice that only the finite verbs vary between injunctive and junctive verbal groups in the examples.
+
+--          |non-conjunctive   |conjunctive
+:----------:|:----------------:|:---------------:
+past        |similata sunt     |similata sint
+present     |similantur        |similentur
+future      |similabuntur      |similarentur
+
+--          |non-conjunctive   |conjunctive
+:----------:|:----------------:|:---------------:
+past        |poterant similari |possent similari
+present     |possunt similari  |possint similari
+future      |poterunt similari |possint similari
+
+Let now turn our attention to the differences between UD and IP analyses regarding this linguistic phenomenon. As a note, the adjunct *de facili* (*easily*) was removed from the original clause in the first example to make it shorter.
+
+FORM        |ut          |sic         |omnes       |possent     |divinae     |cognitionis |participes  |esse
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |adv         |            |verb        |            |            |            |aux            
+VERBFORM    |            |            |            |fin         |            |            |            |inf
+MOOD        |            |            |            |sub         |            |            |            |
+
+FORM        |ut          |ei          |secundum    |formas      |multiplices |aliqua      |similari    |possint
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |            |            |            |            |            |verb        |verb
+MOOD        |            |            |            |            |            |            |inf         |subj
+
+FORM        |ut          |sic         |omnes       |possent     |divinae     |cognitionis |participes  |esse
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |conjunction |adverb      |            |verb        |            |            |            |verb
+VERB-CLASS  |            |            |            |auxiliary   |            |            |            |lexical
+FINITENESS  |            |            |            |finite      |            |            |            |non-finite
+FINITE-MODE |            |            |            |conjunctive |            |            |            |
+GROUP       |            |            |            |Auxiliary   |            |            |            |Head
+CLAUSE      |Marker      |Marker      |Carrier     |            |            |            |Attribute   |Head
+
+FORM        |ut          |ei          |secundum    |formas      |multiplices |aliqua      |similari    |possint            
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |conjunction |            |            |            |            |            |verb        |verb
+VERB-CLASS  |            |            |            |            |            |            |lexical     |auxiliary
+FINITENESS  |            |            |            |            |            |            |non-finite  |finite
+FINITE-MODE |            |            |            |            |            |            |            |conjunctive
+GROUP       |            |            |            |            |            |            |Head        |Auxiliary
+CLAUSE      |Marker      |            |            |            |            |Goal        |Head        |
+
+Examples read *so that in this manner every one could be a participant in the knowledge of God* and *so that something can be learned about Him from his multiple forms*.
+
+### Step 4
 
 FORM        |huiusmodi   |autem       |est         |hoc         |quod        |dicimus     |deum        |esse 
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
