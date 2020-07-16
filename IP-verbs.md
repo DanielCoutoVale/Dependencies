@@ -342,7 +342,7 @@ Now we shall turn our attention to references to participants of a process and r
     - *[[ motum a deo ]]*
 3. Actor
     - *motor [[ immobilis ]]*
-    - *hoc motor [[ immobilis ]]
+    - *hoc motor [[ immobilis ]]*
 4. Goal
     - *motum [[ dei ]]*
     - *hoc motum [[ dei ]]*
