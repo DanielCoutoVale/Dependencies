@@ -186,7 +186,7 @@ In the IP analysis, the verb *dico* is always a **(lexical verb)** and it functi
 
 ### Step 3
 
-Up to now, we have described only verbal groups that could potentially be found in a free declarative clause, a clause that can be sent as a complete message on its own (non-conjunctive mode). There is another mode of representing a process, namely representing it as something that takes place together with another process. When a clause represents a process in such a (conjunctive) mode, it cannot be sent on its own as a message. It must accompany another injunctive clause. One way whereby a clause can be junctive is by having a marker such as *ut* (*so that*) and *sic* (*in this manner*). Another way whereby it can be junctive is by having a junctive verbal group.
+Up to now, we have described only verbal groups that could potentially be found in a free declarative clause, a clause that can be sent as a complete message on its own (non-conjunctive mode). There is another mode of representing a process, namely representing it as something that takes place together with another process. When a clause represents a process in such a (conjunctive) mode, it cannot be sent on its own as a message. It must accompany another injunctive clause. One way whereby a clause can be conjunctive is by having a marker such as *ut* (*so that*) and *sic* (*in this manner*). Another way whereby it can be conjunctive is by having a conjunctive verbal group.
 
 A junctive verbal group differs from an injunctive verbal group in form. In Latin, this difference concentrates in the finite verb. Here are some examples of verbal groups with and without auxiliaries. Notice that only the finite verbs vary between injunctive and junctive verbal groups in the examples.
 
