@@ -178,7 +178,7 @@ FORM        |quod        |perfectum   |posse       |dici        |videtur
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |noun        |adjective   |verb        |verb        |verb
 VERB-CLASS  |            |            |auxiliary   |lexical     |auxiliary
-FINITENESS  |            |            |non-finite  |non-finite  |finite
+FINALITY    |            |            |non-finite  |non-finite   |finite
 GROUP       |            |            |Auxiliary2  |Head        |Auxiliary
 CLAUSE      |Carrier     |Attribute   |            |Head
 
@@ -216,7 +216,7 @@ FORM        |ut          |ei          |secundum    |formas      |multiplices |al
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |sconj       |            |            |            |            |            |verb        |verb
 MOOD        |            |            |            |            |            |            |inf         |subj
-STRUCTURE |Mark        |            |            |            |            |            |Xcomp       |Head
+STRUCTURE   |Mark        |            |            |            |            |            |Xcomp       |Head
 
 FORM        |ut          |sic         |omnes       |possent     |divinae     |cognitionis |participes  |esse
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
@@ -236,9 +236,44 @@ FINITE-MODE |            |            |            |            |            |  
 GROUP       |            |            |            |            |            |            |Head        |Auxiliary
 CLAUSE      |Marker      |            |            |            |            |            |Head        |
 
-Examples read *so that in this manner every one could be a participant in the knowledge of God* and *so that something can be learned about Him from his multiple forms*. The two text analyses are similar at this level regarding which verbs are considered conjunctive/subjunctive. However, in the IP analysis differs from the UD analysis regarding the other verbs. In the IP analysis all verbs that are not conjunctive are non-conjunctive and a **(non-conjunctive verb)** is enough evidence for the corresponding **(lexical verb)** to be a candidate root for the wording. In the UD analysis, this is not the case. Besides the subjunctive mood ("Sub"), there are two other moods: namely the indicative ("Ind") and the imperative ("Imp"). This means that the fact that **(indicative verbs)** are candidate roots will not be transferred to **(imperative verbs)**, which are rare in this corpus. In the IP description, the information whether a verb is indicative or imperative is kept not in the system of FINITE-MODE, but in a separate one: namely, that of NON-CONJUNCTIVE-MODE.
+Examples read *so that in this manner every one could be a participant in the knowledge of God* and *so that something can be learned about Him from his multiple forms*. The text analyses of these two examples are similar regarding the verbs that are considered conjunctive/subjunctive. However, the two analyses do not always coincide. Let us consider the following example:
+
+FORM        |dum         |unum        |eorum       |movetur
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |sconj       |            |            |verb
+MOOD        |            |            |            |ind
+STRUCTURE   |Mark        |            |            |Head
+
+FORM        |dum         |unum        |eorum       |movetur            
+:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |conjunction |            |            |verb
+VERB-CLASS  |            |            |            |lexical
+FINITENESS  |            |            |            |finite
+FINITE-MODE |            |            |            |conjunctive
+GROUP       |            |            |            |Head
+CLAUSE      |Marker      |            |            |Head
+
+The example reads *while one of them moves/moved*. It differs from *unum eorum movetur* (*one of them is moving*) because it represents a process happening at any time, while the latter represents a process happening now. In the UD analysis, the verb *movetur* is indicative and not subjunctive. All 1st-paradigm unbranched ō-aspect verbs (*moveor*, *moveris*, *movetur*, *movemur*, *movemini*, *moventur*, *moveo*, *moves*, *movet*, *movemus*, *movetis*, *movent*) are always indicative, thus not subjunctive in an UD analysis. In contrast, in the IP description, the conjunctive mode is a mode of representing a process, a way of representing it, different from other modes. In that sense, we would have the following three modes:
+
+--          |non-conjunctive  |ut-conjunctive   |dum-conjunctive     
+:----------:|:---------------:|:---------------:|:---------------:
+past        |motum est        |moveretur        |movetur
+present     |movetur          |moveatur         |movetur
+future      |movebitur        |moveatur         |movetur
+
+Notice that the verb *movetur* (*is moving* or *moves/moved*) can be either an option in a system of three options including 'past', 'present', and 'future' or the only option of the system. These modes of representing a process are what counts in an IP analysis. As a result, the feature 'conjunctive' can only be determined given the context of wording and a tagger must take that context into account. In turn, once a verb is declared 'conjunctive' by a tagger, it **cannot* be the root of a message. If it is declared 'non-conjunctive', it will compete with the other non-conjunctive verbs for that title.
+
+The IP analysis also differs from the UD analysis regarding the other verbs declared 'non-conjunctive'. In the IP analysis all verbs that are not conjunctive are non-conjunctive and a **(non-conjunctive verb)** is enough evidence for the corresponding **(lexical verb)** to be a candidate root for the wording. In the UD analysis, this is not the case. Besides the subjunctive mood ("Sub"), there are two other moods: namely the indicative ("Ind") and the imperative ("Imp"). This means that the fact that **(indicative verbs)** are often roots will not be transferred to **(imperative verbs)**, which are rare in this corpus. In the IP description, the information whether a verb is indicative or imperative is kept not in the system of FINITE-MODE, but in a separate one: namely, that of NON-CONJUNCTIVE-MODE.
 
 ### Step 4
+
+Now we shall move on to the differences between finite and non-finite clauses and how these differences affect parsing results. As we saw in the previous step, only free clauses (non-conjunctive) can be sent on their own and only finite clauses can be free. As for conjunctive clauses, they include both those that have a conjunctive finite verb and those that have a finite verb and a conjunctive marker. In this section, we shall see another type of bound clauses, namely those whose subject is represented by the other clause that they are bound to.
+
+Finite verbal groups are those verbal groups that can occur in clauses that have an explicit subject. In this sense, both the verbal group *est* in *suum intelligere est simplex* (*his intelligence is simple*) and the verbal group *esse* in the wording *sci suum intelligere esse simplicem* (*know that his intelligence is simple*) are finite verbal groups. The verbal group *esse* is conjunctive, thereby being necessarily in a bound clause; whereas the verbal group *est* is non-conjunctive, thereby being in a free clause unless other markers are inserted.
+
+Here we find a problem for word tagging. If a finite verbal group is a verbal group that makes a clause be finite and not all finite clauses are free clauses as we pointed out above, we need to account for the fact that re-branch verbs such as *esse*, *similari*, and *similare* can be either a finite verb as in *esse* or a non-finite verb as in *potest esse* or *posse esse*. Since this difference can be detected by a tagger based on the context of wording, we can let the tagger distinguish whether a particular occurrence of *esse* is finite or not. However, this approach might be insufficient. In that case, we shall need to make our word features more stable towards their forms and count on more examples to let the parser determine clause finiteness.
+
+
 
 ### Step 5
 

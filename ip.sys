@@ -54,6 +54,21 @@ system VERB-CLASS
 - lexical-verb
 - auxiliary-verb
 
+system VERB-FINITENESS
+> verb
+- finite
+- non-finite
+
+system FINITE-VERB-MODE
+> finite verb
+- conjunctive
+- non-conjunctive
+
+system NON-CONJUNCTIVE-VERB-MODE
+> finite verb
+- indicative
+- imperative
+
 system CONJUNCTION-CLASS
 > conjunction
 - linker
