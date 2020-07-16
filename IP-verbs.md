@@ -312,6 +312,7 @@ SEAMEDNESS  |            |            |            |seamed
 VERB-CORE   |            |            |            |ō-nd-core
 VERB-FOLIAGE|            |            |            |am-foliage
 CASE        |            |genitive    |accusative  |
+CLAUSE      |Marker      |            |Goal        |Head
 
 FORM        |ad          |sciendum
 :----------:|:----------:|:----------:
@@ -322,6 +323,7 @@ SEAMEDNESS  |            |unseamed
 VERB-CORE   |            |ō-ndum-core
 VERB-FOLIAGE|            |
 CASE        |            |
+CLAUSE      |Marker      |Head
 
 In the UD description, *destruendos* and *sciendum* are two different verb forms, namely 'gerundive' and 'gerund'. No transfer is enabled from one to the other. However, transfer is enabled between gerundive verbs or gerund verbs in different cases. In the IP description, *destruendos* and *sciendum* are both non-finite, thus they have no subject. Both of them share the remainder of their attachments with their respective finite counterparts. If they agree with the object, they are 'seamed'. If there is no object for them to agree with, they are 'unseamed'. This opposition between seamed and unseamed verbs shall do the opposition between 'gerundive' and 'gerund' verbs. However, it is capable of transferring some rules to non-finite clauses with *destructos* and *scitum* in case the corpus has some of them. Finally, the unseamed verb consists a single core composed of an ō-aspect stem, an nd-branch and an um-leaf whereas the seamed verb is composed of a composed of a core and a seam: the core is composed of an ō-aspect stem, an nd-branch while the seam is one of six leaves from the am-foliage. With this further formal specification, the verb does not need to agree with the object in case. This forces the parser to learn the nominal case as dependent of the verb: nominative subject for *destruit*, accusative subject for *destruere*, but no subject for *destruendos* and *destruendis* (non-finite); and accusative object for *destruit*, *destruere*, and *destruendos*, but ablative object for *destruendis*. These rules will apply across all verbs whether or not the noun is preceded by an adposition, which is likely to improve rule transfer.
 ### Step 5
