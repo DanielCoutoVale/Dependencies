@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.model.DepAnalysis;
@@ -38,11 +40,24 @@ public class DuxFileApplier {
 		DuxDocument document = builder.parse(file);
 		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
 		for (DuxCommand command : document) {
-			List<List<DepWord>> wordMatrix = base.searchForWords(factory, command.getMatches());
+			if (command instanceof DuxStop) {
+				System.out.println("Press ENTER to continue. Press Ctrl+D to stop.");
+				Scanner scanner = new Scanner(System.in);
+                try {
+                	scanner.nextLine();
+                	scanner.close();
+    				continue;
+                } catch(IllegalStateException | NoSuchElementException e) {
+                	scanner.close();
+                    break;
+                }
+			}
+			DuxTranslate transate = (DuxTranslate) command;
+			List<List<DepWord>> wordMatrix = base.searchForWords(factory, transate.getMatches());
 			for (List<DepWord> words : wordMatrix) {
 				// FIXME Consider other words
 				DepWord word = words.get(0);
-				for (DuxChange change : command.getMagisTags()) {
+				for (DuxChange change : transate.getMagisTags()) {
 					if (change instanceof DuxFeature) {
 						DuxFeature tag = (DuxFeature) change;
 						DepDescription description = descriptionMap.get(tag.getPrefix());
@@ -100,7 +115,7 @@ public class DuxFileApplier {
 						base.addWordFunction(analysis.getId(), function.getId(), tail.getId(), tailRank.getId(), head.getId(), headRank.getId());
 					}
 				}
-				for (DuxChange change : command.getMinusTags()) {
+				for (DuxChange change : transate.getMinusTags()) {
 					if (change instanceof DuxFeature) {
 						DuxFeature tag = (DuxFeature) change;
 						DepDescription description = descriptionMap.get(tag.getPrefix());

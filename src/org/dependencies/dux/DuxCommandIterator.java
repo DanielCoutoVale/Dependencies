@@ -74,7 +74,11 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 	public final DuxCommand next() {
 		if (!this.hasNext())
 			return null;
-		DuxCommand command = new DuxCommand();
+		if (line.equals("STOP")) {
+			this.advance();
+			return new DuxStop();
+		}
+		DuxTranslate translate = new DuxTranslate();
 		String[] A = line.split("=>");
 		if (A.length != 2) {
 			System.err.println("Error: " + line);
@@ -110,13 +114,13 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 					continue;
 				word.addMatchTag(new DuxFeature(token));
 			}
-			command.addMatch(word);
+			translate.addMatch(word);
 			for (String token : C1.split(" ")) {
 				if (token.length() == 0)
 					continue;
 				if (!DuxFunction.matches(token))
 					continue;
-				command.addMatch(new DuxFunction(token));
+				translate.addMatch(new DuxFunction(token));
 			}
 		}
 		for (String token : A1.split(" ")) {
@@ -126,24 +130,24 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 			if (token.startsWith("+")) {
 				token = token.substring(1);
 				if (DuxFeature.matches(token)) {
-					command.addMagisTag(new DuxFeature(token));
+					translate.addMagisTag(new DuxFeature(token));
 				}
 				if (DuxFunction.matches(token)) {
-					command.addMagisTag(new DuxFunction(token));
+					translate.addMagisTag(new DuxFunction(token));
 				}
 			}
 			if (token.startsWith("-")) {
 				token = token.substring(1);
 				if (DuxFeature.matches(token)) {
-					command.addMinusTag(new DuxFeature(token));
+					translate.addMinusTag(new DuxFeature(token));
 				}
 				if (DuxFunction.matches(token)) {
-					command.addMinusTag(new DuxFunction(token));
+					translate.addMinusTag(new DuxFunction(token));
 				}
 			}
 		}
 		this.advance();
-		return command;
+		return translate;
 	}
 
 }

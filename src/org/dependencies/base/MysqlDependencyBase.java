@@ -1,5 +1,7 @@
 package org.dependencies.base;
 
+import static java.lang.String.format;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -72,7 +74,7 @@ public class MysqlDependencyBase {
 	 * @return the SQL
 	 */
 	private static final String makeWordFeatureJoinSql(Integer wOrder, Integer fOrder) {
-		return String.format(
+		return format(
 				"JOIN `word-feature` W%dWF%d ON W%dWF%d.`word-id` = W%d.`id` \n"
 						+ "JOIN `analysis` W%dA%d ON W%dA%d.`id` = W%dWF%d.`analysis-id` AND W%dA%d.`name` = ? \n"
 						+ "JOIN `feature` W%dF%d ON W%dF%d.`id` = W%dWF%d.`id` AND W%dF%d.`name` = ? \n"
@@ -94,7 +96,7 @@ public class MysqlDependencyBase {
 	 * @return the SQL
 	 */
 	private static String makeWordFunctionJoinSql(Integer order, Integer wordIndex, Integer headIndex) {
-		return String.format("JOIN `word-function` WF%d ON \n"
+		return format("JOIN `word-function` WF%d ON \n"
 				+ "\t WF%d.`word-id` = W%d.`id` \n"
 				+ "\t AND WF%d.`head-id` = W%d.`id` \n"
 				+ "JOIN `function` WF%dF ON WF%dF.`id` = WF%d.`id` AND WF%dF.`name` LIKE ? \n"
@@ -154,7 +156,7 @@ public class MysqlDependencyBase {
 		String user = getProperty(properties, "DependencyBase.user");
 		String password = getProperty(properties, "DependencyBase.password");
 		try {
-			this.conn = DriverManager.getConnection(String.format(url, name), user, password);
+			this.conn = DriverManager.getConnection(format(url, name), user, password);
 		} catch (SQLException e) {
 			System.err.println("Cannot open connection with database '" + name + "'.");
 			System.exit(-1);
@@ -842,7 +844,7 @@ public class MysqlDependencyBase {
 						+ "W%d.`backspaced` AS `backspaced%d`, "
 						+ "W%d.`lemma` AS `lemma%d`";
 				Integer index = i + 1;
-				buffer1.append(String.format(sql,
+				buffer1.append(format(sql,
 						index, index,
 						index, index,
 						index, index, 
@@ -852,14 +854,16 @@ public class MysqlDependencyBase {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("SELECT " + buffer1 + " \n");
 		List<DepWordFeature> lemmata = new LinkedList<>();
+		List<String> wordIndices = new LinkedList<>();
 		for (int i = 0; i < matches.size(); i++) {
 			DuxMatch match = matches.get(i);
 			DepWordFeature lemma = null;
 			if (match instanceof DuxWord) {
+				wordIndices.add(format("W%s", i + 1));
 				if (i == 0) {
 					buffer.append("FROM `word` W1 \n");
 				} else {
-					buffer.append(String.format("JOIN `word` W%d \n", i + 1));
+					buffer.append(format("JOIN `word` W%d \n", i + 1));
 				}
 				DuxWord word = (DuxWord) match;
 				List<DepWordFeature> wordFeatures = factory.makeWordFeatures(word);
@@ -883,7 +887,15 @@ public class MysqlDependencyBase {
 			if (buffer2.length() > 0) {
 				buffer2.append(" AND ");
 			}
-			buffer2.append(String.format("W%s.`lemma` = ?", i + 1));
+			buffer2.append(format("W%s.`lemma` = ?", i + 1));
+		}
+		for (int i = 0; i < wordIndices.size(); i++) {
+			for (int j = i + 1; j < wordIndices.size(); j++) {
+				if (buffer2.length() > 0) {
+					buffer2.append(" AND ");
+				}
+				buffer2.append(format("%s.`id` <> %s.`id`", wordIndices.get(i), wordIndices.get(j)));
+			}
 		}
 		if (buffer2.length() > 0) {
 			buffer.append("WHERE " + buffer2.toString() + " \n");

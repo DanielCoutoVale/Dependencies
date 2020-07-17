@@ -9,6 +9,8 @@
 # VERBFORM: fin, gdv, ger, inf, part
 # VOICE: act, pass
 
+STOP
+
 # WORD CLASS
 [S:WORD-CLASS:verb] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:lexical-verb
 [S:WORD-CLASS:aux] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:lexical-verb
@@ -358,8 +360,9 @@
 [] [] [S:LEMMA:video] T:EXPERIENTIAL:Attribute#1:groups#2:clause S:MIXED:Ccomp#1:word#3:word => +T:LOGICAL:Auxiliary#3:groups#2:group
 
 # VERBS STEP 2
-
+[] [S:VERBFORM:fin] T:LOGICAL:Auxiliary#1:groups#2:group => -T:LOGICAL:Auxiliary#1:groups#2:group
 [] [] T:LOGICAL:Auxiliary#1:groups#2:group => -T:VERB-CLASS:lexical-verb +T:VERB-CLASS:auxiliary-verb
+[] [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary#1:groups#2:group T:LOGICAL:Auxiliary#2:groups#3:group T:LOGICAL:Auxiliary#3:groups#4:group => -T:LOGICAL:Auxiliary#1:groups#2:group +T:LOGICAL:Auxiliary#1:groups#4:group -T:LOGICAL:Auxiliary#2:groups#3:group +T:LOGICAL:Auxiliary2#2:groups#4:group -T:LOGICAL:Auxiliary#3:groups#4:group +T:LOGICAL:Auxiliary3#3:groups#4:group
 [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary#1:groups#2:group T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Auxiliary#1:groups#2:group +T:LOGICAL:Auxiliary#1:groups#3:group -T:LOGICAL:Auxiliary#2:groups#3:group +T:LOGICAL:Auxiliary2#2:groups#3:group
 
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause

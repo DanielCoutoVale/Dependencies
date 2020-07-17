@@ -1,7 +1,6 @@
 package org.dependencies.dux;
 import java.io.File;
 
-import org.dependencies.dux.DuxCommand;
 import org.dependencies.dux.DuxDocument;
 import org.dependencies.dux.DuxDocumentBuilder;
 import org.junit.jupiter.api.Test;
