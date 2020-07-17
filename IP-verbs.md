@@ -178,7 +178,7 @@ FORM        |quod        |perfectum   |posse       |dici        |videtur
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:
 WORD-CLASS  |noun        |adjective   |verb        |verb        |verb
 VERB-CLASS  |            |            |auxiliary   |lexical     |auxiliary
-FINALITY    |            |            |non-finite  |non-finite   |finite
+FINALITY    |            |            |non-finite  |non-finite  |finite
 GROUP       |            |            |Auxiliary2  |Head        |Auxiliary
 CLAUSE      |Carrier     |Attribute   |            |Head
 

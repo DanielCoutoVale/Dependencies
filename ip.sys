@@ -115,13 +115,6 @@ system VERB-Ū-BRANCH
 - ūr-branch
 - ū-branch
 
-system VERB-CORE
-> nd-branch verb
-- ō-nd-core
-- ō-ndum-core
-- ō-ndī-core
-- ō-ndō-core
-
 system NUMBER-KIND
 > number
 - cardinal
@@ -131,7 +124,7 @@ system NUMBER-KIND
 - arabic
 
 system SEAMEDNESS
-> adjective ∨ pronoun
+> adjective ∨ pronoun ∨ nd-branch verb ∨ ū-aspect unbranched verb ∨ ūr-branch verb
 - seamed
 - unseamed
 
@@ -144,14 +137,38 @@ system ŌST-SEAM
 - tis-seam
 - nt-seam
 
+system AUMUS-FOLIAGE
+> seamed adjective ∨ seamed pronoun ∨ nd-branch verb ∨ ū-aspect unbranched verb ∨ ūr-branch verb
+- a-foliage
+- am-foliage
+- ae/ī-foliage
+- ae/ō-foliage
+- ā-foliage
+
 system AUMUS-SEAM
-> ū-aspect unbranched verb ∨ ūr-branch verb ∨ nd-core verb ∨ seamed adjective ∨ seamed pronoun
-- a-am-seam
-- um-um-seam
-- us-um-seam
-- ae-ās-seam
-- a-a-seam
-- ī-ōs-seam
+> seamed ū-aspect unbranched verb ∨ seamed ūr-branch verb ∨ seamed nd-branch verb ∨ seamed adjective ∨ seamed pronoun ∨ seamed number  
+- a/am-seam
+- um/um-seam
+- us/um-seam
+- ae/ās-seam
+- a/a-seam
+- ī/ōs-seam
+
+system AUMUS-LEAF
+> ū-aspect unbranched verb ∨ ūr-branch verb ∨ nd-branch verb ∨ seamed adjective ∨ seamed pronoun
+- a-leaf
+- ae-leaf
+- am-leaf
+- ā-leaf
+- ārum-leaf
+- ās-leaf
+- ī-leaf
+- īs-leaf
+- ō-leaf
+- ōrum-leaf
+- ōs-leaf
+- um-leaf
+- us-leaf
 
 system CASE
 > noun

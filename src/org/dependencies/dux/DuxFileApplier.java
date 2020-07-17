@@ -39,13 +39,12 @@ public class DuxFileApplier {
 		DuxDocumentBuilder builder = new DuxDocumentBuilder();
 		DuxDocument document = builder.parse(file);
 		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
+		Scanner scanner = new Scanner(System.in);
 		for (DuxCommand command : document) {
 			if (command instanceof DuxStop) {
 				System.out.println("Press ENTER to continue. Press Ctrl+D to stop.");
-				Scanner scanner = new Scanner(System.in);
                 try {
                 	scanner.nextLine();
-                	scanner.close();
     				continue;
                 } catch(IllegalStateException | NoSuchElementException e) {
                 	scanner.close();
