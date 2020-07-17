@@ -95,6 +95,22 @@ public class ConlluFileExporter {
 				DepNode node = nodeMap.get(wording.orderOf(word));
 				List<DepDependency> dependencies = word.getDependencies();
 				if (dependencies.size() == 0) {
+					if (null != word.getFeature("lexical-verb")) {
+						followedId = wording.orderOf(word);
+						DepNode head = nodeMap.get(0);
+						head.addTail(node);
+						node.setHead(head);
+						break;
+					}
+				}
+			}
+			for (DepWord word : wording) {
+				DepNode node = nodeMap.get(wording.orderOf(word));
+				if (node.getHead() != null) {
+					continue;
+				}
+				List<DepDependency> dependencies = word.getDependencies();
+				if (dependencies.size() == 0) {
 					DepNode head = nodeMap.get(0);
 					if (head.getTails().size() == 0) {
 						followedId = wording.orderOf(word);
