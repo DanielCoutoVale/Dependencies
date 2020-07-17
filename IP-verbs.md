@@ -329,20 +329,28 @@ CLAUSE      |Marker      |Head
 
 In the UD description, *destruendos* and *sciendum* are two different verb forms, namely 'gerundive' and 'gerund'. No transfer is enabled from one to the other. However, transfer is enabled between gerundive verbs or gerund verbs in different cases. In the IP description, *destruendos* and *sciendum* are both non-finite, thus they have no subject. Both of them share the remainder of their attachments with their respective finite counterparts. If they agree with the object, they are 'seamed'. If there is no object for them to agree with, they are 'unseamed'. This opposition between seamed and unseamed verbs shall do the opposition between 'gerundive' and 'gerund' verbs. In addition, this opposition will enable the parser to transfer some rules to non-finite clauses with other verbs such as *destructos* and *scitum* in case the corpus has some of them. Finally, the unseamed verb consists a single core composed of an ō-aspect stem, an nd-branch and an um-leaf whereas the seamed verb is composed of a core and a seam: the core is composed of an ō-aspect stem, an nd-branch while the seam is one of six leaves from the am-foliage. With this further formal specification, the verb does not need to agree with the object in case. This forces the parser to learn the nominal case as dependent of the verb: nominative subject for *destruit*, accusative subject for *destruere*, but no subject for *destruendos* and *destruendis* (non-finite); and accusative object for *destruit*, *destruere*, and *destruendos*, but ablative object for *destruendis*. These rules for nominal case will apply across all verbs whether or not the noun is preceded by an adposition. In turn, this is likely to improve rule transfer.
 
-#### Step 5
+### Step 5
 
 Now we shall turn our attention to references to participants of a process and references to the process itself.
 
 1. Operative participle
     - *esse [[ movens immobile ]]*
+    - *esse [[ quod immobile movet ]]*
     - *hoc esse [[ movens immobile ]]*
+    - *hoc esse [[ quod immobile movet ]]*
     - *hoc [[ movens immobile ]]*
+    - *hoc [[ quod immobile movet ]]*
     - *[[ movens immobile ]]*
+    - *[[ quod immobile movet ]]*
 2. Passive participle
     - *esse [[ motum a deo ]]*
+    - *esse [[ quod a deo movetur ]]*
     - *hoc esse [[ motum a deo ]]*
+    - *hoc esse [[ quod a deo movetur ]]*
     - *hoc [[ motum a deo ]]*
+    - *hoc [[ quod a deo movetur ]]*
     - *[[ motum a deo ]]*
+    - *[[ quod a deo movetur ]]*
 3. Actor
     - *motor [[ immobilis ]]*
     - *hoc motor [[ immobilis ]]*
