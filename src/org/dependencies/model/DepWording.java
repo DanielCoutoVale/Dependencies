@@ -162,7 +162,7 @@ public class DepWording implements Iterable<DepWord> {
 					DepFunction function = new DepFunction();
 					function.setName("Follower");
 					DepFeature followedRank = new DepFeature();
-					function.setName("clause");
+					followedRank.setName("clause");
 					dependency.setFunction(function);
 					dependency.setHeadOrder(followedId);
 					dependency.setHeadRank(followedRank);
