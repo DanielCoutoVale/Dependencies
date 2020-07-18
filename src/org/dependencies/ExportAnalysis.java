@@ -2,6 +2,7 @@ package org.dependencies;
 
 import static java.lang.String.format;
 
+import org.dependencies.conllu.ConlluFileWriter;
 import org.dependencies.html.HtmlFileWriter;
 import org.dependencies.model.DepAnalyzedText;
 import org.dependencies.model.DepAnalyzedTextLoader;
@@ -11,7 +12,7 @@ import org.dependencies.model.DepAnalyzedTextLoader;
  * 
  * @author Daniel Couto-Vale
  */
-public class ExportHtmlFile {
+public class ExportAnalysis {
 
 	/**
 	 * Main
@@ -31,11 +32,20 @@ public class ExportHtmlFile {
 		String analysisName = args[4];
 		String fileName = args[5];
 		DepAnalyzedTextLoader loader = new DepAnalyzedTextLoader();
-		HtmlFileWriter exporter = new HtmlFileWriter();
+		ConlluFileWriter conlluFileWriter = new ConlluFileWriter();
+		HtmlFileWriter htmlFileWriter = new HtmlFileWriter();
 		try {
 			System.out.println(format("Exporting %s to %s", textTitle, fileName));
-			DepAnalyzedText text = loader.loadAnalyzedText(corpusName, languageName, descriptionName, analysisName, textTitle);
-			exporter.writeHtmlFile(text, fileName);
+			DepAnalyzedText text = loader.loadAnalyzedText(corpusName, languageName, descriptionName, analysisName,
+					textTitle);
+			if (fileName.endsWith(".conllu")) {
+				conlluFileWriter.writeConlluFile(text, fileName);
+			} else if (fileName.endsWith(".html")) {
+				htmlFileWriter.writeHtmlFile(text, fileName);
+			} else {
+				conlluFileWriter.writeConlluFile(text, fileName + ".conllu");
+				htmlFileWriter.writeHtmlFile(text, fileName + ".html");
+			}
 			System.out.println("Exported!");
 		} catch (Exception e) {
 			e.printStackTrace();
