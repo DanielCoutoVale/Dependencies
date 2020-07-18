@@ -97,10 +97,10 @@ The code was tested with the file `la_ittb-ud-dev.conllu` from the GIT repositor
 java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]
 ```
 
-Once an analysis is imported, it can be export ported back as a CONLLU file with the following command.
+Once an analysis is imported, it can be exported back as a CONLLU file or as an HTML file with the following command. If the extension is not specified in the file name, two files will be created, one in each format.
 
 ```
-java -jar export-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]
+java -jar export-analysis.jar [corpus] [language] [text] [description] [analysis] [file]
 ```
 
 A text analysis in a dependency base can be translated and checked for completion as we shall see next.
