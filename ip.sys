@@ -187,6 +187,7 @@ system CASE-SEAM
 - ablative-seam
 
 metafunction EXPERIENTIAL
+- Existent
 - Carrier
 - Attribute
 - Attributor
@@ -212,3 +213,4 @@ metafunction LOGICAL
 - Auxiliary3
 - Marker
 - Particle
+- Case

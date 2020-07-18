@@ -663,7 +663,7 @@ public class MysqlDependencyBase {
 		stmt.setString(1, name);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next())
-			throw new SQLException();
+			return null;
 		DepDescription description = new DepDescription();
 		description.setId(rs.getInt("id"));
 		description.setName(rs.getString("name"));

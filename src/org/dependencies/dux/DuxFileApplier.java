@@ -29,9 +29,21 @@ public class DuxFileApplier {
 		Map<String, DepDescription> descriptionMap = new HashMap<>();
 		descriptionMap.put("S", base.getDescription(sdName));
 		descriptionMap.put("T", base.getDescription(tdName));
+		if (descriptionMap.get("S") == null) {
+			System.err.println("Source description not found: " + sdName);
+			System.exit(-1);
+		}
+		if (descriptionMap.get("T") == null) {
+			System.err.println("Target description not found: " + tdName);
+			System.exit(-1);
+		}
 		Map<String, DepAnalysis> analysisMap = new HashMap<>();
 		analysisMap.put("S", base.getAnalysis(descriptionMap.get("S").getId(), saName));
 		analysisMap.put("T", base.getAnalysis(descriptionMap.get("T").getId(), taName));
+		if (analysisMap.get("S") == null) {
+			System.err.println("Source analysis not found: " + saName);
+			System.exit(-1);
+		}
 		if (analysisMap.get("T") == null) {
 			analysisMap.put("T", base.addAnalysis(descriptionMap.get("T").getId(), taName));
 		}

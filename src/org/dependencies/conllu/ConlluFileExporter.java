@@ -52,27 +52,27 @@ public class ConlluFileExporter {
 		MysqlDependencyBase base = new MysqlDependencyBase();
 		DepCorpus corpus = base.getCorpus(corpusName);
 		if (corpus == null) {
-			System.err.println(String.format("The corpus %s does not exist!", corpusName));
+			System.err.println(format("The corpus %s does not exist!", corpusName));
 			System.exit(-1);
 		}
 		DepLanguage language = base.getLanguage(languageName);
 		if (language == null) {
-			System.err.println(String.format("The language %s does not exist!", languageName));
+			System.err.println(format("The language %s does not exist!", languageName));
 			System.exit(-1);
 		}
 		DepDescription description = base.getDescription(descriptionName);
 		if (description == null) {
-			System.err.println(String.format("The description %s does not exist!", descriptionName));
+			System.err.println(format("The description %s does not exist!", descriptionName));
 			System.exit(-1);
 		}
 		DepAnalysis analysis = base.getAnalysis(description.getId(), analysisName);
 		if (analysis == null) {
-			System.err.println(String.format("The analysis %s does not exist!", analysisName));
+			System.err.println(format("The analysis %s does not exist!", analysisName));
 			System.exit(-1);
 		}
 		DepAnalyzedText text = base.getAnalyzedText(corpus.getId(), language.getId(), textTitle, analysis.getId());
 		if (text == null) {
-			System.err.println(String.format("The text %s does not exist!", textTitle));
+			System.err.println(format("The text %s does not exist!", textTitle));
 			System.exit(-1);
 		}
 		File file = new File(fileName);
