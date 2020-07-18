@@ -22,7 +22,7 @@ public class ExportAnalysis {
 	public final static void main(String[] args) {
 		if (args.length != 6) {
 			System.err.println("USAGE:");
-			System.err.println("java -jar export-html-file.jar [corpus] [language] [text] [description] [analysis] [file]");
+			System.err.println("java -jar export-analysis.jar [corpus] [language] [text] [description] [analysis] [file]");
 			System.exit(-1);
 		}
 		String corpusName = args[0];
