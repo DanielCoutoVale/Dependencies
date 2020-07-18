@@ -148,7 +148,7 @@ public class ConlluFileExporter {
 				pw.print("\t");
 				pw.print("-");
 				pw.print("\t");
-				pw.print("-");
+				pw.print(getWordFeatureLabels(description, wordClasses, word));
 				pw.print("\t");
 				pw.print(getHeadOrder(word));
 				pw.print("\t");
@@ -156,7 +156,7 @@ public class ConlluFileExporter {
 				pw.print("\t");
 				pw.print("-");
 				pw.print("\t");
-				pw.print(getWordFeatureNames(description, wordClasses, word));
+				pw.print(getMixedLabels(word));
 				pw.print("\n");
 			}
 			pw.print("\n");
@@ -182,31 +182,41 @@ public class ConlluFileExporter {
 		return headOrder;
 	}
 
-	private String getWordFeatureNames(DepDescription description, DepSystem wordClasses, DepWord word) {
-		StringBuffer featureBuffer = new StringBuffer();
+	private String getWordFeatureLabels(DepDescription description, DepSystem wordClasses, DepWord word) {
+		StringBuffer buffer = new StringBuffer();
 		if (word.getDependencies().size() > 1) {
-			featureBuffer.append("MultiDep=Yes");
-		}
-		if (word.isBackspaced()) {
-			featureBuffer.append("SpaceAfter=No");
+			buffer.append("MultiDep=Yes");
 		}
 		List<DepFeature> features;
 		features = word.getFeatures();
 		features.removeAll(wordClasses.getFeatures());
 		features.sort((a, b) -> a.compareTo(b));
 		for (DepFeature feature : features) {
-			if (featureBuffer.length() != 0) {
-				featureBuffer.append("|");
+			if (buffer.length() != 0) {
+				buffer.append("|");
 			}
 			DepSystem system = description.getSystem(feature);
 			if (system == null) continue;
-			featureBuffer.append(format("%s=%s", system.getName(), feature.getName()));
+			buffer.append(format("%s=%s", system.getName(), feature.getName()));
 		}
-		if (featureBuffer.length() == 0) {
-			featureBuffer.append("-");
+		if (buffer.length() == 0) {
+			buffer.append("-");
 		}
-		String featureSetString = featureBuffer.toString();
-		return featureSetString;
+		return buffer.toString();
+	}
+	
+	private String getMixedLabels(DepWord word) {
+		StringBuffer buffer = new StringBuffer();
+		if (word.getDependencies().size() > 1) {
+			buffer.append("MultiDep=Yes");
+		}
+		if (word.isBackspaced()) {
+			buffer.append("SpaceAfter=No");
+		}
+		if (buffer.length() == 0) {
+			buffer.append("-");
+		}
+		return buffer.toString();
 	}
 
 	private String getWordClassName(DepSystem wordClasses, DepWord word) {
