@@ -77,6 +77,7 @@ STOP
 # Unseamed nouns
 [T:WORD-CLASS:adjective S:LEMMA:immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:sapiens] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:LEMMA:impius] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 
 # CASE
 [T:WORD-CLASS:adjective S:CASE:nom] => +T:CASE-SEAM:nominative-seam
@@ -484,6 +485,10 @@ STOP
 
 [S:WORD-CLASS:adv S:LEMMA:vero] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => +T:LOGICAL:Marker#1:clauses#2:clause
 [S:WORD-CLASS:adv S:LEMMA:vero] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
+
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Cc#1:word#2:word => +T:LOGICAL:Marker#1:clauses#2:clause
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Actor#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
 
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word => +T:LOGICAL:Marker#1:clauses#2:clause
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause

@@ -144,59 +144,79 @@ public class ConlluFileExporter {
 				pw.print("\t");
 				pw.print(word.getLemma());
 				pw.print("\t");
-				List<DepFeature> features = word.getFeatures();
-				features.retainAll(wordClasses.getFeatures());
-				if (features.isEmpty()) {
-					pw.print("-");
-				} else {
-					pw.print(features.get(0).getName());
-				}
+				pw.print(getWordClassName(wordClasses, word));
 				pw.print("\t");
 				pw.print("-");
 				pw.print("\t");
-				StringBuffer featureBuffer = new StringBuffer();
-				features = word.getFeatures();
-				features.removeAll(wordClasses.getFeatures());
-				features.sort((a, b) -> a.compareTo(b));
-				for (DepFeature feature : features) {
-					if (featureBuffer.length() != 0) {
-						featureBuffer.append("|");
-					}
-					DepSystem system = description.getSystem(feature);
-					if (system == null) continue;
-					featureBuffer.append(format("%s=%s", system.getName(), feature.getName()));
-				}
-				if (featureBuffer.length() == 0) {
-					featureBuffer.append("-");
-				}
-				pw.print(featureBuffer.toString());
+				pw.print("-");
 				pw.print("\t");
-				List<DepDependency> dependencies = word.getDependencies();
-				if (dependencies.size() == 0) {
-					pw.print("0");
-					pw.print("\t");
-					pw.print("root");
-					pw.print("\t");
-				} else if (dependencies.size() >= 1) {
-					DepDependency dependency = dependencies.get(0);
-					pw.print(dependency.getHeadOrder());
-					pw.print("\t");
-					pw.print(dependency.getFunction().getName());
-					pw.print("\t");
-				}
-				if (dependencies.size() <= 1) {
-					pw.print("-");
-					pw.print("\t");					
-				} else {
-					pw.print("MULTIDEP=Yes");
-					pw.print("\t");
-				}
-				pw.print(word.isBackspaced() ? "-" : "SpaceAfter=No");
+				pw.print(getHeadOrder(word));
+				pw.print("\t");
+				pw.print(getFunction(word));
+				pw.print("\t");
+				pw.print("-");
+				pw.print("\t");
+				pw.print(getWordFeatureNames(description, wordClasses, word));
 				pw.print("\n");
 			}
 			pw.print("\n");
 		}
 		pw.close();
+	}
+
+	private String getFunction(DepWord word) {
+		String function = "root";
+		if (word.getDependencies().size() >= 1) {
+			DepDependency dependency = word.getDependencies().get(0);
+			function = dependency.getFunction().getName();
+		}
+		return function;
+	}
+
+	private String getHeadOrder(DepWord word) {
+		String headOrder = "0";
+		if (word.getDependencies().size() >= 1) {
+			DepDependency dependency = word.getDependencies().get(0);
+			headOrder = Integer.toString(dependency.getHeadOrder());
+		}
+		return headOrder;
+	}
+
+	private String getWordFeatureNames(DepDescription description, DepSystem wordClasses, DepWord word) {
+		StringBuffer featureBuffer = new StringBuffer();
+		if (word.getDependencies().size() > 1) {
+			featureBuffer.append("MultiDep=Yes");
+		}
+		if (word.isBackspaced()) {
+			featureBuffer.append("SpaceAfter=No");
+		}
+		List<DepFeature> features;
+		features = word.getFeatures();
+		features.removeAll(wordClasses.getFeatures());
+		features.sort((a, b) -> a.compareTo(b));
+		for (DepFeature feature : features) {
+			if (featureBuffer.length() != 0) {
+				featureBuffer.append("|");
+			}
+			DepSystem system = description.getSystem(feature);
+			if (system == null) continue;
+			featureBuffer.append(format("%s=%s", system.getName(), feature.getName()));
+		}
+		if (featureBuffer.length() == 0) {
+			featureBuffer.append("-");
+		}
+		String featureSetString = featureBuffer.toString();
+		return featureSetString;
+	}
+
+	private String getWordClassName(DepSystem wordClasses, DepWord word) {
+		String wordClassName = "-";
+		List<DepFeature> features = word.getFeatures();
+		features.retainAll(wordClasses.getFeatures());
+		if (!features.isEmpty()) {
+			wordClassName = features.get(0).getName();
+		}
+		return wordClassName;
 	}
 
 }
