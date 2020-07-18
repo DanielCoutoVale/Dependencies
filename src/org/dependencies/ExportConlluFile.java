@@ -3,6 +3,8 @@ package org.dependencies;
 import static java.lang.String.format;
 
 import org.dependencies.conllu.ConlluFileWriter;
+import org.dependencies.model.DepAnalyzedText;
+import org.dependencies.model.DepAnalyzedTextLoader;
 
 /**
  * Exports a CONLLU file.
@@ -28,10 +30,12 @@ public class ExportConlluFile {
 		String descriptionName = args[3];
 		String analysisName = args[4];
 		String fileName = args[5];
+		DepAnalyzedTextLoader loader = new DepAnalyzedTextLoader();
 		ConlluFileWriter exporter = new ConlluFileWriter();
 		try {
 			System.out.println(format("Exporting %s to %s", textTitle, fileName));
-			exporter.exportFile(corpusName, languageName, textTitle, descriptionName, analysisName, fileName);
+			DepAnalyzedText text = loader.loadAnalyzedText(corpusName, languageName, descriptionName, analysisName, textTitle);
+			exporter.writeConlluFile(text, fileName);
 			System.out.println("Exported!");
 		} catch (Exception e) {
 			e.printStackTrace();

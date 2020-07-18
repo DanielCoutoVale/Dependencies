@@ -12,6 +12,11 @@ import java.util.List;
 public class DepAnalyzedText extends DepText {
 
 	/**
+	 * The linguistic description.
+	 */
+	private DepDescription description;
+
+	/**
 	 * The wordings in a text.
 	 */
 	private final List<DepWording> wordings;
@@ -60,6 +65,24 @@ public class DepAnalyzedText extends DepText {
 	 */
 	public final void addWording(int index, DepWording wording) {
 		this.wordings.add(index, wording);
+	}
+
+	/**
+	 * Gets the linguistic description according to which this text was analyzed.
+	 * 
+	 * @return the linguistic description
+	 */
+	public final DepDescription getDescription() {
+		return description;
+	}
+
+	/**
+	 * Sets the linguistic description according to which this text was analyzed.
+	 * 
+	 * @param description the linguistic description
+	 */
+	public final void setDescription(DepDescription description) {
+		this.description = description;
 	}
 
 }
