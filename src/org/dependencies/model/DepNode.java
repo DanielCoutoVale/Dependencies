@@ -78,4 +78,23 @@ public class DepNode {
 		this.tails.add(tail);
 	}
 
+	public final Integer indexOf(DepWord word) {
+		if (this.word == word) {
+			return -1;
+		}
+		for (int index = 0; index < this.tails.size(); index++) {
+			DepNode tail = this.tails.get(index);
+			if (-2 != tail.indexOf(word)) {
+				return index;
+			}
+		}
+		return -2;
+	}
+
+	public final String getFunctionName(Integer index) {
+		if (index == -1) return "Head";
+		List<DepDependency> dependencies = this.tails.get(index).asWord().getDependencies();
+		return dependencies.get(0).getFunction().getName();
+	}
+
 }

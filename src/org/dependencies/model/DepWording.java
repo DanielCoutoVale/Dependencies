@@ -1,8 +1,10 @@
 package org.dependencies.model;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A wording as the largest grammatical unit within a text.
@@ -115,6 +117,68 @@ public class DepWording implements Iterable<DepWord> {
 	 */
 	public final int orderOf(DepWord word) {
 		return this.words.indexOf(word) + 1;
+	}
+
+	/**
+	 * Makes a dependency tree for the wording.
+	 * 
+	 * @return the dependency tree
+	 */
+	public final DepNode makeDependencyTree() {
+		Map<Integer, DepNode> nodeMap = new HashMap<>();
+		nodeMap.put(0, new DepNode(null));
+		for (DepWord word : this) {
+			DepNode node = new DepNode(word);
+			nodeMap.put(this.orderOf(word), node);
+		}
+		Integer followedId = 1;
+		for (DepWord word : this) {
+			DepNode node = nodeMap.get(this.orderOf(word));
+			List<DepDependency> dependencies = word.getDependencies();
+			if (dependencies.size() == 0) {
+				if (null != word.getFeature("lexical-verb")) {
+					followedId = this.orderOf(word);
+					DepNode head = nodeMap.get(0);
+					head.addTail(node);
+					node.setHead(head);
+					break;
+				}
+			}
+		}
+		for (DepWord word : this) {
+			DepNode node = nodeMap.get(this.orderOf(word));
+			if (node.getHead() != null) {
+				continue;
+			}
+			List<DepDependency> dependencies = word.getDependencies();
+			if (dependencies.size() == 0) {
+				DepNode head = nodeMap.get(0);
+				if (head.getTails().size() == 0) {
+					followedId = this.orderOf(word);
+					head.addTail(node);
+					node.setHead(head);
+				} else {
+					DepDependency dependency = new DepDependency();
+					DepFunction function = new DepFunction();
+					function.setName("Follower");
+					dependency.setFunction(function);
+					dependency.setHeadOrder(followedId);
+					word.addDependency(dependency);
+					head = nodeMap.get(dependency.getHeadOrder());
+					head.addTail(node);
+					node.setHead(head);
+				}
+			} else {
+				DepDependency dependency = dependencies.get(0);
+				DepNode head = nodeMap.get(dependency.getHeadOrder());
+				head.addTail(node);
+				node.setHead(head);
+			}
+		}
+		if (nodeMap.get(0).getTails().size() == 0) {
+			nodeMap.get(1).asWord().clearDependencies();
+		}
+		return nodeMap.get(0).getTails().get(0);
 	}
 
 }
