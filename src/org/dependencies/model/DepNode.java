@@ -136,10 +136,12 @@ public class DepNode {
 		} while (index > 0);
 		List<DepDependency> dependencies = node.asWord().getDependencies();
 		if (dependencies.isEmpty()) {
+			if (rankName.equals("clause")) {
+				return "Process";
+			}
 			return "-";
 		}
-		String headRankName = node.getHeadRankName();
-		if (headRankName != null && rankNames.indexOf(headRankName) < rankNames.indexOf(rankName)) {
+		if (rankNames.indexOf(node.getHeadRankName()) < rankNames.indexOf(rankName)) {
 			if (rankName.equals("clause")) {
 				return "Process";
 			}
