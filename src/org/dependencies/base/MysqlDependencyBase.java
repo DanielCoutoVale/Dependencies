@@ -581,22 +581,28 @@ public class MysqlDependencyBase {
 			word.addFeature(feature);
 		}
 		stmt.close();
-		sql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order` FROM `function` F " 
+		sql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order`, HR.`id` AS `head-rank-id`, HR.`name` AS `head-rank-name` FROM `function` F " 
 				+ "JOIN `word-function` WF ON WF.`id` = F.`id` "
 				+ "JOIN `word` W ON W.`id` = WF.`word-id` " 
 				+ "JOIN `word` H ON H.`id` = WF.`head-id` " 
 				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "JOIN `feature` HR ON HR.`id` = WF.`head-rank-id` "
 				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
 		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
 		stmt.setInt(1, text.getId());
 		stmt.setInt(2, analysisId);
 		rs = stmt.executeQuery();
 		while (rs.next()) {
+			Integer headOrder = rs.getInt("head-order");
+			DepFeature headRank = new DepFeature();
+			headRank.setId(rs.getInt("head-rank-id"));
+			headRank.setName(rs.getString("head-rank-name"));
 			DepFunction function = new DepFunction();
 			function.setId(rs.getInt("id"));
 			function.setName(rs.getString("name"));
 			DepDependency dependency = new DepDependency();
-			dependency.setHeadOrder(rs.getInt("head-order"));
+			dependency.setHeadOrder(headOrder);
+			dependency.setHeadRank(headRank);
 			dependency.setFunction(function);
 			DepWord word = wordMap.get(rs.getInt("word-id"));
 			word.addDependency(dependency);

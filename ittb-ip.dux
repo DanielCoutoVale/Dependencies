@@ -442,13 +442,13 @@ STOP
 
 # VERBS STEP 3
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +T:LOGICAL:Enhancer#1:clauses#2:clause
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Enhancer#1:clauses#2:clause
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +T:LOGICAL:Enhancer#1:clauses#2:clause-complex
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Enhancer#1:clauses#2:clause-complex
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:clauses#2:clause
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Conj#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Extender#1:clauses#2:clause
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:clauses#2:clause-complex
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Conj#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Extender#1:clauses#2:clause-complex
 
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Cc#1:word#2:word => +T:LOGICAL:Marker#1:clauses#2:clause
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Cc#1:word#2:word => +T:LOGICAL:Marker#1:clauses#2:clause-complex
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Actor#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
 
@@ -498,11 +498,11 @@ STOP
 
 # VERBS STEP 4
 
-[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#2:word S:Mixed:Advcl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:groups#3:clause
-[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#2:word S:Mixed:Advcl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:groups#3:clause
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Case#1:word#2:word S:Mixed:Acl#3:word#2:word S:Mixed:Obl#2:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#3:word S:Mixed:Nsubj-Pass#2:word#3:word S:Mixed:Advcl-Arg#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#3:word S:Mixed:Nsubj-Pass#2:word#3:word S:Mixed:Advcl#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#2:word S:Mixed:Advcl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:groups#3:clause-complex
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#2:word S:Mixed:Advcl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:groups#3:clause-complex
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Case#1:word#2:word S:Mixed:Acl#3:word#2:word S:Mixed:Obl#2:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause-complex
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#3:word S:Mixed:Nsubj-Pass#2:word#3:word S:Mixed:Advcl-Arg#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause-complex
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#3:word S:Mixed:Nsubj-Pass#2:word#3:word S:Mixed:Advcl#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause-complex
 
 [] [] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause
 [] [] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause

@@ -76,11 +76,13 @@ public class ConlluFileWriter {
 
 	private String getFunction(DepWord word) {
 		String function = "root";
+		String rank = "";
 		if (word.getDependencies().size() >= 1) {
 			DepDependency dependency = word.getDependencies().get(0);
 			function = dependency.getFunction().getName();
+			rank = ":" + dependency.getHeadRank().getName();
 		}
-		return function;
+		return function + rank;
 	}
 
 	private String getHeadOrder(DepWord word) {

@@ -1,9 +1,11 @@
 package org.dependencies.model;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * A word as the smallest independent unit in a text.
@@ -190,6 +192,19 @@ public class DepWord {
 	 */
 	public void clearDependencies() {
 		this.dependencyMap.clear();
+	}
+
+	/**
+	 * Gets the word feature in the given system.
+	 * 
+	 * @param system the system
+	 * @return the feature
+	 */
+	public final DepFeature getFeatureIn(DepSystem system) {
+		Set<DepFeature> features = new HashSet<>(this.featureMap.values());
+		features.retainAll(system.getFeatures());
+		if (features.isEmpty()) return null;
+		return features.iterator().next();
 	}
 
 }

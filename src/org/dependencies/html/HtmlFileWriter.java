@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.dependencies.model.DepAnalyzedText;
+import org.dependencies.model.DepDescription;
+import org.dependencies.model.DepFeature;
 import org.dependencies.model.DepWord;
 import org.dependencies.model.DepNode;
 import org.dependencies.model.DepWording;
@@ -51,17 +53,19 @@ public class HtmlFileWriter {
 			wording.makeDependencyTree();
 			pw.print(format("<table width='%dpx'>\n", (wording.getWords().size() + 1) * 100));
 			pw.print("<tr>");
-			pw.print("<th width='100px'>Logic</th>");
+			pw.print("<th width='100px'>Clauses</th>");
 			DepNode tree = wording.makeDependencyTree();
-			Integer index = - 2;
+			long index;
+			// Run through clauses
+			index = - 2;
 			for (DepWord word : wording) {
-				Integer newIndex = tree.indexOf(word);
+				long newIndex = tree.indexOf(word, "clause-complex");
 				if (index != newIndex) {
 					index = newIndex;
 					Integer span = 1;
 					List<DepWord> words = wording.getWords();
 					for (int i = wording.orderOf(word); i < words.size(); i++) {
-						Integer otherIndex = tree.indexOf(words.get(i));
+						long otherIndex = tree.indexOf(words.get(i), "clause-complex");
 						if (newIndex == otherIndex) {
 							span++;
 						} else {
@@ -69,7 +73,31 @@ public class HtmlFileWriter {
 						}
 					}
 					pw.print(format("<td width='100px' colspan='%d'>", span));
-					pw.print(tree.getFunctionName(index));
+					pw.print(tree.getFunctionName(index, "clause-complex"));
+					pw.print("</td>\n");
+				}
+			}
+			pw.print("</tr>");
+			pw.print("<tr>");
+			pw.print("<th width='100px'>Clause</th>");
+			// Run through clause constituents
+			index = - 2;
+			for (DepWord word : wording) {
+				long newIndex = tree.indexOf(word, "clause");
+				if (index != newIndex) {
+					index = newIndex;
+					Integer span = 1;
+					List<DepWord> words = wording.getWords();
+					for (int i = wording.orderOf(word); i < words.size(); i++) {
+						long otherIndex = tree.indexOf(words.get(i), "clause");
+						if (newIndex == otherIndex) {
+							span++;
+						} else {
+							break;
+						}
+					}
+					pw.print(format("<td width='100px' colspan='%d'>", span));
+					pw.print(tree.getFunctionName(index, "clause"));
 					pw.print("</td>\n");
 				}
 			}
@@ -80,6 +108,15 @@ public class HtmlFileWriter {
 				pw.print("<td width='100px'><i>");
 				pw.print(word.getForm());
 				pw.print("</i></td>\n");
+			}
+			pw.print("</tr>\n");
+			pw.print("<th width='100px'>Word Class</th>");
+			DepDescription description = text.getDescription();
+			for (DepWord word : wording) {
+				DepFeature wordClass = word.getFeatureIn(description.getSystem("WORD-CLASS"));
+				pw.print("<td width='100px'>");
+				pw.print(wordClass == null ? "-" : wordClass.getName());
+				pw.print("</td>\n");
 			}
 			pw.print("</tr>\n");
 			pw.print("</table>\n");

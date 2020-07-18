@@ -13,6 +13,11 @@ public class DepDependency {
 	private Integer headOrder;
 
 	/**
+	 * The rank at which the head word is head.
+	 */
+	private DepFeature headRank;
+	
+	/**
 	 * The function of the table.
 	 */
 	private DepFunction function;
@@ -51,6 +56,24 @@ public class DepDependency {
 	 */
 	public final void setFunction(DepFunction function) {
 		this.function = function;
+	}
+
+	/**
+	 * Gets the rank at which the head word is head.
+	 * 
+	 * @return the head rank
+	 */
+	public final DepFeature getHeadRank() {
+		return headRank;
+	}
+
+	/**
+	 * Sets the rank at which the head word is head.
+	 * 
+	 * @param headRank the head rank to set
+	 */
+	public final void setHeadRank(DepFeature headRank) {
+		this.headRank = headRank;
 	}
 
 }
