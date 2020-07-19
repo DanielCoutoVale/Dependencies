@@ -136,22 +136,31 @@ public class DepNode {
 		} while (index > 0);
 		List<DepDependency> dependencies = node.asWord().getDependencies();
 		if (dependencies.isEmpty()) {
-			if (rankName.equals("clause")) {
+			if (rankName.equals("clause-complex")) {
+				return "Main";
+			} else if (rankName.equals("clause")) {
 				if (null != node.asWord().getFeature("lexical-verb")) {
 					return "Process";
+				} else if (null != node.asWord().getFeature("noun") || null != node.asWord().getFeature("source")) {
+					return "Thing";
 				} else {
-					return "-";
+					return "Head";
 				}
 			} else {
-				return "-";
+				return "Head";
 			}
 		}
 		if (rankNames.indexOf(node.getHeadRankName()) < rankNames.indexOf(rankName)) {
+			if (rankName.equals("clause-complex")) {
+				return "Main";
+			}
 			if (rankName.equals("clause")) {
 				if (null != node.asWord().getFeature("lexical-verb")) {
 					return "Process";
+				} else if (null != node.asWord().getFeature("noun") || null != node.asWord().getFeature("source")) {
+					return "Thing";
 				} else {
-					return "-";
+					return "Head";
 				}
 			}
 		}

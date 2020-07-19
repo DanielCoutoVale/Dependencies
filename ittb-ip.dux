@@ -525,10 +525,13 @@ STOP
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#3:word S:Mixed:Nsubj-Pass#2:word#3:word S:Mixed:Advcl-Arg#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause-complex
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:Mixed:Mark#1:word#3:word S:Mixed:Nsubj-Pass#2:word#3:word S:Mixed:Advcl#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:groups#4:clause-complex
 
+[] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
+[] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
+[] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
+
 [] [] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause
 [] [] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause
 [] [] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:noun] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Attribute#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:adjective] [] T:LOGICAL:Marker#1:word#2:clause T:LOGICAL:Attribute#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:word#3:clause
-
 

@@ -160,7 +160,7 @@ public class DepWording implements Iterable<DepWord> {
 				} else {
 					DepDependency dependency = new DepDependency();
 					DepFunction function = new DepFunction();
-					function.setName("Follower");
+					function.setName("xxxxx");
 					DepFeature followedRank = new DepFeature();
 					followedRank.setName("clause");
 					dependency.setFunction(function);
