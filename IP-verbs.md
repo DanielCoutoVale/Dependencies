@@ -331,7 +331,11 @@ In the UD description, *destruendos* and *sciendum* are two different verb forms
 
 ### Step 5
 
-Now we shall turn our attention to references to participants of a process and references to the process itself.
+Before we can move on to `adjective-like' functions of a clause, let us take some "verb" words in ITTB that are better understood as adjectives out of the way. First and foremost, words such as _finita_ in _potentia finita_ (_limited power_) oppose _infinita_ in _potentia infinita_ (_unlimited power_). They do not correspond to a material clause verb such as _finit_ in the constructed example _hoc potentiam finit_ (_this limits the power_), but rather to the nouns _finis_ and and _finem_ (_limit_), which occur 39 times in the same text. For this reason, _finita_ and _infinita_ are better understood as adjectives derived from nouns, meaning either _with_ or _without an end_. Here is a list of lemmata that should not be enter the discussion that follows.
+
+- _finio_
+
+Now let us focus on references to participants of a process and references to the process itself. Here are some examples where this occurs.
 
 1. Operative participle
     - *esse [[ movens immobile ]]*
@@ -365,6 +369,7 @@ Now we shall turn our attention to references to participants of a process and r
 
 FORM        |huiusmodi   |autem       |est         |hoc         |quod        |dicimus     |deum        |esse 
 :----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+
 
 
 FORM        |et          |sic         |nihil       |inconveniens|accidit     |ponentibus  |deum        |non         |esse: 
