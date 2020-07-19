@@ -137,13 +137,22 @@ public class DepNode {
 		List<DepDependency> dependencies = node.asWord().getDependencies();
 		if (dependencies.isEmpty()) {
 			if (rankName.equals("clause")) {
-				return "Process";
+				if (null != node.asWord().getFeature("lexical-verb")) {
+					return "Process";
+				} else {
+					return "-";
+				}
+			} else {
+				return "-";
 			}
-			return "-";
 		}
 		if (rankNames.indexOf(node.getHeadRankName()) < rankNames.indexOf(rankName)) {
 			if (rankName.equals("clause")) {
-				return "Process";
+				if (null != node.asWord().getFeature("lexical-verb")) {
+					return "Process";
+				} else {
+					return "-";
+				}
 			}
 		}
 		DepDependency dependency = dependencies.get(0);

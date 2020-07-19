@@ -31,7 +31,7 @@ CREATE TABLE `analysis` (
   KEY `analysis-fk1_idx` (`description-id`),
   KEY `analysis-idx1` (`name`),
   CONSTRAINT `analysis-fk1` FOREIGN KEY (`description-id`) REFERENCES `description` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `corpus` (
   `description` varchar(4096) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `description` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `description-idx1` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `feature` (
   KEY `feature-fk2_idx` (`system-id`),
   KEY `feature-idx1` (`name`),
   CONSTRAINT `systemic-feature-fk2` FOREIGN KEY (`system-id`) REFERENCES `system` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=32589 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37834 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,8 +100,9 @@ CREATE TABLE `function` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `function-fk2_idx` (`metafunction-id`),
+  KEY `function-idx1` (`name`),
   CONSTRAINT `function-fk2` FOREIGN KEY (`metafunction-id`) REFERENCES `metafunction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=776 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2074 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +123,31 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `class1`,
  1 AS `class2`,
  1 AS `function`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `ip-chain`
+--
+
+DROP TABLE IF EXISTS `ip-chain`;
+/*!50001 DROP VIEW IF EXISTS `ip-chain`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ip-chain` AS SELECT 
+ 1 AS `id1`,
+ 1 AS `form1`,
+ 1 AS `lemma1`,
+ 1 AS `id2`,
+ 1 AS `form2`,
+ 1 AS `lemma2`,
+ 1 AS `id3`,
+ 1 AS `form3`,
+ 1 AS `lemma3`,
+ 1 AS `class1`,
+ 1 AS `class2`,
+ 1 AS `class3`,
+ 1 AS `function1`,
+ 1 AS `function2`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -163,6 +189,20 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `ip-systemic-features`
+--
+
+DROP TABLE IF EXISTS `ip-systemic-features`;
+/*!50001 DROP VIEW IF EXISTS `ip-systemic-features`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ip-systemic-features` AS SELECT 
+ 1 AS `id`,
+ 1 AS `name`,
+ 1 AS `system`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `ip-word`
 --
 
@@ -178,6 +218,22 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `backspaced`,
  1 AS `lemma`,
  1 AS `class`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `ip-word-features`
+--
+
+DROP TABLE IF EXISTS `ip-word-features`;
+/*!50001 DROP VIEW IF EXISTS `ip-word-features`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ip-word-features` AS SELECT 
+ 1 AS `id`,
+ 1 AS `form`,
+ 1 AS `lemma`,
+ 1 AS `feature`,
+ 1 AS `system`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -283,7 +339,36 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `function`,
  1 AS `class1A`,
  1 AS `class2A`,
- 1 AS `functionA`*/;
+ 1 AS `functionA`,
+ 1 AS `class1B`,
+ 1 AS `class2B`,
+ 1 AS `functionB`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `ittb-ip-anchor-back`
+--
+
+DROP TABLE IF EXISTS `ittb-ip-anchor-back`;
+/*!50001 DROP VIEW IF EXISTS `ittb-ip-anchor-back`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ittb-ip-anchor-back` AS SELECT 
+ 1 AS `id1`,
+ 1 AS `form1`,
+ 1 AS `lemma1`,
+ 1 AS `id2`,
+ 1 AS `form2`,
+ 1 AS `lemma2`,
+ 1 AS `class1`,
+ 1 AS `class2`,
+ 1 AS `function`,
+ 1 AS `class1A`,
+ 1 AS `class2A`,
+ 1 AS `functionA`,
+ 1 AS `class1B`,
+ 1 AS `class2B`,
+ 1 AS `functionB`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -331,6 +416,20 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `ittb-systemic-features`
+--
+
+DROP TABLE IF EXISTS `ittb-systemic-features`;
+/*!50001 DROP VIEW IF EXISTS `ittb-systemic-features`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ittb-systemic-features` AS SELECT 
+ 1 AS `id`,
+ 1 AS `name`,
+ 1 AS `system`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `ittb-word`
 --
 
@@ -346,6 +445,22 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `backspaced`,
  1 AS `lemma`,
  1 AS `class`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `ittb-word-features`
+--
+
+DROP TABLE IF EXISTS `ittb-word-features`;
+/*!50001 DROP VIEW IF EXISTS `ittb-word-features`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ittb-word-features` AS SELECT 
+ 1 AS `id`,
+ 1 AS `form`,
+ 1 AS `lemma`,
+ 1 AS `feature`,
+ 1 AS `system`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -377,8 +492,9 @@ CREATE TABLE `metafunction` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `metafunction-fk1_idx` (`description-id`),
+  KEY `metafunction-idx1` (`name`),
   CONSTRAINT `metafunction-fk1` FOREIGN KEY (`description-id`) REFERENCES `description` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -398,7 +514,7 @@ CREATE TABLE `system` (
   KEY `system-fk1_idx` (`description-id`),
   KEY `system-idx1` (`name`),
   CONSTRAINT `system-fk1` FOREIGN KEY (`description-id`) REFERENCES `description` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=738 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -419,7 +535,7 @@ CREATE TABLE `text` (
   KEY `text-fk2_idx` (`language-id`),
   CONSTRAINT `text-fk1` FOREIGN KEY (`corpus-id`) REFERENCES `corpus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `text-fk2` FOREIGN KEY (`language-id`) REFERENCES `language` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -439,8 +555,10 @@ CREATE TABLE `word` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `word-fk4_idx` (`wording-id`),
+  KEY `word-idx1` (`form`),
+  KEY `word-idx2` (`lemma`),
   CONSTRAINT `word-fk4` FOREIGN KEY (`wording-id`) REFERENCES `wording` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=448355 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=538019 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -463,7 +581,7 @@ CREATE TABLE `word-feature` (
   CONSTRAINT `word-feature-fk1` FOREIGN KEY (`id`) REFERENCES `feature` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `word-feature-fk2` FOREIGN KEY (`word-id`) REFERENCES `word` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `word-feature-fk3` FOREIGN KEY (`analysis-id`) REFERENCES `analysis` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6292812 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16415851 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -495,7 +613,7 @@ CREATE TABLE `word-function` (
   CONSTRAINT `word-function-fk4` FOREIGN KEY (`word-rank-id`) REFERENCES `feature` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `word-function-fk5` FOREIGN KEY (`head-id`) REFERENCES `word` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `word-function-fk6` FOREIGN KEY (`head-rank-id`) REFERENCES `feature` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=401748 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1554303 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -514,7 +632,7 @@ CREATE TABLE `wording` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `wording-fk3_idx` (`text-id`),
   CONSTRAINT `wording-fk3` FOREIGN KEY (`text-id`) REFERENCES `text` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=39933 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46236 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -531,6 +649,24 @@ CREATE TABLE `wording` (
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `ip-anchor` AS select `a`.`id` AS `id1`,`a`.`form` AS `form1`,`a`.`lemma` AS `lemma1`,`b`.`id` AS `id2`,`b`.`form` AS `form2`,`b`.`lemma` AS `lemma2`,`a`.`class` AS `class1`,`b`.`class` AS `class2`,`F`.`name` AS `function` from (((((`ip-word` `A` join `word-function` `WF` on((`WF`.`word-id` = `a`.`id`))) join `ip-word` `B` on((`b`.`id` = `WF`.`head-id`))) join `function` `F` on((`F`.`id` = `WF`.`id`))) join `metafunction` `M` on((`M`.`id` = `F`.`metafunction-id`))) join `description` `D` on(((`D`.`id` = `M`.`description-id`) and (`D`.`name` = 'IP')))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `ip-chain`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ip-chain`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ip-chain` AS select `a`.`id` AS `id1`,`a`.`form` AS `form1`,`a`.`lemma` AS `lemma1`,`b`.`id` AS `id2`,`b`.`form` AS `form2`,`b`.`lemma` AS `lemma2`,`c`.`id` AS `id3`,`c`.`form` AS `form3`,`c`.`lemma` AS `lemma3`,`a`.`class` AS `class1`,`b`.`class` AS `class2`,`c`.`class` AS `class3`,`FA`.`name` AS `function1`,`FB`.`name` AS `function2` from ((((((((`ip-word` `A` join `word-function` `WFA` on((`WFA`.`word-id` = `a`.`id`))) join `ip-word` `B` on((`b`.`id` = `WFA`.`head-id`))) join `function` `FA` on((`FA`.`id` = `WFA`.`id`))) join `word-function` `WFB` on((`WFB`.`word-id` = `b`.`id`))) join `ip-word` `C` on((`c`.`id` = `WFB`.`head-id`))) join `function` `FB` on((`FB`.`id` = `WFB`.`id`))) join `metafunction` `M` on(((`M`.`id` = `FA`.`metafunction-id`) and (`M`.`id` = `FB`.`metafunction-id`)))) join `description` `D` on(((`D`.`id` = `M`.`description-id`) and (`D`.`name` = 'IP')))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -572,6 +708,24 @@ CREATE TABLE `wording` (
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `ip-systemic-features`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ip-systemic-features`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ip-systemic-features` AS select `F`.`id` AS `id`,`F`.`name` AS `name`,`S`.`name` AS `system` from ((`feature` `F` join `system` `S` on((`S`.`id` = `F`.`system-id`))) join `description` `D` on(((`D`.`id` = `S`.`description-id`) and (`D`.`name` = 'IP')))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `ip-word`
 --
 
@@ -585,6 +739,24 @@ CREATE TABLE `wording` (
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `ip-word` AS select `W`.`wording-id` AS `wording-id`,`W`.`order` AS `order`,`W`.`id` AS `id`,`W`.`form` AS `form`,`W`.`backspaced` AS `backspaced`,`W`.`lemma` AS `lemma`,`F`.`name` AS `class` from ((((`word` `W` join `word-feature` `WF` on((`W`.`id` = `WF`.`word-id`))) join `feature` `F` on((`F`.`id` = `WF`.`id`))) join `system` `S` on(((`S`.`id` = `F`.`system-id`) and (`S`.`name` = 'WORD-CLASS')))) join `description` `D` on(((`D`.`id` = `S`.`description-id`) and (`D`.`name` = 'IP')))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `ip-word-features`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ip-word-features`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ip-word-features` AS select `W`.`id` AS `id`,`W`.`form` AS `form`,`W`.`lemma` AS `lemma`,`F`.`name` AS `feature`,`S`.`name` AS `system` from ((((`feature` `F` join `system` `S` on((`S`.`id` = `F`.`system-id`))) join `description` `D` on(((`D`.`id` = `S`.`description-id`) and (`D`.`name` = 'IP')))) join `word-feature` `WF` on((`WF`.`id` = `F`.`id`))) join `word` `W` on((`W`.`id` = `WF`.`word-id`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -674,7 +846,25 @@ CREATE TABLE `wording` (
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `ittb-ip-anchor` AS select `o`.`id1` AS `id1`,`o`.`form1` AS `form1`,`o`.`lemma1` AS `lemma1`,`o`.`id2` AS `id2`,`o`.`form2` AS `form2`,`o`.`lemma2` AS `lemma2`,`o`.`class1` AS `class1`,`o`.`class2` AS `class2`,`o`.`function` AS `function`,`a`.`class1` AS `class1A`,`a`.`class2` AS `class2A`,`a`.`function` AS `functionA` from (`ittb-anchor` `O` left join `ip-anchor` `a` on(((`a`.`id1` = `o`.`id1`) and (`a`.`id2` = `o`.`id2`)))) */;
+/*!50001 VIEW `ittb-ip-anchor` AS select `o`.`id1` AS `id1`,`o`.`form1` AS `form1`,`o`.`lemma1` AS `lemma1`,`o`.`id2` AS `id2`,`o`.`form2` AS `form2`,`o`.`lemma2` AS `lemma2`,`o`.`class1` AS `class1`,`o`.`class2` AS `class2`,`o`.`function` AS `function`,`a`.`class1` AS `class1A`,`a`.`class2` AS `class2A`,`a`.`function` AS `functionA`,`b`.`class1` AS `class1B`,`b`.`class2` AS `class2B`,`b`.`function` AS `functionB` from ((`ittb-anchor` `O` left join `ip-anchor` `a` on(((`a`.`id1` = `o`.`id1`) and (`a`.`id2` = `o`.`id2`)))) left join `ip-anchor` `b` on(((`b`.`id1` = `o`.`id1`) and (`b`.`id2` <> `o`.`id2`)))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `ittb-ip-anchor-back`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ittb-ip-anchor-back`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ittb-ip-anchor-back` AS select `o`.`id1` AS `id1`,`o`.`form1` AS `form1`,`o`.`lemma1` AS `lemma1`,`o`.`id2` AS `id2`,`o`.`form2` AS `form2`,`o`.`lemma2` AS `lemma2`,`o`.`class1` AS `class1`,`o`.`class2` AS `class2`,`o`.`function` AS `function`,`a`.`class1` AS `class1A`,`a`.`class2` AS `class2A`,`a`.`function` AS `functionA`,`b`.`class1` AS `class1B`,`b`.`class2` AS `class2B`,`b`.`function` AS `functionB` from ((`ittb-anchor` `O` left join `ip-anchor` `a` on(((`a`.`id2` = `o`.`id1`) and (`a`.`id1` = `o`.`id2`)))) left join `ip-anchor` `b` on(((`b`.`id2` = `o`.`id1`) and (`b`.`id1` <> `o`.`id2`)))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -716,6 +906,24 @@ CREATE TABLE `wording` (
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `ittb-systemic-features`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ittb-systemic-features`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ittb-systemic-features` AS select `F`.`id` AS `id`,`F`.`name` AS `name`,`S`.`name` AS `system` from ((`feature` `F` join `system` `S` on((`S`.`id` = `F`.`system-id`))) join `description` `D` on(((`D`.`id` = `S`.`description-id`) and (`D`.`name` = 'ITTB')))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `ittb-word`
 --
 
@@ -732,6 +940,24 @@ CREATE TABLE `wording` (
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `ittb-word-features`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ittb-word-features`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ittb-word-features` AS select `W`.`id` AS `id`,`W`.`form` AS `form`,`W`.`lemma` AS `lemma`,`F`.`name` AS `feature`,`S`.`name` AS `system` from ((((`feature` `F` join `system` `S` on((`S`.`id` = `F`.`system-id`))) join `description` `D` on(((`D`.`id` = `S`.`description-id`) and (`D`.`name` = 'ITTB')))) join `word-feature` `WF` on((`WF`.`id` = `F`.`id`))) join `word` `W` on((`W`.`id` = `WF`.`word-id`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -742,4 +968,4 @@ CREATE TABLE `wording` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-12 15:12:07
+-- Dump completed on 2020-07-19 16:13:22
