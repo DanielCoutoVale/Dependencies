@@ -7,7 +7,7 @@ In the context of teaching Latin, wordings are represented as dependency structu
 * for automatically generating exercises on grammatical phenomena
 * for assessing whether a clause can be understood given what was taught
 
-Ranks will improve the usability of dependency trees for all these purposes, but here I shall focus on how they improve graphical representation of grammatical units and how this can improve comprehension.
+Ranks will improve the usability of dependency trees for all these purposes, but here I shall focus on how they improve graphical representation of grammatical units and how this can improve comprehension. Here is a sample representation of [IP ranked dependency trees](outputs/la_ittb-ip-dev.html).
 
 ## The clause
 
