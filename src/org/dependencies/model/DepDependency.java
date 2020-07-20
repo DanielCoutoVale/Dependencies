@@ -23,6 +23,11 @@ public class DepDependency {
 	private DepFunction function;
 
 	/**
+	 * The rank at which the word depends on the head word.
+	 */
+	private DepFeature wordRank;
+
+	/**
 	 * Gets the head order.
 	 * 
 	 * @return the head order
@@ -74,6 +79,24 @@ public class DepDependency {
 	 */
 	public final void setHeadRank(DepFeature headRank) {
 		this.headRank = headRank;
+	}
+
+	/**
+	 * Gets the rank at which the word depends on the head word.
+	 * 
+	 * @return the wordRank the word rank
+	 */
+	public DepFeature getWordRank() {
+		return wordRank;
+	}
+
+	/**
+	 * Sets the rank at which the word depends on the head word.
+	 * 
+	 * @param wordRank the word rank
+	 */
+	public void setWordRank(DepFeature wordRank) {
+		this.wordRank = wordRank;
 	}
 
 }

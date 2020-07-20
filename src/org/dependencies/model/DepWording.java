@@ -159,13 +159,16 @@ public class DepWording implements Iterable<DepWord> {
 					node.setHead(head);
 				} else {
 					DepDependency dependency = new DepDependency();
+					DepFeature wordRank = new DepFeature();
+					wordRank.setName("groups");
 					DepFunction function = new DepFunction();
 					function.setName("xxxxx");
-					DepFeature followedRank = new DepFeature();
-					followedRank.setName("clause");
+					DepFeature headRank = new DepFeature();
+					headRank.setName("clause");
+					dependency.setWordRank(wordRank);
 					dependency.setFunction(function);
 					dependency.setHeadOrder(followedId);
-					dependency.setHeadRank(followedRank);
+					dependency.setHeadRank(headRank);
 					word.addDependency(dependency);
 					head = nodeMap.get(dependency.getHeadOrder());
 					head.addTail(node);
