@@ -181,7 +181,13 @@ public class DepWording implements Iterable<DepWord> {
 		if (nodeMap.get(0).getTails().size() == 0) {
 			nodeMap.get(1).asWord().clearDependencies();
 		}
-		return nodeMap.get(0).getTails().get(0);
+		DepNode root = nodeMap.get(0);
+		List<DepNode> rootTails = root.getTails();
+		if (rootTails.size() == 0) {
+			System.err.println("Could not make dependency tree for '" + this.form + "'");
+			System.exit(-1);
+		}
+		return rootTails.get(0);
 	}
 
 }

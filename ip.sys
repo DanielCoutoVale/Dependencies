@@ -195,7 +195,10 @@ metafunction EXPERIENTIAL
 - Goal
 - Donor
 - Recipient
+- Tool
+- Range
 - Circumstance
+- Minor-Range
 - Deictic
 - Ordinator
 - Nominator
@@ -204,9 +207,11 @@ metafunction EXPERIENTIAL
 - Classifier
 - Epithet
 - Possessor
-- Circumscriber
+- Qualifier
 
 metafunction LOGICAL
+- Idea
+- Locution
 - Elaborator
 - Extender
 - Enhancer
