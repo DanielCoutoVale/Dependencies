@@ -200,7 +200,10 @@ STOP
 [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => +T:EXPERIENTIAL:Actor#1:groups#2:clause
 [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Nsubj-Pass#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
 [T:WORD-CLASS:number T:NUMBER-KIND:ordinal T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
-[T:WORD-CLASS:number T:NUMBER-KIND:cardinal T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
+
+[T:WORD-CLASS:number T:NUMBER-KIND:cardinal] [T:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => +T:EXPERIENTIAL:Actor#1:groups#2:clause
+[T:WORD-CLASS:number T:NUMBER-KIND:cardinal] [T:WORD-CLASS:verb] S:MIXED:Nsubj-Pass#1:word#2:word => +T:EXPERIENTIAL:Actor#1:groups#2:clause
+[T:WORD-CLASS:number T:NUMBER-KIND:cardinal] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Goal#1:groups#2:clause
 
 [T:WORD-CLASS:number T:NUMBER-KIND:ordinal] [T:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Ordinator#1:groups#2:clause
 [T:WORD-CLASS:number T:NUMBER-KIND:ordinal] [T:WORD-CLASS:noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Ordinator#1:groups#2:group 
@@ -302,7 +305,6 @@ STOP
 [T:LEMMA:intellectivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Epithet#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
 
 # Deictic
-[T:WORD-CLASS:adv] [] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
 [T:NOUN-CLASS:pronoun] [] S:MIXED:Det#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
 [T:LEMMA:certus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Deictic#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
 [T:LEMMA:contrarius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Deictic#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
@@ -521,6 +523,10 @@ STOP
 [S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] [S:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Ccomp#2:word#3:word => +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb S:LEMMA:dico] S:MIXED:Csubj-Pass#1:word#2:word => +T:LOGICAL:Locution#1:clauses#2:clause-complex
 
+[S:WORD-CLASS:adv] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
+[S:WORD-CLASS:adv] [T:WORD-CLASS:adjective] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Intensifier#1:groups#2:group
+[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] S:MIXED:Advmod-Emph#1:word#2:word => +T:LOGICAL:Adjunct#1:groups#2:group
+
 # VERBS STEP 2.2
 
 # dum ego hoc facio (finite conjunctive)
@@ -556,17 +562,19 @@ STOP
 # NOUN STEP 2
 
 [T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Donor#2:groups#3:clause
+[T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Attribute#2:groups#3:clause
 [T:WORD-CLASS:adposition S:LEMMA:ab] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Actor#2:groups#3:clause
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Recipient#1:groups#2:clause -T:EXPERIENTIAL:Goal#1:groups#2:clause
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Iobj#1:word#2:word => +T:EXPERIENTIAL:Recipient#1:groups#2:clause -T:EXPERIENTIAL:Goal#1:groups#2:clause
-[T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Tool#1:groups#2:clause -T:EXPERIENTIAL:Goal#1:groups#2:clause
+[T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obl#1:word#2:word => +T:EXPERIENTIAL:Tool#1:groups#2:clause
 
+[T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 [T:WORD-CLASS:adposition S:LEMMA:secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 [T:WORD-CLASS:adposition S:LEMMA:inter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 [T:WORD-CLASS:adposition S:LEMMA:propter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:in] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
+[T:WORD-CLASS:adposition S:LEMMA:in] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#2:clause
 [T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
+[T:WORD-CLASS:adposition S:LEMMA:ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#2:clause
 [T:WORD-CLASS:adposition S:LEMMA:per] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
