@@ -80,6 +80,7 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:sapiens] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:impius] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:sequax] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 
 # VERBS STEP 4
 
@@ -540,22 +541,92 @@ STOP
 
 [T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Advcl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Advcl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Acl#3:word#2:word S:MIXED:Obl#2:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl-Arg#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
 
-#1 ad     | errores     | destruendos   | assumere
-#2 in     | rebus       | cognoscendis  | experimur
-#3 ad     | cognitionem | habendam      | proponi
-#4 ad     | divina      | cognoscenda   | habet
-#5 ad     | veritatem   | manifestandam | sunt
-#- Mark   | Nsubj-Pass  | Advcl         | Head
+#1 ad     | esse        | demonstrandum | nititur
+#2 ad     | esse        | probandum     | inducebant
+#3 ad     | esse        | demonstrandum | via
+#4 ad     | esse        | probandum     | demonstratio
+#5 ad     | esse        | probandum     | rationes
+#6 ad     | esse        | demonstrandum | niti
+#7 ad     | esse        | probandum     | procedit
+#8 ad     | esse        | probandum     | via
+#- Case   | Ccomp       | %             | Head
+#- Marker | Enhancer    | Auxiliary     | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:verb S:VERBFORM:inf] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark#1:word#3:word S:MIXED:Ccomp#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Auxiliary#3:groups#2:clause +T:LOGICAL:Enhancer#2:clauses#4:clause-complex
+
+#1 in     | incorporeis | meditandis | delinquere
+#- Case   | Subj        | %          | Head
+#- Marker | Enhancer    | Auxiliary  | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+
+#1 ad     | adversarios  | convincendos  | exercitium
+#2 ad     | cognitionem  | habendam      | proponi
+#3 ad     | divina       | cognoscenda   | habet
+#4 ad     | ea           | cognoscenda   | pervenitur
+#5 ad     | ea           | solvenda      | relinquitur
+#6 ad     | errores      | destruendos   | assumere
+#7 ad     | necessitatem | complendam    | necessarium
+#8 ad     | omnia        | capienda      | sufficit
+#9 ad     | quae         | cognoscenda   | pertingit
+#A ad     | quam         | capiendam     | idoneus
+#B ad     | substantiam  | capiendam     | pertingere
+#C ad     | substantiam  | declarandam   | insufficiens
+#D ad     | veritatem    | manifestandam | possibilis
+#E ad     | veritatem    | manifestandam | sunt
+#F circa  | errores      | destruendos   | veritate
+#- Mark   | Nsubj-Pass   | %             | Head
+#- Marker | Goal         | Enhancer      | Head 
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:am-foliage] [] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+
+#1 ad     | aquam       | calefaciendum | est
+#2 ad     | deum        | cognoscendum  | pateret
+#3 ad     | ea          | confirmandum  | ostendit
+#4 ad     | esse        | cognoscendum  | perducitur
+#5 ad     | esse        | cognoscendum  | pervenimus
+#6 ad     | hoc         | dicendum      | moti
+#7 ad     | idem        | ostendendum   | rationes
+#8 ad     | idem        | probandum     | ratio
+#9 ad     | infinitatem | probandum     | valet
+#A ad     | naturam     | significandum | institutum
+#B ad     | quod        | significandum | imponitur
+#C ad     | quod        | significandum | impositum
+#D ad     | rationes    | ponendum      | procedamus
+#E ad     | speciem     | designandum   | imposita
+#F ad     | veritatem   | cognoscendum  | habet
+#G in     | ipsum       | cognoscendum  | perducitur
+#- Mark   | Obj         | %             | Head
+#- Marker | Goal        | Enhancer      | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:am-foliage] [] S:MIXED:Mark#1:word#3:word S:MIXED:Obj#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+
+#1 quae        | consideranda  | ea
+#2 rebus       | cognoscendis  | experimur
+#- Nsubj-Pass  | %             | Head
+#- Goal        | Enhancer      | Head 
+[T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Nsubj-Pass#1:word#2:word S:MIXED:%#2:word#3:word => +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
+
+#1 deum           | cognoscendo  | consistit
+#2 errores        | eliminando   | manifestare
+#3 haec           | credendo     | incipe
+#4 motus          | inducendo    | probat
+#5 praepositionem | interponendo | format
+#- Obj            | %            | Head
+#- Goal           | Enhancer     | Head
+[T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Obj#1:word#2:word S:MIXED:%#2:word#3:word => +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
+
+#1 in     | rebus       | cognoscendis  | experimur
+#- Mark   | Nsubj-Pass  | %             | Head
 #- Marker | Goal        | Enhancer      | Head 
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause
 
-#1 ad     | veritatem  | manifestandam | sit  | possibilis
-#- Mark   | Nsubj-Pass | Advcl         | Cop  | Head
-#- Marker | Goal       | Enhancer      | Head | --
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] [] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl#3:word#5:word S:MIXED:Cop#4:word#5:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+#1 in     | deum        | cognoscendo  | consistit
+#- Mark   | Obj         | %             | Head
+#- Marker | Goal        | Enhancer      | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Mark#1:word#3:word S:MIXED:Obj#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause
+
+#1 in     | rebus       | nominandis | sequendum
+#- Case   | Obl         | Acl        | Head
+#- Marker | Goal        | Enhancer   | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#4:word S:MIXED:Acl#3:word#2:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
 
 [] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
@@ -586,9 +657,9 @@ STOP
 [T:WORD-CLASS:adposition S:LEMMA:secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 [T:WORD-CLASS:adposition S:LEMMA:inter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 [T:WORD-CLASS:adposition S:LEMMA:propter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:in] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#2:clause
+[T:WORD-CLASS:adposition S:LEMMA:in] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#3:clause
 [T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#2:clause
+[T:WORD-CLASS:adposition S:LEMMA:ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#3:clause
 [T:WORD-CLASS:adposition S:LEMMA:per] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
 
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
@@ -615,7 +686,7 @@ STOP
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 
-# Fix noun class
+# Fix word class
 [S:LEMMA:divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal#1:groups#2:clause => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS=proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
 
 # VERBS STEP 5
@@ -626,4 +697,3 @@ STOP
 [] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary3#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
 
 [T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Case#1:word#2:word S:MIXED:Nmod#2:word#3:word => +T:EXPERIENTIAL:Qualifier#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-
