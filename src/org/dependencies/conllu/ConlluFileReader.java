@@ -36,7 +36,7 @@ public class ConlluFileReader {
 	 * @param fileName the file name
 	 * @throws SQLException if analyzed text cannot be stored in the dependency base
 	 */
-	public final void importFile(String corpusName, String languageName, String textTitle, String descriptionName,
+	public final void readFile(String corpusName, String languageName, String textTitle, String descriptionName,
 			String analysisName, String fileName) throws SQLException {
 		MysqlDependencyBase base = new MysqlDependencyBase();
 		DepCorpus corpus = base.getCorpus(corpusName);

@@ -33,7 +33,7 @@ public class ImportAnalysis {
 		ConlluFileReader importer = new ConlluFileReader();
 		try {
 			System.out.println(format("Importing %s as %s", fileName, textTitle));
-			importer.importFile(corpusName, languageName, textTitle, descriptionName, analysisName, fileName);
+			importer.readFile(corpusName, languageName, textTitle, descriptionName, analysisName, fileName);
 			System.out.println("Imported!");
 		} catch (SQLException e) {
 			e.printStackTrace();

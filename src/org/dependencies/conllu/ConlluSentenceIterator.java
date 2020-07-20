@@ -113,7 +113,7 @@ public class ConlluSentenceIterator implements Iterator<ConlluSentence> {
 			word.pos = tokens[3].toLowerCase();
 			word.features = ConlluSentenceIterator.parseFeatures(tokens[5]);
 			word.headOrder = Integer.parseInt(tokens[6]);
-			word.functionName = StringUtils.toHyphenCamelCase(tokens[7].split(":"));
+			word.functionName = getFunctionName(tokens[7]);
 			word.backspaced = !tokens[9].contains("SpaceAfter=No");
 			sentence.words.add(word);
 			lines: while (true) {
@@ -137,6 +137,15 @@ public class ConlluSentenceIterator implements Iterator<ConlluSentence> {
 		}
 		this.advance();
 		return sentence;
+	}
+
+	private String getFunctionName(String token) {
+		String[] tokens = token.split(":");
+		if (tokens.length < 3) {
+			return StringUtils.toHyphenCamelCase(tokens);
+		} else {
+			return token;
+		}
 	}
 
 }

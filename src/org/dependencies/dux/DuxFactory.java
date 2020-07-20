@@ -26,8 +26,8 @@ public class DuxFactory {
 		for (int i = 0; i < matchTags.size(); i++) {
 			DepWordFeature feature = new DepWordFeature();
 			DuxFeature matchTag = matchTags.get(i);
-			feature.setDescriptionName(descriptionMap.get(matchTag.getPrefix()).getName());
-			feature.setAnalysisName(analysisMap.get(matchTag.getPrefix()).getName());
+			feature.setDescriptionId(descriptionMap.get(matchTag.getPrefix()).getId());
+			feature.setAnalysisId(analysisMap.get(matchTag.getPrefix()).getId());
 			feature.setSystemName(matchTag.getSystemName());
 			feature.setName(matchTag.getFeatureName());
 			features.add(feature);
@@ -37,12 +37,12 @@ public class DuxFactory {
 
 	public DepWordFunction makeWordFunction(DuxFunction function) {
 		DepWordFunction depFunction = new DepWordFunction();
-		depFunction.setDescriptionName(descriptionMap.get(function.getPrefix()).getName());
-		depFunction.setAnalysisName(analysisMap.get(function.getPrefix()).getName());
-		depFunction.setMetafunctionName(function.getMetafunctionName());
+		DepDescription description = descriptionMap.get(function.getPrefix());
+		depFunction.setAnalysisId(analysisMap.get(function.getPrefix()).getId());
+		depFunction.setMetafunctionId(description.getMetafunction(function.getMetafunctionName()).getId());
 		depFunction.setName(function.getName());
-		depFunction.setWordRankName(function.getWordRankName());
-		depFunction.setHeadRankName(function.getHeadRankName());
+		depFunction.setWordRankId(description.getRank(function.getWordRankName()).getId());
+		depFunction.setHeadRankId(description.getRank(function.getHeadRankName()).getId());
 		return depFunction;
 	}
 }

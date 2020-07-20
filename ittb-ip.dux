@@ -542,7 +542,20 @@ STOP
 [T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Advcl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Acl#3:word#2:word S:MIXED:Obl#2:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl-Arg#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+
+#1 ad     | errores     | destruendos   | assumere
+#2 in     | rebus       | cognoscendis  | experimur
+#3 ad     | cognitionem | habendam      | proponi
+#4 ad     | divina      | cognoscenda   | habet
+#5 ad     | veritatem   | manifestandam | sunt
+#- Mark   | Nsubj-Pass  | Advcl         | Head
+#- Marker | Goal        | Enhancer      | Head 
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
+
+#1 ad     | veritatem  | manifestandam | sit  | possibilis
+#- Mark   | Nsubj-Pass | Advcl         | Cop  | Head
+#- Marker | Goal       | Enhancer      | Head | --
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] [] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj-Pass#2:word#3:word S:MIXED:Advcl#3:word#5:word S:MIXED:Cop#4:word#5:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
 
 [] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
@@ -601,6 +614,9 @@ STOP
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
+
+# Fix noun class
+[S:LEMMA:divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal#1:groups#2:clause => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS=proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
 
 # VERBS STEP 5
 

@@ -3,19 +3,14 @@ package org.dependencies.model;
 public class DepWordFunction {
 
 	/**
-	 * The description name.
-	 */
-	private String descriptionName;
-
-	/**
 	 * The analysis name.
 	 */
-	private String analysisName;
+	private Integer analysisId;
 
 	/**
 	 * The metafunction name.
 	 */
-	private String metafunctionName;
+	private Integer metafunctionId;
 
 	/**
 	 * The function name.
@@ -25,36 +20,12 @@ public class DepWordFunction {
 	/**
 	 * The word rank name.
 	 */
-	private String wordRankName;
+	private Integer wordRankId;
 	
 	/**
 	 * The head rank name.
 	 */
-	private String headRankName;
-
-	public String getDescriptionName() {
-		return descriptionName;
-	}
-
-	public void setDescriptionName(String descriptionName) {
-		this.descriptionName = descriptionName;
-	}
-
-	public String getAnalysisName() {
-		return analysisName;
-	}
-
-	public void setAnalysisName(String analysisName) {
-		this.analysisName = analysisName;
-	}
-
-	public String getMetafunctionName() {
-		return metafunctionName;
-	}
-
-	public void setMetafunctionName(String metafunctionName) {
-		this.metafunctionName = metafunctionName;
-	}
+	private Integer headRankId;
 
 	public String getName() {
 		return name;
@@ -64,20 +35,60 @@ public class DepWordFunction {
 		this.name = name;
 	}
 
-	public String getWordRankName() {
-		return wordRankName;
+	/**
+	 * @return the analysisId
+	 */
+	public Integer getAnalysisId() {
+		return analysisId;
 	}
 
-	public void setWordRankName(String wordRankName) {
-		this.wordRankName = wordRankName;
+	/**
+	 * @param analysisId the analysisId to set
+	 */
+	public void setAnalysisId(Integer analysisId) {
+		this.analysisId = analysisId;
 	}
 
-	public String getHeadRankName() {
-		return headRankName;
+	/**
+	 * @return the metafunctionId
+	 */
+	public Integer getMetafunctionId() {
+		return metafunctionId;
 	}
 
-	public void setHeadRankName(String headRankName) {
-		this.headRankName = headRankName;
+	/**
+	 * @param metafunctionId the metafunctionId to set
+	 */
+	public void setMetafunctionId(Integer metafunctionId) {
+		this.metafunctionId = metafunctionId;
+	}
+
+	/**
+	 * @return the wordRankId
+	 */
+	public Integer getWordRankId() {
+		return wordRankId;
+	}
+
+	/**
+	 * @param wordRankId the wordRankId to set
+	 */
+	public void setWordRankId(Integer wordRankId) {
+		this.wordRankId = wordRankId;
+	}
+
+	/**
+	 * @return the headRankId
+	 */
+	public Integer getHeadRankId() {
+		return headRankId;
+	}
+
+	/**
+	 * @param headRankId the headRankId to set
+	 */
+	public void setHeadRankId(Integer headRankId) {
+		this.headRankId = headRankId;
 	}
 	
 }

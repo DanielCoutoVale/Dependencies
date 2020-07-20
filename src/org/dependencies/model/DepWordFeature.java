@@ -8,14 +8,14 @@ package org.dependencies.model;
 public class DepWordFeature {
 
 	/**
-	 * The description name.
+	 * The description id.
 	 */
-	private String descriptionName;
+	private Integer descriptionId;
 
 	/**
-	 * The analysis name.
+	 * The analysis id.
 	 */
-	private String analysisName;
+	private Integer analysisId;
 
 	/**
 	 * The system name.
@@ -28,39 +28,39 @@ public class DepWordFeature {
 	private String name;
 
 	/**
-	 * Gets the name of the description to which this feature belongs.
+	 * Gets the id of the description to which this feature belongs.
 	 * 
-	 * @return the description name
+	 * @return the description id
 	 */
-	public final String getDescriptionName() {
-		return this.descriptionName;
+	public final Integer getDescriptionId() {
+		return this.descriptionId;
 	}
 
 	/**
-	 * Sets the name of the description to which this feature belongs.
+	 * Sets the id of the description to which this feature belongs.
 	 * 
-	 * @param descriptionName the description name
+	 * @param descriptionId the description id
 	 */
-	public final void setDescriptionName(String descriptionName) {
-		this.descriptionName = descriptionName;
+	public final void setDescriptionId(Integer descriptionId) {
+		this.descriptionId = descriptionId;
 	}
 
 	/**
-	 * Gets the name of the analysis in which this feature was ascribed to a word.
+	 * Gets the id of the analysis in which this feature was ascribed to a word.
 	 * 
-	 * @return the analysis name
+	 * @return the analysis id
 	 */
-	public final String getAnalysisName() {
-		return this.analysisName;
+	public final Integer getAnalysisId() {
+		return this.analysisId;
 	}
 
 	/**
-	 * Sets the name of the analysis in which this feature was ascribed to a word.
+	 * Sets the id of the analysis in which this feature was ascribed to a word.
 	 * 
-	 * @param analysisName the analysis name
+	 * @param analysisId the analysis id
 	 */
-	public final void setAnalysisName(String analysisName) {
-		this.analysisName = analysisName;
+	public final void setAnalysisId(Integer analysisId) {
+		this.analysisId = analysisId;
 	}
 
 	/**

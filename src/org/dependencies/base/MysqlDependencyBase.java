@@ -75,16 +75,12 @@ public class MysqlDependencyBase {
 	 */
 	private static final String makeWordFeatureJoinSql(Integer wOrder, Integer fOrder) {
 		return format(
-				"JOIN `word-feature` W%dWF%d ON W%dWF%d.`word-id` = W%d.`id` \n"
-						+ "JOIN `analysis` W%dA%d ON W%dA%d.`id` = W%dWF%d.`analysis-id` AND W%dA%d.`name` = ? \n"
+				"JOIN `word-feature` W%dWF%d ON W%dWF%d.`word-id` = W%d.`id` AND W%dWF%d.`analysis-id` = ? \n"
 						+ "JOIN `feature` W%dF%d ON W%dF%d.`id` = W%dWF%d.`id` AND W%dF%d.`name` = ? \n"
-						+ "JOIN `system` W%dS%d ON W%dS%d.`id` = W%dF%d.`system-id` AND W%dS%d.`name` = ? \n"
-						+ "JOIN `description` W%dD%d ON W%dD%d.`id` = W%dS%d.`description-id` AND W%dD%d.`name` = ? \n",
-				wOrder, fOrder, wOrder, fOrder, wOrder,
+						+ "JOIN `system` W%dS%d ON W%dS%d.`id` = W%dF%d.`system-id` AND W%dS%d.`name` = ? AND W%dS%d.`description-id` = ? \n",
+				wOrder, fOrder, wOrder, fOrder, wOrder, wOrder, fOrder,
 				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
-				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
-				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
-				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder);
+				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder);
 	}
 
 	/**
@@ -96,40 +92,28 @@ public class MysqlDependencyBase {
 	 * @return the SQL
 	 */
 	private static String makeWordFunctionJoinSql(Integer order, Integer wordIndex, Integer headIndex) {
-		return format("JOIN `word-function` WF%d ON \n"
-				+ "\t WF%d.`word-id` = W%d.`id` \n"
+		return format("JOIN `word-function` WF%d \n"
+				+ "\t  ON WF%d.`word-id` = W%d.`id` \n"
 				+ "\t AND WF%d.`head-id` = W%d.`id` \n"
-				+ "JOIN `function` WF%dF ON WF%dF.`id` = WF%d.`id` AND WF%dF.`name` LIKE ? \n"
-				+ "JOIN `feature` WF%dFA ON WF%dFA.`id` = WF%d.`word-rank-id` AND WF%dFA.`name` = ? \n"
-				+ "JOIN `feature` WF%dFB ON WF%dFB.`id` = WF%d.`head-rank-id` AND WF%dFB.`name` = ? \n"
-				+ "JOIN `system` WF%dSA ON WF%dSA.`id` = WF%dFA.`system-id` AND (WF%dSA.`name` = 'RANK' OR WF%dSA.`name` LIKE '%s-COMPLEXITY') \n"
-				+ "JOIN `system` WF%dSB ON WF%dSB.`id` = WF%dFB.`system-id` AND (WF%dSB.`name` = 'RANK' OR WF%dSB.`name` LIKE '%s-COMPLEXITY') \n"
-				+ "JOIN `metafunction` WF%dM ON WF%dM.`id` = WF%dF.`metafunction-id` AND WF%dM.`name` = ? \n"
-				+ "JOIN `analysis` WF%dA ON WF%dA.`id` = WF%d.`analysis-id` AND WF%dA.`name` = ? \n"
-				+ "JOIN `description` WF%dD ON \n"
-				+ "\t WF%dD.`name` = ? \n"
-				+ "\t AND WF%dD.`id` = WF%dM.`description-id` \n"
-				+ "\t AND WF%dD.`id` = WF%dA.`description-id` \n"
-				+ "\t AND WF%dD.`id` = WF%dSA.`description-id` \n"
-				+ "\t AND WF%dD.`id` = WF%dSB.`description-id` \n",
+				+ "\t AND WF%d.`word-rank-id` = ? \n"
+				+ "\t AND WF%d.`head-rank-id` = ? \n"
+				+ "\t AND WF%d.`analysis-id` = ? \n"
+				+ "JOIN `function` WF%dF \n"
+				+ "\t  ON WF%dF.`id` = WF%d.`id` \n"
+				+ "\t AND WF%dF.`name` LIKE ? \n"
+				+ "\t AND WF%dF.`metafunction-id` = ? \n",
 				order,
 				order, wordIndex,
 				order, headIndex,
-				order, order, order, order,
-				order, order, order, order,
-				order, order, order, order,
-				order, order, order, order, order, "%",
-				order, order, order, order, order, "%",
-				order, order, order, order,
-				order, order, order, order,
-				order, 
-				order, 
-				order, order, 
-				order, order, 
-				order, order, 
-				order, order);
+				order,
+				order,
+				order,
+				order,
+				order, order,
+				order,
+				order);
 	}
-	
+ 
 	/**
 	 * The connection
 	 */
@@ -843,9 +827,10 @@ public class MysqlDependencyBase {
 	/**
 	 * Search for words that have the specified features in this dependency base.
 	 * 
-	 * @param wordFeatures the word features
+	 * @param factory the factory
+	 * @param matches the matches
 	 * @return the words
-	 * @throws SQLException if the query fails
+	 * @throws SQLException
 	 */
 	public final List<List<DepWord>> searchForWords(DuxFactory factory, List<DuxMatch> matches) throws SQLException {
 		StringBuffer buffer1 = new StringBuffer();
@@ -927,20 +912,20 @@ public class MysqlDependencyBase {
 					if (wordFeature.getSystemName().equals("LEMMA")) {
 						continue;
 					}
-					stmt.setString(index++, wordFeature.getAnalysisName());
+					stmt.setInt(index++, wordFeature.getAnalysisId());
 					stmt.setString(index++, wordFeature.getName());
 					stmt.setString(index++, wordFeature.getSystemName());
-					stmt.setString(index++, wordFeature.getDescriptionName());
+					stmt.setInt(index++, wordFeature.getDescriptionId());
 				}
 			} else {
 				DuxFunction function = (DuxFunction) match;
 				DepWordFunction wordFunction = factory.makeWordFunction(function);
+				// word rank id, head rank id, analysis id, name, metafunction id
+				stmt.setInt(index++, wordFunction.getWordRankId());
+				stmt.setInt(index++, wordFunction.getHeadRankId());
+				stmt.setInt(index++, wordFunction.getAnalysisId());
 				stmt.setString(index++, wordFunction.getName());
-				stmt.setString(index++, wordFunction.getWordRankName());
-				stmt.setString(index++, wordFunction.getHeadRankName());
-				stmt.setString(index++, wordFunction.getMetafunctionName());
-				stmt.setString(index++, wordFunction.getAnalysisName());
-				stmt.setString(index++, wordFunction.getDescriptionName());
+				stmt.setInt(index++, wordFunction.getMetafunctionId());
 			}
 		}
 		for (DepWordFeature lemma : lemmata) {
