@@ -4,7 +4,7 @@ import static java.lang.String.format;
 
 import java.sql.SQLException;
 
-import org.dependencies.conllu.ConlluFileImporter;
+import org.dependencies.conllu.ConlluFileReader;
 
 /**
  * Imports a CONLLU file.
@@ -30,7 +30,7 @@ public class ImportAnalysis {
 		String descriptionName = args[3];
 		String analysisName = args[4];
 		String fileName = args[5];
-		ConlluFileImporter importer = new ConlluFileImporter();
+		ConlluFileReader importer = new ConlluFileReader();
 		try {
 			System.out.println(format("Importing %s as %s", fileName, textTitle));
 			importer.importFile(corpusName, languageName, textTitle, descriptionName, analysisName, fileName);

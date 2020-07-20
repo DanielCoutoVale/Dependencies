@@ -98,9 +98,6 @@ public class ConlluFileWriter {
 
 	private String getWordFeatureLabels(DepDescription description, DepSystem wordClasses, DepWord word) {
 		StringBuffer buffer = new StringBuffer();
-		if (word.getDependencies().size() > 1) {
-			buffer.append("MultiDep=Yes");
-		}
 		List<DepFeature> features;
 		features = word.getFeatures();
 		features.removeAll(wordClasses.getFeatures());
@@ -121,9 +118,6 @@ public class ConlluFileWriter {
 	
 	private String getMixedLabels(DepWord word) {
 		StringBuffer buffer = new StringBuffer();
-		if (word.getDependencies().size() > 1) {
-			buffer.append("MultiDep=Yes");
-		}
 		if (word.isBackspaced()) {
 			buffer.append("SpaceAfter=No");
 		}

@@ -536,7 +536,11 @@ public class MysqlDependencyBase {
 	 */
 	public final DepAnalyzedText getAnalyzedText(Integer corpusId, Integer languageId, String title, Integer analysisId)
 			throws SQLException {
-		DepAnalyzedText text = new DepAnalyzedText(this.getText(corpusId, languageId, title));
+		DepText unanalyzedText = this.getText(corpusId, languageId, title);
+		if (unanalyzedText == null) {
+			return null;
+		}
+		DepAnalyzedText text = new DepAnalyzedText(unanalyzedText);
 		String sql = "SELECT Ws.* FROM `wording` Ws " + "WHERE Ws.`text-id` = ?";
 		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
 		stmt.setInt(1, text.getId());
@@ -774,8 +778,9 @@ public class MysqlDependencyBase {
 		stmt.setInt(2, languageId);
 		stmt.setString(3, title);
 		ResultSet rs = stmt.executeQuery();
-		if (!rs.next())
-			throw new SQLException();
+		if (!rs.next()) {
+			return null;
+		}
 		DepText text = new DepText();
 		text.setId(rs.getInt("id"));
 		text.setTitle(rs.getString("title"));
