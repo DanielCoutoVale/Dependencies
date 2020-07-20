@@ -11,7 +11,7 @@ import org.dependencies.conllu.ConlluFileImporter;
  * 
  * @author Daniel Couto-Vale
  */
-public class ImportConlluFile {
+public class ImportAnalysis {
 
 	/**
 	 * Main
@@ -21,7 +21,7 @@ public class ImportConlluFile {
 	public final static void main(String[] args) {
 		if (args.length != 6) {
 			System.err.println("USAGE:");
-			System.err.println("java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]");
+			System.err.println("java -jar import-analysis.jar [corpus] [language] [text] [description] [analysis] [file]");
 			System.exit(-1);
 		}
 		String corpusName = args[0];

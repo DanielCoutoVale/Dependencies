@@ -72,19 +72,13 @@ A `linguistic description` is a description of the options a writer has for maki
 
 A UD file contains a linguistic description in a linguistic theory that foregrounds the dependencies between words. In contrast, a SYS file contains a linguistic description in a linguistic theory that foregrounds the dependencies between systems of options. The latter is more general than the former. For instance, PERSON is a system of options that applies to verbs, but not all verbs. In a UD file, one can specify that 'verb' is a WORD-CLASS and that verbs *can* have a feature for PERSON. In a SYS file, one can specify that 'verb' is a WORD-CLASS, that 'personal-verb' is a VERB-CLASS and that personal verbs *must* have a feature for PERSON. In turn, this enables an analysis checker to state whether an analysis is complete or not. For instance, if a personal verb does not have a feature for PERSON in a particular analysis, the analysis is incomplete. In contrast, the linguistic description contained in a UD file only allows an analysis checker to tell whether the analysis is compliant or not, not whether it is complete or not.
 
-To add a linguistic description in a UD file to a dependency base, one has to run the script `import-ud-file.jar` in the command line. You need to specify the name you want to have for the description in your dependency base and the file path. The code was tested with the `stats.xml` file from the GIT repository `UD_Latin-ITTB`.
+To import a linguistic description from a UD file into a dependency base, one has to run the script `import-description.jar` in the command line. You need to specify the name you want the description to have in your dependency base and the path to the file. The code was tested for the `stats.xml` file from the GIT repository `UD_Latin-ITTB`. A similar procedure applies for importing a linguistic description from a SYS file into a dependency base. A sample SYS file is provided in this repository. It is called `ip.sys`.
 
 ```
-java -jar import-ud-file.jar [description] [file] 
+java -jar import-description.jar [description] [file] 
 ```
 
-A similar procedure applies for adding a linguistic description in a SYS file to a dependency base. Howver, one has to use the script `import-sys-file.jar` instead. A sample SYS file is provided in this repository. It is called `ip.sys`.
-
-```
-java -jar import-sys-file.jar [description] [file] 
-```
-
-To add a text and a text analysis in a CONLLU file to a dependency base, you will need to run the script `import-conllu-file.jar`. You will have to inform:
+To import a text and a text analysis from a CONLLU file into a dependency base, you will need to run the script `import-analysis.jar`. You will have to inform:
 
 * the corpus name or a name for a new corpus
 * the language name or a name for a new language
@@ -96,7 +90,7 @@ To add a text and a text analysis in a CONLLU file to a dependency base, you wil
 The code was tested with the file `la_ittb-ud-dev.conllu` from the GIT repository `UD_Latin-ITTB`.
 
 ```
-java -jar import-conllu-file.jar [corpus] [language] [text] [description] [analysis] [file]
+java -jar import-analysis.jar [corpus] [language] [text] [description] [analysis] [file]
 ```
 
 Once an analysis is imported, it can be exported back as a CONLLU file or as an HTML file with the following command. If the extension is not specified in the file name, two files will be created, one in each format.

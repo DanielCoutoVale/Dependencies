@@ -16,7 +16,7 @@ import org.dependencies.model.DepSystem;
  *  
  * @author Daniel Couto-Vale
  */
-public class SysFileImporter {
+public class SysFileReader {
 
 	public final void importFile(String descriptionName, String fileName) throws IOException, SQLException {
 		File file = new File(fileName);

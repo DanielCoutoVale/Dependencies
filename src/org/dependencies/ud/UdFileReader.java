@@ -19,7 +19,7 @@ import org.xml.sax.SAXException;
  * 
  * @author Daniel Couto-Vale
  */
-public class UdFileImporter {
+public class UdFileReader {
 
 	public final void importFile(String descriptionName, String fileName) throws ParserConfigurationException, SAXException, IOException, SQLException {
 		File file = new File(fileName);
