@@ -539,8 +539,9 @@ STOP
 
 # VERBS STEP 4
 
-[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Advcl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
-[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Advcl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-FOLIAGE:am-foliage] [] S:MIXED:Mark#1:word#2:word S:MIXED:Acl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
+[T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Acl#1:word#2:word => +T:LOGICAL:Enhancer#1:clauses#2:clause-complex
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Mark#1:word#2:word S:MIXED:Acl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:clause
 
 #1 ad     | esse        | demonstrandum | nititur
 #2 ad     | esse        | probandum     | inducebant
@@ -556,7 +557,7 @@ STOP
 
 #1 in     | incorporeis | meditandis | delinquere
 #- Case   | Subj        | %          | Head
-#- Marker | Enhancer    | Auxiliary  | Head
+#- Marker | Goal        | Enhancer   | Head
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark#1:word#3:word S:MIXED:Nsubj#2:word#3:word S:MIXED:%#3:word#4:word => +T:LOGICAL:Marker#1:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
 
 #1 ad     | adversarios  | convincendos  | exercitium
@@ -685,6 +686,8 @@ STOP
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
+
+[T:WORD-CLASS:adposition] [] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Marker#1:groups#3:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause
 
 # Fix word class
 [S:LEMMA:divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal#1:groups#2:clause => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS=proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
