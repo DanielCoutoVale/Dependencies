@@ -727,6 +727,8 @@ STOP
 
 [T:WORD-CLASS:punctuation S:LEMMA:,] [] [] S:MIXED:Punct#1:word#2:word T:EXPERIENTIAL:Minor-Range#2:groups#3:phrase => +T:LOGICAL:Marker#1:groups#3:clause
 [] [S:LEMMA:in] [S:LEMMA:.] [T:WORD-CLASS:noun] S:MIXED:Cc#1:word#4:word S:MIXED:Case#2:word#4:word S:MIXED:Punct#3:word#4:word => +T:LOGICAL:Marker#1:groups#2:clause +T:LOGICAL:Marker#3:groups#2:clause +T:EXPERIENTIAL:Minor-Range#4:groups#2:phrase
+[S:LEMMA:.] [S:LEMMA:adhuc] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
+[S:LEMMA:.] [S:LEMMA:item] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
 
 # Fix ..., quod sapientis est ordinare
 [] [] [S:VERBFORM:inf] [T:CASE:genitive] [] S:MIXED:Mark#1:word#4:word S:MIXED:Cop#2:word#4:word S:MIXED:Csubj#3:word#4:word S:MIXED:Csubj#4:word#5:word => -T:EXPERIENTIAL:Goal#3:groups#5:clause +T:LOGICAL:Enhancer#3:clauses#5:clause-complex
