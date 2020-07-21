@@ -193,7 +193,7 @@ metafunction EXPERIENTIAL
 - Attributor
 - Actor
 - Goal
-- Donor
+- Source
 - Recipient
 - Tool
 - Range
@@ -224,4 +224,5 @@ metafunction LOGICAL
 - Marker
 - Particle
 - Case
+- Sections
 - xxxxx

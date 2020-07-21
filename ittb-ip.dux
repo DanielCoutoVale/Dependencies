@@ -475,8 +475,6 @@ STOP
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#2:clause
 [] [] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#2:clause
 
-[] [] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
-
 # VERBS STEP 3
 
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +T:LOGICAL:Enhancer#1:clauses#2:clause-complex
@@ -635,9 +633,8 @@ STOP
 #- Marker | Goal        | Enhancer   | Head
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#4:word S:MIXED:Acl#3:word#2:word => +T:LOGICAL:Marker#1:groups#3:clause +T:EXPERIENTIAL:Goal#2:groups#3:clause +T:LOGICAL:Enhancer#3:clauses#4:clause-complex
 
-[] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
-[] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
-[] [] [] T:EXPERIENTIAL:Circumstance#1:word#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:word#2:clause +T:EXPERIENTIAL:Circumstance#1:word#3:clause
+[T:WORD-CLASS:punctuation] [T:WORD-CLASS:verb] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
+[T:WORD-CLASS:punctuation] [] [T:WORD-CLASS:verb] S:MIXED:Punct#1:word#2:word T:EXPERIENTIAL:Attribute#2:groups#3:clause => +T:LOGICAL:Marker#1:groups#3:clause
 
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary2#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
@@ -648,12 +645,10 @@ STOP
 [] [] [] T:LOGICAL:Marker#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Marker#1:groups#2:clause +T:LOGICAL:Marker#1:groups#3:clause
 [] [] [] T:LOGICAL:Marker#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:LOGICAL:Marker#1:groups#2:clause +T:LOGICAL:Marker#1:groups#3:clause
 [] [] [] T:LOGICAL:Marker#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:LOGICAL:Marker#1:groups#2:clause +T:LOGICAL:Marker#1:groups#3:clause
-[T:WORD-CLASS:punctuation] [T:WORD-CLASS:noun] [] T:LOGICAL:Marker#1:groups#2:clause T:LOGICAL:Attribute#2:groups#3:group => -T:LOGICAL:Marker#1:groups#2:clause +T:LOGICAL:Marker#1:groups#3:clause
-[T:WORD-CLASS:punctuation] [T:WORD-CLASS:adjective] [] T:LOGICAL:Marker#1:groups#2:clause T:LOGICAL:Attribute#2:groups#3:group => -T:LOGICAL:Marker#1:word#2:clause +T:LOGICAL:Marker#1:groups#3:clause
 
 # NOUN STEP 2
 
-[T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Donor#2:groups#3:clause
+[T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Source#2:groups#3:clause
 [T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Attribute#2:groups#3:clause
 [T:WORD-CLASS:adposition S:LEMMA:ab] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:LOGICAL:Marker#1:groups#3:group +T:EXPERIENTIAL:Actor#2:groups#3:clause
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Obj#1:word#2:word => +T:EXPERIENTIAL:Recipient#1:groups#2:clause -T:EXPERIENTIAL:Goal#1:groups#2:clause
@@ -681,9 +676,9 @@ STOP
 [] [] [] T:EXPERIENTIAL:Recipient#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Recipient#1:groups#2:clause +T:EXPERIENTIAL:Recipient#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Recipient#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Recipient#1:groups#2:clause +T:EXPERIENTIAL:Recipient#1:groups#3:clause
 
-[] [] [] T:EXPERIENTIAL:Donor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Donor#1:groups#2:clause +T:EXPERIENTIAL:Donor#1:groups#3:clause
-[] [] [] T:EXPERIENTIAL:Donor#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Donor#1:groups#2:clause +T:EXPERIENTIAL:Donor#1:groups#3:clause
-[] [] [] T:EXPERIENTIAL:Donor#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Donor#1:groups#2:clause +T:EXPERIENTIAL:Donor#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Source#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Source#1:groups#2:clause +T:EXPERIENTIAL:Source#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Source#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Source#1:groups#2:clause +T:EXPERIENTIAL:Source#1:groups#3:clause
+[] [] [] T:EXPERIENTIAL:Source#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Source#1:groups#2:clause +T:EXPERIENTIAL:Source#1:groups#3:clause
 
 [] [] [] T:EXPERIENTIAL:Tool#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Tool#1:groups#2:clause +T:EXPERIENTIAL:Tool#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Tool#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Tool#1:groups#2:clause +T:EXPERIENTIAL:Tool#1:groups#3:clause
@@ -702,6 +697,9 @@ STOP
 [S:LEMMA:divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal#1:groups#2:clause => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS=proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
 
 # VERBS STEP 5
+
+[T:WORD-CLASS:number T:NUMBER-KIND:arabic] [T:WORD-CLASS:source] S:MIXED:Nummod#1:word#2:word => +T:LOGICAL:Sections#1:groups#2:group
+[T:WORD-CLASS:punctuation] [T:WORD-CLASS:source] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
 
 [S:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl#1:word#2:word => +T:EXPERIENTIAL:Qualifier#1:clauses#2:group
 [] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group

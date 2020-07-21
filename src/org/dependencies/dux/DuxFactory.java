@@ -1,11 +1,14 @@
 package org.dependencies.dux;
 
+import static java.lang.String.format;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepDescription;
+import org.dependencies.model.DepMetafunction;
 import org.dependencies.model.DepWordFeature;
 import org.dependencies.model.DepWordFunction;
 
@@ -39,7 +42,12 @@ public class DuxFactory {
 		DepWordFunction depFunction = new DepWordFunction();
 		DepDescription description = descriptionMap.get(function.getPrefix());
 		depFunction.setAnalysisId(analysisMap.get(function.getPrefix()).getId());
-		depFunction.setMetafunctionId(description.getMetafunction(function.getMetafunctionName()).getId());
+		DepMetafunction metafunction = description.getMetafunction(function.getMetafunctionName());
+		if (metafunction == null) {
+			System.err.println(format("Metafunction '%s' not found in description '%s'!", function.getMetafunctionName(), description.getName()));
+			System.exit(-1);
+		}
+		depFunction.setMetafunctionId(metafunction.getId());
 		depFunction.setName(function.getName());
 		depFunction.setWordRankId(description.getRank(function.getWordRankName()).getId());
 		depFunction.setHeadRankId(description.getRank(function.getHeadRankName()).getId());
