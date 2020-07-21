@@ -36,7 +36,7 @@ public class ExportAnalysis {
 		HtmlFileWriter htmlFileWriter = new HtmlFileWriter();
 		try {
 			System.out.println(format("Exporting %s to %s", textTitle, fileName));
-			DepAnalyzedText text = loader.loadAnalyzedText(corpusName, languageName, descriptionName, analysisName,
+			DepAnalyzedText text = loader.loadAnalyzedText(descriptionName, analysisName, corpusName, languageName,
 					textTitle);
 			if (fileName.endsWith(".conllu")) {
 				conlluFileWriter.writeConlluFile(text, fileName);

@@ -90,6 +90,7 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:medicinalis] [] S:MIXED:Nsubj-Pass#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective] [] S:MIXED:Nmod#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 
 # Unseamed nouns II
 [T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
@@ -207,10 +208,9 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective S:LEMMA:divinus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun +T:CASE:genitive
 
+[T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => -T:NOUN-CLASS:proper-noun +T:NOUN-CLASS:common-noun
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun]  S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group
-[T:WORD-CLASS:adjective] [S:WORD-CLASS:adj T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group -T:WORD-CLASS:adjective +T:WORD-CLASS:noun
 
 # ADJECTIVES #STEP 2
 
@@ -536,6 +536,9 @@ STOP
 [S:WORD-CLASS:adv S:LEMMA:sic] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
 [S:WORD-CLASS:adv S:LEMMA:sic] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
 
+[S:WORD-CLASS:adv S:LEMMA:scilicet] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:scilicet] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+
 [S:WORD-CLASS:adv S:LEMMA:tamen] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
 [S:WORD-CLASS:adv S:LEMMA:tamen] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
 
@@ -548,9 +551,17 @@ STOP
 [S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] [S:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Ccomp#2:word#3:word => +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb S:LEMMA:dico] S:MIXED:Csubj-Pass#1:word#2:word => +T:LOGICAL:Locution#1:clauses#2:clause-complex
 
+[S:WORD-CLASS:adv S:LEMMA:non] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
+[S:WORD-CLASS:adv S:LEMMA:non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
+
+[S:WORD-CLASS:adv S:LEMMA:minus] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
+[S:WORD-CLASS:adv S:LEMMA:minus] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
+
 [S:WORD-CLASS:adv] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
 [S:WORD-CLASS:adv] [T:WORD-CLASS:adjective] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Intensifier#1:groups#2:group
 [S:WORD-CLASS:adv] [T:WORD-CLASS:verb] S:MIXED:Advmod-Emph#1:word#2:word => +T:LOGICAL:Adjunct#1:groups#2:group
+
+
 
 # VERBS STEP 2.2
 
