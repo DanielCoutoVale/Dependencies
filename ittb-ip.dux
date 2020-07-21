@@ -81,6 +81,14 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:impius] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:sequax] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+
+# Unseamed nouns II
+[T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
 
 # VERBS STEP 4
 
@@ -180,8 +188,6 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective S:LEMMA:divinus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun +T:CASE:genitive
 
-[T:WORD-CLASS:verb S:VERBFORM:inf] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => -T:WORD-CLASS:verb +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:verb S:VERBFORM:inf] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => -T:WORD-CLASS:verb +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 [T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun]  S:MIXED:Amod#2:word#1:word => +T:EXPERIENTIAL:Possessor#2:groups#1:group
@@ -376,8 +382,8 @@ STOP
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Cc#1:word#2:word S:MIXED:Conj#2:word#3:word => +T:LOGICAL:Marker#1:groups#2:group
 
 # (Conj) (Head) => (Extender) (Head)
-[T:WORD-CLASS:adjective] [] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:groups#2:group-complex
-[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:groups#2:group-complex
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:groups#2:group-complex
 
 # VERBS STEP 1
 
@@ -688,6 +694,9 @@ STOP
 [] [] [] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Auxiliary3#2:groups#3:group => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:EXPERIENTIAL:Circumstance#1:groups#3:clause
 
 [T:WORD-CLASS:adposition] [] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Marker#1:groups#3:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause
+
+# Fix ..., quod sapientis est ordinare
+[] [] [S:VERBFORM:inf] [T:CASE:genitive] [] S:MIXED:Mark#1:word#4:word S:MIXED:Cop#2:word#4:word S:MIXED:Csubj#3:word#4:word S:MIXED:Csubj#4:word#5:word => -T:EXPERIENTIAL:Goal#3:groups#5:clause +T:LOGICAL:Enhancer#3:clauses#5:clause-complex
 
 # Fix word class
 [S:LEMMA:divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal#1:groups#2:clause => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS=proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
