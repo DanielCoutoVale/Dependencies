@@ -140,13 +140,7 @@ public class DepNode {
 			if (rankName.equals("clause-complex")) {
 				return "Main";
 			} else if (rankName.equals("clause")) {
-				if (null != node.asWord().getFeature("lexical-verb")) {
-					return "Process";
-				} else if (null != node.asWord().getFeature("noun") || null != node.asWord().getFeature("source")) {
-					return "Thing";
-				} else {
-					return "Head";
-				}
+				return makeClauseHeadName(node);
 			} else {
 				return "Head";
 			}
@@ -154,19 +148,24 @@ public class DepNode {
 		if (rankNames.indexOf(node.getHeadRankName()) < rankNames.indexOf(rankName)) {
 			if (rankName.equals("clause-complex")) {
 				return "Main";
-			}
-			if (rankName.equals("clause")) {
-				if (null != node.asWord().getFeature("lexical-verb")) {
-					return "Process";
-				} else if (null != node.asWord().getFeature("noun") || null != node.asWord().getFeature("source")) {
-					return "Thing";
-				} else {
-					return "Head";
-				}
+			} else if (rankName.equals("clause")) {
+				return makeClauseHeadName(node);
 			}
 		}
 		DepDependency dependency = dependencies.get(0);
 		return dependency.getFunction().getName();
+	}
+
+	private String makeClauseHeadName(DepNode node) {
+		if (null != node.asWord().getFeature("lexical-verb")) {
+			return "Process";
+		} else if (null != node.asWord().getFeature("noun") || null != node.asWord().getFeature("source")) {
+			return "Thing";
+		} else if (null != node.asWord().getFeature("adverb") || null != node.asWord().getFeature("adposition")) {
+			return "Circumstance";
+		} else {
+			return "Head";
+		}
 	}
 
 	private final String getHeadRankName() {

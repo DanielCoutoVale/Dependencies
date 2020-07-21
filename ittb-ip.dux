@@ -84,6 +84,7 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:gubernativus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:navifactivus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:equester] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:princeps] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:pigmentarius] [] S:MIXED:Obj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:medicinalis] [] S:MIXED:Nsubj-Pass#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
@@ -725,6 +726,7 @@ STOP
 [T:WORD-CLASS:adposition] [] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Marker#1:groups#3:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause
 
 [T:WORD-CLASS:punctuation S:LEMMA:,] [] [] S:MIXED:Punct#1:word#2:word T:EXPERIENTIAL:Minor-Range#2:groups#3:phrase => +T:LOGICAL:Marker#1:groups#3:clause
+[] [S:LEMMA:in] [S:LEMMA:.] [T:WORD-CLASS:noun] S:MIXED:Cc#1:word#4:word S:MIXED:Case#2:word#4:word S:MIXED:Punct#3:word#4:word => +T:LOGICAL:Marker#1:groups#2:clause +T:LOGICAL:Marker#3:groups#2:clause +T:EXPERIENTIAL:Minor-Range#4:groups#2:phrase
 
 # Fix ..., quod sapientis est ordinare
 [] [] [S:VERBFORM:inf] [T:CASE:genitive] [] S:MIXED:Mark#1:word#4:word S:MIXED:Cop#2:word#4:word S:MIXED:Csubj#3:word#4:word S:MIXED:Csubj#4:word#5:word => -T:EXPERIENTIAL:Goal#3:groups#5:clause +T:LOGICAL:Enhancer#3:clauses#5:clause-complex
