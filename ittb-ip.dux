@@ -661,6 +661,7 @@ STOP
 [S:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl#1:word#2:word => +T:EXPERIENTIAL:Qualifier#1:clauses#2:group
 
 [S:WORD-CLASS:sconj] [] [T:WORD-CLASS:noun] S:MIXED:Mark#1:word#2:word S:MIXED:Acl#2:word#3:word => +T:EXPERIENTIAL:Qualifier#2:clauses#3:group
+[S:WORD-CLASS:sconj] [] [] [T:WORD-CLASS:noun] S:MIXED:Mark#1:word#2:word S:MIXED:Cop#3:word#2:word S:MIXED:Acl#2:word#4:word => +T:EXPERIENTIAL:Qualifier#3:clauses#4:group
 
 [] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
 [] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary2#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
@@ -687,6 +688,7 @@ STOP
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Iobj#1:word#2:word => +T:EXPERIENTIAL:Recipient#1:groups#2:clause -T:EXPERIENTIAL:Goal#1:groups#2:clause
 [T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obl#1:word#2:word => +T:EXPERIENTIAL:Tool#1:groups#2:clause
 
+[T:WORD-CLASS:adposition S:LEMMA:circa] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
 [T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
 [T:WORD-CLASS:adposition S:LEMMA:secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
 [T:WORD-CLASS:adposition S:LEMMA:inter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
