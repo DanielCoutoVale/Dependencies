@@ -387,6 +387,7 @@ STOP
 [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:groups#2:group-complex
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extender#1:groups#2:group-complex
 
+
 # VERBS STEP 1
 
 [S:VERBFORM:inf] [S:LEMMA:debeo] S:MIXED:Xcomp#1:word#2:word => +T:LOGICAL:Auxiliary#2:groups#1:group
@@ -635,6 +636,7 @@ STOP
 
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:verb] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
 [T:WORD-CLASS:punctuation] [] [T:WORD-CLASS:verb] S:MIXED:Punct#1:word#2:word T:EXPERIENTIAL:Attribute#2:groups#3:clause => +T:LOGICAL:Marker#1:groups#3:clause
+[T:WORD-CLASS:punctuation S:LEMMA:,] [] [] S:MIXED:Punct#1:word#3:word T:LOGICAL:Extender#2:groups#3:group-complex => +T:LOGICAL:Marker#1:groups#2:clause
 
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary2#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
