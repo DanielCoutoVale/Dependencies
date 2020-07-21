@@ -82,6 +82,8 @@ STOP
 [T:WORD-CLASS:adjective S:LEMMA:sequax] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:LEMMA:gubernativus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:LEMMA:princeps] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 
@@ -459,8 +461,6 @@ STOP
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Goal#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Goal#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Goal#1:groups#2:clause +T:EXPERIENTIAL:Goal#1:groups#3:clause
-[] [] [] T:EXPERIENTIAL:Attribute#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Attribute#1:groups#2:clause +T:EXPERIENTIAL:Attribute#1:groups#3:clause
-[] [] [] T:EXPERIENTIAL:Attribute#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Attribute#1:groups#2:clause +T:EXPERIENTIAL:Attribute#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Attributor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Attributor#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Attributor#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Attributor#1:groups#2:clause +T:EXPERIENTIAL:Attributor#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Carrier#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Carrier#1:groups#2:clause +T:EXPERIENTIAL:Carrier#1:groups#3:clause

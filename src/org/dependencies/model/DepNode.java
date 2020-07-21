@@ -20,6 +20,7 @@ public class DepNode {
 		rankNames.add("clause-complex");
 		rankNames.add("clause");
 		rankNames.add("phrase");
+		rankNames.add("group-complex");
 		rankNames.add("group");
 		rankNames.add("word");
 	}
