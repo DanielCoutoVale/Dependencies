@@ -16,8 +16,8 @@ STOP
 [S:WORD-CLASS:verb] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:lexical-verb
 [S:WORD-CLASS:aux] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:verb +T:VERB-CLASS:lexical-verb
 [S:WORD-CLASS:adj] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed
-[S:WORD-CLASS:propn] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun
-[S:WORD-CLASS:noun] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[S:WORD-CLASS:propn] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun +T:SEAMEDNESS:unseamed
+[S:WORD-CLASS:noun] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [S:WORD-CLASS:pron] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:SEAMEDNESS:unseamed
 [S:WORD-CLASS:adv] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adverb
 [S:WORD-CLASS:adp] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:adposition
@@ -76,37 +76,40 @@ STOP
 # ADJECTIVE STEP 2
 
 # Unseamed nouns
-[T:WORD-CLASS:adjective S:LEMMA:immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:sapiens] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:impius] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:sequax] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:gubernativus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective S:LEMMA:princeps] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:LEMMA:immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:sapiens] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:impius] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:sequax] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:gubernativus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:navifactivus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:princeps] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:pigmentarius] [] S:MIXED:Obj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:medicinalis] [] S:MIXED:Nsubj-Pass#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 
 # Unseamed nouns II
-[T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
-[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
-[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
 
 # VERBS STEP 4
 
 [T:WORD-CLASS:verb S:LEMMA:finio] => +T:WORD-CLASS:adjective -T:WORD-CLASS:verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
 
 # CASE
-[T:WORD-CLASS:adjective S:CASE:nom] => +T:CASE-SEAM:nominative-seam
-[T:WORD-CLASS:adjective S:CASE:acc] => +T:CASE-SEAM:accusative-seam
-[T:WORD-CLASS:adjective S:CASE:gen] => +T:CASE-SEAM:genitive-seam
-[T:WORD-CLASS:adjective S:CASE:dat] => +T:CASE-SEAM:dative-seam
-[T:WORD-CLASS:adjective S:CASE:abl] => +T:CASE-SEAM:ablative-seam
-[T:WORD-CLASS:noun S:CASE:nom] => +T:CASE:nominative
-[T:WORD-CLASS:noun S:CASE:acc] => +T:CASE:accusative
-[T:WORD-CLASS:noun S:CASE:gen] => +T:CASE:genitive
-[T:WORD-CLASS:noun S:CASE:dat] => +T:CASE:dative
-[T:WORD-CLASS:noun S:CASE:abl] => +T:CASE:ablative
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:nom] => +T:CASE-SEAM:nominative-seam
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:acc] => +T:CASE-SEAM:accusative-seam
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:gen] => +T:CASE-SEAM:genitive-seam
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:dat] => +T:CASE-SEAM:dative-seam
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:abl] => +T:CASE-SEAM:ablative-seam
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:nom] => +T:CASE:nominative
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:acc] => +T:CASE:accusative
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:gen] => +T:CASE:genitive
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:dat] => +T:CASE:dative
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:abl] => +T:CASE:ablative
 
 # AUMUS FOLIAGE
 [T:WORD-CLASS:verb S:CASE:nom] => +T:AUMUS-FOLIAGE:a-foliage
@@ -114,11 +117,22 @@ STOP
 [T:WORD-CLASS:verb S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
 [T:WORD-CLASS:verb S:CASE:dat] => +T:AUMUS-FOLIAGE:ae/ō-foliage
 [T:WORD-CLASS:verb S:CASE:abl] => +T:AUMUS-FOLIAGE:ā-foliage
-[T:WORD-CLASS:adjective S:CASE:nom] => +T:AUMUS-FOLIAGE:a-foliage
-[T:WORD-CLASS:adjective S:CASE:acc] => +T:AUMUS-FOLIAGE:am-foliage
-[T:WORD-CLASS:adjective S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
-[T:WORD-CLASS:adjective S:CASE:dat] => +T:AUMUS-FOLIAGE:ae/ō-foliage
-[T:WORD-CLASS:adjective S:CASE:abl] => +T:AUMUS-FOLIAGE:ā-foliage
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:nom] => +T:AUMUS-FOLIAGE:a-foliage
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:acc] => +T:AUMUS-FOLIAGE:am-foliage
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:dat] => +T:AUMUS-FOLIAGE:ae/ō-foliage
+[T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:abl] => +T:AUMUS-FOLIAGE:ā-foliage
+
+# RHYME
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:GENDER:fem] => +T:RHYME:a-rhyme
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:GENDER:neut] => +T:RHYME:um-rhyme
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:GENDER:masc] => +T:RHYME:us-rhyme
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:WORDFORM:inf] => +T:RHYME:um-rhyme
+
+# NUMBER
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:NUMBER:sing] => +T:NUMBER:singular
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:NUMBER:plur] => +T:NUMBER:plural
+[T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:WORDFORM:inf] => +T:NUMBER:singular
 
 # AUMUS SEAM
 [T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:a/am-seam
@@ -170,7 +184,7 @@ STOP
 [T:AUMUS-SEAM:us/um-seam S:CASE:abl] => +T:AUMUS-LEAF:ō-leaf
 [T:AUMUS-SEAM:ae/ās-seam S:CASE:abl] => +T:AUMUS-LEAF:īs-leaf
 [T:AUMUS-SEAM:a/a-seam   S:CASE:abl] => +T:AUMUS-LEAF:īs-leaf
-[T:AUMUS-SEAM:ī/ōs-seam  S:CASE:abl] => +T:AUMUS-LEAF:īs-leaf 
+[T:AUMUS-SEAM:ī/ōs-seam  S:CASE:abl] => +T:AUMUS-LEAF:īs-leaf
 
 [T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem T:VERB-Ō-BRANCH:nt-branch] => +T:AUMUS-SEAM:a/am-seam
 [T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut T:VERB-Ō-BRANCH:nt-branch] => +T:AUMUS-SEAM:um/um-seam
@@ -181,8 +195,10 @@ STOP
 
 # ADJECTIVES #STEP 1
 
-# Seamed nouns
+# Unseamed adjectives
 [S:LEMMA:necesse] => -T:SEAMEDNESS:seamed +T:SEAMEDNESS:unseamed
+
+# Seamed nouns
 [T:WORD-CLASS:adjective S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective S:LEMMA:tuus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective S:LEMMA:suus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
@@ -236,6 +252,7 @@ STOP
 [T:LEMMA:duplex S:WORD-CLASS:adj] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMBER-KIND:multiplicative
 [T:WORD-CLASS:number T:NUMBER-KIND:multiplicative] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Multiplier#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
 [T:WORD-CLASS:adjective S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Multiplier#2:groups#1:group => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+# MOVE THIS TO 'unseamed nouns'
 
 # Epithet
 [T:LEMMA:sacer S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier#1:groups#2:group => +T:EXPERIENTIAL:Epithet#1:groups#2:group -T:EXPERIENTIAL:Classifier#1:groups#2:group
@@ -638,6 +655,19 @@ STOP
 [T:WORD-CLASS:punctuation] [] [T:WORD-CLASS:verb] S:MIXED:Punct#1:word#2:word T:EXPERIENTIAL:Attribute#2:groups#3:clause => +T:LOGICAL:Marker#1:groups#3:clause
 [T:WORD-CLASS:punctuation S:LEMMA:,] [] [] S:MIXED:Punct#1:word#3:word T:LOGICAL:Extender#2:groups#3:group-complex => +T:LOGICAL:Marker#1:groups#2:clause
 
+# VERBS STEP 5
+# Embedded clauses
+
+[S:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl#1:word#2:word => +T:EXPERIENTIAL:Qualifier#1:clauses#2:group
+
+[S:WORD-CLASS:sconj] [] [T:WORD-CLASS:noun] S:MIXED:Mark#1:word#2:word S:MIXED:Acl#2:word#3:word => +T:EXPERIENTIAL:Qualifier#2:clauses#3:group
+
+[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
+[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary2#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
+[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary3#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
+
+# VERBS END
+
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary2#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
 [] [] [] T:LOGICAL:Extender#1:clauses#2:clause-complex T:LOGICAL:Auxiliary3#2:groups#3:group => -T:LOGICAL:Enhancer#1:clauses#2:clause-complex +T:LOGICAL:Enhancer#2:clauses#3:clause-complex
@@ -657,14 +687,14 @@ STOP
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Iobj#1:word#2:word => +T:EXPERIENTIAL:Recipient#1:groups#2:clause -T:EXPERIENTIAL:Goal#1:groups#2:clause
 [T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obl#1:word#2:word => +T:EXPERIENTIAL:Tool#1:groups#2:clause
 
-[T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:inter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:propter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:in] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#3:clause
-[T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
-[T:WORD-CLASS:adposition S:LEMMA:ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group -T:EXPERIENTIAL:Tool#1:groups#3:clause
-[T:WORD-CLASS:adposition S:LEMMA:per] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
+[T:WORD-CLASS:adposition S:LEMMA:de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl-Arg#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
+[T:WORD-CLASS:adposition S:LEMMA:secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
+[T:WORD-CLASS:adposition S:LEMMA:inter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
+[T:WORD-CLASS:adposition S:LEMMA:propter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
+[T:WORD-CLASS:adposition S:LEMMA:in] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase -T:EXPERIENTIAL:Tool#1:groups#3:clause
+[T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
+[T:WORD-CLASS:adposition S:LEMMA:ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase -T:EXPERIENTIAL:Tool#1:groups#3:clause
+[T:WORD-CLASS:adposition S:LEMMA:per] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case#1:word#2:word S:MIXED:Obl#2:word#3:word => +T:EXPERIENTIAL:Circumstance#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
 
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
 [] [] [] T:EXPERIENTIAL:Actor#1:groups#2:clause T:LOGICAL:Auxiliary2#2:groups#3:group => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Actor#1:groups#3:clause
@@ -692,20 +722,17 @@ STOP
 
 [T:WORD-CLASS:adposition] [] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] T:EXPERIENTIAL:Circumstance#1:groups#2:clause T:LOGICAL:Marker#1:groups#3:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause
 
+[T:WORD-CLASS:punctuation S:LEMMA:,] [] [] S:MIXED:Punct#1:word#2:word T:EXPERIENTIAL:Minor-Range#2:groups#3:phrase => +T:LOGICAL:Marker#1:groups#3:clause
+
 # Fix ..., quod sapientis est ordinare
 [] [] [S:VERBFORM:inf] [T:CASE:genitive] [] S:MIXED:Mark#1:word#4:word S:MIXED:Cop#2:word#4:word S:MIXED:Csubj#3:word#4:word S:MIXED:Csubj#4:word#5:word => -T:EXPERIENTIAL:Goal#3:groups#5:clause +T:LOGICAL:Enhancer#3:clauses#5:clause-complex
 
 # Fix word class
 [S:LEMMA:divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal#1:groups#2:clause => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS=proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
 
-# VERBS STEP 5
+# OTHER
 
 [T:WORD-CLASS:number T:NUMBER-KIND:arabic] [T:WORD-CLASS:source] S:MIXED:Nummod#1:word#2:word => +T:LOGICAL:Sections#1:groups#2:group
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:source] S:MIXED:Punct#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
 
-[S:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl#1:word#2:word => +T:EXPERIENTIAL:Qualifier#1:clauses#2:group
-[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary2#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary3#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-
-[T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Case#1:word#2:word S:MIXED:Nmod#2:word#3:word => +T:EXPERIENTIAL:Qualifier#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:group
+[T:WORD-CLASS:adposition S:LEMMA:ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Case#1:word#2:word S:MIXED:Nmod#2:word#3:word => +T:EXPERIENTIAL:Qualifier#1:groups#3:clause +T:EXPERIENTIAL:Minor-Range#2:groups#1:phrase
