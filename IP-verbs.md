@@ -331,11 +331,17 @@ In the UD description, *destruendos* and *sciendum* are two different verb forms
 
 ### Step 5
 
-Before we can move on to `adjective-like' functions of a clause, let us take some "verb" words in ITTB that are better understood as adjectives out of the way. First and foremost, words such as _finita_ in _potentia finita_ (_limited power_) oppose _infinita_ in _potentia infinita_ (_unlimited power_). They do not correspond to a material clause verb such as _finit_ in the constructed example _hoc potentiam finit_ (_this limits the power_), but rather to the nouns _finis_ and and _finem_ (_limit_), which occur 39 times in the same text. For this reason, _finita_ and _infinita_ are better understood as adjectives derived from nouns, meaning either _with_ or _without an end_. Here is a list of lemmata that should not be enter the discussion that follows.
+Before we can move on to `adjective-like' functions of a clause, let us take some "verb" words in ITTB that are better understood as adjectives out of the way. First and foremost, words such as _finita_ in _potentia finita_ (_limited power_) oppose _infinita_ in _potentia infinita_ (_unlimited power_). They do not correspond to a material clause verb such as _finit_ in the constructed example _hoc potentiam finit_ (_this limits the power_), but rather to the nouns _finis_ and _finem_ (_limit_), which occur 39 times in the same text. For this reason, _finita_ and _infinita_ are better understood as adjectives derived from nouns, meaning either _with_ or _without an end_. Here is a list of lemmata that should not enter the discussion that follows.
 
 - _finio_
 
-Now let us focus on references to participants of a process and references to the process itself. Here are some examples where this occurs.
+Now let us focus on structures that represent participants of a process. The example below reads _nothing is both what moves and what is moved_.
+
+FORM        |nihil       |est         |movens      |et          |motum
+:----------:|:----------:|:----------:|:----------:|:----------:|:----------:
+WORD-CLASS  |noun        |verb        |verb        |conjunction |verb
+
+Here are some structures where this occurs.
 
 1. Operative participle
     - *esse [[ movens immobile ]]*

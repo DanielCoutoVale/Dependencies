@@ -62,6 +62,9 @@
 [S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:ŌST-SEAM:tis-seam
 [S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:ŌST-SEAM:nt-seam
 
+# NOUN STEP 1
+[T:WORD-CLASS:noun S:LEMMA:respectus S:CASE:abl] => -T:WORD-CLASS:noun +T:WORD-CLASS:adposition
+
 # ADJECTIVE STEP 2
 
 # Unseamed nouns
@@ -86,8 +89,7 @@
 [T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
 [T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
 
-# VERBS STEP 4
-
+# VERBS STEP 5
 [T:WORD-CLASS:verb S:LEMMA:finio] => +T:WORD-CLASS:adjective -T:WORD-CLASS:verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
 
 # CASE
