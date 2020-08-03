@@ -9,9 +9,9 @@ public class DuxDocumentBuilderTest {
 
 	@Test
 	public final void testIttbIp() {
-		File file = new File("ittb-ip.dux");
+		File home = new File("ittb-ip");
 		DuxDocumentBuilder builder = new DuxDocumentBuilder();
-		DuxDocument document = builder.parse(file);
+		DuxDocument document = builder.parse(home, "main");
 		for (DuxCommand command : document) {
 			if (command == null) throw new Error();
 			System.out.println(command);

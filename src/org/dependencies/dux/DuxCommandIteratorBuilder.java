@@ -8,29 +8,31 @@ import java.io.File;
  * @author Daniel Couto-Vale
  */
 public class DuxCommandIteratorBuilder {
-
+	
 	/**
-	 * The DUX file.
+	 * The home
 	 */
-	private File file;
+	private File home;
 
 	/**
 	 * Constructor
 	 * 
+	 * @param home the home
 	 * @param file the DUX file
 	 */
-	public DuxCommandIteratorBuilder(File file) {
-		this.file = file;
-
+	public DuxCommandIteratorBuilder(File home) {
+		this.home = home;
 	}
 
 	/**
 	 * Builds a DUX command iterator.
 	 * 
-	 * @return the DUX commmand iterator
+	 * @param moduleName the module name
+	 * @return the DUX command iterator
 	 */
-	public final DuxCommandIterator build() {
-		return new DuxCommandIterator(file);
+	public final DuxCommandIterator build(String moduleName) {
+		File file = new File(home, moduleName.replace('.', '/') + ".dux");
+		return new DuxCommandIterator(this, file);
 	}
 
 }

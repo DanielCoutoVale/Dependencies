@@ -24,7 +24,7 @@ import org.dependencies.model.DepWord;
  */
 public class DuxFileApplier {
 
-	public final void applyFile(String sdName, String saName, String tdName, String taName, String fileName) throws SQLException {
+	public final void applyFile(String sdName, String saName, String tdName, String taName, String homePathname, String packName) throws SQLException {
 		MysqlDependencyBase base = new MysqlDependencyBase();
 		Map<String, DepDescription> descriptionMap = new HashMap<>();
 		descriptionMap.put("S", base.getDescription(sdName));
@@ -47,9 +47,9 @@ public class DuxFileApplier {
 		if (analysisMap.get("T") == null) {
 			analysisMap.put("T", base.addAnalysis(descriptionMap.get("T").getId(), taName));
 		}
-		File file = new File(fileName);
+		File home = new File(homePathname);
 		DuxDocumentBuilder builder = new DuxDocumentBuilder();
-		DuxDocument document = builder.parse(file);
+		DuxDocument document = builder.parse(home, packName);
 		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
 		Scanner scanner = new Scanner(System.in);
 		for (DuxCommand command : document) {

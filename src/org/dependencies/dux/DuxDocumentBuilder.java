@@ -13,11 +13,12 @@ public class DuxDocumentBuilder {
 	 * Parse a DUX file as a DUX document and return a DUX document object.
 	 * 
 	 * @param file the DUX file
+	 * @param file2 
 	 * @return the DUX document
 	 */
-	public final DuxDocument parse(File file) {
-		DuxCommandIteratorBuilder builder = new DuxCommandIteratorBuilder(file);
-		return new DuxDocument(builder);
+	public final DuxDocument parse(File home, String packName) {
+		DuxCommandIteratorBuilder builder = new DuxCommandIteratorBuilder(home);
+		return new DuxDocument(builder, packName);
 	}
 
 }
