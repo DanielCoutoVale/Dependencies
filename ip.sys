@@ -49,6 +49,11 @@ system NOUN-CLASS
 - common-noun
 - pronoun
 
+system PRONOUN-RELATIVITY
+> pronoun
+- relative
+- absolute
+
 system VERB-CLASS
 > verb
 - lexical-verb
