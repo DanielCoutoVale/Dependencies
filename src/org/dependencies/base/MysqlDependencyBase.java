@@ -933,7 +933,7 @@ public class MysqlDependencyBase {
 				stmt.setString(index++, lemma.getName());
 			}
 		}
-		System.out.println(stmt);
+		System.out.println(stmt.asSql().replace('\n', ' '));
 		ResultSet rs = stmt.executeQuery();
 		List<List<DepWord>> wordMatrix = new LinkedList<>();
 		while (rs.next()) {
