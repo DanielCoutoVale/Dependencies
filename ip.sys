@@ -131,11 +131,14 @@ system RHYME
 - um-rhyme
 - us-rhyme
 
-system NUMBER-KIND
+system NUMERIC-CASE
 > number
 - cardinal
 - ordinal
+- positional
 - multiplicative
+- collectional
+- distributive
 - roman
 - arabic
 
