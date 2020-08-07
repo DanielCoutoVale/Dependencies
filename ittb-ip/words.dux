@@ -238,7 +238,7 @@
 
 # ADJECTIVES #FIX
 [S:LEMMA:necesse] => -T:SEAMEDNESS:seamed +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:noun S:LEMMA:impossibilis] [] S:MIXED:Xcomp#1:word#2:word => -T:WORD-CLASS:noun -T:NOUN-CLASS:noun +T:WORD-CLASS:adjective
+[T:WORD-CLASS:noun S:LEMMA:impossibilis] [] S:MIXED:Xcomp#1:word#2:word => -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun +T:WORD-CLASS:adjective
 
 # ADJECTIVES #STEP 1
 [T:WORD-CLASS:adjective S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
