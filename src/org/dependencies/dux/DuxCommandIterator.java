@@ -74,6 +74,10 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 			if (line.length() != 0 & !line.startsWith("#")) {
 				break;
 			}
+			if (line.startsWith("##")) {
+				System.out.println();
+				System.out.println(line.substring(1));
+			}
 		}
 	}
 
