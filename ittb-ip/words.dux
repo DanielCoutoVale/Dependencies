@@ -23,6 +23,8 @@
 [S:WORD-CLASS:x S:LEMMA:decuplus] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:decuplus
 [S:WORD-CLASS:x S:LEMMA:quam] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:quam
 
+STOP
+
 # PRONOUNS
 [S:LEMMA:hic S:PRONTYPE:dem] => +T:PRONOUN-RELATIVITY:absolute
 [S:LEMMA:ille S:PRONTYPE:dem] => +T:PRONOUN-RELATIVITY:absolute
@@ -130,8 +132,8 @@
 [T:WORD-CLASS:adjective] [] S:MIXED:Nmod#2:word#1:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 
 # Seamed adjectives
-[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Amod#1:word#2:word => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Conj#1:word#2:word => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
+#[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Amod#1:word#2:word => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
+#[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Conj#1:word#2:word => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
 
 # Unseamed nouns II
 [T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
@@ -283,7 +285,7 @@
 [T:WORD-CLASS:adjective T:LEMMA:quaterni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
 [T:WORD-CLASS:adjective T:LEMMA:quini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
 [T:WORD-CLASS:adjective T:LEMMA:seni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective T:LEMMA:septeni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicativ
+[T:WORD-CLASS:adjective T:LEMMA:septeni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
 [T:WORD-CLASS:adjective T:LEMMA:octoni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
 [T:WORD-CLASS:adjective T:LEMMA:noveni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
 [T:WORD-CLASS:adjective T:LEMMA:deni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive

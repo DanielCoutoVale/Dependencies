@@ -11,12 +11,10 @@
 # PRONTYPE: rel
 
 STOP
-
 IMPORT words
-STOP
 
-[T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
-[T:CASE:genitive T:WORD-CLASS:noun] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
+[T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
+[T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Amod#1:word#2:word => +T:EXPERIENTIAL:Possessor#1:groups#2:group
 
 # ADJECTIVES #STEP 2
 
@@ -214,7 +212,6 @@ STOP
 [T:WORD-CLASS:verb S:VERBFORM:part] [S:LEMMA:sum] S:MIXED:Cop#2:word#1:word => +T:EXPERIENTIAL:Attribute#1:groups#2:clause
 
 IMPORT verbal-groups
-STOP
 
 # VERBS STEP 5
 
@@ -262,7 +259,6 @@ STOP
 
 # VERBS STEP 3
 IMPORT clause-complex
-STOP
 
 # VERBS STEP 2.2
 
@@ -370,7 +366,6 @@ STOP
 
 # VERBS STEP 5
 IMPORT embedded-clauses
-STOP
 
 # VERBS END
 

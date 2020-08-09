@@ -424,7 +424,7 @@ public class MysqlDependencyBase {
 	 * in this dependency base.
 	 * 
 	 * @param analysisId the analysis id
-	 * @param id         the word id
+	 * @param id         the feature id
 	 * @param wordId     the word id
 	 * @throws SQLException if the query fails
 	 */
@@ -437,6 +437,30 @@ public class MysqlDependencyBase {
 		int ar = stmt.executeUpdate();
 		if (ar != 1)
 			throw new SQLException();
+		stmt.close();
+	}
+
+	/**
+	 * Adds a feature as a property of the specified word in the specified analysis
+	 * in this dependency base.
+	 * 
+	 * @param analysisId the analysis id
+	 * @param id         the feature id
+	 * @param wordIds    the word ids
+	 * @throws SQLException if the query fails
+	 */
+	public final void addWordFeature(Integer analysisId, Integer id, List<Integer> wordIds) throws SQLException {
+		String sql = "INSERT INTO `word-feature` (`analysis-id`, `id`, `word-id`) VALUES (?, ?, ?)";
+		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		for (int i = 0; i < wordIds.size(); i++) {
+			stmt.setInt(1, analysisId);
+			stmt.setInt(2, id);
+			stmt.setInt(3, wordIds.get(i));
+            stmt.addBatch();
+            if (i % 1000 == 0 || i + 1 == wordIds.size()) {
+                stmt.executeBatch();
+            }
+        }
 		stmt.close();
 	}
 
@@ -466,6 +490,38 @@ public class MysqlDependencyBase {
 		int ar = stmt.executeUpdate();
 		if (ar != 1)
 			throw new SQLException();
+		stmt.close();
+	}
+
+	/**
+	 * Adds a function as a property of the specified word at the specified rank
+	 * relative to the specified head word at the specified rank in the specified
+	 * analysis in this dependency base.
+	 * 
+	 * @param analysisId the analysis id
+	 * @param id         the function id
+	 * @param wordId     the word ids
+	 * @param wordRankId the word rank id
+	 * @param headId     the head word ids
+	 * @param headRankId the head word rank id
+	 * @throws SQLException if the query fails
+	 */
+	public final void addWordFunction(Integer analysisId, Integer id, List<Integer> wordIds, Integer wordRankId,
+			List<Integer> headIds, Integer headRankId) throws SQLException {
+		String sql = "INSERT INTO `word-function` (`analysis-id`, `id`, `word-id`, `word-rank-id`, `head-id`, `head-rank-id`) VALUES (?, ?, ?, ?, ?, ?)";
+		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		for (int i = 0; i < wordIds.size(); i++) {
+			stmt.setInt(1, analysisId);
+			stmt.setInt(2, id);
+			stmt.setInt(3, wordIds.get(i));
+			stmt.setInt(4, wordRankId);
+			stmt.setInt(5, headIds.get(i));
+			stmt.setInt(6, headRankId);
+			stmt.addBatch();
+			if (i % 1000 == 0 || i + 1 == wordIds.size()) {
+                stmt.executeBatch();
+            }
+        }
 		stmt.close();
 	}
 
@@ -790,6 +846,30 @@ public class MysqlDependencyBase {
 		stmt.executeUpdate();
 		stmt.close();
 	}
+
+	/**
+	 * Remove the specified feature as a property of the specified word in the
+	 * specified analysis in this dependency base.
+	 * 
+	 * @param analysisId the analysis id
+	 * @param id         the feature id
+	 * @param wordIds    the word ids
+	 * @throws SQLException if the query fails
+	 */
+	public final void removeWordFeature(Integer analysisId, Integer id, List<Integer> wordIds) throws SQLException {
+		String sql = "DELETE FROM `word-feature` WHERE `analysis-id` = ? AND `id` = ? AND `word-id` = ?";
+		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		for (int i = 0; i < wordIds.size(); i++) {
+			stmt.setInt(1, analysisId);
+			stmt.setInt(2, id);
+			stmt.setInt(3, wordIds.get(i));
+            stmt.addBatch();
+            if (i % 1000 == 0 || i + 1 == wordIds.size()) {
+                stmt.executeBatch();
+            }
+        }
+		stmt.close();
+	}
 	
 	/**
 	 * Removes a function as a property of the specified word at the specified rank
@@ -821,6 +901,44 @@ public class MysqlDependencyBase {
 		stmt.setInt(5, headId);
 		stmt.setInt(6, headRankId);
 		stmt.executeUpdate();
+		stmt.close();
+	}
+	
+	/**
+	 * Removes a function as a property of the specified word at the specified rank
+	 * relative to the specified head word at the specified rank in the specified
+	 * analysis in this dependency base.
+	 * 
+	 * @param analysisId the analysis id
+	 * @param id         the function id
+	 * @param wordIds    the word ids
+	 * @param wordRankId the word rank id
+	 * @param headIds    the head word ids
+	 * @param headRankId the head word rank id
+	 * @throws SQLException if the query fails
+	 */
+	public final void removeWordFunction(Integer analysisId, Integer id, List<Integer> wordIds, Integer wordRankId,
+			List<Integer> headIds, Integer headRankId) throws SQLException {
+		String sql = "DELETE FROM `word-function` \n"
+				+ "\t WHERE `analysis-id` = ? \n"
+				+ "\t AND `id` = ? \n"
+				+ "\t AND `word-id` = ? \n"
+				+ "\t AND `word-rank-id` = ? \n"
+				+ "\t AND `head-id` = ? \n"
+				+ "\t AND `head-rank-id` = ? \n";
+		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
+		for (int i = 0; i < wordIds.size(); i++) {
+			stmt.setInt(1, analysisId);
+			stmt.setInt(2, id);
+			stmt.setInt(3, wordIds.get(i));
+			stmt.setInt(4, wordRankId);
+			stmt.setInt(5, headIds.get(i));
+			stmt.setInt(6, headRankId);
+			stmt.addBatch();
+			if (i % 1000 == 0 || i + 1 == wordIds.size()) {
+                stmt.executeBatch();
+            }
+        }
 		stmt.close();
 	}
 
