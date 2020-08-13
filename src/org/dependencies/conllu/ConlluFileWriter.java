@@ -36,14 +36,18 @@ public class ConlluFileWriter {
 	 * @throws FileNotFoundException 
 	 */
 	public final void writeConlluFile(DepAnalyzedText text, String fileName) throws SQLException, FileNotFoundException {
+		writeConlluFile(text.getWordings(), text.getDescription(), fileName);
+	}
+
+	public final void writeConlluFile(List<DepWording> wordings, DepDescription description, String fileName)
+			throws FileNotFoundException {
 		File file = new File(fileName);
 		FileOutputStream fos = new FileOutputStream(file);
 		OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
 		BufferedWriter bw = new BufferedWriter(osw);
 		PrintWriter pw = new PrintWriter(bw);
-		DepDescription description = text.getDescription();
 		DepSystem wordClasses = description.getSystem("WORD-CLASS");
-		for (DepWording wording : text.getWordings()) {
+		for (DepWording wording : wordings) {
 			pw.println(format("# sent_id = %s-s%d", description.getName(), wording.getId()));
 			pw.println(format("# text = %s", wording.getForm()));
 			wording.makeDependencyTree();

@@ -467,3 +467,5 @@ IMPORT embedded-clauses
 
 [] [S:LEMMA:resulto] T:EXPERIENTIAL:Actor#1:groups#2:clause => -T:EXPERIENTIAL:Actor#1:groups#2:clause +T:EXPERIENTIAL:Existent#1:groups#2:clause
 
+[T:WORD-CLASS:verb S:LEMMA:sum] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Carrier#2:groups#1:clause T:EXPERIENTIAL:Attribute#3:groups#1:clause => -T:EXPERIENTIAL:Carrier#2:groups#1:clause -T:EXPERIENTIAL:Attribute#3:groups#1:clause +T:EXPERIENTIAL:Identified#2:groups#1:clause +T:EXPERIENTIAL:Identifier#3:groups#1:clause
+

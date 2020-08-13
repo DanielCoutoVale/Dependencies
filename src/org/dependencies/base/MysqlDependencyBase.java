@@ -77,7 +77,7 @@ public class MysqlDependencyBase {
 		return format(
 				"JOIN `word-feature` W%dWF%d ON W%dWF%d.`word-id` = W%d.`id` AND W%dWF%d.`analysis-id` = ? \n"
 						+ "JOIN `feature` W%dF%d ON W%dF%d.`id` = W%dWF%d.`id` AND W%dF%d.`name` = ? \n"
-						+ "JOIN `system` W%dS%d ON W%dS%d.`id` = W%dF%d.`system-id` AND W%dS%d.`name` = ? AND W%dS%d.`description-id` = ? \n",
+						+ "JOIN `system` W%dS%d ON W%dS%d.`id` = W%dF%d.`system-id` AND W%dS%d.`name` LIKE ? AND W%dS%d.`description-id` = ? \n",
 				wOrder, fOrder, wOrder, fOrder, wOrder, wOrder, fOrder,
 				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder,
 				wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder, wOrder, fOrder);
@@ -91,27 +91,30 @@ public class MysqlDependencyBase {
 	 * @param headIndex the head index of the join SQL
 	 * @return the SQL
 	 */
-	private static String makeWordFunctionJoinSql(Integer order, Integer wordIndex, Integer headIndex) {
+	private static String makeWordFunctionJoinSql(Integer order, Integer wordIndex, Integer headIndex, boolean wordRank, boolean headRank, boolean metafunction) {
 		return format("JOIN `word-function` WF%d \n"
 				+ "\t  ON WF%d.`word-id` = W%d.`id` \n"
-				+ "\t AND WF%d.`head-id` = W%d.`id` \n"
-				+ "\t AND WF%d.`word-rank-id` = ? \n"
-				+ "\t AND WF%d.`head-rank-id` = ? \n"
-				+ "\t AND WF%d.`analysis-id` = ? \n"
-				+ "JOIN `function` WF%dF \n"
-				+ "\t  ON WF%dF.`id` = WF%d.`id` \n"
-				+ "\t AND WF%dF.`name` LIKE ? \n"
-				+ "\t AND WF%dF.`metafunction-id` = ? \n",
+				+ "\t AND WF%d.`head-id` = W%d.`id` \n",
 				order,
 				order, wordIndex,
-				order, headIndex,
-				order,
-				order,
+				order, headIndex) +
+			   (wordRank ? format("\t AND WF%d.`word-rank-id` = ? \n", order): "") +
+			   (headRank ? format("\t AND WF%d.`head-rank-id` = ? \n", order): "") +
+			   format("\t AND WF%d.`analysis-id` = ? \n"
+				+ "JOIN `function` WF%dF \n"
+				+ "\t  ON WF%dF.`id` = WF%d.`id` \n"
+				+ "\t AND WF%dF.`name` LIKE ? \n",
 				order,
 				order,
 				order, order,
-				order,
-				order);
+				order) +
+			   (metafunction ?
+			   format("\t AND WF%dF.`metafunction-id` = ? \n",
+				order):
+			   format("JOIN `metafunction` WF%dM ON WF%dM.`id` = WF%dF.`metafunction-id` \n"
+				+ "\t AND WF%dM.`description-id` = ? \n",
+				order, order, order,
+				order));
 	}
  
 	/**
@@ -562,6 +565,63 @@ public class MysqlDependencyBase {
 	public final void close() throws SQLException {
 		this.conn.close();
 	}
+	private static class WordingSqls {
+		String wordingSql;
+		String wordSql;
+		String featureSql;
+		String functionSql;
+	}
+	private static WordingSqls textSqls = new WordingSqls();
+	static {
+		textSqls.wordingSql = "SELECT Ws.* FROM `wording` Ws " + "WHERE Ws.`text-id` = ?";
+		textSqls.wordSql = "SELECT W.* FROM `word` W " + "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` " + "WHERE Ws.`text-id` = ?";
+		textSqls.featureSql = "SELECT F.*, WF.`word-id` FROM `feature` F " + "JOIN `word-feature` WF ON WF.`id` = F.`id` "
+				+ "JOIN `word` W ON W.`id` = WF.`word-id` " + "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
+		textSqls.functionSql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order`, WR.`id` AS `word-rank-id`, WR.`name` AS `word-rank-name`, HR.`id` AS `head-rank-id`, HR.`name` AS `head-rank-name` FROM `function` F " 
+				+ "JOIN `word-function` WF ON WF.`id` = F.`id` "
+				+ "JOIN `word` W ON W.`id` = WF.`word-id` " 
+				+ "JOIN `word` H ON H.`id` = WF.`head-id` " 
+				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "JOIN `feature` WR ON WR.`id` = WF.`word-rank-id` "
+				+ "JOIN `feature` HR ON HR.`id` = WF.`head-rank-id` "
+				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
+	}
+	
+	private static WordingSqls searchSqls(List<Integer> ids) {
+		StringBuffer buffer = new StringBuffer();
+		for (Integer id : ids) {
+			if (buffer.length() > 0) {
+				buffer.append(",");
+			}
+			buffer.append(id);
+		}
+		String pool = buffer.toString();
+		WordingSqls sqls = new WordingSqls();
+		sqls.wordingSql = 
+				"SELECT Ws.* FROM `wording` Ws "
+				+ "JOIN `word` K ON K.`wording-id` = Ws.`id` AND K.`id` in (" + pool + ") "
+				+ "WHERE Ws.`text-id` = ?";
+		sqls.wordSql = "SELECT W.* FROM `word` W "
+				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "JOIN `word` K ON K.`wording-id` = Ws.`id` AND K.`id` in (" + pool + ") "
+				+ "WHERE Ws.`text-id` = ?";
+		sqls.featureSql = "SELECT F.*, WF.`word-id` FROM `feature` F " + "JOIN `word-feature` WF ON WF.`id` = F.`id` "
+				+ "JOIN `word` W ON W.`id` = WF.`word-id` "
+				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "JOIN `word` K ON K.`wording-id` = Ws.`id` AND K.`id` in (" + pool + ") "
+				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
+		sqls.functionSql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order`, WR.`id` AS `word-rank-id`, WR.`name` AS `word-rank-name`, HR.`id` AS `head-rank-id`, HR.`name` AS `head-rank-name` FROM `function` F " 
+				+ "JOIN `word-function` WF ON WF.`id` = F.`id` "
+				+ "JOIN `word` W ON W.`id` = WF.`word-id` " 
+				+ "JOIN `word` H ON H.`id` = WF.`head-id` " 
+				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
+				+ "JOIN `word` K ON K.`wording-id` = Ws.`id` AND K.`id` in (" + pool + ") "
+				+ "JOIN `feature` WR ON WR.`id` = WF.`word-rank-id` "
+				+ "JOIN `feature` HR ON HR.`id` = WF.`head-rank-id` "
+				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
+		return sqls;
+	}
 
 	/**
 	 * Gets the specified analyzed text of the specified corpus in the specified
@@ -581,9 +641,17 @@ public class MysqlDependencyBase {
 			return null;
 		}
 		DepAnalyzedText text = new DepAnalyzedText(unanalyzedText);
-		String sql = "SELECT Ws.* FROM `wording` Ws " + "WHERE Ws.`text-id` = ?";
-		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
-		stmt.setInt(1, text.getId());
+		List<DepWording> wordings = getWordings(analysisId, text.getId(), textSqls);
+		for (DepWording wording : wordings) {
+			text.addWording(wording);
+		}
+		return text;
+	}
+
+	private List<DepWording> getWordings(Integer analysisId, Integer textId, WordingSqls sqls) throws SQLException {
+		List<DepWording> wordings = new LinkedList<>();
+		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sqls.wordingSql);
+		stmt.setInt(1, textId);
 		ResultSet rs = stmt.executeQuery();
 		Map<Integer, DepWording> wordingMap = new HashMap<>();
 		while (rs.next()) {
@@ -591,12 +659,11 @@ public class MysqlDependencyBase {
 			wording.setId(rs.getInt("id"));
 			wording.setForm(rs.getString("form"));
 			wordingMap.put(wording.getId(), wording);
-			text.addWording(wording);
+			wordings.add(wording);
 		}
 		stmt.close();
-		sql = "SELECT W.* FROM `word` W " + "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` " + "WHERE Ws.`text-id` = ?";
-		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
-		stmt.setInt(1, text.getId());
+		stmt = (PreparedStatement) this.conn.prepareStatement(sqls.wordSql);
+		stmt.setInt(1, textId);
 		rs = stmt.executeQuery();
 		Map<Integer, DepWord> wordMap = new HashMap<>();
 		while (rs.next()) {
@@ -610,11 +677,8 @@ public class MysqlDependencyBase {
 			wording.addWord(word);
 		}
 		stmt.close();
-		sql = "SELECT F.*, WF.`word-id` FROM `feature` F " + "JOIN `word-feature` WF ON WF.`id` = F.`id` "
-				+ "JOIN `word` W ON W.`id` = WF.`word-id` " + "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
-				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
-		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
-		stmt.setInt(1, text.getId());
+		stmt = (PreparedStatement) this.conn.prepareStatement(sqls.featureSql);
+		stmt.setInt(1, textId);
 		stmt.setInt(2, analysisId);
 		rs = stmt.executeQuery();
 		while (rs.next()) {
@@ -625,16 +689,8 @@ public class MysqlDependencyBase {
 			word.addFeature(feature);
 		}
 		stmt.close();
-		sql = "SELECT F.*, WF.`word-id`, H.`order` AS `head-order`, WR.`id` AS `word-rank-id`, WR.`name` AS `word-rank-name`, HR.`id` AS `head-rank-id`, HR.`name` AS `head-rank-name` FROM `function` F " 
-				+ "JOIN `word-function` WF ON WF.`id` = F.`id` "
-				+ "JOIN `word` W ON W.`id` = WF.`word-id` " 
-				+ "JOIN `word` H ON H.`id` = WF.`head-id` " 
-				+ "JOIN `wording` Ws ON Ws.`id` = W.`wording-id` "
-				+ "JOIN `feature` WR ON WR.`id` = WF.`word-rank-id` "
-				+ "JOIN `feature` HR ON HR.`id` = WF.`head-rank-id` "
-				+ "WHERE Ws.`text-id` = ? AND WF.`analysis-id` = ?";
-		stmt = (PreparedStatement) this.conn.prepareStatement(sql);
-		stmt.setInt(1, text.getId());
+		stmt = (PreparedStatement) this.conn.prepareStatement(sqls.functionSql);
+		stmt.setInt(1, textId);
 		stmt.setInt(2, analysisId);
 		rs = stmt.executeQuery();
 		while (rs.next()) {
@@ -657,7 +713,32 @@ public class MysqlDependencyBase {
 			word.addDependency(dependency);
 		}
 		stmt.close();
-		return text;
+		return wordings;
+	}
+	
+	/**
+	 * Search for wordings that match the structure.
+	 * 
+	 * @param corpusId   the corpus id
+	 * @param languageId the language id
+	 * @param title      the text title
+	 * @param analysisId the analysis id
+	 * @param factory 
+	 * @param matches    the matches
+	 * @return the analyzed wordings
+	 * @throws SQLException if any of the queries fail
+	 */
+	public final List<DepWording> searchForWordings(Integer corpusId, Integer languageId, String title, Integer analysisId,
+			DuxFactory factory, List<DuxMatch> matches) throws SQLException {
+		DepText text = this.getText(corpusId, languageId, title);
+		if (text == null) {
+			return null;
+		}
+		List<List<DepWord>> wordLists = this.searchForWords(factory, matches);
+		List<Integer> wordIds = new LinkedList<>();
+		wordLists.stream().map(wordList -> wordList.get(0)).forEach(word -> wordIds.add(word.getId()));
+		List<DepWording> wordings = this.getWordings(analysisId, text.getId(), searchSqls(wordIds));
+		return wordings;
 	}
 
 	/**
@@ -995,7 +1076,10 @@ public class MysqlDependencyBase {
 				}
 			} else {
 				DuxFunction function = (DuxFunction) match;
-				buffer.append(makeWordFunctionJoinSql(i + 1, function.getWordIndex(), function.getHeadIndex()));
+				boolean wordRank = !function.getWordRankName().equals("%");
+				boolean headRank = !function.getHeadRankName().equals("%");
+				boolean metafunction = !function.getMetafunctionName().equals("%");
+				buffer.append(makeWordFunctionJoinSql(i + 1, function.getWordIndex(), function.getHeadIndex(), wordRank , headRank, metafunction));
 			}
 			lemmata.add(lemma);
 		}
@@ -1038,12 +1122,16 @@ public class MysqlDependencyBase {
 			} else {
 				DuxFunction function = (DuxFunction) match;
 				DepWordFunction wordFunction = factory.makeWordFunction(function);
+				boolean a = wordFunction.getWordRankId() != null;
+				boolean b = wordFunction.getHeadRankId() != null;
+				boolean c = wordFunction.getMetafunctionId() != null;
 				// word rank id, head rank id, analysis id, name, metafunction id
-				stmt.setInt(index++, wordFunction.getWordRankId());
-				stmt.setInt(index++, wordFunction.getHeadRankId());
+				if (a) stmt.setInt(index++, wordFunction.getWordRankId());
+				if (b) stmt.setInt(index++, wordFunction.getHeadRankId());
 				stmt.setInt(index++, wordFunction.getAnalysisId());
 				stmt.setString(index++, wordFunction.getName());
-				stmt.setInt(index++, wordFunction.getMetafunctionId());
+				if (c) stmt.setInt(index++, wordFunction.getMetafunctionId());
+				else stmt.setInt(index++, wordFunction.getDescriptionId());
 			}
 		}
 		for (DepWordFeature lemma : lemmata) {

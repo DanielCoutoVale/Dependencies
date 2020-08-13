@@ -36,6 +36,29 @@ public class HtmlFileWriter {
 	 * @throws FileNotFoundException 
 	 */
 	public final void writeHtmlFile(DepAnalyzedText text, String fileName) throws SQLException, FileNotFoundException {
+		this.writeHtmlFile(text.getWordings(), text.getTitle(), text.getDescription(), fileName);
+	}
+
+	private void printStructure(PrintWriter pw, DepNode tree, List<Integer> spans, List<Long> indices, String headerLabel,
+			String rankName) {
+		pw.print("<tr>");
+		pw.print(format("<th width='100px'>%s</th>\n", headerLabel));
+		for (int i = 0; i < spans.size(); i++) {
+			Integer span = spans.get(i);
+			Long spanIndex = indices.get(i);
+			String label = tree.getFunctionName(spanIndex, rankName);
+			if (indices.indexOf(spanIndex) < i) {
+				label = "…" + label;
+			}
+			if (indices.lastIndexOf(spanIndex) > i) {
+				label = label + "…";
+			}
+			pw.print(format("<td width='100px' colspan='%d'>%s</td>\n", span, label));
+		}
+		pw.print("</tr>");
+	}
+
+	public void writeHtmlFile(List<DepWording> wordings, String textTitle, DepDescription description, String fileName) throws FileNotFoundException {
 		File file = new File(fileName);
 		FileOutputStream fos = new FileOutputStream(file);
 		OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
@@ -44,7 +67,7 @@ public class HtmlFileWriter {
 		pw.print("<html>\n");
 		pw.print("<head>\n");
 		pw.print("<meta charset='utf-8'>\n");
-		pw.print(format("<title>%s #%s</title>\n", text.getTitle(), text.getDescription().getName()));
+		pw.print(format("<title>%s #%s</title>\n", textTitle, description.getName()));
 		pw.print("<style>\n");
 		pw.print("h1 { margin: 20px; }\n");
 		pw.print("table { margin: 20px; border-spacing: 0px; border-bottom: 1px solid black; border-right: 1px solid black; }\n");
@@ -53,8 +76,8 @@ public class HtmlFileWriter {
 		pw.print("</style>\n");
 		pw.print("</head>\n");
 		pw.print("<body>\n");
-		pw.print(format("<h1>%s #%s</h1>", text.getTitle(), text.getDescription().getName()));
-		for (DepWording wording : text.getWordings()) {
+		pw.print(format("<h1>%s #%s</h1>", textTitle, description.getName()));
+		for (DepWording wording : wordings) {
 			wording.makeDependencyTree();
 			pw.print(format("<table width='%dpx'>\n", (wording.getWords().size() + 1) * 100));
 			//pw.print("<tr>");
@@ -122,7 +145,6 @@ public class HtmlFileWriter {
 			}
 			pw.print("</tr>\n");
 			pw.print("<th width='100px'>Word Class</th>");
-			DepDescription description = text.getDescription();
 			for (DepWord word : wording) {
 				DepFeature wordClass = word.getFeatureIn(description.getSystem("WORD-CLASS"));
 				pw.print("<td width='100px'>");
@@ -135,25 +157,6 @@ public class HtmlFileWriter {
 		pw.print("</body>\n");
 		pw.print("</html>\n");
 		pw.close();
-	}
-
-	private void printStructure(PrintWriter pw, DepNode tree, List<Integer> spans, List<Long> indices, String headerLabel,
-			String rankName) {
-		pw.print("<tr>");
-		pw.print(format("<th width='100px'>%s</th>\n", headerLabel));
-		for (int i = 0; i < spans.size(); i++) {
-			Integer span = spans.get(i);
-			Long spanIndex = indices.get(i);
-			String label = tree.getFunctionName(spanIndex, rankName);
-			if (indices.indexOf(spanIndex) < i) {
-				label = "…" + label;
-			}
-			if (indices.lastIndexOf(spanIndex) > i) {
-				label = label + "…";
-			}
-			pw.print(format("<td width='100px' colspan='%d'>%s</td>\n", span, label));
-		}
-		pw.print("</tr>");
 	}
 
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepDescription;
+import org.dependencies.model.DepFeature;
 import org.dependencies.model.DepMetafunction;
 import org.dependencies.model.DepWordFeature;
 import org.dependencies.model.DepWordFunction;
@@ -43,14 +44,34 @@ public class DuxFactory {
 		DepDescription description = descriptionMap.get(function.getPrefix());
 		depFunction.setAnalysisId(analysisMap.get(function.getPrefix()).getId());
 		DepMetafunction metafunction = description.getMetafunction(function.getMetafunctionName());
-		if (metafunction == null) {
+		if (metafunction != null) {
+			depFunction.setMetafunctionId(metafunction.getId());
+		} else if (function.getMetafunctionName().equals("%")) { 
+			depFunction.setMetafunctionId(null);
+		} else {
 			System.err.println(format("Metafunction '%s' not found in description '%s'!", function.getMetafunctionName(), description.getName()));
 			System.exit(-1);
 		}
-		depFunction.setMetafunctionId(metafunction.getId());
 		depFunction.setName(function.getName());
-		depFunction.setWordRankId(description.getRank(function.getWordRankName()).getId());
-		depFunction.setHeadRankId(description.getRank(function.getHeadRankName()).getId());
+		DepFeature wordRank = description.getRank(function.getWordRankName());
+		if (wordRank != null) {
+			depFunction.setWordRankId(wordRank.getId());
+		} else if (function.getWordRankName().equals("%")) {
+			depFunction.setWordRankId(null);
+		} else {
+			System.err.println(format("Word rank '%s' not found in description '%s'!", function.getWordRankName(), description.getName()));
+			System.exit(-1);
+		}
+		DepFeature headRank = description.getRank(function.getHeadRankName());
+		if (headRank != null) {
+			depFunction.setHeadRankId(headRank.getId());
+		} else if (function.getHeadRankName().equals("%")) {
+			depFunction.setHeadRankId(null);
+		} else {
+			System.err.println(format("Head rank '%s' not found in description '%s'!", function.getHeadRankName(), description.getName()));
+			System.exit(-1);
+		}
+		depFunction.setDescriptionId(description.getId());
 		return depFunction;
 	}
 }

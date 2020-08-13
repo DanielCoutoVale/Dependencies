@@ -27,6 +27,8 @@ public class DepWordFunction {
 	 */
 	private Integer headRankId;
 
+	private Integer descriptionId;
+
 	public String getName() {
 		return name;
 	}
@@ -89,6 +91,14 @@ public class DepWordFunction {
 	 */
 	public void setHeadRankId(Integer headRankId) {
 		this.headRankId = headRankId;
+	}
+
+	public Integer getDescriptionId() {
+		return descriptionId;
+	}
+
+	public void setDescriptionId(Integer descriptionId) {
+		this.descriptionId = descriptionId;
 	}
 	
 }

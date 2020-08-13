@@ -48,17 +48,30 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	 * @param form the feature form
 	 */
 	public DuxFunction(String form) {
-		String[] A = form.split("#");
-		String[] A0 = A[0].split(":");
-		this.prefix = A0[0];
-		this.metafunctionName = A0[1];
-		this.name = A0[2];
-		String[] A1 = A[1].split(":");
-		this.wordIndex = Integer.parseInt(A1[0]);
-		this.wordRankName = A1[1];
-		String[] A2 = A[2].split(":");
-		this.headIndex = Integer.parseInt(A2[0]);
-		this.headRankName = A2[1];
+		if (DuxFunction.matchRank(form)) {
+			String[] A = form.split("#");
+			String[] A0 = A[0].split(":");
+			this.prefix = A0[0];
+			this.metafunctionName = A0[1];
+			this.name = A0[2];
+			String[] A1 = A[1].split(":");
+			this.wordIndex = Integer.parseInt(A1[0]);
+			this.wordRankName = A1[1];
+			String[] A2 = A[2].split(":");
+			this.headIndex = Integer.parseInt(A2[0]);
+			this.headRankName = A2[1];
+		} else {
+			int a = form.indexOf('(');
+			int b = form.indexOf(',');
+			int c = form.indexOf(')');
+			this.prefix = "H";
+			this.metafunctionName = "%";
+			this.name = form.substring(0, a).trim();
+			this.wordIndex = Integer.parseInt(form.substring(a + 1, b).trim());
+			this.wordRankName = "%";
+			this.headIndex = Integer.parseInt(form.substring(b + 1, c).trim());
+			this.headRankName = "%";
+		}
 	}
 
 	/**
@@ -68,6 +81,20 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	 * @return <code>true</code> if the token has the form of a feature
 	 */
 	public final static boolean matches(String token) {
+		return matchRank(token) || matchNoRank(token);
+	}
+
+	private final static boolean matchNoRank(String token) {
+		int a1 = token.indexOf('(');
+		int a2 = token.indexOf('(', a1 + 1);
+		int b1 = token.indexOf(',');
+		int b2 = token.indexOf(',', b1 + 1);
+		int c1 = token.indexOf(')');
+		int c2 = token.indexOf(')', c1 + 1);
+		return a1 < b1 && b1 < c1 && a1 > 0 && a2 == -1 && b2 == -1 && c2 == -1;
+	}
+
+	private final static boolean matchRank(String token) {
 		String[] A = token.split("#");
 		if (A.length != 3) return false;
 		String[] A0 = A[0].split(":");
