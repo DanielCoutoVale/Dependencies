@@ -99,6 +99,12 @@ Once an analysis is imported, it can be exported back as a CONLLU file or as an 
 java -jar export-analysis.jar [corpus] [language] [text] [description] [analysis] [file]
 ```
 
+Alternatively, one can specify a query and retrieve only specific wordings from the text. The query must be specified as a [DUX query](DUX-README.md).
+
+```
+java -jar query-analysis.jar [corpus] [language] [text] [description] [analysis] [file] [query]
+```
+
 A text analysis in a dependency base can be translated and checked for completion as we shall see next.
 
 ## Text Analyses
