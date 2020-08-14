@@ -32,7 +32,7 @@ Further information can be given about the features. One can specify the system 
 [T:WORD-CLASS:verb #sum 'sit']
 ```
 
-When one wants to retrieve word tuples, one needs to specify the function that a word must have relative to another. Functions are represented by a token followed by a tuple of two numbers, referring to the positions of the words in the query. The first line below retrieves a tuple of two words: the first is a verb, the second is a noun, and the second functions as the Actor of the first. In the second line below, one retrieves a tuple of three words: the first is a verb, the second and the third are nouns, the second functions as the Carrier of the first and the third as the Attribute of the first. The third line retrieves the same word sets as the second, only their order is different.
+When one wants to retrieve word tuples, one needs to specify the function that words must have relative to one another. Functions are represented by a token followed by a tuple of two numbers, referring to the positions of the words in the query. The first line below retrieves a tuple of two words: the first is a verb, the second is a noun, and the second functions as the Actor of the first. In the second line below, one retrieves a tuple of three words: the first is a verb, the second and the third are nouns, the second functions as the Carrier of the first and the third as the Attribute of the first. The third line retrieves the same word sets as the second, only their order is different.
 
 ```
 [verb] [noun] Actor(2,1)
