@@ -65,9 +65,9 @@ A DUX command is composed of two parts. A DUX query and a sequence of DUX change
 In these examples, the '+' symbol prescribes that the specified feature should be added to the matching words and the '-' symbol prescribes that the specified feature should be removed from the matching words. A similar procedure occurs when there are tuples as shown below:
 
 ```
-[T:verb] [T:adjective] S:Amod(2,1) => -T:verb -T:lexical-verb +T:noun +T:common-noun
-[T:noun] [T:adjective] S:Amod(2,1) => +T:Classifier(2,1)
-[T:noun] [#bonus] T:Classifier(2,1) => -T:Classifier(2,1) +T:Epithet(2,1)
+[T:verb] [T:adjective] S:Amod(2,1)  => -T:verb -T:lexical-verb +T:noun +T:common-noun
+[T:noun] [T:adjective] S:Amod(2,1)  => +T:Classifier(2:groups,1:clause)
+[T:noun] [#bonus] T:Classifier(2,1) => -T:Classifier(2,1) +T:Epithet(2:groups,1:clause)
 ```
 
 ...
