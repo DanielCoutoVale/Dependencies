@@ -40,7 +40,7 @@ When one wants to retrieve word tuples, one needs to specify the function that w
 [noun] Carrier(1,3) [verb] [noun] Attribute(4,3)
 ```
 
-One can specify more information regarding functions. Each function belongs to a metafunction, that is, a function in the situation of interaction. The function of Actor belongs to the EXPERIENTIAL metafunction. Moreover, the rank at which words relate to one another can also be specified as shown below. This further specification can be done both when there is a single description in the context, or when there is a source and a target description.
+One can specify more information concerning functions. Each function belongs to a metafunction, that is, a function in the situation of interaction. The function of Actor belongs to the EXPERIENTIAL metafunction. Moreover, the rank at which words relate to one another can also be specified as shown below. This further specification can be done both when there is a single description in the context, or when there is a source and a target description.
 
 ```
 [WORD-CLASS:verb] [WORD-CLASS:noun] EXPERIENTIAL:Actor(2:groups,1:clause)
