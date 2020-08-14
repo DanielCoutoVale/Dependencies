@@ -1,6 +1,6 @@
 # DUX FORMAT
 
-Here we shall explain the DUX format, a format for querying a Dependency Base, now compatible with both Universal Dependencies (UD) and Intelligenti Pauca.
+Here we shall explain the DUX format, a format for querying a Dependency Base, which is compatible with both Universal Dependencies (UD) and Intelligenti Pauca (IP).
 
 A Dependency Base keeps named corpora with titled texts. Each text is stored as an enumeration of wordings and each wording is an enumeration of words. Every word in a Dependency Base has a serial id such as 13492342 and a structured id such as (ITTB, Gentiles, 1, 2), meaning the second word of the first wording of the text "Gentiles" from the corpus "ITTB". The DUX format is composed of two subformats. A DUX query and a DUX command.
 
