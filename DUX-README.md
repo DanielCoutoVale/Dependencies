@@ -2,7 +2,7 @@
 
 Here we shall explain the DUX format, a format for querying a Dependency Base, which is compatible with both Universal Dependencies (UD) and Intelligenti Pauca (IP).
 
-A Dependency Base keeps named corpora with titled texts. Each text is stored as an enumeration of wordings and each wording is an enumeration of words. Every word in a Dependency Base has a serial id such as 13492342 and a structured id such as (ITTB, Gentiles, 1, 2), meaning the second word of the first wording of the text "Gentiles" from the corpus "ITTB". The DUX format is composed of two subformats. A DUX query and a DUX command.
+A Dependency Base keeps named corpora with titled texts. Each text is stored as an enumeration of wordings and each wording is an enumeration of words. Every word in a Dependency Base has a serial id such as 13492342 and a structured id such as (ITTB, Gentiles, 1, 2), referring to the second word of the first wording of the text "Gentiles" from the corpus "ITTB". The DUX format is composed of two subformats. A DUX query and a DUX command.
 
 # DUX Query
 
@@ -14,7 +14,7 @@ A DUX query is meant to retrieve a group of one or more words related to each ot
 [aux #sum 'sit']
 ```
 
-One can specify a word by its serial id, by its structured id within parentheses, or by its features within square brackets. The word form is specified as a token between single quotes, the word lemma is specified as a token starting with a hash mark, and other features such as word class is specified by tokens without marks.
+One can specify a word by its serial id, by its structured id within parentheses, or by its features within square brackets. The word form is specified as a token between single quotes, the word lemma is specified as a token starting with a hash mark, and other features such as word class are specified by tokens without marks.
 
 Queries can be carried out in two contexts: either when retrieving words by their features in a given analysis in a given description or when converting an analysis from a source description to a target one. In the former case, no prefix is added to the features because they belong to the only linguistic description in the context. In the later case, one has to add either S: or T: as prefixes, specifying which description the feature belongs to.   
 
