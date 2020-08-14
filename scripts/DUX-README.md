@@ -6,7 +6,7 @@ A Dependency Base keeps named corpora with titled texts. Each text is stored as 
 
 # DUX Query
 
-A DUX query is meant to retrieve a group of one or more words related to each other through links (dependencies or ties). In its simplest format, a DUX query is composed of a single word. Here are three ways of specifying a word:
+A DUX query is meant to retrieve a group of one or more words related to each other through links (dependencies or ties). In its simplest format, a DUX query is composed of a single word pattern. There are three ways of specifying a word:
 
 ```
 13492342
@@ -15,6 +15,38 @@ A DUX query is meant to retrieve a group of one or more words related to each ot
 ```
 
 One can specify a word by its serial id, by its structured id within parentheses, or by its features within square brackets. The word form is specified as a token between single quotes, the word lemma is specified as a token starting with a hash mark, and other features such as word class is specified by tokens without marks.
+
+Queries can be carried out in two contexts: either when retrieving words by their features in a given analysis in a given description or when converting an analysis from a source description to a target one. In the former case, no prefix is added to the features because they belong to the only linguistic description in the context. In the later case, one has to add either S: or T: as prefixes, specifying which description the feature belongs to.   
+
+```
+[aux #sum 'sit']
+[S:aux #sum 'sit']
+[T:verb #sum 'sit']
+```
+
+Further information can be given about the features. One can specify the system name to which the feature belongs. This is a good practice for large descriptions and for descriptions where multiple systems have features with the same name, especially in scripts one would like to keep.
+
+```
+[WORD-CLASS:aux #sum 'sit']
+[S:WORD-CLASS:aux #sum 'sit']
+[T:WORD-CLASS:verb #sum 'sit']
+```
+
+When one wants to retrieve word tuples, one needs to specify the function that a word has to have relative to another. Function are represented by a token followed by a tuple of two numbers, referring to the positions of the words in the query. The first line below retrieves a tuple of two words: the first is a verb, the second is a noun, and the second functions as the Actor of the first. In the second line below, one retrieves a tuple of three words: the first is a verb, the second and the third are nouns, the second functions as the Carrier of the first and the third as the Attribute of the first. The third line retrieves the same word sets as the second, only their order is different.
+
+```
+[verb] [noun] Actor(2,1)
+[verb] [noun] [noun] Carrier(2,1) Attribute(3,1)
+[noun] Carrier(1,3) [verb] [noun] Attribute(4,3)
+```
+
+One can specify more information regarding functions. Each function belongs to a metafunction, that is, a function in the situation of interaction. The function of Actor belongs to the EXPERIENTIAL metafunction. Moreover, the rank at which words relate to one another can also be specified as shown below. This further specification can be done both when there is a single description in the context, or when there is a source and a target description.
+
+```
+[WORD-CLASS:verb] [WORD-CLASS:noun] EXPERIENTIAL:Actor(2:groups,1:clause)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] T:EXPERIENTIAL:Actor(2:groups,1:clause)
+[S:WORD-CLASS:verb] [S:WORD-CLASS:noun] S:MIXED:Nsubj(2:word,1:word)
+```
 
 # DUX Command
 
