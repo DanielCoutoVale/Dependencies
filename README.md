@@ -22,18 +22,18 @@ And a sample PROPERTIES file:
 
 - database.properties
 
-And you will find 6 JAR scripts:
+And you will find 6 executable JAR scripts:
 
-- import-ud-file.jar
-- import-sys-file.jar
-- import-conllu-file.jar
-- export-conllu-file.jar
-- translate-analysis.jar
-- check-analysis.jar
+1. import-description.jar
+2. import-analysis.jar
+3. translate-analysis.jar
+4. check-analysis.jar
+5. query-analysis.jar
+6. export-analysis.jar
 
-In the following, you will learn how to create a database with the `dependencies` schema,
-how to use the scripts to import linguistic descriptions, text analyses, how to translate
-text analyses from a description to another and how to verify if an analysis is complete.
+In the following, you will learn how to create a `dependency base` (DB) with the `dependencies` schema,
+how to import linguistic descriptions and text analyses into a DB, translate text analyses
+from a description to another, check if an analysis is complete, then query or export analyses.
 
 ## Dependency Base
 
