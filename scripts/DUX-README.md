@@ -50,6 +50,30 @@ One can specify more information regarding functions. Each function belongs to a
 
 # DUX Command
 
+A DUX command is composed of two parts. A DUX query and a sequence of DUX changes to be applied. Here are some examples of DUX commands
+
+```
+[S:verb]  => +T:verb +T:lexical-verb
+[S:aux]   => +T:verb +T:auxiliary-verb
+[S:propn] => +T:noun +T:proper-noun
+[S:noun]  => +T:noun +T:common-noun
+[S:pron]  => +T:noun +T:pronoun
+[S:adj]   => +T:adjective
+[#primus] => -T:adjective +T:number +T:ordinal
+```
+
+In these examples, the '+' symbol prescribes that the specified feature should be added to the matching words and the '-' symbol prescribes that the specified feature should be removed from the matching words. A similar procedure occurs when there are tuples as shown below:
+
+```
+[T:verb] [T:adjective] S:Amod(2,1) => -T:verb -T:lexical-verb +T:noun +T:common-noun
+[T:noun] [T:adjective] S:Amod(2,1) => +T:Classifier(2,1)
+[T:noun] [#bonus] T:Classifier(2,1) => -T:Classifier(2,1) +T:Epithet(2,1)
+```
+
+...
+
+# DUX Document
+
+A DUX document is composed of one or multiple files. 
 
 
-# DUX Line
