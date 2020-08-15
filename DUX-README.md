@@ -107,3 +107,4 @@ A DUX document is composed of one or multiple files. One of the files is selecte
 3. A stop command stops the execution so that one can verify the conversion until that point.
 4. An import command moves execution to a file whose path is `<pathname>.dux`.
 5. A DUX command behaves as explained in the previous section.
+
