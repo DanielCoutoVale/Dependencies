@@ -17,8 +17,8 @@ import java.util.Properties;
 import org.dependencies.model.DepAnalyzedText;
 import org.dependencies.dux.DuxFactory;
 import org.dependencies.dux.DuxFunction;
-import org.dependencies.dux.DuxMatch;
-import org.dependencies.dux.DuxWord;
+import org.dependencies.dux.DuxPattern;
+import org.dependencies.dux.DuxFeaturedWord;
 import org.dependencies.model.DepAnalysis;
 import org.dependencies.model.DepCorpus;
 import org.dependencies.model.DepDependency;
@@ -729,7 +729,7 @@ public class MysqlDependencyBase {
 	 * @throws SQLException if any of the queries fail
 	 */
 	public final List<DepWording> searchForWordings(Integer corpusId, Integer languageId, String title, Integer analysisId,
-			DuxFactory factory, List<DuxMatch> matches) throws SQLException {
+			DuxFactory factory, List<DuxPattern> matches) throws SQLException {
 		DepText text = this.getText(corpusId, languageId, title);
 		if (text == null) {
 			return null;
@@ -1031,11 +1031,11 @@ public class MysqlDependencyBase {
 	 * @return the words
 	 * @throws SQLException
 	 */
-	public final List<List<DepWord>> searchForWords(DuxFactory factory, List<DuxMatch> matches) throws SQLException {
+	public final List<List<DepWord>> searchForWords(DuxFactory factory, List<DuxPattern> matches) throws SQLException {
 		StringBuffer buffer1 = new StringBuffer();
 		for (int i = 0; i < matches.size(); i++) {
-			DuxMatch match = matches.get(i);
-			if (match instanceof DuxWord) {
+			DuxPattern match = matches.get(i);
+			if (match instanceof DuxFeaturedWord) {
 				if (buffer1.length() > 0) {
 					buffer1.append(", ");
 				}
@@ -1056,16 +1056,16 @@ public class MysqlDependencyBase {
 		List<DepWordFeature> lemmata = new LinkedList<>();
 		List<String> wordIndices = new LinkedList<>();
 		for (int i = 0; i < matches.size(); i++) {
-			DuxMatch match = matches.get(i);
+			DuxPattern match = matches.get(i);
 			DepWordFeature lemma = null;
-			if (match instanceof DuxWord) {
+			if (match instanceof DuxFeaturedWord) {
 				wordIndices.add(format("W%s", i + 1));
 				if (i == 0) {
 					buffer.append("FROM `word` W1 \n");
 				} else {
 					buffer.append(format("JOIN `word` W%d \n", i + 1));
 				}
-				DuxWord word = (DuxWord) match;
+				DuxFeaturedWord word = (DuxFeaturedWord) match;
 				List<DepWordFeature> wordFeatures = factory.makeWordFeatures(word);
 				for (int j = 0; j < wordFeatures.size(); j++) {
 					if (wordFeatures.get(j).getSystemName().equals("LEMMA")) {
@@ -1106,9 +1106,9 @@ public class MysqlDependencyBase {
 		String sql = buffer.toString();
 		PreparedStatement stmt = (PreparedStatement) this.conn.prepareStatement(sql);
 		int index = 1;
-		for (DuxMatch match : matches) {
-			if (match instanceof DuxWord) {
-				DuxWord word = (DuxWord) match;
+		for (DuxPattern match : matches) {
+			if (match instanceof DuxFeaturedWord) {
+				DuxFeaturedWord word = (DuxFeaturedWord) match;
 				List<DepWordFeature> wordFeatures = factory.makeWordFeatures(word);
 				for (DepWordFeature wordFeature : wordFeatures) {
 					if (wordFeature.getSystemName().equals("LEMMA")) {
@@ -1145,7 +1145,7 @@ public class MysqlDependencyBase {
 		while (rs.next()) {
 			List<DepWord> words = new LinkedList<>();
 			for (int i = 0; i < matches.size(); i++) {
-				DuxMatch match = matches.get(i);
+				DuxPattern match = matches.get(i);
 				if (match instanceof DuxFunction) {
 					words.add(null);
 					continue;

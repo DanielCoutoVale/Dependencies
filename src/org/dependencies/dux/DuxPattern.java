@@ -1,5 +1,5 @@
 package org.dependencies.dux;
 
-public interface DuxMatch {
+public interface DuxPattern {
 
 }

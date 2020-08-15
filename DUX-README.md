@@ -1,16 +1,16 @@
 # DUX FORMAT
 
-Here we shall explain the DUX format, a format for querying a Dependency Base, which is compatible with both Universal Dependencies (UD) and Intelligenti Pauca (IP).
+DUX is a format for querying a Dependency Base. It is compatible with both Universal Dependencies (UD) and Intelligenti Pauca (IP).
 
-A Dependency Base keeps named corpora with titled texts. Each text is stored as an enumeration of wordings and each wording is an enumeration of words. Every word in a Dependency Base has a serial id such as 13492342 and a structured id such as (ITTB, Gentiles, 1, 2), referring to the second word of the first wording of the text "Gentiles" from the corpus "ITTB". The DUX format is composed of two subformats. A DUX query and a DUX command.
+A Dependency Base keeps named corpora and their texts. Each text is represented as an enumeration of wordings and each wording is an enumeration of words. Every word in a Dependency Base has a serial id such as 13492342 and a structured id such as (ITTB, Gentiles, 1, 2). The structured id represents the second word of the first wording of the text "Gentiles" from the corpus "ITTB". The DUX format includes queries, updates, and documents.
 
 # DUX Query
 
-A DUX query is meant to retrieve a group of one or more words related to each other through links (dependencies or ties). In its simplest format, a DUX query is composed of a single word pattern. There are three ways of specifying a word:
+A DUX query is meant to retrieve a tuple of one or more words related to each other through `functions`, which can be either `dependencies` or `ties`. In its simplest format, a DUX query is composed of a single `word descriptor`. There are three different ways to describe a word:
 
 ```
-13492342
-(ITTB, Gentiles, 1, 2)
+[13492342]
+[ITTB, Gentiles, 1, 2]
 [aux #sum 'sit']
 ```
 
@@ -48,7 +48,7 @@ One can specify more information concerning functions. Each function belongs to 
 [S:WORD-CLASS:verb] [S:WORD-CLASS:noun] S:MIXED:Nsubj(2:word,1:word)
 ```
 
-# DUX Command
+# DUX Update
 
 A DUX command is composed of two parts. A DUX query and a sequence of DUX changes to be applied. Here are some examples of DUX commands
 

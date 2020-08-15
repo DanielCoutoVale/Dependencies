@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class DuxTranslate implements DuxCommand {
 	
-	private final List<DuxMatch> matches;
+	private final List<DuxPattern> matches;
 
 	/**
 	 * The magis tags.
@@ -37,7 +37,7 @@ public class DuxTranslate implements DuxCommand {
 	 * 
 	 * @param match the match
 	 */
-	public final void addMatch(DuxMatch match) {
+	public final void addMatch(DuxPattern match) {
 		matches.add(match);
 	}
 	
@@ -63,7 +63,7 @@ public class DuxTranslate implements DuxCommand {
 	@Override
 	public final String toString() {
 		StringBuffer buffer = new StringBuffer();
-		for (DuxMatch match : matches) {
+		for (DuxPattern match : matches) {
 			if (buffer.length() > 0) {
 				buffer.append(" ");
 			}
@@ -86,7 +86,7 @@ public class DuxTranslate implements DuxCommand {
 	 * 
 	 * @return the matches
 	 */
-	public List<DuxMatch> getMatches() {
+	public List<DuxPattern> getMatches() {
 		return new LinkedList<>(this.matches);
 	}
 

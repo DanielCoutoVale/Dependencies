@@ -5,42 +5,42 @@ package org.dependencies.dux;
  * 
  * @author Daniel Couto-Vale
  */
-public class DuxFunction implements DuxMatch, DuxChange {
+public class DuxFunction implements DuxPattern, DuxChange {
 	
 	/**
 	 * The function prefix
 	 */
-	private String prefix;
+	private final String prefix;
 
 	/**
 	 * The metafunction name for this function
 	 */
-	private String metafunctionName;
+	private final String metafunctionName;
 
 	/**
 	 * The function name 
 	 */
-	private String name;
+	private final String name;
 
 	/**
 	 * The word index
 	 */
-	private Integer wordIndex;
+	private final Integer wordIndex;
 
 	/**
 	 * The word rank name
 	 */
-	private String wordRankName;
+	private final String wordRankName;
 
 	/**
 	 * The head word index
 	 */
-	private Integer headIndex;
+	private final Integer headIndex;
 
 	/**
 	 * The rank name for the head word 
 	 */
-	private String headRankName;
+	private final String headRankName;
 
 	/**
 	 * Constructor
@@ -48,30 +48,40 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	 * @param form the feature form
 	 */
 	public DuxFunction(String form) {
-		if (DuxFunction.matchRank(form)) {
-			String[] A = form.split("#");
-			String[] A0 = A[0].split(":");
-			this.prefix = A0[0];
-			this.metafunctionName = A0[1];
-			this.name = A0[2];
-			String[] A1 = A[1].split(":");
-			this.wordIndex = Integer.parseInt(A1[0]);
-			this.wordRankName = A1[1];
-			String[] A2 = A[2].split(":");
-			this.headIndex = Integer.parseInt(A2[0]);
-			this.headRankName = A2[1];
-		} else {
-			int a = form.indexOf('(');
-			int b = form.indexOf(',');
-			int c = form.indexOf(')');
+		String[] A = form.substring(0, form.length() - 1).split("[(]");
+		String[] split = A[0].split(":");
+		if (split.length == 3) {
+			this.prefix = split[0];
+			this.metafunctionName = split[1];
+			this.name = split[2];
+		} else if (split.length == 2) {
+			if (split[0].equals("S") || split[0].equals("T")) {
+				this.prefix = split[0];
+				this.metafunctionName = "%";
+				this.name = split[1];
+			} else {
+				this.prefix = "H";
+				this.metafunctionName = split[0];
+				this.name = split[1];
+			}
+		} else if (split.length == 1) {
 			this.prefix = "H";
 			this.metafunctionName = "%";
-			this.name = form.substring(0, a).trim();
-			this.wordIndex = Integer.parseInt(form.substring(a + 1, b).trim());
-			this.wordRankName = "%";
-			this.headIndex = Integer.parseInt(form.substring(b + 1, c).trim());
-			this.headRankName = "%";
+			this.name = split[0];
+		} else {
+			this.prefix = null;
+			this.metafunctionName = null;
+			this.name = null;
+			System.err.println("Incorrect feature form: " + form);
+			System.exit(-1);
 		}
+		String[] B = A[1].split(",");
+		String[] B0 = B[0].split(":");
+		String[] B1 = B[1].split(":");
+		this.wordIndex = Integer.parseInt(B0[0]);
+		this.wordRankName = B0.length > 1 ? B0[1] : "%";
+		this.headIndex = Integer.parseInt(B1[0]);
+		this.headRankName = B1.length > 1 ? B1[1] : "%";
 	}
 
 	/**
@@ -81,29 +91,7 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	 * @return <code>true</code> if the token has the form of a feature
 	 */
 	public final static boolean matches(String token) {
-		return matchRank(token) || matchNoRank(token);
-	}
-
-	private final static boolean matchNoRank(String token) {
-		int a1 = token.indexOf('(');
-		int a2 = token.indexOf('(', a1 + 1);
-		int b1 = token.indexOf(',');
-		int b2 = token.indexOf(',', b1 + 1);
-		int c1 = token.indexOf(')');
-		int c2 = token.indexOf(')', c1 + 1);
-		return a1 < b1 && b1 < c1 && a1 > 0 && a2 == -1 && b2 == -1 && c2 == -1;
-	}
-
-	private final static boolean matchRank(String token) {
-		String[] A = token.split("#");
-		if (A.length != 3) return false;
-		String[] A0 = A[0].split(":");
-		if (A0.length != 3) return false;
-		String[] A1 = A[1].split(":");
-		if (A1.length != 2) return false;
-		String[] A2 = A[2].split(":");
-		if (A2.length != 2) return false;
-		return true;
+		return token.matches("^.*\\(.*\\)$");
 	}
 
 	/**
@@ -116,30 +104,12 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	}
 
 	/**
-	 * Sets the prefix of this function.
-	 * 
-	 * @param prefix the function prefix
-	 */
-	public final void setPrefix(String prefix) {
-		this.prefix = prefix;
-	}
-
-	/**
 	 * Gets the name of the metafunction of this function.
 	 * 
 	 * @return the metafunction name
 	 */
 	public final String getMetafunctionName() {
 		return this.metafunctionName;
-	}
-
-	/**
-	 * Sets the name of the metafunction of this function.
-	 * 
-	 * @param metafunctionName the metafunction name
-	 */
-	public final void setMetafunctionName(String metafunctionName) {
-		this.metafunctionName = metafunctionName;
 	}
 
 	/**
@@ -152,30 +122,12 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	}
 
 	/**
-	 * Sets the name of this function.
-	 * 
-	 * @param name the function name
-	 */
-	public final void setName(String name) {
-		this.name = name;
-	}
-
-	/**
 	 * Gets the index of the word that has this function.
 	 * 
 	 * @return the word index
 	 */
 	public final Integer getWordIndex() {
 		return wordIndex;
-	}
-
-	/**
-	 * Sets the index of the word that has this function.
-	 * 
-	 * @param wordIndex the word index
-	 */
-	public final void setWordIndex(Integer wordIndex) {
-		this.wordIndex = wordIndex;
 	}
 
 	/**
@@ -188,30 +140,12 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	}
 
 	/**
-	 * Sets the rank of the word at which it has this function
-	 * 
-	 * @param wordRankName the word rank name
-	 */
-	public final void setWordRankName(String wordRankName) {
-		this.wordRankName = wordRankName;
-	}
-
-	/**
 	 * Gets the index of the head word for this function.
 	 * 
 	 * @return the index of the head word
 	 */
 	public final Integer getHeadIndex() {
 		return headIndex;
-	}
-
-	/**
-	 * Sets the index of the head word for this function.
-	 * 
-	 * @param headIndex the index of the head word
-	 */
-	public final void setHeadIndex(Integer headIndex) {
-		this.headIndex = headIndex;
 	}
 
 	/**
@@ -222,22 +156,27 @@ public class DuxFunction implements DuxMatch, DuxChange {
 	public final String getHeadRankName() {
 		return headRankName;
 	}
-
-	/**
-	 * Sets the rank at which the word is a head for this function.
-	 * 
-	 * @param headRankName the rank name for the head word
-	 */
-	public final void setHeadRankName(String headRankName) {
-		this.headRankName = headRankName;
-	}
 	
 	@Override
 	public final String toString() {
-		return this.prefix +  
-				":" + this.metafunctionName + ":" + this.name +
-				"#" + this.wordIndex + ":" + this.wordRankName +
-				"#" + this.headIndex + ":" + this.headRankName;
+		StringBuffer buffer = new StringBuffer();
+		if (!this.prefix.equals("H")) {
+			buffer.append(this.prefix);
+			buffer.append(":");
+		}
+		if (!metafunctionName.equals("%")) {
+			buffer.append(this.metafunctionName);
+			buffer.append(":");
+		}
+		buffer.append(this.name);
+		buffer.append("(");
+		buffer.append(this.wordIndex);
+		buffer.append(this.wordRankName.equals("%") ? "" : ":" + this.wordRankName);
+		buffer.append(",");
+		buffer.append(this.headIndex);
+		buffer.append(this.headRankName.equals("%") ? "" : ":" + this.headRankName);
+		buffer.append(")");
+		return buffer.toString();
 	}
 
 }

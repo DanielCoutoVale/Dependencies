@@ -10,17 +10,17 @@ public class DuxFeature implements DuxChange {
 	/**
 	 * The prefix, which stands for a description and an analysis.
 	 */
-	private String prefix;
+	private final String prefix;
 
 	/**
 	 * The system name.
 	 */
-	private String systemName;
+	private final String systemName;
 
 	/**
 	 * The feature name.
 	 */
-	private String featureName;
+	private final String name;
 
 	/**
 	 * Constructor
@@ -28,10 +28,44 @@ public class DuxFeature implements DuxChange {
 	 * @param form the feature form
 	 */
 	public DuxFeature(String form) {
+		if (form.startsWith("#") && !form.contains(":")) {
+			this.prefix = "W";
+			this.systemName = "LEMMA";
+			this.name = form.substring(1);
+			return;
+		}
+		if (form.startsWith("'") && form.endsWith("'") && !form.contains(":")) {
+			this.prefix = "W";
+			this.systemName = "FORM";
+			this.name = form.substring(1, form.length() - 1);
+			return;
+		}
 		String[] split = form.split(":");
-		this.prefix = split[0];
-		this.systemName = split[1];
-		this.featureName = split[2];
+		if (split.length == 3) {
+			this.prefix = split[0];
+			this.systemName = split[1];
+			this.name = split[2];
+		} else if (split.length == 2) {
+			if (split[0].equals("S") || split[0].equals("T")) {
+				this.prefix = split[0];
+				this.systemName = "%";
+				this.name = split[1];
+			} else {
+				this.prefix = "H";
+				this.systemName = split[0];
+				this.name = split[1];
+			}
+		} else if (split.length == 1) {
+			this.prefix = "H";
+			this.systemName = "%";
+			this.name = split[0];
+		} else {
+			this.prefix = null;
+			this.systemName = null;
+			this.name = null;
+			System.err.println("Incorrect feature form: " + form);
+			System.exit(-1);
+		}
 	}
 
 	/**
@@ -41,7 +75,7 @@ public class DuxFeature implements DuxChange {
 	 * @return <code>true</code> if the token has the form of a feature
 	 */
 	public final static boolean matches(String token) {
-		return token.split(":").length == 3;
+		return token.split(":").length <= 3;
 	}
 
 	/**
@@ -54,15 +88,6 @@ public class DuxFeature implements DuxChange {
 	}
 
 	/**
-	 * Sets the prefix of this feature.
-	 * 
-	 * @param prefix the feature prefix
-	 */
-	public final void setPrefix(String prefix) {
-		this.prefix = prefix;
-	}
-
-	/**
 	 * Gets the name of the system that has this feature.
 	 * 
 	 * @return the feature name
@@ -72,35 +97,37 @@ public class DuxFeature implements DuxChange {
 	}
 
 	/**
-	 * Sets the name of the system that has this feature.
-	 * 
-	 * @param systemName the system name
-	 */
-	public final void setSystemName(String systemName) {
-		this.systemName = systemName;
-	}
-
-	/**
 	 * Gets the name of this feature.
 	 * 
 	 * @return the feature name
 	 */
-	public final String getFeatureName() {
-		return featureName;
-	}
-
-	/**
-	 * Sets the name of this feature.
-	 * 
-	 * @param featureName the feature name
-	 */
-	public final void setFeatureName(String featureName) {
-		this.featureName = featureName;
+	public final String getName() {
+		return name;
 	}
 
 	@Override
 	public final String toString() {
-		return this.prefix + ":" + this.systemName + ":" + this.featureName;
+		StringBuffer buffer = new StringBuffer();
+		if (!this.prefix.equals("H") && !this.prefix.equals("W")) {
+			buffer.append(this.prefix);
+			buffer.append(":");
+		}
+		if (this.systemName.equals("LEMMA")) {
+			buffer.append("#");
+			buffer.append(this.name);
+		} else if (this.systemName.equals("FORM")) {
+			buffer.append("'");
+			buffer.append(this.name);
+			buffer.append("'");
+		} else {
+			if (!systemName.equals("%")) {
+				buffer.append(this.systemName);
+				buffer.append(":");
+			}
+			buffer.append(this.name);
+		}
+		
+		return buffer.toString();
 	}
 
 }

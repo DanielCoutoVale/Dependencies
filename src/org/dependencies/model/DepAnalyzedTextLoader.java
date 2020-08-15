@@ -9,7 +9,7 @@ import java.util.Map;
 
 import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.dux.DuxFactory;
-import org.dependencies.dux.DuxMatch;
+import org.dependencies.dux.DuxPattern;
 import org.dependencies.dux.DuxQueryParser;
 
 /**
@@ -80,7 +80,7 @@ public class DepAnalyzedTextLoader {
 		analysisMap.put("H", analysis);
 		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
 		DuxQueryParser parser = new DuxQueryParser();
-		List<DuxMatch> matches = parser.parseQuery(query);
+		List<DuxPattern> matches = parser.parseQuery(query);
 		List<DepWording> wordings = base.searchForWordings(corpus.getId(), language.getId(), textTitle, analysis.getId(), factory, matches);
 		if (wordings == null) {
 			System.err.println(format("The text %s does not exist in the corpus %s for the language %s!", textTitle, corpusName, languageName));

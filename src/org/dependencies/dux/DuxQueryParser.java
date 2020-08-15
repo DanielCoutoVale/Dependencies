@@ -5,43 +5,45 @@ import java.util.List;
 
 public class DuxQueryParser {
 	
-	public List<DuxMatch> parseQuery(String query) {
-		List<DuxMatch> matches = new LinkedList<>();
+	public List<DuxPattern> parseQuery(String query) {
+		List<DuxPattern> patterns = new LinkedList<>();
 		String[] B = query.split("[\\[]");
 		for (int i = 0; i < B.length; i++) {
 			B[i] = B[i].trim();
 		}
 		if (B[0].length() != 0) {
 			System.err.println("Error: " + query);
+			System.exit(-1);
 			return null;
 		}
 		for (int i = 1; i < B.length; i++) {
 			String C[] = (B[i] + " ").split("]");
 			if (C.length != 2) {
 				System.err.println("Error2: " + query);
+				System.exit(-1);
 				return null;
 			}
 			String C0 = C[0].trim();
 			String C1 = C[1].trim();
-			DuxWord word = new DuxWord();
+			DuxFeaturedWord word = new DuxFeaturedWord();
 			for (String token : C0.split(" ")) {
 				token = token.trim();
 				if (token.length() == 0)
 					continue;
-				if (!DuxFeature.matches("H:%:" + token))
+				if (!DuxFeature.matches(token))
 					continue;
-				word.addMatchTag(new DuxFeature("H:%:" + token));
+				word.addFeature(new DuxFeature(token));
 			}
-			matches.add(word);
+			patterns.add(word);
 			for (String token : C1.split(" ")) {
 				if (token.length() == 0)
 					continue;
 				if (!DuxFunction.matches(token))
 					continue;
-				matches.add(new DuxFunction(token));
+				patterns.add(new DuxFunction(token));
 			}
 		}
-		return matches;
+		return patterns;
 	}
 
 }

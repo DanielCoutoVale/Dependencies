@@ -24,8 +24,8 @@ public class DuxFactory {
 		this.analysisMap = analysisMap;
 	}
 
-	public final List<DepWordFeature> makeWordFeatures(DuxWord word) {
-		List<DuxFeature> matchTags = word.getMatchTags();
+	public final List<DepWordFeature> makeWordFeatures(DuxFeaturedWord word) {
+		List<DuxFeature> matchTags = word.getFeatures();
 		List<DepWordFeature> features = new LinkedList<>();
 		for (int i = 0; i < matchTags.size(); i++) {
 			DepWordFeature feature = new DepWordFeature();
@@ -33,7 +33,7 @@ public class DuxFactory {
 			feature.setDescriptionId(descriptionMap.get(matchTag.getPrefix()).getId());
 			feature.setAnalysisId(analysisMap.get(matchTag.getPrefix()).getId());
 			feature.setSystemName(matchTag.getSystemName());
-			feature.setName(matchTag.getFeatureName());
+			feature.setName(matchTag.getName());
 			features.add(feature);
 		}
 		return features;

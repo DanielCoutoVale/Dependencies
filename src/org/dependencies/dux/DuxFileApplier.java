@@ -81,7 +81,7 @@ public class DuxFileApplier {
 						continue;
 					}
 					DepFeature feature = system
-							.getFeature(tag.getFeatureName());
+							.getFeature(tag.getName());
 					if (feature == null) {
 						System.err.println("Error: Feature not found for +" + tag);
 						continue;
@@ -154,7 +154,7 @@ public class DuxFileApplier {
 						continue;
 					}
 					DepFeature feature = system
-							.getFeature(tag.getFeatureName());
+							.getFeature(tag.getName());
 					if (feature == null) {
 						System.err.println("Error: Feature not found for +" + tag);
 						continue;

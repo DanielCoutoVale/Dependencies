@@ -146,16 +146,28 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 			}
 			String C0 = C[0].trim();
 			String C1 = C[1].trim();
-			DuxWord word = new DuxWord();
-			for (String token : C0.split(" ")) {
-				token = token.trim();
-				if (token.length() == 0)
-					continue;
-				if (!DuxFeature.matches(token))
-					continue;
-				word.addMatchTag(new DuxFeature(token));
+			DuxPattern pattern;
+			if (DuxNumberedWord.matches(C0)) {
+				DuxNumberedWord word = new DuxNumberedWord(C0);
+				pattern = word;
+			} else if (DuxLocatedWord.matches(C0)) {
+				DuxLocatedWord word = new DuxLocatedWord(C0);
+				pattern = word;
+			} else {
+				DuxFeaturedWord word = new DuxFeaturedWord();
+				for (String token : C0.split(" ")) {
+					token = token.trim();
+					if (token.length() == 0)
+						continue;
+					if (!DuxFeature.matches(token)) {
+						System.err.println("Drop feature: " + token);
+						continue;
+					}
+					word.addFeature(new DuxFeature(token));
+				}
+				pattern = word;
 			}
-			translate.addMatch(word);
+			translate.addMatch(pattern);
 			for (String token : C1.split(" ")) {
 				if (token.length() == 0)
 					continue;

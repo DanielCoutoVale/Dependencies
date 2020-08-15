@@ -1,0 +1,32 @@
+
+
+[13492342] => +word
+[ITTB, Gentiles, 1, 2] => +word
+[aux #sum 'sit'] => +word
+
+[aux #sum 'sit'] => +word
+[S:aux #sum 'sit'] => +word
+[T:verb #sum 'sit'] => +word
+
+[WORD-CLASS:aux #sum 'sit'] => +word
+[S:WORD-CLASS:aux #sum 'sit'] => +word
+[T:WORD-CLASS:verb #sum 'sit'] => +word
+
+[verb] [noun] Actor(2,1) => +word
+[verb] [noun] [noun] Carrier(2,1) Attribute(3,1) => +word
+[noun] Carrier(1,3) [verb] [noun] Attribute(4,3) => +word
+
+[WORD-CLASS:verb] [WORD-CLASS:noun] EXPERIENTIAL:Actor(2:groups,1:clause) => +word
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] T:EXPERIENTIAL:Actor(2:groups,1:clause) => +word
+[S:WORD-CLASS:verb] [S:WORD-CLASS:noun] S:MIXED:Nsubj(2:word,1:word) => +word
+
+[S:verb]  => +T:verb +T:lexical-verb
+[S:aux]   => +T:verb +T:auxiliary-verb
+[S:propn] => +T:noun +T:proper-noun
+[S:noun]  => +T:noun +T:common-noun
+[S:pron]  => +T:noun +T:pronoun
+[S:adj]   => +T:adjective
+[#primus] => -T:adjective +T:number +T:ordinal
+
+[T:verb] [T:noun] S:Nsubj(2,1) => +T:EXPERIENTIAL:Actor(2:groups,1:clause)
+[T:verb] [T:noun] S:Aux(1,2) => +T:EXPERIENTIAL:Attribute(2:groups,1:clause)
