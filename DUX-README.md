@@ -48,9 +48,9 @@ One can specify more information concerning functions. Each function belongs to 
 [S:WORD-CLASS:verb] [S:WORD-CLASS:noun] S:MIXED:Nsubj(2:word,1:word)
 ```
 
-# DUX Update
+# DUX Command
 
-A DUX command is composed of two parts. A DUX query and a sequence of DUX changes to be applied. Here are some examples of DUX commands
+A DUX command is composed of two parts. A DUX query and a DUX update to be carried out. Here are some examples of DUX commands:
 
 ```
 [S:verb]  => +T:verb +T:lexical-verb
@@ -59,21 +59,51 @@ A DUX command is composed of two parts. A DUX query and a sequence of DUX change
 [S:noun]  => +T:noun +T:common-noun
 [S:pron]  => +T:noun +T:pronoun
 [S:adj]   => +T:adjective
-[#primus] => -T:adjective +T:number +T:ordinal
 ```
 
-In these examples, the '+' symbol prescribes that the specified feature should be added to the matching words and the '-' symbol prescribes that the specified feature should be removed from the matching words. A similar procedure occurs when there are tuples as shown below:
+These commands select all words of specified UD classes and they add an IP class and an IP subclass to these words. In these examples, the '+' symbol indicates that the specified feature should be added to the words matching the query. Word features may be added, then removed. Here are examples where this is done when converting UD to IP.
+
+```
+[T:adjective #primus] => -T:adjective +T:number +T:ordinal
+[T:adjective #secundus] => -T:adjective +T:number +T:ordinal
+[T:adjective #tertius] => -T:adjective +T:number +T:ordinal
+[T:adjective #meus] => -T:adjective +T:noun +T:pronoun
+[T:adjective #tuus] => -T:adjective +T:noun +T:pronoun
+[T:adjective #suus] => -T:adjective +T:noun +T:pronoun
+```
+
+The symbol '-' indicates that the specified feature should be removed from words matching the query. Sometimes, however, we want to add features to or remove them from a word depending on the way this word is linked to others. This is shown below:
 
 ```
 [T:verb] [T:adjective] S:Amod(2,1)  => -T:verb -T:lexical-verb +T:noun +T:common-noun
-[T:noun] [T:adjective] S:Amod(2,1)  => +T:Classifier(2:groups,1:clause)
-[T:noun] [#bonus] T:Classifier(2,1) => -T:Classifier(2,1) +T:Epithet(2:groups,1:clause)
+[T:adjective] [T:adjective] S:Amod(2,1)  => -T:adjective +T:noun +T:common-noun
 ```
 
-...
+All verbs and adjectives modified by adjectives in UD are nouns in IP. When making a conversion, the first word of the tuple is the word to which features are added or removed.
+
+At last, but not least, there are the links. When converting an analysis from a source description to a target one, one needs to add and remove links between words in the target analysis. Here are some examples of how this is done.
+
+```
+[T:noun] [T:adjective] S:Amod(2,1)  => +T:Classifier(2:groups,1:group)
+[T:noun] [#bonus] T:Classifier(2,1) => -T:Classifier(2,1) +T:Epithet(2:groups,1:group)
+```
+
+When adding a link, one must specify the ranks. When removing links, specifying the ranks is optional.
 
 # DUX Document
 
-A DUX document is composed of one or multiple files. 
+A DUX document is composed of one or multiple files. One of the files is selected for execution. There are five kinds of line in a DUX file:
 
+```
+1.
+4. # this is a comment
+2. STOP
+3. IMPORT <pathname>
+5. [S:adj]  => +T:adjective
+```
 
+1. An empty line is not an operation and it has no effect.
+2. A command line is not an operation and it has no effect.
+3. A stop command stops the execution so that one can verify the conversion until that point.
+4. An import command moves execution to a file whose path is `<pathname>.dux`.
+5. A DUX command behaves as explained in the previous section.
