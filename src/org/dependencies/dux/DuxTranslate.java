@@ -37,7 +37,7 @@ public class DuxTranslate implements DuxCommand {
 	 * 
 	 * @param match the match
 	 */
-	public final void addMatch(DuxPattern match) {
+	public final void addPattern(DuxPattern match) {
 		matches.add(match);
 	}
 	

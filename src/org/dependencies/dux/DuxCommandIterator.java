@@ -15,6 +15,8 @@ import java.util.Iterator;
  * @author Daniel Couto-Vale
  */
 public class DuxCommandIterator implements Iterator<DuxCommand> {
+	
+	private DuxQueryParser queryParser = new DuxQueryParser();
 
 	/**
 	 * The iterator builder
@@ -128,54 +130,19 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 		}
 		String A0 = A[0].trim();
 		String A1 = A[1].trim();
-		String[] B = A0.split("[\\[]");
-		for (int i = 0; i < B.length; i++) {
-			B[i] = B[i].trim();
-		}
-		if (B[0].length() != 0) {
+
+		// Parse query
+		try {
+			for (DuxPattern pattern : queryParser.parseQuery(A0)) {
+				translate.addPattern(pattern);
+			}
+		} catch (DuxQueryParseError e) {
 			System.err.println("Error: " + line);
 			this.advance();
 			return null;
 		}
-		for (int i = 1; i < B.length; i++) {
-			String C[] = (B[i] + " ").split("]");
-			if (C.length != 2) {
-				System.err.println("Error2: " + line);
-				this.advance();
-				return null;
-			}
-			String C0 = C[0].trim();
-			String C1 = C[1].trim();
-			DuxPattern pattern;
-			if (DuxNumberedWord.matches(C0)) {
-				DuxNumberedWord word = new DuxNumberedWord(C0);
-				pattern = word;
-			} else if (DuxLocatedWord.matches(C0)) {
-				DuxLocatedWord word = new DuxLocatedWord(C0);
-				pattern = word;
-			} else {
-				DuxFeaturedWord word = new DuxFeaturedWord();
-				for (String token : C0.split(" ")) {
-					token = token.trim();
-					if (token.length() == 0)
-						continue;
-					if (!DuxFeature.matches(token)) {
-						System.err.println("Drop feature: " + token);
-						continue;
-					}
-					word.addFeature(new DuxFeature(token));
-				}
-				pattern = word;
-			}
-			translate.addMatch(pattern);
-			for (String token : C1.split(" ")) {
-				if (token.length() == 0)
-					continue;
-				if (!DuxFunction.matches(token))
-					continue;
-				translate.addMatch(new DuxFunction(token));
-			}
-		}
+
+		// Parse update
 		for (String token : A1.split(" ")) {
 			token = token.trim();
 			if (token.length() == 0)

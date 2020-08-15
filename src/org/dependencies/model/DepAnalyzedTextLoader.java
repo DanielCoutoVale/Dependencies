@@ -10,6 +10,7 @@ import java.util.Map;
 import org.dependencies.base.MysqlDependencyBase;
 import org.dependencies.dux.DuxFactory;
 import org.dependencies.dux.DuxPattern;
+import org.dependencies.dux.DuxQueryParseError;
 import org.dependencies.dux.DuxQueryParser;
 
 /**
@@ -51,7 +52,7 @@ public class DepAnalyzedTextLoader {
 	}
 
 	public DepSearchResult searchForWordings(String descriptionName, String analysisName, String corpusName,
-			String languageName, String textTitle, String query) throws SQLException {
+			String languageName, String textTitle, String query) throws SQLException, DuxQueryParseError {
 		MysqlDependencyBase base = new MysqlDependencyBase();
 		DepDescription description = base.getDescription(descriptionName);
 		if (description == null) {
