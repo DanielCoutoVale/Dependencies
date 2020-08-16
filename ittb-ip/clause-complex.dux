@@ -1,65 +1,65 @@
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl#1:word#2:word => +T:LOGICAL:Enhancing#1:clauses#2:clause-complex
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Enhancing#1:clauses#2:clause-complex
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj#1:word#2:word => +T:LOGICAL:Extending#1:clauses#2:clause-complex
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Conj#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Extending#1:clauses#2:clause-complex
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:clauses,2:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Conj(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Extending(1:clauses,2:clause-complex)
 
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Cc#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc#1:word#3:word T:EXPERIENTIAL:Actor#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Cc(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
 
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word => +T:LOGICAL:Marker#1:groups#2:clause
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark#1:word#3:word T:EXPERIENTIAL:Actor#3:groups#2:clause => +T:LOGICAL:Marker#1:groups#2:clause
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Mark(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
 
-[] [] S:MIXED:Fixed#1:word#2:word => +T:LOGICAL:Particle#1:word#2:word
+[] [] S:MIXED:Fixed(1:word,2:word) => +T:LOGICAL:Particle(1:word,2:word)
 
-[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => +T:EXPERIENTIAL:Circumstance#1:groups#2:clause
-[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => +T:EXPERIENTIAL:Circumstance#1:groups#2:clause
+[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => +T:EXPERIENTIAL:Circumstance(1:groups,2:clause)
+[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:EXPERIENTIAL:Circumstance(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:enim] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:enim] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:enim] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:enim] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:ergo] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:ergo] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:ergo] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:ergo] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:ideo] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:ideo] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:ideo] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:ideo] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:igitur] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:igitur] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:igitur] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:igitur] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:ita] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:ita] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:ita] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:ita] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:iterum] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:iterum] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:iterum] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:iterum] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:sic] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:sic] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:sic] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:sic] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:scilicet] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:scilicet] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:scilicet] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:scilicet] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:tamen] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:tamen] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:tamen] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:tamen] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:tunc] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:tunc] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:tunc] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:tunc] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:adv S:LEMMA:vero] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
-[S:WORD-CLASS:adv S:LEMMA:vero] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Marker#1:groups#2:clause
+[S:WORD-CLASS:adv S:LEMMA:vero] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[S:WORD-CLASS:adv S:LEMMA:vero] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
-[S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] [S:WORD-CLASS:verb] S:MIXED:Mark#1:word#2:word S:MIXED:Ccomp#2:word#3:word => +T:LOGICAL:Enhancing#2:clauses#3:clause-complex
-[T:WORD-CLASS:verb] [T:WORD-CLASS:verb S:LEMMA:dico] S:MIXED:Csubj-Pass#1:word#2:word => +T:LOGICAL:Locution#1:clauses#2:clause-complex
+[S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] [S:WORD-CLASS:verb] S:MIXED:Mark(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb S:LEMMA:dico] S:MIXED:Csubj-Pass(1:word,2:word) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
 
-[S:WORD-CLASS:adv S:LEMMA:non] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
-[S:WORD-CLASS:adv S:LEMMA:non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
+[S:WORD-CLASS:adv S:LEMMA:non] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
+[S:WORD-CLASS:adv S:LEMMA:non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
 
-[S:WORD-CLASS:adv S:LEMMA:minus] [T:WORD-CLASS:verb] S:MIXED:Advmod#1:word#2:word => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
-[S:WORD-CLASS:adv S:LEMMA:minus] [T:WORD-CLASS:verb] [] S:MIXED:Advmod#1:word#3:word T:EXPERIENTIAL:Attribute#3:groups#2:clause => -T:EXPERIENTIAL:Circumstance#1:groups#2:clause +T:LOGICAL:Adjunct#1:groups#2:group
+[S:WORD-CLASS:adv S:LEMMA:minus] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
+[S:WORD-CLASS:adv S:LEMMA:minus] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
 
-[S:WORD-CLASS:adv] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Deictic#1:groups#2:group
-[S:WORD-CLASS:adv] [T:WORD-CLASS:adjective] S:MIXED:Advmod-Emph#1:word#2:word => +T:EXPERIENTIAL:Intensifier#1:groups#2:group
-[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] S:MIXED:Advmod-Emph#1:word#2:word => +T:LOGICAL:Adjunct#1:groups#2:group
+[S:WORD-CLASS:adv] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+[S:WORD-CLASS:adv] [T:WORD-CLASS:adjective] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Intensifier(1:groups,2:group)
+[S:WORD-CLASS:adv] [T:WORD-CLASS:verb] S:MIXED:Advmod-Emph(1:word,2:word) => +T:LOGICAL:Adjunct(1:groups,2:group)

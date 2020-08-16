@@ -6,7 +6,7 @@ A Dependency Base keeps named corpora and their texts. Each text is represented 
 
 # DUX Query
 
-A DUX query is meant to retrieve a tuple of one or more words related to each other through `functions`, which can be either `dependencies` or `ties`. In its simplest format, a DUX query is composed of a single `word descriptor`. There are three different ways to describe a word:
+A DUX query is meant to retrieve a tuple of one or more words related to each other through `functions`, which can be either `dependencies` or `ties`. In its simplest format, a DUX query is composed of a single pattern for a word. There are three different ways to describe a word:
 
 ```
 [13492342]

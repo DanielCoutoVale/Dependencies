@@ -115,33 +115,33 @@
 ## ADJECTIVE STEP 2
 
 # Unseamed nouns
-[T:WORD-CLASS:adjective S:LEMMA:immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:sapiens] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:impius] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:sequax] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:incorporeus] [S:WORD-CLASS:verb] S:MIXED:Nsubj(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:universus] [] S:MIXED:Nmod(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:gubernativus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:architectonicus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:navifactivus] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:militaris] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:equester] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective S:LEMMA:princeps] => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:adjective S:LEMMA:pigmentarius] [] S:MIXED:Obj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:adjective S:LEMMA:medicinalis] [] S:MIXED:Nsubj-Pass#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:adjective] [] S:MIXED:Nmod#1:word#2:word => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:pigmentarius] [] S:MIXED:Obj(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective S:LEMMA:medicinalis] [] S:MIXED:Nsubj-Pass(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:adjective] [] S:MIXED:Nmod(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 
 
 # Seamed adjectives
-#[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Amod#1:word#2:word => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
-#[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Conj#1:word#2:word => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
+#[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Amod(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
+#[T:WORD-CLASS:noun S:LEMMA:sapiens] [] S:MIXED:Conj(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
 
 
 # Unseamed nouns II
-[T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
-[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
-[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod#2:word#1:word => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past S:LEMMA:ordino] [T:WORD-CLASS:noun] S:MIXED:Det(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
 
 
 # VERBS STEP 5
@@ -244,7 +244,7 @@
 
 # ADJECTIVES #FIX
 [S:LEMMA:necesse] => -T:SEAMEDNESS:seamed +T:SEAMEDNESS:unseamed
-[T:WORD-CLASS:noun S:LEMMA:impossibilis] [] S:MIXED:Xcomp#1:word#2:word => -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun +T:WORD-CLASS:adjective
+[T:WORD-CLASS:noun S:LEMMA:impossibilis] [] S:MIXED:Xcomp(1:word,2:word) => -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun +T:WORD-CLASS:adjective
 
 ## ADJECTIVES #STEP 1
 [T:WORD-CLASS:adjective S:LEMMA:meus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
@@ -299,6 +299,6 @@
 
 
 ## NOUNS #STEP 1
-[T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod#2:word#1:word => -T:NOUN-CLASS:proper-noun +T:NOUN-CLASS:common-noun
+[T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod(2:word,1:word) => -T:NOUN-CLASS:proper-noun +T:NOUN-CLASS:common-noun
 
 

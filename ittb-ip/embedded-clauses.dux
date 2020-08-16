@@ -1,19 +1,19 @@
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl#1:word#2:word => +T:EXPERIENTIAL:Qualifier#1:clauses#2:group
-[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl(1:word,2:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 
-[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl#1:word#2:word => +T:EXPERIENTIAL:Qualifier#1:clauses#2:group
-[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Acl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Acl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Acl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Acl#1:word#2:word S:MIXED:Cop#3:word#1:word => +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl(1:word,2:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Acl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Acl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Acl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Acl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 
-[S:WORD-CLASS:sconj] [] [T:WORD-CLASS:noun] S:MIXED:Mark#1:word#2:word S:MIXED:Acl#2:word#3:word => +T:EXPERIENTIAL:Qualifier#2:clauses#3:group
-[S:WORD-CLASS:sconj] [] [] [T:WORD-CLASS:noun] S:MIXED:Mark#1:word#2:word S:MIXED:Cop#3:word#2:word S:MIXED:Acl#2:word#4:word => +T:EXPERIENTIAL:Qualifier#3:clauses#4:group
+[S:WORD-CLASS:sconj] [] [T:WORD-CLASS:noun] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:EXPERIENTIAL:Qualifier(2:clauses,3:group)
+[S:WORD-CLASS:sconj] [] [] [T:WORD-CLASS:noun] S:MIXED:Mark(1:word,2:word) S:MIXED:Cop(3:word,2:word) S:MIXED:Acl(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,4:group)
 
-[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary2#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
-[] [] [] T:EXPERIENTIAL:Qualifier#1:clauses#2:group T:LOGICAL:Auxiliary3#1:groups#3:group => -T:EXPERIENTIAL:Qualifier#1:clauses#2:group +T:EXPERIENTIAL:Qualifier#3:clauses#2:group
+[] [] [] T:EXPERIENTIAL:Qualifier(1:clauses,2:group) T:LOGICAL:Auxiliary(1:groups,3:group) => -T:EXPERIENTIAL:Qualifier(1:clauses,2:group) +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[] [] [] T:EXPERIENTIAL:Qualifier(1:clauses,2:group) T:LOGICAL:Auxiliary2(1:groups,3:group) => -T:EXPERIENTIAL:Qualifier(1:clauses,2:group) +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+[] [] [] T:EXPERIENTIAL:Qualifier(1:clauses,2:group) T:LOGICAL:Auxiliary3(1:groups,3:group) => -T:EXPERIENTIAL:Qualifier(1:clauses,2:group) +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
