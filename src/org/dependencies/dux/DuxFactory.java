@@ -30,8 +30,10 @@ public class DuxFactory {
 		for (int i = 0; i < matchTags.size(); i++) {
 			DepWordFeature feature = new DepWordFeature();
 			DuxFeature matchTag = matchTags.get(i);
-			feature.setDescriptionId(descriptionMap.get(matchTag.getPrefix()).getId());
-			feature.setAnalysisId(analysisMap.get(matchTag.getPrefix()).getId());
+			DepDescription description = descriptionMap.get(matchTag.getPrefix());
+			DepAnalysis analysis = analysisMap.get(matchTag.getPrefix());
+			feature.setDescriptionId(description != null ? description.getId() : null);
+			feature.setAnalysisId(analysis != null ? analysis.getId() : null);
 			feature.setSystemName(matchTag.getSystemName());
 			feature.setName(matchTag.getName());
 			features.add(feature);
