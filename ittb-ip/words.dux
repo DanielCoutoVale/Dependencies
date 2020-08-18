@@ -23,8 +23,6 @@
 [S:WORD-CLASS:x #decuplus] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:decuplus
 [S:WORD-CLASS:x #quam] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:quam
 
-
-
 ## PRONOUNS
 [#hic S:PRONTYPE:dem] => +T:PRONOUN-RELATIVITY:absolute
 [#ille S:PRONTYPE:dem] => +T:PRONOUN-RELATIVITY:absolute
