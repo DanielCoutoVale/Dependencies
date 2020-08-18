@@ -13,6 +13,8 @@
 STOP
 IMPORT words
 
+[T:WORD-CLASS:adverb #non] [] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:group)
+
 [T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
 [T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
 
