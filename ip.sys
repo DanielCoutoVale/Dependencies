@@ -142,6 +142,17 @@ system NUMERIC-CASE
 - roman
 - arabic
 
+system NUMERIC-MODULO
+> number
+- decimal
+- centesimal
+
+system NUMERIC-PLACE
+> number
+- one
+- ten
+- hundred
+
 system SEAMEDNESS
 > adjective ∨ pronoun ∨ nd-branch verb ∨ ū-aspect unbranched verb ∨ ūr-branch verb
 - seamed

@@ -33,22 +33,10 @@ IMPORT words
 
 # ADJECTIVES #STEP 3
 
-[T:WORD-CLASS:verb] [S:WORD-CLASS:adj T:WORD-CLASS:adjective] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
-[T:WORD-CLASS:noun] [S:WORD-CLASS:adj T:WORD-CLASS:adjective] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:adjective] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
+[T:WORD-CLASS:noun] [T:WORD-CLASS:adjective] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
 
-# Quantifier
-[T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [S:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group)
-[T:WORD-CLASS:number T:NUMERIC-CASE:distributive] [S:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group)
-[#multus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#diversus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#solus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#varius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#multiplex S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#singulus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-
-# Multiplier
-[T:WORD-CLASS:number T:NUMERIC-CASE:multiplicative] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Multiplier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[T:WORD-CLASS:adjective S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Multiplier(2:groups,1:group) => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+IMPORT numbers
 
 # Epithet
 [#sacer S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
@@ -151,9 +139,6 @@ IMPORT words
 [#universus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 [#analogicus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 
-# Ordinator
-[#ultimus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Ordinator(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-
 # Exceptional cases
 [S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#impossibilis S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Epithet(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 [S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#multus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Quantifier(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
@@ -193,8 +178,16 @@ IMPORT words
 
 # ADJECTIVES STEP 5
 
-[T:WORD-CLASS:conjunction] [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 
 [T:WORD-CLASS:conjunction #ut] [T:WORD-CLASS:noun] S:MIXED:Mark(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:group)
 [T:WORD-CLASS:conjunction #ut] [T:WORD-CLASS:noun] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:group)
@@ -202,12 +195,14 @@ IMPORT words
 [T:WORD-CLASS:adverb #quasi] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Nmod-Appos(1:word,2:word) => +T:LOGICAL:Elaborating(1:groups,2:group)
 
-
 [T:WORD-CLASS:conjunction #et] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
 
 # (Conj) (Head) => (Extending) (Head)
 [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
+[T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
+[T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 
 [T:WORD-CLASS:verb S:VERBFORM:part] [#sum] S:MIXED:Cop(2:word,1:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
 

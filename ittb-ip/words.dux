@@ -65,6 +65,45 @@
 [#qualis S:PRONTYPE:int,rel] => +T:PRONOUN-RELATIVITY:relative
 [#quantus S:PRONTYPE:int,rel] => +T:PRONOUN-RELATIVITY:relative
 
+## ADJECTIVES #STEP 2
+[T:WORD-CLASS:adjective #primus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #secundus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #tertius] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quartus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quintus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #sextus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #septimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #octavus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #nonus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #decimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+
+## ADJECTIVES #STEP 3
+[T:WORD-CLASS:adjective #simplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #duplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #triplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quadruplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quincuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quintuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #sextuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #septuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicativ +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #octuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #nonuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #decuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #septemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #novemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #decemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+
+## ADJECTIVES #STEP 4
+[T:WORD-CLASS:adjective #singuli] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #bini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #terni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quaterni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #seni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #septeni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #octoni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #noveni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #deni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
 ## VERBS
 
@@ -105,10 +144,8 @@
 [S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:ŌST-SEAM:tis-seam
 [S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:ŌST-SEAM:nt-seam
 
-
 ## NOUN STEP 1
 [T:WORD-CLASS:noun #respectus S:CASE:abl] => -T:WORD-CLASS:noun +T:WORD-CLASS:adposition
-
 
 ## ADJECTIVE STEP 2
 
@@ -140,7 +177,8 @@
 [T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past #ordino] [T:WORD-CLASS:noun] S:MIXED:Det(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
 [T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Amod(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
 [T:WORD-CLASS:verb S:VERBFORM:inf] [S:CASE:gen T:WORD-CLASS:noun] S:MIXED:Nmod(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
-
+[T:WORD-CLASS:verb S:VERBFORM:inf] [T:WORD-CLASS:number T:NUMERIC-CASE:multiplicative] S:MIXED:Amod(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:re-branch -T:VERB-FINITENESS:non-finite
+[T:WORD-CLASS:adjective] [T:WORD-CLASS:number T:NUMERIC-CASE:multiplicative] S:MIXED:Amod(2:word,1:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 
 # VERBS STEP 5
 [T:WORD-CLASS:verb #finio] => +T:WORD-CLASS:adjective -T:WORD-CLASS:verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
@@ -151,6 +189,11 @@
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:gen] => +T:CASE-SEAM:genitive-seam
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:dat] => +T:CASE-SEAM:dative-seam
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:abl] => +T:CASE-SEAM:ablative-seam
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:nom] => +T:CASE-SEAM:nominative-seam
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:acc] => +T:CASE-SEAM:accusative-seam
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:gen] => +T:CASE-SEAM:genitive-seam
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:dat] => +T:CASE-SEAM:dative-seam
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:abl] => +T:CASE-SEAM:ablative-seam
 [T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:nom] => +T:CASE:nominative
 [T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:acc] => +T:CASE:accusative
 [T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:CASE:gen] => +T:CASE:genitive
@@ -168,6 +211,11 @@
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:dat] => +T:AUMUS-FOLIAGE:ae/ō-foliage
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:abl] => +T:AUMUS-FOLIAGE:ā-foliage
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:nom] => +T:AUMUS-FOLIAGE:a-foliage
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:acc] => +T:AUMUS-FOLIAGE:am-foliage
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:dat] => +T:AUMUS-FOLIAGE:ae/ō-foliage
+[T:WORD-CLASS:number T:SEAMEDNESS:seamed S:CASE:abl] => +T:AUMUS-FOLIAGE:ā-foliage
 
 # RHYME
 [T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:GENDER:fem] => +T:RHYME:a-rhyme
@@ -199,6 +247,12 @@
 [T:WORD-CLASS:adjective S:NUMBER:plur S:GENDER:fem] => +T:AUMUS-SEAM:ae/ās-seam
 [T:WORD-CLASS:adjective S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a/a-seam
 [T:WORD-CLASS:adjective S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī/ōs-seam
+[T:WORD-CLASS:number S:NUMBER:sing S:GENDER:fem] => +T:AUMUS-SEAM:a/am-seam
+[T:WORD-CLASS:number S:NUMBER:sing S:GENDER:neut] => +T:AUMUS-SEAM:um/um-seam
+[T:WORD-CLASS:number S:NUMBER:sing S:GENDER:masc] => +T:AUMUS-SEAM:us/um-seam
+[T:WORD-CLASS:number S:NUMBER:plur S:GENDER:fem] => +T:AUMUS-SEAM:ae/ās-seam
+[T:WORD-CLASS:number S:NUMBER:plur S:GENDER:neut] => +T:AUMUS-SEAM:a/a-seam
+[T:WORD-CLASS:number S:NUMBER:plur S:GENDER:masc] => +T:AUMUS-SEAM:ī/ōs-seam
 
 # AUMUS LEAVES
 [T:AUMUS-SEAM:a/am-seam  S:CASE:nom] => +T:AUMUS-LEAF:a-leaf
@@ -251,50 +305,6 @@
 [T:WORD-CLASS:adjective #noster] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective #vester] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:pronoun +T:CASE:genitive
 [T:WORD-CLASS:adjective #divinus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:proper-noun +T:CASE:genitive
-
-
-## ADJECTIVES #STEP 2
-[T:WORD-CLASS:adjective #primus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #secundus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #tertius] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #quartus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #quintus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #sextus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #septimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #octavus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #nonus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-[T:WORD-CLASS:adjective #decimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal
-
-
-## ADJECTIVES #STEP 3
-[T:WORD-CLASS:adjective #simplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #duplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #triplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #quadruplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #quincuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #quintuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #sextuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #septuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicativ
-[T:WORD-CLASS:adjective #octuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #nonuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #decuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #septemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #novemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative
-[T:WORD-CLASS:adjective #decemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative 
-
-
-## ADJECTIVES #STEP 4
-[T:WORD-CLASS:adjective #singuli] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #bini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #terni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #quaterni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #quini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #seni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #septeni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #octoni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #noveni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-[T:WORD-CLASS:adjective #deni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive
-
 
 ## NOUNS #STEP 1
 [T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod(2:word,1:word) => -T:NOUN-CLASS:proper-noun +T:NOUN-CLASS:common-noun
