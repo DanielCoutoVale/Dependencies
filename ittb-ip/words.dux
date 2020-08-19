@@ -107,18 +107,20 @@
 
 ## ADVERBS
 [T:WORD-CLASS:noun #verus] [] S:MIXED:Orphan(1:word,2:word) => -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun +T:WORD-CLASS:adverb
-STOP
+# TODO other contexts
 
 ## VERBS
 
 # O-BRANCH
-[S:TENSE:imp S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:bā-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
-[S:TENSE:imp S:MOOD:sub] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:rē-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:conjunctive
-[S:TENSE:pres S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:unbranched +T:VERB-Ō-PARADIGMS:ō-1st-paradigm +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
-[S:TENSE:pres S:MOOD:imp] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:unbranched +T:VERB-Ō-PARADIGMS:ō-2nd-paradigm +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
-[S:TENSE:pres S:MOOD:sub] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:ē-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:conjunctive
-[S:TENSE:fut S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:b-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
-[S:VERBFORM:inf] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:re-branch +T:VERB-FINITENESS:non-finite
+[S:VERBFORM:fin S:TENSE:imp S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:bā-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
+[S:VERBFORM:fin S:TENSE:imp S:MOOD:sub] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:rē-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:conjunctive
+[S:VERBFORM:fin S:TENSE:pres S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:unbranched +T:VERB-Ō-PARADIGMS:ō-1st-paradigm +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
+[S:VERBFORM:fin S:TENSE:pres S:MOOD:imp] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:unbranched +T:VERB-Ō-PARADIGMS:ō-2nd-paradigm +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
+[S:VERBFORM:fin S:TENSE:pres S:MOOD:sub] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:ē-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:conjunctive
+[S:VERBFORM:fin S:TENSE:fut S:MOOD:ind] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:b-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
+[S:VERBFORM:fin S:TENSE:fut S:MOOD:imp] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:tō-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
+[S:VERBFORM:inf S:VOICE:act] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:re-branch +T:VERB-FINITENESS:non-finite
+[S:VERBFORM:inf S:VOICE:pass] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:rī-branch +T:VERB-FINITENESS:non-finite
 [S:VERBFORM:part S:TENSE:pres] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nt-branch +T:VERB-FINITENESS:non-finite
 [S:VERBFORM:gdv] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nd-branch +T:SEAMEDNESS:seamed +T:VERB-FINITENESS:non-finite
 [S:VERBFORM:ger] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nd-branch +T:SEAMEDNESS:unseamed +T:VERB-FINITENESS:non-finite
@@ -138,15 +140,37 @@ STOP
 [S:VERBFORM:part S:TENSE:fut] => +T:VERB-ASPECT:ū-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ū-BRANCH:ūr-branch +T:VERB-FINITENESS:non-finite
 
 # OST FOLIAGE
-# FIXME: TODO
+[T:VERB-ASPECT:ō-aspect S:VERBFORM:fin S:VOICE:act] => +T:ŌST-FOLIAGE:ō-foliage
+[T:VERB-ASPECT:ō-aspect S:VERBFORM:fin S:VOICE:pass] => +T:ŌST-FOLIAGE:or-foliage
+[T:VERB-ASPECT:ī-aspect S:VERBFORM:fin] => +T:ŌST-FOLIAGE:ī-foliage
 
 # OST SEAM
-[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:1] => +T:ŌST-SEAM:ō-seam
-[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:2] => +T:ŌST-SEAM:s-seam
-[S:WORD-CLASS:verb S:NUMBER:sing S:PERSON:3] => +T:ŌST-SEAM:t-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:1] => +T:ŌST-SEAM:mus-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:ŌST-SEAM:tis-seam
-[S:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:ŌST-SEAM:nt-seam
+[T:WORD-CLASS:verb S:NUMBER:sing S:PERSON:1] => +T:ŌST-SEAM:ō-seam
+[T:WORD-CLASS:verb S:NUMBER:sing S:PERSON:2] => +T:ŌST-SEAM:s-seam
+[T:WORD-CLASS:verb S:NUMBER:sing S:PERSON:3] => +T:ŌST-SEAM:t-seam
+[T:WORD-CLASS:verb S:NUMBER:plur S:PERSON:1] => +T:ŌST-SEAM:mus-seam
+[T:WORD-CLASS:verb S:NUMBER:plur S:PERSON:2] => +T:ŌST-SEAM:tis-seam
+[T:WORD-CLASS:verb S:NUMBER:plur S:PERSON:3] => +T:ŌST-SEAM:nt-seam
+
+# OST LEAF
+[T:ŌST-FOLIAGE:ō-foliage T:ŌST-SEAM:ō-seam] => +T:ŌST-LEAF:ō-leaf
+[T:ŌST-FOLIAGE:ō-foliage T:ŌST-SEAM:s-seam] => +T:ŌST-LEAF:s-leaf
+[T:ŌST-FOLIAGE:ō-foliage T:ŌST-SEAM:t-seam] => +T:ŌST-LEAF:t-leaf
+[T:ŌST-FOLIAGE:ō-foliage T:ŌST-SEAM:mus-seam] => +T:ŌST-LEAF:mus-leaf
+[T:ŌST-FOLIAGE:ō-foliage T:ŌST-SEAM:tis-seam] => +T:ŌST-LEAF:tis-leaves
+[T:ŌST-FOLIAGE:ō-foliage T:ŌST-SEAM:nt-seam] => +T:ŌST-LEAF:nt-leaf
+[T:ŌST-FOLIAGE:or-foliage T:ŌST-SEAM:ō-seam] => +T:ŌST-LEAF:or-leaf
+[T:ŌST-FOLIAGE:or-foliage T:ŌST-SEAM:s-seam] => +T:ŌST-LEAF:ris-leaves
+[T:ŌST-FOLIAGE:or-foliage T:ŌST-SEAM:t-seam] => +T:ŌST-LEAF:tur-leaves
+[T:ŌST-FOLIAGE:or-foliage T:ŌST-SEAM:mus-seam] => +T:ŌST-LEAF:mur-leaf
+[T:ŌST-FOLIAGE:or-foliage T:ŌST-SEAM:tis-seam] => +T:ŌST-LEAF:minī-leaf
+[T:ŌST-FOLIAGE:or-foliage T:ŌST-SEAM:nt-seam] => +T:ŌST-LEAF:ntur-leaves
+[T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:ō-seam] => +T:ŌST-LEAF:ī-leaf
+[T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:s-seam] => +T:ŌST-LEAF:istī-leaf
+[T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:t-seam] => +T:ŌST-LEAF:it-leaf
+[T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:mus-seam] => +T:ŌST-LEAF:imus-leaf
+[T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:tis-seam] => +T:ŌST-LEAF:istis-leaf
+[T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:nt-seam] => +T:ŌST-LEAF:ērunt-leaf
 
 ## NOUN STEP 1
 [T:WORD-CLASS:noun #respectus S:CASE:abl] => -T:WORD-CLASS:noun +T:WORD-CLASS:adposition
@@ -210,6 +234,11 @@ STOP
 [T:WORD-CLASS:verb S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
 [T:WORD-CLASS:verb S:CASE:dat] => +T:AUMUS-FOLIAGE:ae/ō-foliage
 [T:WORD-CLASS:verb S:CASE:abl] => +T:AUMUS-FOLIAGE:ā-foliage
+[S:VERBFORM:ger S:CASE:nom] => -T:AUMUS-FOLIAGE:a-foliage +T:AUMUS-LEAF:um-leaf
+[S:VERBFORM:ger S:CASE:acc] => -T:AUMUS-FOLIAGE:am-foliage +T:AUMUS-LEAF:um-leaf
+[S:VERBFORM:ger S:CASE:gen] => -T:AUMUS-FOLIAGE:ae/ī-foliage +T:AUMUS-LEAF:ī-leaf
+[S:VERBFORM:ger S:CASE:dat] => -T:AUMUS-FOLIAGE:ae/ō-foliage +T:AUMUS-LEAF:ō-leaf
+[S:VERBFORM:ger S:CASE:abl] => -T:AUMUS-FOLIAGE:ā-foliage +T:AUMUS-LEAF:ō-leaf
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:nom] => +T:AUMUS-FOLIAGE:a-foliage
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:acc] => +T:AUMUS-FOLIAGE:am-foliage
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:gen] => +T:AUMUS-FOLIAGE:ae/ī-foliage
@@ -233,12 +262,12 @@ STOP
 [T:WORD-CLASS:noun T:SEAMEDNESS:unseamed S:WORDFORM:inf] => +T:NUMBER:singular
 
 # AUMUS SEAM
-[T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:a/am-seam
-[T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:um/um-seam
-[T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:masc T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:us/um-seam
-[T:WORD-CLASS:verb S:NUMBER:plur S:GENDER:fem T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:ae/ās-seam
-[T:WORD-CLASS:verb S:NUMBER:plur S:GENDER:neut T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:a/a-seam
-[T:WORD-CLASS:verb S:NUMBER:plur S:GENDER:masc T:VERB-Ō-BRANCH:nd-branch] => +T:AUMUS-SEAM:ī/ōs-seam
+[T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] => +T:AUMUS-SEAM:a/am-seam
+[T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] => +T:AUMUS-SEAM:um/um-seam
+[T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:masc T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] => +T:AUMUS-SEAM:us/um-seam
+[T:WORD-CLASS:verb S:NUMBER:plur S:GENDER:fem T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] => +T:AUMUS-SEAM:ae/ās-seam
+[T:WORD-CLASS:verb S:NUMBER:plur S:GENDER:neut T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] => +T:AUMUS-SEAM:a/a-seam
+[T:WORD-CLASS:verb S:NUMBER:plur S:GENDER:masc T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] => +T:AUMUS-SEAM:ī/ōs-seam
 [T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:fem T:VERB-ASPECT:ū-aspect] => +T:AUMUS-SEAM:a/am-seam
 [T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:neut T:VERB-ASPECT:ū-aspect] => +T:AUMUS-SEAM:um/um-seam
 [T:WORD-CLASS:verb S:NUMBER:sing S:GENDER:masc T:VERB-ASPECT:ū-aspect] => +T:AUMUS-SEAM:us/um-seam

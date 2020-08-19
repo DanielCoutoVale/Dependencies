@@ -97,6 +97,7 @@ system VERB-Ō-BRANCH
 - ē-branch
 - rē-branch
 - re-branch
+- rī-branch
 - tō-branch
 - ō-branch
 - nd-branch
@@ -159,13 +160,40 @@ system SEAMEDNESS
 - unseamed
 
 system ŌST-SEAM
-> bā-branch ∨ b-branch verb ∨ ē-branch verb ∨ rē-branch verb ∨ tō-branch verb ∨ ō-branch verb ∨ ō-1st-paradigm verb ∨ ō-2nd-paradigm verb
+> bā-branch verb ∨ b-branch verb ∨ ē-branch verb ∨ rē-branch verb ∨ tō-branch verb ∨ ō-branch verb ∨ ō-1st-paradigm verb ∨ ō-2nd-paradigm verb
 - ō-seam
 - s-seam
 - t-seam
 - mus-seam
 - tis-seam
 - nt-seam
+
+system ŌST-FOLIAGE
+> bā-branch verb ∨ b-branch verb ∨ ē-branch verb ∨ rē-branch verb ∨ tō-branch verb ∨ ō-branch verb ∨ ō-1st-paradigm verb ∨ ō-2nd-paradigm verb
+- ō-foliage
+- or-foliage
+- ī-foliage
+
+system ŌST-LEAF
+> bā-branch verb ∨ b-branch verb ∨ ē-branch verb ∨ rē-branch verb ∨ tō-branch verb ∨ ō-branch verb ∨ ō-1st-paradigm verb ∨ ō-2nd-paradigm verb
+- ō-leaf
+- s-leaf
+- t-leaf
+- mus-leaf
+- tis-leaves
+- nt-leaf
+- or-leaf
+- ris-leaves
+- tur-leaves
+- mur-leaf
+- minī-leaf
+- ntur-leaves
+- ī-leaf
+- istī-leaf
+- it-leaf
+- imus-leaf
+- istis-leaf
+- ērunt-leaf
 
 system AUMUS-FOLIAGE
 > seamed adjective ∨ seamed pronoun ∨ nd-branch verb ∨ ū-aspect unbranched verb ∨ ūr-branch verb
