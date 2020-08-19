@@ -334,12 +334,12 @@ IMPORT embedded-clauses
 
 # NOUN STEP 2
 
-[T:WORD-CLASS:adposition #de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Source(2:groups,3:clause)
-[T:WORD-CLASS:adposition #ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Attribute(2:groups,3:clause)
-[T:WORD-CLASS:adposition #ab] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb S:VOICE:pass] S:MIXED:Case(1:word,2:word) S:MIXED:%(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Actor(2:groups,3:clause)
+[T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obl(1:word,2:word) => +T:EXPERIENTIAL:Tool(1:groups,2:clause)
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Recipient(1:groups,2:clause) -T:EXPERIENTIAL:Goal(1:groups,2:clause)
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Iobj(1:word,2:word) => +T:EXPERIENTIAL:Recipient(1:groups,2:clause) -T:EXPERIENTIAL:Goal(1:groups,2:clause)
-[T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obl(1:word,2:word) => +T:EXPERIENTIAL:Tool(1:groups,2:clause)
+[T:WORD-CLASS:adposition #de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Source(2:groups,3:clause) -T:EXPERIENTIAL:Tool(2:groups,3:clause)
+[T:WORD-CLASS:adposition #ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Attribute(2:groups,3:clause)
+[T:WORD-CLASS:adposition #ab] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb S:VOICE:pass] S:MIXED:Case(1:word,2:word) S:MIXED:%(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Actor(2:groups,3:clause)
 
 [T:WORD-CLASS:adposition #respectus] [T:WORD-CLASS:noun] S:MIXED:Nmod(2:word,1:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #respectus] [T:WORD-CLASS:verb] S:MIXED:%(1:word,2:word) => +T:EXPERIENTIAL:Circumstance(1:groups,2:clause)
