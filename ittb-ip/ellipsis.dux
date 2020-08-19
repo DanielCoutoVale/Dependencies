@@ -1,0 +1,3 @@
+
+[#autem] [#bonum] [#significo] [#concretus] [#ut] S:Cc(1,2) S:Conj(2,3) S:Orphan(4,2) S:Advmod(5,4) => +T:LOGICAL:Extending(1:clauses,3:clause-complex) +T:EXPERIENTIAL:Carrier(2:groups,1:clause) +T:EXPERIENTIAL:Attribute(4:groups,1:clause) +T:LOGICAL:Marker(5:groups,1:group)
+[#autem] [#bonum] [#significo] [#,] S:Cc(1,2) S:Conj(2,3) S:Punct(4,2) => +T:LOGICAL:Marker(4:groups,2:clause)

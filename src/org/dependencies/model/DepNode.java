@@ -177,7 +177,7 @@ public class DepNode {
 	}
 
 	private String makeClauseHeadName(DepNode node) {
-		if (null != node.asWord().getFeature("lexical-verb")) {
+		if (null != node.asWord().getFeature("lexical-verb") || null != node.asWord().getFeature("conjunction")) {
 			return "Process";
 		} else if (null != node.asWord().getFeature("noun") || null != node.asWord().getFeature("source")) {
 			return "Thing";

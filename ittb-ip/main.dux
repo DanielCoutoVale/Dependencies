@@ -210,51 +210,8 @@ IMPORT numbers
 
 IMPORT verbal-groups
 
-# VERBS STEP 5
+IMPORT participants
 
-[T:WORD-CLASS:verb S:VERBFORM:part] [T:WORD-CLASS:verb] S:MIXED:Csubj(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:clauses,2:group)
-#[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Csubj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Actor(3:clauses,2:group)
-#[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Csubj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Actor(3:clauses,2:group)
-#[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Csubj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Actor(3:clauses,2:group)
-#[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Csubj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Actor(3:clauses,2:group)
-
-[T:WORD-CLASS:verb S:VERBFORM:part] [T:WORD-CLASS:verb] S:MIXED:Cobj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:clauses,2:group)
-#[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Cobj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-#[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Cobj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-#[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Cobj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-#[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Cobj(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-
-[T:WORD-CLASS:verb S:VERBFORM:part] [T:WORD-CLASS:verb] S:MIXED:Csubj-Pass(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:clauses,2:group)
-#[T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Csubj-Pass(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-#[T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Csubj-Pass(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-#[T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Csubj-Pass(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-#[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Csubj-Pass(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Goal(3:clauses,2:group)
-
-# FIX PARTICIPANT ATTACHMENT
-
-[] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Actor(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Actor(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Goal(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Goal(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Attributor(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:EXPERIENTIAL:Attributor(1:groups,2:clause) +T:EXPERIENTIAL:Attributor(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Attributor(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Attributor(1:groups,2:clause) +T:EXPERIENTIAL:Attributor(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Carrier(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:EXPERIENTIAL:Carrier(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,3:clause)
-[] [] [] T:EXPERIENTIAL:Carrier(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Carrier(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,3:clause)
-
-[] [#sum] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
-[] [#sum] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
-[] [S:VOICE:pass] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
-[] [S:VOICE:pass] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
-[T:CASE:accusative] [S:VOICE:act] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
-[T:CASE:accusative] [S:VOICE:act] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
-[] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Attributor(1:groups,2:clause)
-[] [] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Attributor(1:groups,2:clause)
-
-# FIX PARTICIPANT CASE ATTACHMENT
-
-[] [T:WORD-CLASS:adjective] [] S:MIXED:Case(1:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,3:clause) => +T:LOGICAL:Marker(1:groups,3:group)
-
-# VERBS STEP 3
 IMPORT clause-complex
 
 # VERBS STEP 2.2
@@ -464,4 +421,9 @@ IMPORT embedded-clauses
 
 [T:WORD-CLASS:verb #sum] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Carrier(2:groups,1:clause) T:EXPERIENTIAL:Attribute(3:groups,1:clause) => -T:EXPERIENTIAL:Carrier(2:groups,1:clause) -T:EXPERIENTIAL:Attribute(3:groups,1:clause) +T:EXPERIENTIAL:Identified(2:groups,1:clause) +T:EXPERIENTIAL:Identifier(3:groups,1:clause)
 
+IMPORT ellipsis
+
 IMPORT punctuation
+
+# FIX
+[T:WORD-CLASS:adverb #ut] [T:WORD-CLASS:verb #significo] T:EXPERIENTIAL:Circumstance(1:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:group)
