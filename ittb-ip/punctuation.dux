@@ -17,3 +17,4 @@
 [T:WORD-CLASS:punctuation #,] [] [] S:MIXED:Punct(1:word,3:word) T:LOGICAL:Extending(2:groups,3:group-complex) => +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:punctuation #,] [] [] S:MIXED:Punct(1:word,2:word) T:EXPERIENTIAL:Minor-Range(2:groups,3:phrase) => +T:LOGICAL:Marker(1:groups,3:clause)
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:source] S:MIXED:Punct(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:punctuation] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)

@@ -1,5 +1,7 @@
 
-# Quantifier
+## Numbers
+
+## Quantifier
 [T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [S:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group)
 [T:WORD-CLASS:number T:NUMERIC-CASE:distributive] [S:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group)
 [#multus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
@@ -9,10 +11,17 @@
 [#multiplex S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 [#singulus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Quantifier(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 
-# Multiplier
+## Multiplier
 [T:WORD-CLASS:number T:NUMERIC-CASE:multiplicative] [] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Multiplier(1:groups,2:group)
 
-# Ordinator
+## Ordinator
 [T:WORD-CLASS:number T:NUMERIC-CASE:ordinal] [T:WORD-CLASS:noun] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Ordinator(1:groups,2:group)
 [#ultimus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Ordinator(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
+[T:WORD-CLASS:number T:NUMERIC-CASE:roman] [T:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Ordinator(1:groups,2:group)
 
+## Bible Verses
+[T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [T:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(2:groups,1:group)
+[T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [T:WORD-CLASS:source] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(2:groups,1:group)
+
+[T:WORD-CLASS:number T:NUMERIC-CASE:roman] [#metaphys.] S:MIXED:Nummod(1:word,2:word) => -T:EXPERIENTIAL:Ordinator(1:groups,2:group) +T:EXPERIENTIAL:Possessor(2:groups,1:group)
+[T:WORD-CLASS:number T:NUMERIC-CASE:roman] [#physic.] S:MIXED:Nummod(1:word,2:word) => -T:EXPERIENTIAL:Ordinator(1:groups,2:group) +T:EXPERIENTIAL:Possessor(2:groups,1:group)

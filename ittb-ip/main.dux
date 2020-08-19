@@ -356,6 +356,8 @@ IMPORT embedded-clauses
 [T:WORD-CLASS:adposition #propter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #secundum] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 
+[T:WORD-CLASS:adposition] [] [] T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) +T:EXPERIENTIAL:Minor-Range(3:groups,1:phrase)
+
 [T:WORD-CLASS:adposition #ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) -T:EXPERIENTIAL:Tool(1:groups,3:clause)
 [T:WORD-CLASS:adposition #circa] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
@@ -411,9 +413,6 @@ IMPORT embedded-clauses
 [#divinus T:WORD-CLASS:noun T:CASE:genitive T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Goal(1:groups,2:clause) => -T:CASE:genitive -T:SEAMEDNESS:seamed -T:CASE-SEAM:accusative-seam +T:SEAMEDNESS:unseamed +T:CASE:accusative -T:NOUN-CLASS:proper-noun +T:NOUN-CLASS:common-noun -T:AUMUS-FOLIAGE:am-foliage -T:AUMUS-SEAM:a/a-seam -T:AUMUS-LEAF:a-leaf
 
 # OTHER
-
-[T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [T:WORD-CLASS:source] S:MIXED:Nummod(1:word,2:word) => +T:LOGICAL:Sections(1:groups,2:group)
-
 
 [T:WORD-CLASS:adposition #ad] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) S:MIXED:Nmod(2:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:groups,3:clause) +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 
