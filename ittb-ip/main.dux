@@ -214,6 +214,8 @@ IMPORT participants
 
 IMPORT clause-complex
 
+IMPORT adverbial-groups
+
 # VERBS STEP 2.2
 
 # dum ego hoc facio (finite conjunctive)
@@ -424,6 +426,3 @@ IMPORT embedded-clauses
 IMPORT ellipsis
 
 IMPORT punctuation
-
-# FIX
-[T:WORD-CLASS:adverb #ut] [T:WORD-CLASS:verb #significo] T:EXPERIENTIAL:Circumstance(1:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:group)

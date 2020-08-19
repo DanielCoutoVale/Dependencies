@@ -110,13 +110,13 @@ public class DuxFileApplier {
 					DepMetafunction metafunction = description
 							.getMetafunction(tag.getMetafunctionName());
 					if (metafunction == null) {
-						System.err.println("Error: Metafunction not found for " + tag);
+						System.err.println("Error: Metafunction not found for +" + tag);
 						continue;
 					}
 					DepFunction function = metafunction
 							.getFunction(tag.getName());
 					if (function == null) {
-						System.err.println("Error: Function not found for " + tag);
+						System.err.println("Error: Function not found for +" + tag);
 						continue;
 					}
 					DepAnalysis analysis = analysisMap.get(tag.getPrefix());
@@ -144,24 +144,24 @@ public class DuxFileApplier {
 					DuxFeature tag = (DuxFeature) change;
 					DepDescription description = descriptionMap.get(tag.getPrefix());
 					if (description == null) {
-						System.err.println("Error: Description not found for +" + tag);
+						System.err.println("Error: Description not found for -" + tag);
 						continue;
 					}
 					DepSystem system = description
 							.getSystem(tag.getSystemName());
 					if (system == null) {
-						System.err.println("Error: System not found for +" + tag);
+						System.err.println("Error: System not found for -" + tag);
 						continue;
 					}
 					DepFeature feature = system
 							.getFeature(tag.getName());
 					if (feature == null) {
-						System.err.println("Error: Feature not found for +" + tag);
+						System.err.println("Error: Feature not found for -" + tag);
 						continue;
 					}
 					DepAnalysis analysis = analysisMap.get(tag.getPrefix());
 					if (analysis == null) {
-						System.err.println("Error: Analysis not found for +" + tag);
+						System.err.println("Error: Analysis not found for -" + tag);
 						continue;
 					}
 
@@ -177,24 +177,24 @@ public class DuxFileApplier {
 					DuxFunction tag = (DuxFunction) change;
 					DepDescription description = descriptionMap.get(tag.getPrefix());
 					if (description == null) {
-						System.err.println("Error: Description not found for +" + tag);
+						System.err.println("Error: Description not found for -" + tag);
 						continue;
 					}
 					DepMetafunction metafunction = description
 							.getMetafunction(tag.getMetafunctionName());
 					if (metafunction == null) {
-						System.err.println("Error: Metafunction not found for " + tag);
+						System.err.println("Error: Metafunction not found for -" + tag);
 						continue;
 					}
 					DepFunction function = metafunction
 							.getFunction(tag.getName());
 					if (function == null) {
-						System.err.println("Error: Function not found for " + tag);
+						System.err.println("Error: Function not found for -" + tag);
 						continue;
 					}
 					DepAnalysis analysis = analysisMap.get(tag.getPrefix());
 					if (analysis == null) {
-						System.err.println("Error: Analysis not found for +" + tag);
+						System.err.println("Error: Analysis not found for -" + tag);
 						continue;
 					}
 					DepFeature tailRank = description.getRank(tag.getWordRankName());

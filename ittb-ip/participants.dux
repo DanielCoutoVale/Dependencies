@@ -39,6 +39,10 @@
 [] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Attributor(1:groups,2:clause)
 [] [] [] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Goal(1:groups,2:clause) +T:EXPERIENTIAL:Attributor(1:groups,2:clause)
 
+[T:WORD-CLASS:noun T:CASE:nominative] [T:WORD-CLASS:verb S:VOICE:pass #affirmo] T:EXPERIENTIAL:Actor(1:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+[T:WORD-CLASS:noun T:CASE:nominative] [T:WORD-CLASS:verb S:VOICE:pass #nego] T:EXPERIENTIAL:Actor(1:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+STOP
+
 # FIX PARTICIPANT CASE ATTACHMENT
 
 [] [T:WORD-CLASS:adjective] [] S:MIXED:Case(1:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,3:clause) => +T:LOGICAL:Marker(1:groups,3:group)
