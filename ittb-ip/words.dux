@@ -13,7 +13,7 @@
 [S:WORD-CLASS:punct] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:punctuation
 [S:WORD-CLASS:num #unus] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:cardinal +T:SEAMEDNESS:seamed
 [S:WORD-CLASS:num #duo] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:cardinal +T:SEAMEDNESS:seamed
-[S:WORD-CLASS:num #tres] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:cardinal +T:SEAMEDNESS:unseamed
+[S:WORD-CLASS:num #tres] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:cardinal +T:SEAMEDNESS:seamed
 [S:WORD-CLASS:num #quator] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:cardinal +T:SEAMEDNESS:unseamed
 [S:WORD-CLASS:num #quatuor] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:cardinal +T:SEAMEDNESS:unseamed
 [S:WORD-CLASS:num #num._rom.] => +T:RANK:words +T:WORD-COMPLEXITY:word +T:WORD-CLASS:number +T:NUMERIC-CASE:roman
@@ -65,6 +65,20 @@
 [#qualis S:PRONTYPE:int,rel] => +T:PRONOUN-RELATIVITY:relative
 [#quantus S:PRONTYPE:int,rel] => +T:PRONOUN-RELATIVITY:relative
 
+## NUMBERS #STEP 1
+[T:WORD-CLASS:number #unus] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #duo] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #tres] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #quatuor] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #quator] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #quinque] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #sex] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #septem] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #octo] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #novem] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:number #decem] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+[T:WORD-CLASS:number #viginti] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+
 ## ADJECTIVES #STEP 2
 [T:WORD-CLASS:adjective #primus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #secundus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
@@ -76,6 +90,7 @@
 [T:WORD-CLASS:adjective #octavus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #nonus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #decimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+[T:WORD-CLASS:adjective #vicesimus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:ordinal +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
 ## ADJECTIVES #STEP 3
 [T:WORD-CLASS:adjective #simplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
@@ -92,6 +107,7 @@
 [T:WORD-CLASS:adjective #septemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #novemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #decemplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+[T:WORD-CLASS:adjective #vigentuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
 ## ADJECTIVES #STEP 4
 [T:WORD-CLASS:adjective #singuli] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
@@ -104,6 +120,7 @@
 [T:WORD-CLASS:adjective #octoni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #noveni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #deni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+[T:WORD-CLASS:adjective #viceni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
 ## ADVERBS
 [T:WORD-CLASS:noun #verus] [] S:MIXED:Orphan(1:word,2:word) => -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun +T:WORD-CLASS:adverb
