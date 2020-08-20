@@ -179,4 +179,11 @@ public class DuxFunction implements DuxPattern, DuxChange {
 		return buffer.toString();
 	}
 
+	public final boolean isBefore() {
+		return wordRankName.equals("%") && 
+				headRankName.equals("%") &&
+				metafunctionName.equals("%") &&
+				name.equals("before");
+	}
+
 }

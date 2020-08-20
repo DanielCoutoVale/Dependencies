@@ -1,6 +1,6 @@
 
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
-STOP
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 
@@ -17,3 +17,6 @@ STOP
 
 [] [] S:MIXED:Fixed(1:word,2:word) => +T:LOGICAL:Particle(1:word,2:word)
 
+## Projected clauses
+[T:verb] [T:verb #nosco] S:Ccomp(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+[T:verb] [T:verb #nosco] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)

@@ -1,8 +1,11 @@
 
-## Punctuation to verb
+## Punctuation to full clauses
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:verb] S:MIXED:Punct(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+
+## Punctuation to elliptical clauses
+[T:WORD-CLASS:punctuation] [T:WORD-CLASS:noun] [T:WORD-CLASS:conjunction] S:MIXED:Punct(1:word,2:word) T:EXPERIENTIAL:Actor(2:groups,3:clause) => +T:LOGICAL:Marker(1:groups,3:clause)
 
 ## Punctuation to participants
 [T:WORD-CLASS:punctuation] [] [T:WORD-CLASS:verb] S:MIXED:Punct(1:word,2:word) T:EXPERIENTIAL:Identifier(2:groups,3:clause) => +T:LOGICAL:Marker(1:groups,3:clause)
@@ -12,9 +15,19 @@
 ## Punctuation to circumstances
 [T:WORD-CLASS:punctuation] [] [T:WORD-CLASS:verb] S:MIXED:Punct(1:word,2:word) T:EXPERIENTIAL:Circumstance(2:groups,3:clause) => +T:LOGICAL:Marker(1:groups,3:clause)
 
-## Punctuation to other...
+## Punctuation to things
 [T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Punct(1:word,2:word) S:MIXED:Nmod-Appos(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:punctuation #,] [] [] S:MIXED:Punct(1:word,3:word) T:LOGICAL:Extending(2:groups,3:group-complex) => +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:punctuation #,] [] [] S:MIXED:Punct(1:word,2:word) T:EXPERIENTIAL:Minor-Range(2:groups,3:phrase) => +T:LOGICAL:Marker(1:groups,3:clause)
+
+## Conjunction to bible citation
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:source] S:MIXED:Cc(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:noun S:ABBR:yes] S:MIXED:Cc(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+[T:WORD-CLASS:conjunction] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+
+## Punctuation to bible citation
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:source] S:MIXED:Punct(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:punctuation] [T:WORD-CLASS:noun S:ABBR:yes] S:MIXED:Punct(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:punctuation] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
 [T:WORD-CLASS:punctuation] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)

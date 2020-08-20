@@ -1052,12 +1052,15 @@ public class MysqlDependencyBase {
 			}
 		}
 		StringBuffer buffer = new StringBuffer();
+		StringBuffer buffer2 = new StringBuffer();
 		buffer.append("SELECT " + buffer1 + " \n");
 		List<DepWordFeature> lemmata = new LinkedList<>();
+		List<DepWordFeature> forms = new LinkedList<>();
 		List<String> wordIndices = new LinkedList<>();
 		for (int i = 0; i < matches.size(); i++) {
 			DuxPattern match = matches.get(i);
 			DepWordFeature lemma = null;
+			DepWordFeature form = null;
 			if (match instanceof DuxFeaturedWord) {
 				wordIndices.add(format("W%s", i + 1));
 				if (i == 0) {
@@ -1072,6 +1075,10 @@ public class MysqlDependencyBase {
 						lemma = wordFeatures.get(j);
 						continue;
 					}
+					if (wordFeatures.get(j).getSystemName().equals("FORM")) {
+						form = wordFeatures.get(j);
+						continue;
+					}
 					buffer.append(makeWordFeatureJoinSql(i + 1, j + 1));
 				}
 			} else {
@@ -1079,11 +1086,18 @@ public class MysqlDependencyBase {
 				boolean wordRank = !function.getWordRankName().equals("%");
 				boolean headRank = !function.getHeadRankName().equals("%");
 				boolean metafunction = !function.getMetafunctionName().equals("%");
-				buffer.append(makeWordFunctionJoinSql(i + 1, function.getWordIndex(), function.getHeadIndex(), wordRank , headRank, metafunction));
+				if (function.isBefore()) {
+					if (buffer2.length() > 0) {
+						buffer2.append(" AND ");
+					}
+					buffer2.append(format("W%d.`order` < W%d.`order`", function.getWordIndex(), function.getHeadIndex()));
+				} else {
+					buffer.append(makeWordFunctionJoinSql(i + 1, function.getWordIndex(), function.getHeadIndex(), wordRank , headRank, metafunction));	
+				}
 			}
 			lemmata.add(lemma);
+			forms.add(form);
 		}
-		StringBuffer buffer2 = new StringBuffer();
 		for (int i = 0; i < lemmata.size(); i++) {
 			DepWordFeature lemma = lemmata.get(i);
 			if (lemma == null) continue;
@@ -1091,6 +1105,14 @@ public class MysqlDependencyBase {
 				buffer2.append(" AND ");
 			}
 			buffer2.append(format("W%s.`lemma` = ?", i + 1));
+		}
+		for (int i = 0; i < forms.size(); i++) {
+			DepWordFeature form = forms.get(i);
+			if (form == null) continue;
+			if (buffer2.length() > 0) {
+				buffer2.append(" AND ");
+			}
+			buffer2.append(format("W%s.`form` = ?", i + 1));
 		}
 		for (int i = 0; i < wordIndices.size(); i++) {
 			for (int j = i + 1; j < wordIndices.size(); j++) {
@@ -1114,6 +1136,9 @@ public class MysqlDependencyBase {
 					if (wordFeature.getSystemName().equals("LEMMA")) {
 						continue;
 					}
+					if (wordFeature.getSystemName().equals("FORM")) {
+						continue;
+					}
 					stmt.setInt(index++, wordFeature.getAnalysisId());
 					stmt.setString(index++, wordFeature.getName());
 					stmt.setString(index++, wordFeature.getSystemName());
@@ -1121,6 +1146,9 @@ public class MysqlDependencyBase {
 				}
 			} else {
 				DuxFunction function = (DuxFunction) match;
+				if (function.isBefore()) {
+					continue;
+				}
 				DepWordFunction wordFunction = factory.makeWordFunction(function);
 				boolean a = wordFunction.getWordRankId() != null;
 				boolean b = wordFunction.getHeadRankId() != null;
@@ -1137,6 +1165,11 @@ public class MysqlDependencyBase {
 		for (DepWordFeature lemma : lemmata) {
 			if (lemma != null) {
 				stmt.setString(index++, lemma.getName());
+			}
+		}
+		for (DepWordFeature form : forms) {
+			if (form != null) {
+				stmt.setString(index++, form.getName());
 			}
 		}
 		System.out.println(stmt.asSql().replace('\n', ' '));

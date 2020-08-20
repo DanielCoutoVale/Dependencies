@@ -22,6 +22,12 @@
 ## Bible Verses
 [T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [T:WORD-CLASS:noun] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(2:groups,1:group)
 [T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [T:WORD-CLASS:source] S:MIXED:Nummod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(2:groups,1:group)
+[T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [T:WORD-CLASS:number T:NUMERIC-CASE:arabic] [] T:EXPERIENTIAL:Possessor(3:groups,1:group) T:EXPERIENTIAL:Possessor(3:groups,2:group) before(1,2) => -T:EXPERIENTIAL:Possessor(3:groups,2:group) +T:EXPERIENTIAL:Possessor(1:groups,2:group)
+
+[S:ABBR:yes] [T:WORD-CLASS:verb] S:MIXED:Obl(1:word,2:word) => +T:EXPERIENTIAL:Angle(1:groups,2:clause)
+[] [] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Possessor(1:groups,2:group) T:EXPERIENTIAL:Angle(1:groups,3:clause) => -T:EXPERIENTIAL:Angle(1:groups,3:clause) +T:EXPERIENTIAL:Angle(2:groups,3:clause)
+[] [] [T:WORD-CLASS:verb] T:EXPERIENTIAL:Possessor(1:groups,2:group) T:EXPERIENTIAL:Angle(1:groups,3:clause) => -T:EXPERIENTIAL:Angle(1:groups,3:clause) +T:EXPERIENTIAL:Angle(2:groups,3:clause)
 
 [T:WORD-CLASS:number T:NUMERIC-CASE:roman] [#metaphys.] S:MIXED:Nummod(1:word,2:word) => -T:EXPERIENTIAL:Ordinator(1:groups,2:group) +T:EXPERIENTIAL:Possessor(2:groups,1:group)
 [T:WORD-CLASS:number T:NUMERIC-CASE:roman] [#physic.] S:MIXED:Nummod(1:word,2:word) => -T:EXPERIENTIAL:Ordinator(1:groups,2:group) +T:EXPERIENTIAL:Possessor(2:groups,1:group)
+

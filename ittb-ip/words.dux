@@ -214,7 +214,7 @@
 
 
 # Seamed adjectives
-#[T:WORD-CLASS:noun #sapiens] [] S:MIXED:Amod(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
+[T:WORD-CLASS:noun #sapiens] [] S:MIXED:Amod(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
 #[T:WORD-CLASS:noun #sapiens] [] S:MIXED:Conj(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
 
 

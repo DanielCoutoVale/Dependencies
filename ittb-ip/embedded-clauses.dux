@@ -1,10 +1,14 @@
 
+
+## Embedded: relative clauses as qualifier
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl(1:word,2:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 [T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [] S:MIXED:Acl-Relcl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 
+#ISSUE: ittb-scg-s15
+## Embedded: participial clauses as qualifier
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl(1:word,2:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [] S:MIXED:Acl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] [] S:MIXED:Acl(1:word,2:word) S:MIXED:Cop(3:word,1:word) => +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
@@ -17,3 +21,7 @@
 [] [] [] T:EXPERIENTIAL:Qualifier(1:clauses,2:group) T:LOGICAL:Auxiliary(1:groups,3:group) => -T:EXPERIENTIAL:Qualifier(1:clauses,2:group) +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 [] [] [] T:EXPERIENTIAL:Qualifier(1:clauses,2:group) T:LOGICAL:Auxiliary2(1:groups,3:group) => -T:EXPERIENTIAL:Qualifier(1:clauses,2:group) +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
 [] [] [] T:EXPERIENTIAL:Qualifier(1:clauses,2:group) T:LOGICAL:Auxiliary3(1:groups,3:group) => -T:EXPERIENTIAL:Qualifier(1:clauses,2:group) +T:EXPERIENTIAL:Qualifier(3:clauses,2:group)
+
+## Embedded: relative clauses as thing
+[T:verb] [T:lexical-verb #sum] S:Ccomp(1,2) => +T:EXPERIENTIAL:Identifier(1:groups,2:clause)
+[T:verb] [T:lexical-verb #sum] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:EXPERIENTIAL:Identifier(1:groups,2:clause)

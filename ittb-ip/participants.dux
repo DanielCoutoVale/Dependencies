@@ -41,10 +41,16 @@
 
 [T:WORD-CLASS:noun T:CASE:nominative] [T:WORD-CLASS:verb S:VOICE:pass #affirmo] T:EXPERIENTIAL:Actor(1:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Goal(1:groups,2:clause)
 [T:WORD-CLASS:noun T:CASE:nominative] [T:WORD-CLASS:verb S:VOICE:pass #nego] T:EXPERIENTIAL:Actor(1:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Goal(1:groups,2:clause)
-STOP
 
 # FIX PARTICIPANT CASE ATTACHMENT
 
 [] [T:WORD-CLASS:adjective] [] S:MIXED:Case(1:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,3:clause) => +T:LOGICAL:Marker(1:groups,3:group)
 
 [T:WORD-CLASS:noun] [T:WORD-CLASS:verb #significo] T:EXPERIENTIAL:Attributor(1:groups,2:clause) => -T:EXPERIENTIAL:Attributor(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
+
+## Participants in elliptic clauses
+
+# Actor
+[T:conjunction] [T:noun T:nominative] [T:verb] [T:noun T:nominative] S:Mark(1,2) S:Advcl(2,3) T:Actor(4,3) => +T:EXPERIENTIAL:Actor(2:groups,1:clause) +T:LOGICAL:Extending(1:clauses,3:clause-complex)
+[T:conjunction] [T:noun T:nominative] [T:verb #pono] [T:noun T:nominative #ego] S:Mark(1,2) S:Advcl(2,3) T:Actor(4,3) => -T:EXPERIENTIAL:Actor(2:groups,1:clause) -T:LOGICAL:Extending(1:clauses,3:clause-complex)
+[T:conjunction] [T:noun T:nominative] [T:verb #pono T:ō-seam] S:Mark(1,2) S:Advcl(2,3) => +T:EXPERIENTIAL:Actor(2:groups,1:clause) +T:LOGICAL:Extending(1:clauses,3:clause-complex) 
