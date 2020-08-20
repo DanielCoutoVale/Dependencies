@@ -225,12 +225,20 @@ IMPORT adverbial-groups
 # me hoc facere (finite conjunctive)
 # TODO: check if required for ITTB
 
-# VERBS STEP 4
+## Non-finite bound clauses
+#1 cognescendo
+#- Advcl
+#- Enhancing
+[T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Advcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Advcl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:um-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Advcl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
 
-[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-FOLIAGE:am-foliage] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
-[T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Acl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
-[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+#ISSUE: Needed?
+[T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Acl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:um-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
 
+#ISSUE: Really?
 #1 ad     | esse        | demonstrandum | nititur
 #2 ad     | esse        | probandum     | inducebant
 #3 ad     | esse        | demonstrandum | via
@@ -240,7 +248,7 @@ IMPORT adverbial-groups
 #7 ad     | esse        | probandum     | procedit
 #8 ad     | esse        | probandum     | via
 #- Case   | Ccomp       | %             | Head
-#- Marker | Enhancing    | Auxiliary     | Head
+#- Marker | Enhancing   | Auxiliary     | Head
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:verb S:VERBFORM:inf] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Ccomp(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Auxiliary(3:groups,2:clause) +T:LOGICAL:Enhancing(2:clauses,4:clause-complex)
 
 #1 in     | incorporeis | meditandis | delinquere
@@ -323,12 +331,12 @@ IMPORT embedded-clauses
 
 # VERBS END
 
-[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
+[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
+[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
+[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
 [] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
 [] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
 [] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
@@ -337,6 +345,7 @@ IMPORT embedded-clauses
 
 ## Phrases
 
+[T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb #utor] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Tool(1:groups,2:clause)
 [T:WORD-CLASS:noun S:CASE:abl] [T:WORD-CLASS:verb] S:MIXED:Obl(1:word,2:word) => +T:EXPERIENTIAL:Tool(1:groups,2:clause)
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Recipient(1:groups,2:clause) -T:EXPERIENTIAL:Goal(1:groups,2:clause)
 [T:WORD-CLASS:noun S:CASE:dat] [T:WORD-CLASS:verb] S:MIXED:Iobj(1:word,2:word) => +T:EXPERIENTIAL:Recipient(1:groups,2:clause) -T:EXPERIENTIAL:Goal(1:groups,2:clause)

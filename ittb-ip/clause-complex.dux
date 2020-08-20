@@ -18,5 +18,11 @@
 [] [] S:MIXED:Fixed(1:word,2:word) => +T:LOGICAL:Particle(1:word,2:word)
 
 ## Projected clauses
-[T:verb] [T:verb #nosco] S:Ccomp(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
-[T:verb] [T:verb #nosco] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+[T:verb] [T:verb #nosco] S:Ccomp(1,2) => +T:LOGICAL:Idea(1:clauses,2:clause-complex)
+[T:verb] [T:verb #nosco] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Idea(1:clauses,2:clause-complex)
+
+#[T:verb] [T:verb #dico] S:Ccomp(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+#[T:verb] [T:verb #dico] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+
+#[T:verb] [T:verb #dico] S:Nsubj-Pass(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+#[T:verb] [T:verb #dico] [] S:Nsubj-Pass(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
