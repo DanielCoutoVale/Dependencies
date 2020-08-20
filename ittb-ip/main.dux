@@ -392,6 +392,7 @@ IMPORT embedded-clauses
 [T:WORD-CLASS:adposition #secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [T:WORD-CLASS:adposition #secundum] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun T:CASE:genitive] [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) S:MIXED:Cop(4:word,3:word) S:MIXED:Csubj(5:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,5:clause)
 
+[T:adposition] [T:noun] [T:conjunction] [T:verb] T:Minor-Range(2,1) S:Mark(3,2) S:Advcl(2,4) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) +T:LOGICAL:Extending(3:clauses,4:clause-complex)
 
 
 ## Fix non-finite clauses
