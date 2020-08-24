@@ -2,6 +2,7 @@
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:noun] [T:verb] [#ita] [T:verb] T:Actor(1,2) S:Advcl(1,3) T:Marker(3,4) => +T:LOGICAL:Enhancing(2:clauses,4:clause-complex)
 
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 

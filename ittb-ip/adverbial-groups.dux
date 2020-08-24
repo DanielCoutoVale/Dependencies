@@ -22,12 +22,17 @@
 
 [T:WORD-CLASS:adverb #ita] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #ita] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:adverb #ita] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
 
 [T:WORD-CLASS:adverb #item] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #item] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
 [T:WORD-CLASS:adverb #iterum] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #iterum] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+
+[T:WORD-CLASS:adverb #praecipue] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:adverb #praecipue] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:adverb #praecipue] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
 
 [T:WORD-CLASS:adverb #praeterea] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #praeterea] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)

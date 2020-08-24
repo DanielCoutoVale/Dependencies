@@ -52,13 +52,16 @@ public class ConlluFileWriter {
 			pw.println(format("# text = %s", wording.getForm()));
 			wording.makeDependencyTree();
 			for (DepWord word : wording) {
+				String wordClassName = getWordClassName(wordClasses, word);
 				pw.print(wording.orderOf(word));
 				pw.print("\t");
 				pw.print(word.getForm());
 				pw.print("\t");
+				pw.print(wordClassName);
+				pw.print("-");
 				pw.print(word.getLemma());
 				pw.print("\t");
-				pw.print(getWordClassName(wordClasses, word));
+				pw.print(wordClassName);
 				pw.print("\t");
 				pw.print("-");
 				pw.print("\t");
@@ -107,11 +110,13 @@ public class ConlluFileWriter {
 		features.removeAll(wordClasses.getFeatures());
 		features.sort((a, b) -> a.compareTo(b));
 		for (DepFeature feature : features) {
+			DepSystem system = description.getSystem(feature);
+			if (system == null) continue;
+			if (system.getName().endsWith("RANK")) continue;
+			if (system.getName().endsWith("COMPLEXITY")) continue;
 			if (buffer.length() != 0) {
 				buffer.append("|");
 			}
-			DepSystem system = description.getSystem(feature);
-			if (system == null) continue;
 			buffer.append(format("%s=%s", system.getName(), feature.getName()));
 		}
 		if (buffer.length() == 0) {
