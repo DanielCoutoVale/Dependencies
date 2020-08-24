@@ -122,6 +122,9 @@
 [T:WORD-CLASS:adjective #deni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 [T:WORD-CLASS:adjective #viceni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
+## NUMERIC NOUNS
+[T:WORD-CLASS:number] [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:verb] S:MIXED:Case(2:word,1:word) S:MIXED:Obl-Arg(1:word,3:word) => -T:WORD-CLASS:number +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:CASE:ablative
+
 ## ADVERBS
 [T:WORD-CLASS:noun #verus] [] S:MIXED:Orphan(1:word,2:word) => -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun +T:WORD-CLASS:adverb
 # TODO other contexts

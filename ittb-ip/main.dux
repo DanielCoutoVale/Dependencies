@@ -381,8 +381,12 @@ IMPORT embedded-clauses
 [T:WORD-CLASS:adposition #per] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #per] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 
-[T:WORD-CLASS:adposition #circa] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) -T:EXPERIENTIAL:Tool(2:groups,3:clause)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) => +T:EXPERIENTIAL:Attribute(2:groups,3:clause) +T:LOGICAL:Marker(1:groups,3:group) -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) T:EXPERIENTIAL:Actor(4:groups,3:clause) => -T:EXPERIENTIAL:Actor(4:groups,3:clause) +T:EXPERIENTIAL:Carrier(4:groups,3:clause)
+
+[T:WORD-CLASS:adposition #circa] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
  
 [T:WORD-CLASS:adposition #inter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
@@ -392,7 +396,6 @@ IMPORT embedded-clauses
 [T:WORD-CLASS:adposition] [] [] T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) +T:EXPERIENTIAL:Minor-Range(3:groups,1:phrase)
 [T:WORD-CLASS:adposition] [] [] T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) T:EXPERIENTIAL:Possessor(2:groups,3:group) => -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) +T:EXPERIENTIAL:Minor-Range(3:groups,1:phrase)
 
-[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) -T:EXPERIENTIAL:Tool(2:groups,3:clause)
 [T:WORD-CLASS:adposition #circa] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [T:WORD-CLASS:adposition #inter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
