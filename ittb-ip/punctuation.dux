@@ -4,6 +4,7 @@
 
 ## Clause complex
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Acl-Appos(1:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,3:clause) => +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] T:EXPERIENTIAL:Attribute(4:groups,1:clause) S:MIXED:Acl-Appos(4:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,3:clause) => +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
 
 ## Punctuation to full clauses
 [T:WORD-CLASS:punctuation] [T:WORD-CLASS:verb] S:MIXED:Punct(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)

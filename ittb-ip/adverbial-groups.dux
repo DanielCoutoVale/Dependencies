@@ -44,6 +44,8 @@
 [T:WORD-CLASS:adverb #scilicet] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #scilicet] [T:WORD-CLASS:verb] S:MIXED:Advmod-Cc(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #scilicet] [T:WORD-CLASS:verb] [] S:MIXED:Advmod-Cc(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:adverb #scilicet] [T:WORD-CLASS:verb] S:MIXED:Orphan(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:adverb #scilicet] [T:WORD-CLASS:verb] [] S:MIXED:Orphan(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 
 [T:WORD-CLASS:adverb #tamen] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:adverb #tamen] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,2:clause)

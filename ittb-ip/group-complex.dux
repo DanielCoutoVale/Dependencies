@@ -6,18 +6,21 @@
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:adverb] [T:WORD-CLASS:adverb] S:MIXED:Cc(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 
 [T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:punctuation #,] [T:WORD-CLASS:adverb] [T:WORD-CLASS:adverb] S:MIXED:Punct(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 
 [T:WORD-CLASS:adverb #non] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Advmod(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:adverb #non] [T:WORD-CLASS:adjective] [T:WORD-CLASS:adjective] S:MIXED:Advmod(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:adverb #non] [T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Advmod(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:adverb #non] [T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Advmod(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 [T:WORD-CLASS:adverb #non] [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Advmod(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:adverb] [T:WORD-CLASS:adverb] S:MIXED:Advmod(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:LOGICAL:Marker(1:groups,2:group)
 
 #Issue: ittb-scg-s15
 #[T:WORD-CLASS:conjunction #ut] [T:WORD-CLASS:noun] S:MIXED:Mark(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:group)
@@ -34,5 +37,6 @@
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:number] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 [T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
+[T:WORD-CLASS:adverb] [T:WORD-CLASS:adverb] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 
 
