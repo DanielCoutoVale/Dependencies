@@ -1,18 +1,26 @@
 
-
 ## Embedded: relative clauses as qualifier
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl(1:word,2:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Acl-Relcl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adjective] S:MIXED:Acl-Relcl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adverb] S:MIXED:Acl-Relcl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adposition] S:MIXED:Acl-Relcl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adjective] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adverb] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adposition] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 
 ## Embedded: participial clauses as qualifier
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Det(2:word,1:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Acl(1:word,2:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Acl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adjective] S:MIXED:Acl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adverb] S:MIXED:Acl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adposition] S:MIXED:Acl(3:word,2:word) S:MIXED:Cop(1:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Acl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adjective] [T:WORD-CLASS:verb] S:MIXED:Acl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adverb] [T:WORD-CLASS:verb] S:MIXED:Acl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:noun] [T:WORD-CLASS:adposition] [T:WORD-CLASS:verb] S:MIXED:Acl(3:word,4:word) S:MIXED:Cop(1:word,3:word) S:MIXED:Det(2:word,4:word) => +T:EXPERIENTIAL:Qualifier(1:clauses,2:group)
 
 #ISSUE: ittb-scg-s10, ittb-scg-s15
 #[S:WORD-CLASS:sconj] [] [T:WORD-CLASS:noun] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:EXPERIENTIAL:Qualifier(2:clauses,3:group)

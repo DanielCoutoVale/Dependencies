@@ -1,4 +1,4 @@
-## Auxiliary of event verb
+## VG: auxiliaries for event verb
 
 [T:WORD-CLASS:verb S:VERBFORM:inf] [#consto] S:MIXED:Xcomp(1:word,2:word) => +T:LOGICAL:Auxiliary(2:groups,1:group)
 [T:WORD-CLASS:verb S:VERBFORM:inf] [#debeo] S:MIXED:Xcomp(1:word,2:word) => +T:LOGICAL:Auxiliary(2:groups,1:group)
@@ -24,7 +24,7 @@
 
 [T:WORD-CLASS:verb S:VERBFORM:inf] [#oportet] S:MIXED:Csubj(1:word,2:word) => +T:LOGICAL:Auxiliary(2:groups,1:group)
 
-## Auxiliary of copula
+## VG: auxiliaries for copula
 [] [] [#cogito] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 [] [] [#confiteor] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 [] [] [#dico] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
@@ -35,7 +35,7 @@
 [] [] [#possum] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 [] [] [#suppono] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 [] [] [#video] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
-STOP
+
 [] [] [#cogito] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 [] [] [#confiteor] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 [] [] [#dico] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
@@ -56,5 +56,6 @@ STOP
 [] [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary(1:groups,2:group) T:LOGICAL:Auxiliary(2:groups,3:group) T:LOGICAL:Auxiliary(3:groups,4:group) => -T:LOGICAL:Auxiliary(1:groups,2:group) +T:LOGICAL:Auxiliary(1:groups,4:group) -T:LOGICAL:Auxiliary(2:groups,3:group) +T:LOGICAL:Auxiliary2(2:groups,4:group) -T:LOGICAL:Auxiliary(3:groups,4:group) +T:LOGICAL:Auxiliary3(3:groups,4:group)
 [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary(1:groups,2:group) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Auxiliary(1:groups,2:group) +T:LOGICAL:Auxiliary(1:groups,3:group) -T:LOGICAL:Auxiliary(2:groups,3:group) +T:LOGICAL:Auxiliary2(2:groups,3:group)
 
-## Negation adjunct
-[T:WORD-CLASS:adverb #non] [] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:group)
+## VG: adjuncts
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Adjunct(1:groups,2:group)
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) S:MIXED:Cop(2:word,3:word) => +T:LOGICAL:Adjunct(1:groups,2:group)

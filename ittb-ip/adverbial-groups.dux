@@ -61,8 +61,8 @@
 [S:WORD-CLASS:sconj] [T:WORD-CLASS:verb] [S:WORD-CLASS:verb] S:MIXED:Mark(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb #dico] S:MIXED:Csubj-Pass(1:word,2:word) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
 
-[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
-[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause)
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause)
 
 [T:WORD-CLASS:adverb #minus] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)
 [T:WORD-CLASS:adverb #minus] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:LOGICAL:Adjunct(1:groups,2:group)

@@ -25,6 +25,7 @@ IMPORT adpositional-phrases
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb T:VERB-Ō-BRANCH:nd-branch] T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) T:EXPERIENTIAL:Goal(2:groups,3:clause) => -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase) -T:EXPERIENTIAL:Qualifier(3:groups,2:group)
 [T:WORD-CLASS:noun] [T:WORD-CLASS:verb T:VERB-Ō-BRANCH:nd-branch] T:EXPERIENTIAL:Goal(1:groups,2:clause) T:EXPERIENTIAL:Qualifier(2:clauses,1:group) => -T:EXPERIENTIAL:Qualifier(2:clauses,1:group)
 
+## Raise participants
 [] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Actor(1:groups,3:clause)
 [] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Actor(1:groups,3:clause)
 [] [] [] T:EXPERIENTIAL:Actor(1:groups,2:clause) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Actor(1:groups,3:clause)
@@ -45,6 +46,7 @@ IMPORT adpositional-phrases
 [] [] [] T:EXPERIENTIAL:Tool(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Tool(1:groups,2:clause) +T:EXPERIENTIAL:Tool(1:groups,3:clause)
 [] [] [] T:EXPERIENTIAL:Tool(1:groups,2:clause) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:EXPERIENTIAL:Tool(1:groups,2:clause) +T:EXPERIENTIAL:Tool(1:groups,3:clause)
 
+## Raise circumstances
 [] [] [] T:EXPERIENTIAL:Circumstance(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [] [] [] T:EXPERIENTIAL:Circumstance(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [] [] [] T:EXPERIENTIAL:Circumstance(1:groups,2:clause) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:EXPERIENTIAL:Circumstance(1:groups,2:clause) +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
