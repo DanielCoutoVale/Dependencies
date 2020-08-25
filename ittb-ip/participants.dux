@@ -1,4 +1,6 @@
 
+[T:WORD-CLASS:verb S:VERBFORM:part] [#sum] S:MIXED:Cop(2:word,1:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
+
 # VERBS STEP 5
 
 [T:WORD-CLASS:verb S:VERBFORM:part] [T:WORD-CLASS:verb] S:MIXED:Csubj(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:clauses,2:group)

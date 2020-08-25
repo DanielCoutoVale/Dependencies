@@ -25,29 +25,29 @@
 [T:WORD-CLASS:verb S:VERBFORM:inf] [#oportet] S:MIXED:Csubj(1:word,2:word) => +T:LOGICAL:Auxiliary(2:groups,1:group)
 
 ## Auxiliary of copula
-[] [] [#cogito] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#confiteor] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#dico] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#intellego] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#ostendo] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#pateo] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#pono] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#possum] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#suppono] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#video] S:MIXED:Cop(2:word,1:word) S:MIXED:Xcomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
+[] [] [#cogito] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#confiteor] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#dico] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#intellego] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#ostendo] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#pateo] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#pono] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#possum] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#suppono] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#video] S:MIXED:Cop(1:word,2:word) S:MIXED:Xcomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+STOP
+[] [] [#cogito] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#confiteor] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#dico] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#intellego] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#ostendo] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#pateo] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#pono] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#possum] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#suppono] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
+[] [] [#video] S:MIXED:Cop(1:word,2:word) S:MIXED:Ccomp(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 
-[] [] [#cogito] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#confiteor] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#dico] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#intellego] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#ostendo] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#pateo] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#pono] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#possum] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#suppono] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-[] [] [#video] S:MIXED:Cop(2:word,1:word) S:MIXED:Ccomp(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
-
-[] [] [#oportet] S:MIXED:Cop(2:word,1:word) S:MIXED:Csubj(1:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,2:group)
+[] [] [#oportet] S:MIXED:Cop(1:word,2:word) S:MIXED:Csubj(2:word,3:word) => +T:LOGICAL:Auxiliary(3:groups,1:group)
 
 # VERBS STEP 2.1
 
@@ -55,3 +55,6 @@
 [] [] T:LOGICAL:Auxiliary(1:groups,2:group) => -T:VERB-CLASS:lexical-verb +T:VERB-CLASS:auxiliary-verb
 [] [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary(1:groups,2:group) T:LOGICAL:Auxiliary(2:groups,3:group) T:LOGICAL:Auxiliary(3:groups,4:group) => -T:LOGICAL:Auxiliary(1:groups,2:group) +T:LOGICAL:Auxiliary(1:groups,4:group) -T:LOGICAL:Auxiliary(2:groups,3:group) +T:LOGICAL:Auxiliary2(2:groups,4:group) -T:LOGICAL:Auxiliary(3:groups,4:group) +T:LOGICAL:Auxiliary3(3:groups,4:group)
 [] [] [T:VERB-CLASS:lexical-verb] T:LOGICAL:Auxiliary(1:groups,2:group) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Auxiliary(1:groups,2:group) +T:LOGICAL:Auxiliary(1:groups,3:group) -T:LOGICAL:Auxiliary(2:groups,3:group) +T:LOGICAL:Auxiliary2(2:groups,3:group)
+
+## Negation adjunct
+[T:WORD-CLASS:adverb #non] [] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:group)

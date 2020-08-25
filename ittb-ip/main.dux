@@ -17,11 +17,6 @@ IMPORT verbal-groups
 
 IMPORT nominal-groups
 
-[T:WORD-CLASS:adverb #non] [] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:group)
-
-[T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
-[T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
-
 # ADJECTIVES #STEP 2
 
 [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
@@ -89,15 +84,14 @@ IMPORT nominal-groups
 [T:WORD-CLASS:number] [T:WORD-CLASS:number] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 [T:WORD-CLASS:number] [T:WORD-CLASS:adjective] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:groups,2:group-complex)
 
-[T:WORD-CLASS:verb S:VERBFORM:part] [#sum] S:MIXED:Cop(2:word,1:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
-
-
-
 IMPORT participants
+STOP
 
 IMPORT clause-complex
+STOP
 
 IMPORT adverbial-groups
+STOP
 
 # VERBS STEP 2.2
 
@@ -214,22 +208,32 @@ IMPORT adverbial-groups
 #- Case   | Obl         | Acl        | Head
 #- Marker | Goal        | Enhancing   | Head
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,4:word) S:MIXED:Acl(3:word,2:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:EXPERIENTIAL:Goal(2:groups,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
-
+STOP
 
 # VERBS STEP 5
 IMPORT embedded-clauses
+STOP
 
 # VERBS END
-
-[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Extending(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Enhancing(1:clauses,2:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(1:clauses,2:clause-complex) +T:LOGICAL:Enhancing(1:clauses,3:clause-complex)
-[] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+[] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group)  => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
 [] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
 [] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+
+# possunt moveri, movetur
+[] [] [] T:LOGICAL:Extending(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary(1:groups,2:group)  => -T:LOGICAL:Extending(3:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Extending(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(1:groups,2:group) => -T:LOGICAL:Extending(3:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Extending(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(1:groups,2:group) => -T:LOGICAL:Extending(3:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary(1:groups,2:group)  => -T:LOGICAL:Enhancing(3:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(1:groups,2:group) => -T:LOGICAL:Enhancing(3:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(1:groups,2:group) => -T:LOGICAL:Enhancing(3:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,2:clause-complex)
+
+# movetur, possunt moveri
+[] [] [] T:LOGICAL:Extending(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group)  => -T:LOGICAL:Extending(2:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Extending(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Extending(2:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Extending(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Extending(2:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group)  => -T:LOGICAL:Enhancing(2:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(2:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(2:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,1:clause-complex)
 
 # NOUN STEP 2
 
