@@ -117,7 +117,7 @@ IMPORT numbers
 [#intellectivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 
 # Deictic
-[T:NOUN-CLASS:pronoun] [] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+[T:NOUN-CLASS:pronoun] [T:NOUN-CLASS:common-noun] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
 [#certus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 [#contrarius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 [#inferus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
@@ -238,6 +238,11 @@ IMPORT adverbial-groups
 [T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause)
 [T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:um-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
 
+#1 in     | ipso        | operante
+#2 Mark   | Det         | Head
+#3 Marker | Actor       | Head 
+[T:adposition] [T:noun] [T:nt-branch] S:Mark(1,3) S:Det(2,3) => +T:LOGICAL:Marker(1:groups,3:clause) +T:EXPERIENTIAL:Actor(2:groups,3:clause)
+
 #WARNING:
 # 'ad demonstrandum, deum esse'
 # 'to show, that God exists'
@@ -250,7 +255,7 @@ IMPORT adverbial-groups
 #6 ad     | esse        | probandum     | rationes
 #7 ad     | esse        | probandum     | procedit
 #8 ad     | esse        | probandum     | via
-#- Case   | Ccomp       | %             | Head
+#- Mark   | Ccomp       | %             | Head
 #- Marker | Idea        | Auxiliary     | Head
 [T:WORD-CLASS:adposition] [T:WORD-CLASS:verb S:VERBFORM:inf] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Ccomp(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Idea(2:clauses,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
 
@@ -384,10 +389,14 @@ IMPORT embedded-clauses
 [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) -T:EXPERIENTIAL:Tool(2:groups,3:clause)
 [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) => +T:EXPERIENTIAL:Attribute(2:groups,3:clause) +T:LOGICAL:Marker(1:groups,3:group) -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun #primus T:CASE:ablative] [T:WORD-CLASS:punctuation] S:MIXED:Case(1:word,2:word) S:MIXED:Orphan(2:word,3:word) S:MIXED:Punct(4:word,2:word) => +T:EXPERIENTIAL:Attribute(2:groups,4:clause) +T:LOGICAL:Marker(1:groups,4:group) +T:LOGICAL:Marker(3:groups,4:clause) -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun #secundus T:CASE:ablative] [T:WORD-CLASS:punctuation] S:MIXED:Case(1:word,2:word) S:MIXED:Orphan(2:word,3:word) S:MIXED:Punct(4:word,2:word) => +T:EXPERIENTIAL:Attribute(2:groups,4:clause) +T:LOGICAL:Marker(1:groups,4:group) +T:LOGICAL:Marker(3:groups,4:clause) -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun #tertius T:CASE:ablative] [T:WORD-CLASS:punctuation] S:MIXED:Case(1:word,2:word) S:MIXED:Orphan(2:word,3:word) S:MIXED:Punct(4:word,2:word) => +T:EXPERIENTIAL:Attribute(2:groups,4:clause) +T:LOGICAL:Marker(1:groups,4:group) +T:LOGICAL:Marker(3:groups,4:clause) -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
+[T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun #quartus T:CASE:ablative] [T:WORD-CLASS:punctuation] S:MIXED:Case(1:word,2:word) S:MIXED:Orphan(2:word,3:word) S:MIXED:Punct(4:word,2:word) => +T:EXPERIENTIAL:Attribute(2:groups,4:clause) +T:LOGICAL:Marker(1:groups,4:group) +T:LOGICAL:Marker(3:groups,4:clause) -T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) T:EXPERIENTIAL:Actor(4:groups,3:clause) => -T:EXPERIENTIAL:Actor(4:groups,3:clause) +T:EXPERIENTIAL:Carrier(4:groups,3:clause)
 
 [T:WORD-CLASS:adposition #circa] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
- 
+
 [T:WORD-CLASS:adposition #inter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #propter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
@@ -454,8 +463,6 @@ IMPORT embedded-clauses
 
 # OTHER
 
-
-
 # TRANSITIVITY
 
 [] [#resulto] T:EXPERIENTIAL:Actor(1:groups,2:clause) => -T:EXPERIENTIAL:Actor(1:groups,2:clause) +T:EXPERIENTIAL:Existent(1:groups,2:clause)
@@ -465,7 +472,6 @@ IMPORT embedded-clauses
 [T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:noun T:CASE:accusative] T:EXPERIENTIAL:Carrier(2:groups,1:clause) T:EXPERIENTIAL:Attribute(3:groups,1:clause) => -T:EXPERIENTIAL:Carrier(2:groups,1:clause) -T:EXPERIENTIAL:Attribute(3:groups,1:clause) +T:EXPERIENTIAL:Identified(2:groups,1:clause) +T:EXPERIENTIAL:Identifier(3:groups,1:clause)
 [T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb #dico] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Identifier(2:groups,1:clause) T:LOGICAL:Auxiliary(3:groups,1:group) T:EXPERIENTIAL:Carrier(4:groups,1:clause) => -T:EXPERIENTIAL:Carrier(4:groups,1:clause) +T:EXPERIENTIAL:Assigner(4:groups,1:clause)
 [T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb #determino] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Identifier(2:groups,1:clause) S:MIXED:Ccomp(2:word,3:word) T:EXPERIENTIAL:Actor(4:groups,3:clause) => -T:EXPERIENTIAL:Actor(4:groups,3:clause) +T:EXPERIENTIAL:Assigner(4:groups,2:clause) +T:LOGICAL:Auxiliary(3:groups,2:group)
-
 
 ## Existence
 [T:WORD-CLASS:verb #sum] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Actor(2:groups,1:clause) => -T:EXPERIENTIAL:Actor(2:groups,1:clause) +T:EXPERIENTIAL:Existent(2:groups,1:clause)
