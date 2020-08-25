@@ -4,12 +4,15 @@
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Advcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Advcl(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] T:EXPERIENTIAL:Attribute(3:groups,1:clause) S:MIXED:Advcl(3:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] T:EXPERIENTIAL:Actor(3:groups,1:clause) S:MIXED:Advcl(3:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 [T:noun] [T:verb] [#ita] [T:verb] T:Actor(1,2) S:Advcl(1,3) T:Marker(3,4) => +T:LOGICAL:Enhancing(2:clauses,4:clause-complex)
 
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Acl-Relcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
 
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] S:MIXED:Conj(1:word,2:word) => +T:LOGICAL:Extending(1:clauses,2:clause-complex)
 [T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] S:MIXED:Conj(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Extending(1:clauses,2:clause-complex)
+[T:WORD-CLASS:verb] [T:WORD-CLASS:verb] [] T:EXPERIENTIAL:Attribute(3:groups,1:clause) S:MIXED:Conj(3:word,2:word) => +T:LOGICAL:Extending(1:clauses,2:clause-complex)
 
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Cc(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Cc(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
@@ -32,8 +35,8 @@
 [T:verb] [T:verb #cognosco] S:Ccomp(1,2) => +T:LOGICAL:Idea(1:clauses,2:clause-complex)
 [T:verb] [T:verb #cognosco] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Idea(1:clauses,2:clause-complex)
 
-#[T:verb] [T:verb #dico] S:Ccomp(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
-#[T:verb] [T:verb #dico] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+[T:verb T:unbranched] [T:verb #dico] S:Ccomp(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+[T:verb T:unbranched] [T:verb #dico] [] S:Ccomp(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
 
 #[T:verb] [T:verb #dico] S:Nsubj-Pass(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
 #[T:verb] [T:verb #dico] [] S:Nsubj-Pass(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
