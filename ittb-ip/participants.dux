@@ -1,4 +1,42 @@
 
+# ADJECTIVES #STEP 2
+
+[T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+[T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+[T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Nsubj(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:groups,2:clause)
+[T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Nsubj-Pass(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+[T:WORD-CLASS:number T:NUMERIC-CASE:ordinal T:CASE-SEAM:accusative-seam] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+
+[T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [T:WORD-CLASS:verb] S:MIXED:Nsubj(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:groups,2:clause)
+[T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [T:WORD-CLASS:verb] S:MIXED:Nsubj-Pass(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:groups,2:clause)
+[T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
+
+# ADJECTIVES STEP 4
+
+# (Cop) (Head)
+[] [] S:MIXED:Cop(1:word,2:word) => +T:EXPERIENTIAL:Attribute(2:groups,1:clause)
+[] [T:WORD-CLASS:verb] S:MIXED:Cop(1:word,2:word) => -T:EXPERIENTIAL:Attribute(2:groups,1:clause)
+
+# (Cop) (Head) (Nsubj) => (Head) (Attribute) (Carrier)
+[] [] [] S:MIXED:Cop(1:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,1:clause) S:MIXED:Nsubj(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,1:clause)
+[] [] [T:WORD-CLASS:noun] S:MIXED:Cop(1:word,2:word) T:EXPERIENTIAL:Attribute(2:groups,1:clause) S:MIXED:Csubj(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,1:clause)
+
+# (XComp) (Head)
+[] [] S:MIXED:XComp(1:word,2:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
+[T:WORD-CLASS:verb] [] S:MIXED:XComp(1:word,2:word) => -T:EXPERIENTIAL:Attribute(1:groups,2:clause)
+
+# (XComp) (Head) (Nsubj-Pass) => (Attribute) (Head) (Carrier)
+[] [] [] S:MIXED:XComp(1:word,2:word) T:EXPERIENTIAL:Attribute(1:groups,2:clause) S:MIXED:Nsubj-Pass(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,2:clause)
+[] [] [T:WORD-CLASS:noun] S:MIXED:XComp(1:word,2:word) T:EXPERIENTIAL:Attribute(1:groups,2:clause) S:MIXED:Csubj-Pass(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,2:clause)
+
+# (XComp) (Head) (Obj) => (Attribute) (Head) (Carrier)
+[] [] [] S:MIXED:XComp(1:word,2:word) T:EXPERIENTIAL:Attribute(1:groups,2:clause) S:MIXED:Obj(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,2:clause)
+[] [] [T:WORD-CLASS:noun] S:MIXED:XComp(1:word,2:word) T:EXPERIENTIAL:Attribute(1:groups,2:clause) S:MIXED:Cobj(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,2:clause)
+
+# (XComp) (Head) (Obj) => (Attribute) (Head) (Attributor)
+[] [] [] S:MIXED:XComp(1:word,2:word) T:EXPERIENTIAL:Attribute(1:groups,2:clause) S:MIXED:Subj(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,2:clause)
+[] [] [T:WORD-CLASS:noun] S:MIXED:XComp(1:word,2:word) T:EXPERIENTIAL:Attribute(1:groups,2:clause) S:MIXED:Csubj(3:word,2:word) => +T:EXPERIENTIAL:Carrier(3:groups,2:clause)
+
 [T:WORD-CLASS:verb S:VERBFORM:part] [#sum] S:MIXED:Cop(2:word,1:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
 
 # VERBS STEP 5

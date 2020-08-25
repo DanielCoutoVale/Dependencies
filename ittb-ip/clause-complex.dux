@@ -33,3 +33,132 @@
 
 #[T:verb] [T:verb #dico] S:Nsubj-Pass(1,2) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
 #[T:verb] [T:verb #dico] [] S:Nsubj-Pass(3,2) T:Attribute(3,1) => +T:LOGICAL:Locution(1:clauses,2:clause-complex)
+
+## Non-finite bound clauses
+#1 cognescendo
+#- Advcl
+#- Enhancing
+[T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Advcl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Advcl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:um-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Advcl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
+
+#ISSUE: Needed?
+[T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Acl(1:word,2:word) => +T:LOGICAL:Enhancing(1:clauses,2:clause-complex)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:ō-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+[T:WORD-CLASS:adposition] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:unseamed T:AUMUS-LEAF:um-leaf] [] S:MIXED:Mark(1:word,2:word) S:MIXED:Acl(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
+
+#1 in     | ipso        | operante
+#2 Mark   | Det         | Head
+#3 Marker | Actor       | Head 
+[T:adposition] [T:noun] [T:nt-branch] S:Mark(1,3) S:Det(2,3) => +T:LOGICAL:Marker(1:groups,3:clause) +T:EXPERIENTIAL:Actor(2:groups,3:clause)
+
+#WARNING:
+# 'ad demonstrandum, deum esse'
+# 'to show, that God exists'
+# These structures are metaphorical. 
+#1 ad     | esse        | demonstrandum | nititur
+#2 ad     | esse        | demonstrandum | niti
+#3 ad     | esse        | demonstrandum | via
+#4 ad     | esse        | probandum     | inducebant
+#5 ad     | esse        | probandum     | demonstratio
+#6 ad     | esse        | probandum     | rationes
+#7 ad     | esse        | probandum     | procedit
+#8 ad     | esse        | probandum     | via
+#- Mark   | Ccomp       | %             | Head
+#- Marker | Idea        | Auxiliary     | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:verb S:VERBFORM:inf] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Ccomp(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Idea(2:clauses,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
+
+#1 in     | incorporeis | meditandis | delinquere
+#- Case   | Subj        | %          | Head
+#- Marker | Goal        | Enhancing   | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Nsubj(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
+
+#1 ad     | adversarios  | convincendos  | exercitium
+#2 ad     | cognitionem  | habendam      | proponi
+#3 ad     | divina       | cognoscenda   | habet
+#4 ad     | ea           | cognoscenda   | pervenitur
+#5 ad     | ea           | solvenda      | relinquitur
+#6 ad     | errores      | destruendos   | assumere
+#7 ad     | necessitatem | complendam    | necessarium
+#8 ad     | omnia        | capienda      | sufficit
+#9 ad     | quae         | cognoscenda   | pertingit
+#A ad     | quam         | capiendam     | idoneus
+#B ad     | substantiam  | capiendam     | pertingere
+#C ad     | substantiam  | declarandam   | insufficiens
+#D ad     | veritatem    | manifestandam | possibilis
+#E ad     | veritatem    | manifestandam | sunt
+#F circa  | errores      | destruendos   | veritate
+#- Mark   | Nsubj-Pass   | %             | Head
+#- Marker | Goal         | Enhancing      | Head 
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:am-foliage] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Nsubj-Pass(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
+
+#1 ad     | aquam       | calefaciendum | est
+#2 ad     | deum        | cognoscendum  | pateret
+#3 ad     | ea          | confirmandum  | ostendit
+#4 ad     | esse        | cognoscendum  | perducitur
+#5 ad     | esse        | cognoscendum  | pervenimus
+#6 ad     | hoc         | dicendum      | moti
+#7 ad     | idem        | ostendendum   | rationes
+#8 ad     | idem        | probandum     | ratio
+#9 ad     | infinitatem | probandum     | valet
+#A ad     | naturam     | significandum | institutum
+#B ad     | quod        | significandum | imponitur
+#C ad     | quod        | significandum | impositum
+#D ad     | rationes    | ponendum      | procedamus
+#E ad     | speciem     | designandum   | imposita
+#F ad     | veritatem   | cognoscendum  | habet
+#G in     | ipsum       | cognoscendum  | perducitur
+#- Mark   | Obj         | %             | Head
+#- Marker | Goal        | Enhancing      | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:am-foliage] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Obj(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
+
+#1 quae        | consideranda  | ea
+#2 rebus       | cognoscendis  | experimur
+#- Nsubj-Pass  | %             | Head
+#- Goal        | Enhancing      | Head 
+[T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Nsubj-Pass(1:word,2:word) S:MIXED:%(2:word,3:word) => +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
+
+#1 deum           | cognoscendo  | consistit
+#2 errores        | eliminando   | manifestare
+#3 haec           | credendo     | incipe
+#4 motus          | inducendo    | probat
+#5 praepositionem | interponendo | format
+#- Obj            | %            | Head
+#- Goal           | Enhancing     | Head
+[T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Obj(1:word,2:word) S:MIXED:%(2:word,3:word) => +T:LOGICAL:Enhancing(2:clauses,3:clause-complex)
+
+#1 in     | rebus       | cognoscendis  | experimur
+#- Mark   | Nsubj-Pass  | %             | Head
+#- Marker | Goal        | Enhancing      | Head 
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Nsubj-Pass(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+
+#1 in     | deum        | cognoscendo  | consistit
+#- Mark   | Obj         | %             | Head
+#- Marker | Goal        | Enhancing      | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:AUMUS-FOLIAGE:ā-foliage] [] S:MIXED:Mark(1:word,3:word) S:MIXED:Obj(2:word,3:word) S:MIXED:%(3:word,4:word) => +T:LOGICAL:Marker(1:groups,3:clause)
+
+#1 in     | rebus       | nominandis | sequendum
+#- Case   | Obl         | Acl        | Head
+#- Marker | Goal        | Enhancing   | Head
+[T:WORD-CLASS:adposition] [T:WORD-CLASS:noun] [T:VERB-Ō-BRANCH:nd-branch T:SEAMEDNESS:seamed] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,4:word) S:MIXED:Acl(3:word,2:word) => +T:LOGICAL:Marker(1:groups,3:clause) +T:EXPERIENTIAL:Goal(2:groups,3:clause) +T:LOGICAL:Enhancing(3:clauses,4:clause-complex)
+
+# Raise: possunt moveri, movetur
+[] [] [] T:LOGICAL:Extending(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary(1:groups,2:group)  => -T:LOGICAL:Extending(3:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Extending(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(1:groups,2:group) => -T:LOGICAL:Extending(3:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Extending(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(1:groups,2:group) => -T:LOGICAL:Extending(3:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary(1:groups,2:group)  => -T:LOGICAL:Enhancing(3:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(1:groups,2:group) => -T:LOGICAL:Enhancing(3:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,2:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(3:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(1:groups,2:group) => -T:LOGICAL:Enhancing(3:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,2:clause-complex)
+
+# Raise: movetur, possunt moveri
+[] [] [] T:LOGICAL:Extending(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group)  => -T:LOGICAL:Extending(2:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Extending(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Extending(2:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Extending(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Extending(2:clauses,1:clause-complex) +T:LOGICAL:Extending(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary(2:groups,3:group)  => -T:LOGICAL:Enhancing(2:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Enhancing(2:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,1:clause-complex)
+[] [] [] T:LOGICAL:Enhancing(2:clauses,1:clause-complex) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Enhancing(2:clauses,1:clause-complex) +T:LOGICAL:Enhancing(3:clauses,1:clause-complex)
+
+# Raise: conjunctive
+[] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary(2:groups,3:group)  => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+[] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary2(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)
+[] [] [] T:LOGICAL:Marker(1:groups,2:clause) T:LOGICAL:Auxiliary3(2:groups,3:group) => -T:LOGICAL:Marker(1:groups,2:clause) +T:LOGICAL:Marker(1:groups,3:clause)

@@ -145,6 +145,12 @@
 [S:VERBFORM:gdv] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nd-branch +T:SEAMEDNESS:seamed +T:VERB-FINITENESS:non-finite
 [S:VERBFORM:ger] => +T:VERB-ASPECT:ō-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ō-BRANCH:nd-branch +T:SEAMEDNESS:unseamed +T:VERB-FINITENESS:non-finite
 
+# dum-conjunctive
+[T:VERB-Ō-PARADIGMS:ō-1st-paradigm] [#dum] S:MIXED:Mark(2:word,1:word) => -T:FINITE-VERB-MODE:non-conjunctive +T:FINITE-VERB-MODE:conjunctive
+
+# me hoc facere (finite conjunctive)
+# TODO: check if required for ITTB
+
 # I-BRANCH
 [S:TENSE:pqp S:MOOD:ind] => +T:VERB-ASPECT:ī-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ī-BRANCH:erā-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:non-conjunctive
 [S:TENSE:pqp S:MOOD:sub] => +T:VERB-ASPECT:ī-aspect +T:VERB-BRANCHEDNESS:branched +T:VERB-Ī-BRANCH:issē-branch +T:VERB-FINITENESS:finite +T:FINITE-VERB-MODE:conjunctive
