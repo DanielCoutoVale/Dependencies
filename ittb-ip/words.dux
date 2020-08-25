@@ -244,6 +244,9 @@
 [T:WORD-CLASS:adjective S:DEGREE:pos] => +T:ADJECTIVE-BRANCHEDNESS:unbranched
 [T:WORD-CLASS:adjective S:DEGREE:cmp] => +T:ADJECTIVE-BRANCHEDNESS:branched +T:ADJECTIVE-BRANCH:ior-branch
 [T:WORD-CLASS:adjective S:DEGREE:abs] => +T:ADJECTIVE-BRANCHEDNESS:branched +T:ADJECTIVE-BRANCH:issim-branch
+[T:WORD-CLASS:adjective S:DEGREE:pos #summus] => +T:ADJECTIVE-BRANCHEDNESS:branched +T:ADJECTIVE-BRANCH:issim-branch -T:ADJECTIVE-BRANCHEDNESS:unbranched
+[T:WORD-CLASS:adjective S:DEGREE:abs] [T:WORD-CLASS:noun T:CASE:genitive] S:MIXED:Obl(2:word,1:word) => -T:ADJECTIVE-BRANCHEDNESS:branched -T:ADJECTIVE-BRANCH:issim-branch -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
+[T:WORD-CLASS:adjective S:DEGREE:pos #summus] [T:WORD-CLASS:noun T:CASE:genitive] S:MIXED:Obl(2:word,1:word) => -T:ADJECTIVE-BRANCHEDNESS:branched -T:ADJECTIVE-BRANCH:issim-branch -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
 
 # CASE
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:nom] => +T:CASE-SEAM:nominative-seam

@@ -73,6 +73,10 @@
 
 [T:WORD-CLASS:conjunction #et] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
 [T:WORD-CLASS:conjunction #et] [T:WORD-CLASS:number] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Preciser(1:groups,2:group)
+#[T:WORD-CLASS:conjunction #nec] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+#[T:WORD-CLASS:conjunction #nec] [T:WORD-CLASS:number] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Preciser(1:groups,2:group)
+#[T:WORD-CLASS:conjunction #sed] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+#[T:WORD-CLASS:conjunction #sed] [T:WORD-CLASS:number] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Preciser(1:groups,2:group)
 
 [T:WORD-CLASS:adverb] [T:WORD-CLASS:noun] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
 [T:WORD-CLASS:adverb] [T:WORD-CLASS:number] S:MIXED:Advmod-Emph(1:word,2:word) => +T:EXPERIENTIAL:Preciser(1:groups,2:group)

@@ -29,6 +29,7 @@
 [T:WORD-CLASS:adposition #de] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl-Arg(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #de] [T:WORD-CLASS:noun] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) S:MIXED:Nmod(2:word,3:word) => +T:EXPERIENTIAL:Qualifier(1:groups,3:group) +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 
+[T:WORD-CLASS:adposition #absque] [T:WORD-CLASS:noun] [T:WORD-CLASS:adverb] S:MIXED:Case(1:word,2:word) S:MIXED:Conj(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #ab] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb S:VOICE:act] S:MIXED:Case(1:word,2:word) S:MIXED:%(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause) +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #ab] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb S:VOICE:pass] S:MIXED:Case(1:word,2:word) S:MIXED:%(2:word,3:word) => +T:LOGICAL:Marker(1:groups,3:group) +T:EXPERIENTIAL:Actor(2:groups,3:clause)
 

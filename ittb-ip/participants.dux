@@ -1,4 +1,7 @@
 
+[T:WORD-CLASS:noun T:CASE:ablative] [T:WORD-CLASS:verb #indigeo] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
+[T:WORD-CLASS:noun T:CASE:ablative] [T:WORD-CLASS:verb #indigeo] S:MIXED:Ccomp(1:word,2:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
+
 # ADJECTIVES #STEP 2
 
 [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)

@@ -116,9 +116,14 @@
 [T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
 [T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
 [T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Acl(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
+[T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Obl(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
 
 ## NG: Deictic
 [T:NOUN-CLASS:pronoun] [T:NOUN-CLASS:common-noun] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+[#talis T:WORD-CLASS:adjective] [T:NOUN-CLASS:common-noun] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+[#qualis T:WORD-CLASS:adjective] [T:NOUN-CLASS:common-noun] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+[#qualiscumque T:WORD-CLASS:adjective] [T:NOUN-CLASS:common-noun] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
+
 [#certus T:WORD-CLASS:adjective] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 [#contrarius T:WORD-CLASS:adjective] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
 [#inferus T:WORD-CLASS:adjective] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)

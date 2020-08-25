@@ -19,6 +19,10 @@
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
 [T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Mark(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
 
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] S:MIXED:Advmod-Emph(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Advmod-Emph(1:word,3:word) T:EXPERIENTIAL:Attribute(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
+[T:WORD-CLASS:conjunction] [T:WORD-CLASS:verb] [] S:MIXED:Advmod-Emph(1:word,3:word) T:EXPERIENTIAL:Actor(3:groups,2:clause) => +T:LOGICAL:Marker(1:groups,2:clause)
+
 [] [] S:MIXED:Fixed(1:word,2:word) => +T:LOGICAL:Particle(1:word,2:word)
 
 ## Projected clauses
