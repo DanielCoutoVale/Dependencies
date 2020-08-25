@@ -48,6 +48,11 @@
 
 [T:WORD-CLASS:noun] [T:WORD-CLASS:verb #significo] T:EXPERIENTIAL:Attributor(1:groups,2:clause) => -T:EXPERIENTIAL:Attributor(1:groups,2:clause) +T:EXPERIENTIAL:Carrier(1:groups,2:clause)
 
+## Participants with auxiliary verb #sum
+[S:CASE:gen] [S:VERBFORM:inf] [#sum] S:MIXED:Csubj(2:word,1:word) S:MIXED:Cop(3:word,1:word) => -T:EXPERIENTIAL:Attribute(1:groups,3:clause) +T:EXPERIENTIAL:Actor(1:groups,2:clause)
+[S:CASE:gen] [S:VERBFORM:inf] [#sum] [] S:MIXED:Csubj(2:word,1:word) S:MIXED:Cop(3:word,1:word) S:MIXED:Csubj(1:word,4:word) => -T:EXPERIENTIAL:Attribute(1:groups,2:clause) +T:EXPERIENTIAL:Goal(2:groups,4:clause)
+[T:WORD-CLASS:verb S:VERBFORM:part] [#sum] S:MIXED:Cop(2:word,1:word) => -T:EXPERIENTIAL:Attribute(1:groups,2:clause)
+
 ## Participants in elliptic clauses
 
 # Actor

@@ -78,6 +78,7 @@ public class HtmlFileWriter {
 		pw.print("<body>\n");
 		pw.print(format("<h1>%s #%s</h1>", textTitle, description.getName()));
 		for (DepWording wording : wordings) {
+			System.out.println("- " + wording.getForm());
 			wording.makeDependencyTree();
 			pw.print(format("<table width='%dpx'>\n", (wording.getWords().size() + 1) * 100));
 			//pw.print("<tr>");
