@@ -58,4 +58,5 @@
 
 ## VG: adjuncts
 [T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Adjunct(1:groups,2:group)
-[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb] [] S:MIXED:Advmod(1:word,3:word) S:MIXED:Cop(2:word,3:word) => +T:LOGICAL:Adjunct(1:groups,2:group)
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb #sum] [] S:MIXED:Advmod(1:word,3:word) S:MIXED:Cop(2:word,3:word) => +T:LOGICAL:Adjunct(1:groups,2:group)
+[T:WORD-CLASS:adverb #non] [T:WORD-CLASS:verb #sum] [] S:MIXED:Advmod(1:word,3:word) S:MIXED:Obl(3:word,2:word) => +T:LOGICAL:Adjunct(1:groups,2:group)
