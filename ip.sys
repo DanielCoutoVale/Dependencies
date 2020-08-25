@@ -121,6 +121,22 @@ system VERB-Ū-BRANCH
 - ūr-branch
 - ū-branch
 
+system ADJECTIVE-BRANCHEDNESS
+> adjective
+- branched
+- unbranched
+
+system ADJECTIVE-BRANCH
+> branched adjective
+- issim-branch
+- ior-branch
+
+system SCALAR-MODE
+> adjective
+- distributive
+- comparative
+- ordinative
+
 system NUMBER
 > unseamed noun
 - singular
@@ -274,6 +290,8 @@ metafunction EXPERIENTIAL
 - Minor-Range
 - Participant
 - Angle
+- Pool
+- Standard
 
 metafunction LOGICAL
 - Idea

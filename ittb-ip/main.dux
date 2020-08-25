@@ -14,6 +14,7 @@ STOP
 IMPORT words
 IMPORT verbal-groups
 IMPORT nominal-groups
+IMPORT adjectival-groups
 IMPORT group-complex
 IMPORT participants
 IMPORT adverbial-groups
@@ -77,6 +78,9 @@ IMPORT adpositional-phrases
 ## Identification
 [T:WORD-CLASS:verb #sum] [T:WORD-CLASS:noun T:CASE:nominative] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Carrier(2:groups,1:clause) T:EXPERIENTIAL:Attribute(3:groups,1:clause) => -T:EXPERIENTIAL:Carrier(2:groups,1:clause) -T:EXPERIENTIAL:Attribute(3:groups,1:clause) +T:EXPERIENTIAL:Identified(2:groups,1:clause) +T:EXPERIENTIAL:Identifier(3:groups,1:clause)
 [T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:noun T:CASE:accusative] T:EXPERIENTIAL:Carrier(2:groups,1:clause) T:EXPERIENTIAL:Attribute(3:groups,1:clause) => -T:EXPERIENTIAL:Carrier(2:groups,1:clause) -T:EXPERIENTIAL:Attribute(3:groups,1:clause) +T:EXPERIENTIAL:Identified(2:groups,1:clause) +T:EXPERIENTIAL:Identifier(3:groups,1:clause)
+[T:WORD-CLASS:verb #sum] [T:WORD-CLASS:noun T:CASE:nominative] [T:WORD-CLASS:adjective T:SCALAR-MODE:ordinative T:CASE-SEAM:nominative-seam] T:EXPERIENTIAL:Carrier(2:groups,1:clause) T:EXPERIENTIAL:Attribute(3:groups,1:clause) => -T:EXPERIENTIAL:Carrier(2:groups,1:clause) -T:EXPERIENTIAL:Attribute(3:groups,1:clause) +T:EXPERIENTIAL:Identified(2:groups,1:clause) +T:EXPERIENTIAL:Identifier(3:groups,1:clause)
+[T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:adjective T:SCALAR-MODE:ordinative T:CASE-SEAM:accusative-seam] T:EXPERIENTIAL:Carrier(2:groups,1:clause) T:EXPERIENTIAL:Attribute(3:groups,1:clause) => -T:EXPERIENTIAL:Carrier(2:groups,1:clause) -T:EXPERIENTIAL:Attribute(3:groups,1:clause) +T:EXPERIENTIAL:Identified(2:groups,1:clause) +T:EXPERIENTIAL:Identifier(3:groups,1:clause)
+
 [T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb #dico] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Identifier(2:groups,1:clause) T:LOGICAL:Auxiliary(3:groups,1:group) T:EXPERIENTIAL:Carrier(4:groups,1:clause) => -T:EXPERIENTIAL:Carrier(4:groups,1:clause) +T:EXPERIENTIAL:Assigner(4:groups,1:clause)
 [T:WORD-CLASS:verb #sum T:VERB-Ō-BRANCH:re-branch] [T:WORD-CLASS:noun T:CASE:accusative] [T:WORD-CLASS:verb #determino] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Identifier(2:groups,1:clause) S:MIXED:Ccomp(2:word,3:word) T:EXPERIENTIAL:Actor(4:groups,3:clause) => -T:EXPERIENTIAL:Actor(4:groups,3:clause) +T:EXPERIENTIAL:Assigner(4:groups,2:clause) +T:LOGICAL:Auxiliary(3:groups,2:group)
 

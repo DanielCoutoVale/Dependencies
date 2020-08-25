@@ -1,0 +1,11 @@
+
+[T:WORD-CLASS:adjective T:ADJECTIVE-BRANCHEDNESS:unbranched] => +T:SCALAR-MODE:distributive
+[T:WORD-CLASS:adjective T:ADJECTIVE-BRANCH:ior-branch] => +T:SCALAR-MODE:comparative
+[T:WORD-CLASS:adjective T:ADJECTIVE-BRANCH:issim-branch] => +T:SCALAR-MODE:ordinative
+[T:WORD-CLASS:adjective T:SCALAR-MODE:distributive] [T:WORD-CLASS:adverb #minus S:DEGREE:cmp] S:MIXED:Advmod(2:word,1:word) => -T:SCALAR-MODE:distributive +T:SCALAR-MODE:comparative +T:LOGICAL:Adjunct(2:groups,1:group)
+[T:WORD-CLASS:adjective T:SCALAR-MODE:distributive] [T:WORD-CLASS:adverb #magis] S:MIXED:Advmod(2:word,1:word) => -T:SCALAR-MODE:distributive +T:SCALAR-MODE:comparative +T:LOGICAL:Adjunct(2:groups,1:group)
+[T:WORD-CLASS:adjective T:SCALAR-MODE:distributive] [T:WORD-CLASS:adverb #tam] S:MIXED:Advmod-Emph(2:word,1:word) => -T:SCALAR-MODE:distributive +T:SCALAR-MODE:comparative +T:LOGICAL:Adjunct(2:groups,1:group)
+[T:WORD-CLASS:adjective T:SCALAR-MODE:distributive] [T:WORD-CLASS:adverb #minus S:DEGREE:abs] S:MIXED:Advmod(2:word,1:word) => -T:SCALAR-MODE:distributive +T:SCALAR-MODE:ordinative +T:LOGICAL:Adjunct(2:groups,1:group)
+[T:WORD-CLASS:adjective T:SCALAR-MODE:distributive] [T:WORD-CLASS:adverb #parvus S:DEGREE:abs] S:MIXED:Advmod(2:word,1:word) => -T:SCALAR-MODE:distributive +T:SCALAR-MODE:ordinative +T:LOGICAL:Adjunct(2:groups,1:group)
+
+[T:WORD-CLASS:adjective T:SCALAR-MODE:ordinative] [T:WORD-CLASS:noun T:CASE:genitive] S:MIXED:Obl(2:word,1:word) => +T:EXPERIENTIAL:Pool(2:groups,1:group)

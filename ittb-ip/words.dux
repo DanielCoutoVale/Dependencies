@@ -45,7 +45,7 @@
 [#plerusque S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
 [#quilibet S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
 [#nonnullus S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
-[#talis S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
+
 [#cunctus S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
 [#ullus S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
 [#ceterus S:PRONTYPE:ind] => +T:PRONOUN-RELATIVITY:absolute
@@ -61,9 +61,11 @@
 [#qui S:PRONTYPE:rel] => +T:PRONOUN-RELATIVITY:relative
 [#quisquis S:PRONTYPE:ind,rel] => +T:PRONOUN-RELATIVITY:relative
 [#quicumque S:PRONTYPE:ind,rel] => +T:PRONOUN-RELATIVITY:relative
-[#qualiscumque S:PRONTYPE:ind,rel] => +T:PRONOUN-RELATIVITY:relative
-[#qualis S:PRONTYPE:int,rel] => +T:PRONOUN-RELATIVITY:relative
 [#quantus S:PRONTYPE:int,rel] => +T:PRONOUN-RELATIVITY:relative
+
+[#talis S:PRONTYPE:ind] => -T:WORD-CLASS:noun -T:NOUN-CLASS:pronoun +T:WORD-CLASS:adjective +T:PRONOUN-RELATIVITY:absolute
+[#qualiscumque S:PRONTYPE:ind,rel] => -T:WORD-CLASS:noun -T:NOUN-CLASS:pronoun +T:WORD-CLASS:adjective +T:PRONOUN-RELATIVITY:relative
+[#qualis S:PRONTYPE:int,rel] => -T:WORD-CLASS:noun -T:NOUN-CLASS:pronoun +T:WORD-CLASS:adjective +T:PRONOUN-RELATIVITY:relative
 
 ## NUMBERS #STEP 1
 [T:WORD-CLASS:number #unus] => +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
@@ -198,12 +200,10 @@
 [T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:tis-seam] => +T:ŌST-LEAF:istis-leaf
 [T:ŌST-FOLIAGE:ī-foliage T:ŌST-SEAM:nt-seam] => +T:ŌST-LEAF:ērunt-leaf
 
-## NOUN STEP 1
+## Nouns -> Adpositions I
 [T:WORD-CLASS:noun #respectus S:CASE:abl] => -T:WORD-CLASS:noun +T:WORD-CLASS:adposition
 
-## ADJECTIVE STEP 2
-
-# Unseamed nouns
+## Adjectives -> Nouns I
 [T:WORD-CLASS:adjective #immobilis] [S:WORD-CLASS:verb] S:MIXED:Amod(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective #intelligibilis] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective #intelligibilis] [T:WORD-CLASS:adjective] S:MIXED:Obl(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
@@ -224,11 +224,11 @@
 [T:WORD-CLASS:adjective] [T:WORD-CLASS:noun] S:MIXED:Conj(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 [T:WORD-CLASS:adjective] [] S:MIXED:Nmod(1:word,2:word) => -T:WORD-CLASS:adjective -T:SEAMEDNESS:seamed +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed
 
-# Seamed adjectives
+## Nouns -> Adjectives I
 [T:WORD-CLASS:noun #sapiens] [] S:MIXED:Amod(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
 #[T:WORD-CLASS:noun #sapiens] [] S:MIXED:Conj(1:word,2:word) => +T:WORD-CLASS:adjective +T:SEAMEDNESS:seamed -T:WORD-CLASS:noun -T:NOUN-CLASS:common-noun -T:SEAMEDNESS:unseamed
 
-# Unseamed nouns II
+## Verbs -> Nouns I
 [T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:pres #operor] => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ō-aspect -T:VERB-BRANCHEDNESS:branched -T:VERB-Ō-BRANCH:nt-branch -T:VERB-FINITENESS:non-finite
 [T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past #operor] => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
 [T:WORD-CLASS:verb S:VERBFORM:part S:TENSE:past #ordino] [T:WORD-CLASS:noun] S:MIXED:Det(2:word,1:word) => +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:SEAMEDNESS:unseamed -T:WORD-CLASS:verb -T:VERB-CLASS:lexical-verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
@@ -239,6 +239,11 @@
 
 # VERBS STEP 5
 [T:WORD-CLASS:verb #finio] => +T:WORD-CLASS:adjective -T:WORD-CLASS:verb -T:VERB-ASPECT:ū-aspect -T:VERB-BRANCHEDNESS:unbranched -T:VERB-FINITENESS:non-finite
+
+## ADJECTIVE
+[T:WORD-CLASS:adjective S:DEGREE:pos] => +T:ADJECTIVE-BRANCHEDNESS:unbranched
+[T:WORD-CLASS:adjective S:DEGREE:cmp] => +T:ADJECTIVE-BRANCHEDNESS:branched +T:ADJECTIVE-BRANCH:ior-branch
+[T:WORD-CLASS:adjective S:DEGREE:abs] => +T:ADJECTIVE-BRANCHEDNESS:branched +T:ADJECTIVE-BRANCH:issim-branch
 
 # CASE
 [T:WORD-CLASS:adjective T:SEAMEDNESS:seamed S:CASE:nom] => +T:CASE-SEAM:nominative-seam
