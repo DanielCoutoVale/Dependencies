@@ -110,17 +110,17 @@
 [T:WORD-CLASS:adjective #vigentuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
 ## ADJECTIVES #STEP 4
-[T:WORD-CLASS:adjective #singuli] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #bini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #terni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #quaterni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #quini] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #seni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #septeni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #octoni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #noveni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #deni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
-[T:WORD-CLASS:adjective #viceni] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+[T:WORD-CLASS:adjective #singulus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #binus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #ternus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quaternus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #quinus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #senus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #septenus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #octonus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #novenus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #denus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
+[T:WORD-CLASS:adjective #vicenus] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:distributive +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:ten
 
 ## NUMERIC NOUNS
 [T:WORD-CLASS:number] [T:WORD-CLASS:adposition #ex] [T:WORD-CLASS:verb] S:MIXED:Case(2:word,1:word) S:MIXED:Obl-Arg(1:word,3:word) => -T:WORD-CLASS:number +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun +T:CASE:ablative

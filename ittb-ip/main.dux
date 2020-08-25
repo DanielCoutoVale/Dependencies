@@ -13,6 +13,10 @@
 STOP
 IMPORT words
 
+IMPORT verbal-groups
+
+IMPORT nominal-groups
+
 [T:WORD-CLASS:adverb #non] [] S:MIXED:Advmod(1:word,2:word) => +T:LOGICAL:Marker(1:groups,2:group)
 
 [T:WORD-CLASS:noun T:CASE:genitive] [T:NOUN-CLASS:common-noun] S:MIXED:Nmod(1:word,2:word) => +T:EXPERIENTIAL:Possessor(1:groups,2:group)
@@ -29,128 +33,6 @@ IMPORT words
 [T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [T:WORD-CLASS:verb] S:MIXED:Nsubj(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:groups,2:clause)
 [T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [T:WORD-CLASS:verb] S:MIXED:Nsubj-Pass(1:word,2:word) => +T:EXPERIENTIAL:Actor(1:groups,2:clause)
 [T:WORD-CLASS:number T:NUMERIC-CASE:cardinal] [T:WORD-CLASS:verb] S:MIXED:Obj(1:word,2:word) => +T:EXPERIENTIAL:Goal(1:groups,2:clause)
-
-[T:WORD-CLASS:number T:NUMERIC-CASE:ordinal] [T:WORD-CLASS:verb] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Ordinator(1:groups,2:clause)
-[T:WORD-CLASS:number T:NUMERIC-CASE:ordinal] [T:WORD-CLASS:noun] S:MIXED:Amod(1:word,2:word) => +T:EXPERIENTIAL:Ordinator(1:groups,2:group)
-
-# ADJECTIVES #STEP 3
-
-[T:WORD-CLASS:verb] [T:WORD-CLASS:adjective] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
-[T:WORD-CLASS:noun] [T:WORD-CLASS:adjective] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
-
-IMPORT numbers
-
-# Epithet
-[#sacer S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#infinitus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#magnus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#purus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#summus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#parvus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#intelligibilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#sensibilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#activus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#efficiens S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#perfectus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#vetus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#nobilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#sempiternus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#completus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#continuus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#altus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#perpetuus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#verus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#demonstrativus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#passivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#mirabilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#sanctus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#subsistens S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#probabilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#immobilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#singularis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#antiquus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#paucus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#longus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#visibilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#debilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#efficax S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#affirmativus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#negativus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#aequalis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#novus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#aequivocus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#intellectualis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#potior S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#studiosus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#familiaris S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#contemplativus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#modestus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#indoctus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#subtilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#bonus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#rudis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#angelicus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#nimius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#innumerabilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#conformis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#falsus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#bestialis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#ignarus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#fabulosus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#astutus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#interminabilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#verisimilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#necessarius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#scibilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#effectivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#sensualis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#plenus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#violentus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#finalis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#sensitivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#operativus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#absolutus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#cognoscitivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#incommunicabilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#superessentialis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#sublimis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#intellectivus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Epithet(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-
-# Deictic
-[T:NOUN-CLASS:pronoun] [T:NOUN-CLASS:common-noun] S:MIXED:Det(1:word,2:word) => +T:EXPERIENTIAL:Deictic(1:groups,2:group)
-[#certus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#contrarius S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#inferus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#communis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#praesens S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#superior S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#particularis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#principalis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#localis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#similis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#consimilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#evidens S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#dissimilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#univocus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#omnimodus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#unicus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#specialis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#posterus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#invariabilis S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#manifestus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#universus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-[#analogicus S:WORD-CLASS:adj] [] T:EXPERIENTIAL:Classifier(1:groups,2:group) => +T:EXPERIENTIAL:Deictic(1:groups,2:group) -T:EXPERIENTIAL:Classifier(1:groups,2:group)
-
-# Exceptional cases
-[S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#impossibilis S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Epithet(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#multus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Quantifier(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#solus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Deictic(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#spiritualis S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-[S:WORD-CLASS:adj T:WORD-CLASS:adjective] [#primus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Ordinator(2:groups,1:group) -T:WORD-CLASS:adjective +T:WORD-CLASS:noun +T:NOUN-CLASS:common-noun
-
-[S:WORD-CLASS:num T:WORD-CLASS:number] [#infinitus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Classifier(2:groups,1:group)
-[S:WORD-CLASS:num T:WORD-CLASS:number] [#primus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Ordinator(2:groups,1:group)
-[S:WORD-CLASS:num T:WORD-CLASS:number] [#proximus S:WORD-CLASS:adj] S:MIXED:Amod(2:word,1:word) => +T:EXPERIENTIAL:Deictic(2:groups,1:group)
 
 # ADJECTIVES STEP 4
 
@@ -209,7 +91,7 @@ IMPORT numbers
 
 [T:WORD-CLASS:verb S:VERBFORM:part] [#sum] S:MIXED:Cop(2:word,1:word) => +T:EXPERIENTIAL:Attribute(1:groups,2:clause)
 
-IMPORT verbal-groups
+
 
 IMPORT participants
 
