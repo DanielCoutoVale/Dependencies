@@ -47,6 +47,7 @@
 
 [T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
 [T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
+[T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb] S:MIXED:Case(1:word,2:word) S:MIXED:Nmod(2:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 [T:WORD-CLASS:adposition #praeter] [T:WORD-CLASS:noun] [T:WORD-CLASS:verb #facio] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) S:MIXED:Obl(2:word,4:word) S:MIXED:Nsubj-Pass(4:word,3:word) => +T:EXPERIENTIAL:Circumstance(1:groups,3:clause)
 
 [T:WORD-CLASS:adposition #circa] [T:WORD-CLASS:noun] S:MIXED:Case(1:word,2:word) => +T:EXPERIENTIAL:Minor-Range(2:groups,1:phrase)
