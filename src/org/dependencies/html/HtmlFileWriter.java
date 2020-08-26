@@ -41,8 +41,8 @@ public class HtmlFileWriter {
 
 	private void printStructure(PrintWriter pw, DepNode tree, List<Integer> spans, List<Long> indices, String headerLabel,
 			String rankName) {
-		pw.print("<tr>");
-		pw.print(format("<th width='100px'>%s</th>\n", headerLabel));
+		pw.print(format("<tr class='%s' style='display:none;'>", rankName));
+		pw.print(format("<th class='hidden' width='100px'>%s</th>\n", headerLabel));
 		for (int i = 0; i < spans.size(); i++) {
 			Integer span = spans.get(i);
 			Long spanIndex = indices.get(i);
@@ -53,7 +53,7 @@ public class HtmlFileWriter {
 			if (indices.lastIndexOf(spanIndex) > i) {
 				label = label + "…";
 			}
-			pw.print(format("<td width='100px' colspan='%d'>%s</td>\n", span, label));
+			pw.print(format("<td width='%dpx' colspan='%d'>%s</td>\n", span * 100, span, label));
 		}
 		pw.print("</tr>");
 	}
@@ -69,20 +69,40 @@ public class HtmlFileWriter {
 		pw.print("<meta charset='utf-8'>\n");
 		pw.print(format("<title>%s #%s</title>\n", textTitle, description.getName()));
 		pw.print("<style>\n");
+		pw.print("body { width: 10000px; }\n");
 		pw.print("h1 { margin: 20px; }\n");
 		pw.print("table { margin: 20px; border-spacing: 0px; border-bottom: 1px solid black; border-right: 1px solid black; }\n");
 		pw.print("table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }");
+		pw.print("table.structure { margin-bottom:2px; }");
+		pw.print("table.syntagma { margin-top:2px; }");
+		pw.print("th.hidden { display:none; }");
 		pw.print("th, td { border-left: 1px solid black; border-top: 1px solid black; }");
 		pw.print("</style>\n");
+		pw.print("<script>\n");
+		pw.print("function hide(a) {document.getElementById('show' + a).style.display = ''; document.getElementById('hide' + a).style.display = 'none';}\n");
+		pw.print("function show(a) {document.getElementById('hide' + a).style.display = ''; document.getElementById('show' + a).style.display = 'none';}\n");
+		pw.print("function showRowHeaders(a) { show('RowHeaders'); var th = document.getElementsByTagName('th'); for (var i in th) {th[i].className='';} }\n");
+		pw.print("function hideRowHeaders(a) { hide('RowHeaders'); var th = document.getElementsByTagName('th'); for (var i in th) {th[i].className='hidden';} }\n");
+		pw.print("function showClause(a) { show('Clause'); var tr = document.getElementsByClassName('clause'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='';} }\n");
+		pw.print("function hideClause(a) { hide('Clause'); var tr = document.getElementsByClassName('clause'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='none';} }\n");
+		pw.print("function showClauseComplex(a) { show('ClauseComplex'); var tr = document.getElementsByClassName('clause-complex'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='';} }\n");
+		pw.print("function hideClauseComplex(a) { hide('ClauseComplex'); var tr = document.getElementsByClassName('clause-complex'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='none';} }\n");
+		pw.print("</script>\n");
 		pw.print("</head>\n");
 		pw.print("<body>\n");
 		pw.print(format("<h1>%s #%s</h1>", textTitle, description.getName()));
+		pw.print("<div style='margin-left:20px;'>");
+		pw.print("<button id='showRowHeaders' onClick='showRowHeaders()'>Show row headers</button>");
+		pw.print("<button id='hideRowHeaders' onClick='hideRowHeaders()' style='display:none;'>Hide row headers</button>");
+		pw.print("<button id='showClause' onClick='showClause()'>Show clauses</button>");
+		pw.print("<button id='hideClause' onClick='hideClause()' style='display:none;'>Hide clauses</button>");
+		pw.print("<button id='showClauseComplex' onClick='showClauseComplex()'>Show clause complexes</button>");
+		pw.print("<button id='hideClauseComplex' onClick='hideClauseComplex()' style='display:none;'>Hide clause complexes</button>");
+		pw.print("</div>");
 		for (DepWording wording : wordings) {
 			System.out.println("- " + wording.getForm());
+			pw.print(format("<table class='structure'>\n"));
 			wording.makeDependencyTree();
-			pw.print(format("<table width='%dpx'>\n", (wording.getWords().size() + 1) * 100));
-			//pw.print("<tr>");
-			//pw.print("<th width='100px'>Clauses</th>");
 			DepNode tree = wording.makeDependencyTree();
 			long index;
 			List<Integer> spans;
@@ -107,12 +127,8 @@ public class HtmlFileWriter {
 					}
 					spans.add(span);
 					indices.add(index);
-					//pw.print(format("<td width='100px' colspan='%d'>", span));
-					//pw.print(tree.getFunctionName(index, "clause-complex"));
-					//pw.print("</td>\n");
 				}
 			}
-			//pw.print("</tr>");
 			printStructure(pw, tree, spans, indices, "Clauses", "clause-complex");
 			// Run through clause constituents
 			index = - 2;
@@ -137,15 +153,17 @@ public class HtmlFileWriter {
 				}
 			}
 			printStructure(pw, tree, spans, indices, "Clause", "clause");
+			pw.print("</table>");
+			pw.print(format("<table class='syntagma'>\n"));
 			pw.print("<tr>");
-			pw.print("<th width='100px'>Form</th>");
+			pw.print("<th class='hidden' width='100px'>Form</th>");
 			for (DepWord word : wording) {
 				pw.print("<td width='100px'><i>");
 				pw.print(word.getForm());
 				pw.print("</i></td>\n");
 			}
 			pw.print("</tr>\n");
-			pw.print("<th width='100px'>Word Class</th>");
+			pw.print("<th class='hidden' width='100px'>Word Class</th>");
 			for (DepWord word : wording) {
 				DepFeature wordClass = word.getFeatureIn(description.getSystem("WORD-CLASS"));
 				pw.print("<td width='100px'>");

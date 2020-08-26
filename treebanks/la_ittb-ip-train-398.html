@@ -3,23 +3,35 @@
 <meta charset='utf-8'>
 <title>Thomas-train #IP</title>
 <style>
+body { width: 10000px; }
 h1 { margin: 20px; }
 table { margin: 20px; border-spacing: 0px; border-bottom: 1px solid black; border-right: 1px solid black; }
-table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th, td { border-left: 1px solid black; border-top: 1px solid black; }</style>
+table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }table.structure { margin-bottom:2px; }table.syntagma { margin-top:2px; }th.hidden { display:none; }th, td { border-left: 1px solid black; border-top: 1px solid black; }</style>
+<script>
+function hide(a) {document.getElementById('show' + a).style.display = ''; document.getElementById('hide' + a).style.display = 'none';}
+function show(a) {document.getElementById('hide' + a).style.display = ''; document.getElementById('show' + a).style.display = 'none';}
+function showRowHeaders(a) { show('RowHeaders'); var th = document.getElementsByTagName('th'); for (var i in th) {th[i].className='';} }
+function hideRowHeaders(a) { hide('RowHeaders'); var th = document.getElementsByTagName('th'); for (var i in th) {th[i].className='hidden';} }
+function showClause(a) { show('Clause'); var tr = document.getElementsByClassName('clause'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='';} }
+function hideClause(a) { hide('Clause'); var tr = document.getElementsByClassName('clause'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='none';} }
+function showClauseComplex(a) { show('ClauseComplex'); var tr = document.getElementsByClassName('clause-complex'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='';} }
+function hideClauseComplex(a) { hide('ClauseComplex'); var tr = document.getElementsByClassName('clause-complex'); for (var i = 0; i < tr.length; i++) {tr[i].style.display='none';} }
+</script>
 </head>
 <body>
-<h1>Thomas-train #IP</h1><table width='1000px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='9'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<h1>Thomas-train #IP</h1><div style='margin-left:20px;'><button id='showRowHeaders' onClick='showRowHeaders()'>Show row headers</button><button id='hideRowHeaders' onClick='hideRowHeaders()' style='display:none;'>Hide row headers</button><button id='showClause' onClick='showClause()'>Show clauses</button><button id='hideClause' onClick='hideClause()' style='display:none;'>Hide clauses</button><button id='showClauseComplex' onClick='showClauseComplex()'>Show clause complexes</button><button id='hideClauseComplex' onClick='hideClauseComplex()' style='display:none;'>Hide clause complexes</button></div><table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='900px' colspan='9'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Assigner</td>
+<td width='200px' colspan='2'>Assigner</td>
 <td width='100px' colspan='1'>Process…</td>
 <td width='100px' colspan='1'>Identified</td>
 <td width='100px' colspan='1'>…Process</td>
-<td width='100px' colspan='2'>Identifier</td>
+<td width='200px' colspan='2'>Identifier</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>unde</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>unde</i></td>
 <td width='100px'><i>et</i></td>
 <td width='100px'><i>philosophus</i></td>
 <td width='100px'><i>dicit</i></td>
@@ -29,7 +41,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>perfectam</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adverb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adverb</td>
 <td width='100px'>conjunction</td>
 <td width='100px'>noun</td>
 <td width='100px'>verb</td>
@@ -40,17 +52,18 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='800px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='7'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='700px' colspan='7'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Carrier…</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>…Carrier</td>
-<td width='100px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Process</td>
 <td width='100px' colspan='1'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>perfectio</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>perfectio</i></td>
 <td width='100px'><i>autem</i></td>
 <td width='100px'><i>operationis</i></td>
 <td width='100px'><i>dependet</i></td>
@@ -58,7 +71,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>quatuor</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>conjunction</td>
 <td width='100px'>noun</td>
 <td width='100px'>verb</td>
@@ -67,22 +80,23 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1500px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='5'>Main…</td>
-<td width='100px' colspan='8'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='500px' colspan='5'>Main…</td>
+<td width='800px' colspan='8'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='3'>Circumstance</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='300px' colspan='3'>Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>primo</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>primo</i></td>
 <td width='100px'><i>,</i></td>
 <td width='100px'><i>ex</i></td>
 <td width='100px'><i>suo</i></td>
@@ -97,7 +111,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>operante</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>verb</td>
 <td width='100px'>adposition</td>
 <td width='100px'>noun</td>
@@ -113,15 +127,16 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='2100px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='20'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='2000px' colspan='20'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='17'>Goal</td>
+<td width='1700px' colspan='17'>Goal</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>dico</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>dico</i></td>
 <td width='100px'><i>autem</i></td>
 <td width='100px'><i>operationem</i></td>
 <td width='100px'><i>in</i></td>
@@ -142,7 +157,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>audire</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>verb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>verb</td>
 <td width='100px'>conjunction</td>
 <td width='100px'>noun</td>
 <td width='100px'>adposition</td>
@@ -164,26 +179,27 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='2500px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='8'>Main…</td>
-<td width='100px' colspan='5'>Extending</td>
-<td width='100px' colspan='10'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='800px' colspan='8'>Main…</td>
+<td width='500px' colspan='5'>Extending</td>
+<td width='1000px' colspan='10'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='5'>Existent</td>
+<td width='500px' colspan='5'>Existent</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='3'>Process</td>
+<td width='300px' colspan='3'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='6'>Circumstance</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='600px' colspan='6'>Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>huiusmodi</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>huiusmodi</i></td>
 <td width='100px'><i>enim</i></td>
 <td width='100px'><i>sunt</i></td>
 <td width='100px'><i>perfectiones</i></td>
@@ -208,7 +224,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>finis</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adverb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adverb</td>
 <td width='100px'>adverb</td>
 <td width='100px'>verb</td>
 <td width='100px'>noun</td>
@@ -234,26 +250,27 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='2800px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='18'>Main…</td>
-<td width='100px' colspan='5'>Extending</td>
-<td width='100px' colspan='3'>Extending</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='1800px' colspan='18'>Main…</td>
+<td width='500px' colspan='5'>Extending</td>
+<td width='300px' colspan='3'>Extending</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Identified…</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='10'>…Identified</td>
+<td width='1000px' colspan='10'>…Identified</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='5'>Identifier</td>
+<td width='500px' colspan='5'>Identifier</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Circumstance</td>
+<td width='200px' colspan='2'>Circumstance</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Circumstance</td>
+<td width='200px' colspan='2'>Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>operatio</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>operatio</i></td>
 <td width='100px'><i>vero</i></td>
 <td width='100px'><i>vel</i></td>
 <td width='100px'><i>actio</i></td>
@@ -281,7 +298,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>finem</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>adverb</td>
 <td width='100px'>conjunction</td>
 <td width='100px'>noun</td>
@@ -310,17 +327,18 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1300px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='12'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='1200px' colspan='12'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='4'>Identified</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='3'>Identifier</td>
+<td width='400px' colspan='4'>Identified</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='300px' colspan='3'>Identifier</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>et</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>et</i></td>
 <td width='100px'><i>ideo</i></td>
 <td width='100px'><i>talis</i></td>
 <td width='100px'><i>operatio</i></td>
@@ -333,7 +351,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>felicitas</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>conjunction</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>conjunction</td>
 <td width='100px'>adverb</td>
 <td width='100px'>adjective</td>
 <td width='100px'>noun</td>
@@ -347,21 +365,22 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1200px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='5'>Main…</td>
-<td width='100px' colspan='5'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='500px' colspan='5'>Main…</td>
+<td width='500px' colspan='5'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>secundo</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>secundo</i></td>
 <td width='100px'><i>,</i></td>
 <td width='100px'><i>ex</i></td>
 <td width='100px'><i>principio</i></td>
@@ -373,7 +392,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>potentiae</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>verb</td>
 <td width='100px'>adposition</td>
 <td width='100px'>noun</td>
@@ -386,18 +405,19 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='2000px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='19'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='1900px' colspan='19'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='3'>Circumstance…</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='2'>Circumstance</td>
+<td width='300px' colspan='3'>Circumstance…</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Circumstance</td>
 <td width='100px' colspan='1'>Existent</td>
-<td width='100px' colspan='9'>…Circumstance</td>
+<td width='900px' colspan='9'>…Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>unde</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>unde</i></td>
 <td width='100px'><i>secundum</i></td>
 <td width='100px'><i>operationem</i></td>
 <td width='100px'><i>sensus</i></td>
@@ -417,7 +437,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>perfecti</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adverb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adverb</td>
 <td width='100px'>adposition</td>
 <td width='100px'>noun</td>
 <td width='100px'>noun</td>
@@ -438,22 +458,23 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='700px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='6'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='600px' colspan='6'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>tertio</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>tertio</i></td>
 <td width='100px'><i>,</i></td>
 <td width='100px'><i>ex</i></td>
 <td width='100px'><i>operationis</i></td>
 <td width='100px'><i>obiecto</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>verb</td>
 <td width='100px'>adposition</td>
 <td width='100px'>noun</td>
@@ -461,22 +482,23 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1400px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='9'>Main…</td>
-<td width='100px' colspan='3'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='900px' colspan='9'>Main…</td>
+<td width='300px' colspan='3'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Circumstance</td>
-<td width='100px' colspan='2'>Circumstance</td>
-<td width='100px' colspan='2'>Existent</td>
+<td width='200px' colspan='2'>Circumstance</td>
+<td width='200px' colspan='2'>Circumstance</td>
+<td width='200px' colspan='2'>Existent</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Goal</td>
+<td width='200px' colspan='2'>Goal</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>et</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>et</i></td>
 <td width='100px'><i>propter</i></td>
 <td width='100px'><i>hoc</i></td>
 <td width='100px'><i>in</i></td>
@@ -490,7 +512,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>intelligibile</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>conjunction</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>conjunction</td>
 <td width='100px'>adposition</td>
 <td width='100px'>noun</td>
 <td width='100px'>adposition</td>
@@ -505,22 +527,23 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1800px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='5'>Main…</td>
-<td width='100px' colspan='11'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='500px' colspan='5'>Main…</td>
+<td width='1100px' colspan='11'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='7'>Circumstance</td>
+<td width='700px' colspan='7'>Circumstance</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>quarto</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>quarto</i></td>
 <td width='100px'><i>,</i></td>
 <td width='100px'><i>ex</i></td>
 <td width='100px'><i>forma</i></td>
@@ -538,7 +561,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>operetur</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>verb</td>
 <td width='100px'>adposition</td>
 <td width='100px'>noun</td>
@@ -557,43 +580,44 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='3400px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='5'>Main…</td>
-<td width='100px' colspan='4'>Enhancing</td>
-<td width='100px' colspan='7'>Extending</td>
-<td width='100px' colspan='5'>Extending</td>
-<td width='100px' colspan='6'>Enhancing</td>
-<td width='100px' colspan='5'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='500px' colspan='5'>Main…</td>
+<td width='400px' colspan='4'>Enhancing</td>
+<td width='700px' colspan='7'>Extending</td>
+<td width='500px' colspan='5'>Extending</td>
+<td width='600px' colspan='6'>Enhancing</td>
+<td width='500px' colspan='5'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Carrier</td>
+<td width='200px' colspan='2'>Carrier</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Identified</td>
-<td width='100px' colspan='2'>Identifier</td>
+<td width='200px' colspan='2'>Identified</td>
+<td width='200px' colspan='2'>Identifier</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Circumstance</td>
+<td width='200px' colspan='2'>Circumstance</td>
 <td width='100px' colspan='1'>Attribute</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Circumstance</td>
-<td width='100px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>talis</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>talis</i></td>
 <td width='100px'><i>autem</i></td>
 <td width='100px'><i>est</i></td>
 <td width='100px'><i>dei</i></td>
@@ -627,7 +651,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>est</i></td>
 <td width='100px'><i>;</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adjective</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adjective</td>
 <td width='100px'>conjunction</td>
 <td width='100px'>verb</td>
 <td width='100px'>noun</td>
@@ -662,19 +686,20 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='2000px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='19'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='1900px' colspan='19'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Actor</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Goal…</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='5'>…Goal</td>
+<td width='500px' colspan='5'>…Goal</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='8'>Circumstance</td>
+<td width='800px' colspan='8'>Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>ipse</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>ipse</i></td>
 <td width='100px'><i>autem</i></td>
 <td width='100px'><i>seipsum</i></td>
 <td width='100px'><i>intelligit</i></td>
@@ -694,7 +719,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>delectabiliter</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>conjunction</td>
 <td width='100px'>noun</td>
 <td width='100px'>verb</td>
@@ -715,51 +740,53 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='500px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='4'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='400px' colspan='4'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>est</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>est</i></td>
 <td width='100px'><i>igitur</i></td>
 <td width='100px'><i>beatus</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>verb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>verb</td>
 <td width='100px'>adverb</td>
 <td width='100px'>adjective</td>
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='300px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='2'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='200px' colspan='2'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>adhuc</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>adhuc</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adverb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adverb</td>
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='2200px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='5'>Main…</td>
-<td width='100px' colspan='2'>Enhancing…</td>
-<td width='100px' colspan='4'>Enhancing</td>
-<td width='100px' colspan='4'>…Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='500px' colspan='5'>Main…</td>
+<td width='200px' colspan='2'>Enhancing…</td>
+<td width='400px' colspan='4'>Enhancing</td>
+<td width='400px' colspan='4'>…Enhancing</td>
 <td width='100px' colspan='1'>Enhancing…</td>
 <td width='100px' colspan='1'>Extending</td>
-<td width='100px' colspan='3'>…Enhancing</td>
+<td width='300px' colspan='3'>…Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
-<td width='100px' colspan='2'>Circumstance</td>
-<td width='100px' colspan='2'>Goal</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
+<td width='200px' colspan='2'>Circumstance</td>
+<td width='200px' colspan='2'>Goal</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
@@ -767,14 +794,15 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px' colspan='1'>Goal</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Process</td>
-<td width='100px' colspan='2'>Actor</td>
+<td width='200px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Actor</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>per</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>per</i></td>
 <td width='100px'><i>beatitudinem</i></td>
 <td width='100px'><i>desiderium</i></td>
 <td width='100px'><i>omne</i></td>
@@ -796,7 +824,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>finis</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adposition</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adposition</td>
 <td width='100px'>noun</td>
 <td width='100px'>noun</td>
 <td width='100px'>noun</td>
@@ -819,18 +847,19 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1600px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='15'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='1500px' colspan='15'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Process…</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Carrier…</td>
 <td width='100px' colspan='1'>…Process</td>
 <td width='100px' colspan='1'>Attribute</td>
-<td width='100px' colspan='9'>…Carrier</td>
+<td width='900px' colspan='9'>…Carrier</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>oportet</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>oportet</i></td>
 <td width='100px'><i>igitur</i></td>
 <td width='100px'><i>eum</i></td>
 <td width='100px'><i>esse</i></td>
@@ -846,7 +875,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>potest</i></td>
 <td width='100px'><i>:</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>verb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>verb</td>
 <td width='100px'>adverb</td>
 <td width='100px'>noun</td>
 <td width='100px'>verb</td>
@@ -863,21 +892,22 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1300px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='3'>Main…</td>
-<td width='100px' colspan='8'>Locution</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='300px' colspan='3'>Main…</td>
+<td width='800px' colspan='8'>Locution</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Actor</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Identified</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='5'>Identifier</td>
+<td width='500px' colspan='5'>Identifier</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>unde</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>unde</i></td>
 <td width='100px'><i>boetius</i></td>
 <td width='100px'><i>dicit</i></td>
 <td width='100px'><i>quod</i></td>
@@ -890,7 +920,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>perfectus</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adverb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adverb</td>
 <td width='100px'>noun</td>
 <td width='100px'>verb</td>
 <td width='100px'>conjunction</td>
@@ -904,27 +934,28 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1900px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='5'>Main…</td>
-<td width='100px' colspan='7'>Enhancing</td>
-<td width='100px' colspan='5'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='500px' colspan='5'>Main…</td>
+<td width='700px' colspan='7'>Enhancing</td>
+<td width='500px' colspan='5'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Attribute</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='2'>Carrier</td>
+<td width='200px' colspan='2'>Carrier</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Goal</td>
-<td width='100px' colspan='3'>Circumstance</td>
+<td width='200px' colspan='2'>Goal</td>
+<td width='300px' colspan='3'>Circumstance</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Circumstance</td>
-<td width='100px' colspan='2'>Process</td>
+<td width='200px' colspan='2'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>sed</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>sed</i></td>
 <td width='100px'><i>talis</i></td>
 <td width='100px'><i>est</i></td>
 <td width='100px'><i>divina</i></td>
@@ -943,7 +974,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>est</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>conjunction</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>conjunction</td>
 <td width='100px'>adjective</td>
 <td width='100px'>verb</td>
 <td width='100px'>noun</td>
@@ -963,24 +994,25 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='700px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='6'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='600px' colspan='6'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Carrier</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Circumstance</td>
 <td width='100px' colspan='1'>Attribute</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>ipse</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>ipse</i></td>
 <td width='100px'><i>igitur</i></td>
 <td width='100px'><i>est</i></td>
 <td width='100px'><i>vere</i></td>
 <td width='100px'><i>beatus</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>noun</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>noun</td>
 <td width='100px'>adverb</td>
 <td width='100px'>verb</td>
 <td width='100px'>adverb</td>
@@ -988,39 +1020,41 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='300px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='2'>Main</td>
-</tr><tr><th width='100px'>Clause</th>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='200px' colspan='2'>Main</td>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Circumstance</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>item</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>item</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>adverb</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>adverb</td>
 <td width='100px'>punctuation</td>
 </tr>
 </table>
-<table width='1900px'>
-<tr><th width='100px'>Clauses</th>
-<td width='100px' colspan='7'>Enhancing</td>
-<td width='100px' colspan='3'>Main…</td>
-<td width='100px' colspan='7'>Enhancing</td>
+<table class='structure'>
+<tr class='clause-complex' style='display:none;'><th class='hidden' width='100px'>Clauses</th>
+<td width='700px' colspan='7'>Enhancing</td>
+<td width='300px' colspan='3'>Main…</td>
+<td width='700px' colspan='7'>Enhancing</td>
 <td width='100px' colspan='1'>…Main</td>
-</tr><tr><th width='100px'>Clause</th>
+</tr><tr class='clause' style='display:none;'><th class='hidden' width='100px'>Clause</th>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Recipient</td>
 <td width='100px' colspan='1'>Process</td>
-<td width='100px' colspan='3'>Actor</td>
+<td width='300px' colspan='3'>Actor</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Attribute</td>
+<td width='200px' colspan='2'>Attribute</td>
 <td width='100px' colspan='1'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
 <td width='100px' colspan='1'>Marker</td>
-<td width='100px' colspan='2'>Goal</td>
-<td width='100px' colspan='3'>Process</td>
+<td width='200px' colspan='2'>Goal</td>
+<td width='300px' colspan='3'>Process</td>
 <td width='100px' colspan='1'>Marker</td>
-</tr><tr><th width='100px'>Form</th><td width='100px'><i>quandiu</i></td>
+</tr></table><table class='syntagma'>
+<tr><th class='hidden' width='100px'>Form</th><td width='100px'><i>quandiu</i></td>
 <td width='100px'><i>alicui</i></td>
 <td width='100px'><i>deest</i></td>
 <td width='100px'><i>aliquid</i></td>
@@ -1039,7 +1073,7 @@ table, th, td { box-sizing: border-box; font-size: 11px; text-align: center; }th
 <td width='100px'><i>quietatum</i></td>
 <td width='100px'><i>.</i></td>
 </tr>
-<th width='100px'>Word Class</th><td width='100px'>conjunction</td>
+<th class='hidden' width='100px'>Word Class</th><td width='100px'>conjunction</td>
 <td width='100px'>noun</td>
 <td width='100px'>verb</td>
 <td width='100px'>noun</td>
