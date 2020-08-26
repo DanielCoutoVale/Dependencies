@@ -1,7 +1,7 @@
 # Intelligentī Pauca
 A systemic network for ranked universal dependencies
 
-Latin corpora such as ITTB, AGLDT, and PROIEL have been annotated with classes and functions from a cross-linguistic description called **Universal Dependencies** (UD). These classes and functions are meant to be universal across all languages. However, despite the enormous impact this universality has to the comparability of study results as one can easily see at [UDPipe linguistic model comparison page](http://ufal.mff.cuni.cz/udpipe/models), grammatical structures in this linguistic description lack a grounding on both semantics and expression.
+Latin corpora such as ITTB, PROIEL, and AGLDT have been annotated with classes and functions from a cross-linguistic description called **Universal Dependencies** (UD). These classes and functions are meant to be universal across all languages. However, despite the enormous impact this universality has to the comparability of study results as one can easily see at [UDPipe linguistic model comparison page](http://ufal.mff.cuni.cz/udpipe/models), grammatical structures in this linguistic description lack a grounding on both semantics and expression.
 
 From a pedagogical perspective, the fact that grammatical similarities between examples do not reflect semantic similarities in this linguistic description can render the grammatical structures less useful for teaching Latin. In this regard, when looking up dependency trees, Latin learners must learn how to map different grammatical structures onto the same semantic structure and vice versa. This effort might be (or be perceived as) larger than the effort of learning the grammatical structures directly from text without looking up dependency trees.
 
@@ -13,7 +13,7 @@ In this step-by-step translation documentation, I shall illustrate the issues I 
 
 Statistical parsers often rely on the sequence of word classes/features to determine 1) which word depends on which (**attachment**) and 2) which role the tail word plays relative to the head one (**labeling**). This means that a linguistic description that results in less attachment options and less labeling options for the same sequence of word classes will be learned with less data than a linguistic description that results in more options. Taking this into consideration, let us take a look at the five most frequent attachment and labeling options (**anchors**) that exist for a tail adjective in ITTB dev corpus.
 
-A-Frequency |R-Frequency |Tail class  |Head class  |Dependency   
+A-Frequency |R-Frequency |Tail class  |Head class  |Function   
 :----------:|:----------:|:----------:|:----------:|:----------:
 1041        |48.76%      |adj         |noun        |Amod
 97          |04.54%      |adj         |verb        |Xcomp
