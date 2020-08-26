@@ -1,0 +1,198 @@
+# sent_id = ittb-scg-s1
+# text = quod sit officium sapientis.
+1	quod	qui	PRON	F1|grn1|casA|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing|PronType=Rel	0	root	_	_
+2	sit	sum	AUX	N3|modB|tem1|gen6	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	1	cop	_	_
+3	officium	officium	NOUN	B1|grn1|casA|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	1	nsubj	_	_
+4	sapientis	sapiens	ADJ	C1|grn1|casB|gen1	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	3	nmod	_	SpaceAfter=No
+5	.	.	PUNCT	Punc	_	1	punct	_	_
+
+# sent_id = ittb-scg-s2
+# text = veritatem meditabitur guttur meum, et labia mea detestabuntur impium.
+1	veritatem	veritas	NOUN	C1|grn1|casD|gen2|vgr1	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	2	obj	_	_
+2	meditabitur	meditor	VERB	J3|modJ|tem3|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin|Voice=Pass	0	root	_	_
+3	guttur	guttur	NOUN	C1|grn1|casA|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	2	nsubj	_	_
+4	meum	meus	ADJ	F1|grn1|casA|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing|Poss=Yes	3	amod	_	SpaceAfter=No
+5	,	,	PUNCT	Punc	_	9	punct	_	_
+6	et	et	CCONJ	O4	_	9	cc	_	_
+7	labia	labium	NOUN	B1|grn1|casJ|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Plur	9	nsubj	_	_
+8	mea	meus	ADJ	F1|grn1|casJ|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Plur|Poss=Yes	7	amod	_	_
+9	detestabuntur	detestor	VERB	J3|modJ|tem3|gen9	Mood=Ind|Number=Plur|Person=3|Tense=Fut|VerbForm=Fin|Voice=Pass	2	conj	_	_
+10	impium	impius	ADJ	B1|grn1|casD|gen3	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	9	obj	_	SpaceAfter=No
+11	.	.	PUNCT	Punc	_	2	punct	_	_
+
+# sent_id = ittb-scg-s3
+# text = prov. 8-7.
+1	prov.	vox_breviata	X	5	Abbr=Yes	0	root	_	_
+2	8-7	num._arab.	NUM	G5	NumForm=Digit	1	nummod	_	SpaceAfter=No
+3	.	.	PUNCT	Punc	_	1	punct	_	_
+
+# sent_id = ittb-scg-s4
+# text = multitudinis usus, quem in rebus nominandis sequendum philosophus censet, communiter obtinuit ut sapientes dicantur qui res directe ordinant et eas bene gubernant.
+1	multitudinis	multitudo	NOUN	C1|grn1|casB|gen2	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	2	nmod	_	_
+2	usus	usus	NOUN	D1|grn1|casA|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	13	nsubj	_	SpaceAfter=No
+3	,	,	PUNCT	Punc	_	10	punct	_	_
+4	quem	qui	PRON	F1|grn1|casD|gen1	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing|PronType=Rel	10	obj	_	_
+5	in	in	ADP	S4	AdpType=Prep	6	case	_	_
+6	rebus	res	NOUN	E1|grn1|casO|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Plur	8	obl	_	_
+7	nominandis	nomino	VERB	J2|modO|grp1|casO|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Plur|VerbForm=Gdv|Voice=Pass	6	acl	_	_
+8	sequendum	sequor	VERB	L2|modO|grp1|casD|gen1	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing|VerbForm=Gdv|Voice=Pass	10	ccomp	_	_
+9	philosophus	philosophus	NOUN	B1|grn1|casA|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	10	nsubj	_	_
+10	censet	censeo	VERB	K3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	2	acl:relcl	_	SpaceAfter=No
+11	,	,	PUNCT	Punc	_	10	punct	_	_
+12	communiter	communiter	ADV	C1|grn1|casG	Degree=Pos	13	advmod	_	_
+13	obtinuit	obtineo	VERB	K3|modA|tem4|gen6	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_
+14	ut	ut	SCONJ	O4|vgr1	_	16	mark	_	_
+15	sapientes	sapiens	ADJ	C1|grn1|casJ|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	16	xcomp	_	_
+16	dicantur	dico	VERB	L3|modK|tem1|gen9	Mood=Sub|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	13	ccomp	_	_
+17	qui	qui	PRON	F1|grn1|casJ|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|PronType=Rel	20	nsubj	_	_
+18	res	res	NOUN	E1|grn1|casM|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Plur	20	obj	_	_
+19	directe	directe	ADV	B1|grn1|casG	Degree=Pos	20	advmod	_	_
+20	ordinant	ordino	VERB	J3|modA|tem1|gen9	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	16	csubj:pass	_	_
+21	et	et	CCONJ	O4	_	24	cc	_	_
+22	eas	is	PRON	F1|grn1|casM|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Plur|PronType=Dem,Prs	24	obj	_	_
+23	bene	bene	ADV	O4	_	24	advmod	_	_
+24	gubernant	guberno	VERB	J3|modA|tem1|gen9	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	20	conj	_	SpaceAfter=No
+25	.	.	PUNCT	Punc	_	13	punct	_	_
+
+# sent_id = ittb-scg-s5
+# text = unde inter alia quae homines de sapiente concipiunt, a philosopho ponitur quod sapientis est ordinare.
+1	unde	unde	ADV	O4	_	12	advmod	_	_
+2	inter	inter	ADP	S4	AdpType=Prep	3	case	_	_
+3	alia	alius	PRON	F1|grn1|casM|gen3	Case=Acc|Degree=Pos|Gender=Neut|Number=Plur|PronType=Ind	12	obl	_	_
+4	quae	qui	PRON	F1|grn1|casM|gen3|vgr1	Case=Acc|Degree=Pos|Gender=Neut|Number=Plur|PronType=Rel	8	obj	_	_
+5	homines	homo	NOUN	C1|grn1|casJ|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	8	nsubj	_	_
+6	de	de	ADP	S4	AdpType=Prep	7	case	_	_
+7	sapiente	sapiens	ADJ	C1|grn1|casF|gen1	Case=Abl|Degree=Pos|Gender=Masc|Number=Sing	8	obl	_	_
+8	concipiunt	concipio	VERB	L3|modA|tem1|gen9	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	3	acl:relcl	_	SpaceAfter=No
+9	,	,	PUNCT	Punc	_	8	punct	_	_
+10	a	ab	ADP	S4|vgr1	AdpType=Prep	11	case	_	_
+11	philosopho	philosophus	NOUN	B1|grn1|casF|gen1	Case=Abl|Degree=Pos|Gender=Masc|Number=Sing	12	obl:arg	_	_
+12	ponitur	pono	VERB	L3|modJ|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	_
+13	quod	quod	SCONJ	O4	_	14	mark	_	_
+14	sapientis	sapiens	ADJ	C1|grn1|casB|gen1	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	12	csubj	_	_
+15	est	sum	AUX	N3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	14	cop	_	_
+16	ordinare	ordino	VERB	J3|modH|tem1	Tense=Pres|VerbForm=Inf|Voice=Act	14	csubj	_	SpaceAfter=No
+17	.	.	PUNCT	Punc	_	12	punct	_	_
+
+# sent_id = ittb-scg-s6
+# text = omnium autem ordinatorum ad finem, gubernationis et ordinis regulam ex fine sumi necesse est:
+1	omnium	omnis	PRON	C1|grn1|casK|gen3	Case=Gen|Degree=Pos|Gender=Neut|Number=Plur|PronType=Ind	3	det	_	_
+2	autem	autem	CCONJ	O4	_	14	cc	_	_
+3	ordinatorum	ordino	VERB	J2|modM|tem4|grp1|casK|gen3	Aspect=Perf|Case=Gen|Degree=Pos|Gender=Neut|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	10	nmod	_	_
+4	ad	ad	ADP	S4	AdpType=Prep	5	case	_	_
+5	finem	finis	NOUN	C1|grn1|casD|gen1	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	3	nmod	_	SpaceAfter=No
+6	,	,	PUNCT	Punc	_	3	punct	_	_
+7	gubernationis	gubernatio	NOUN	C1|grn1|casB|gen2	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	3	conj	_	_
+8	et	et	CCONJ	O4	_	9	cc	_	_
+9	ordinis	ordo	NOUN	C1|grn1|casB|gen1	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	7	conj	_	_
+10	regulam	regula	NOUN	A1|grn1|casD|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	13	nsubj:pass	_	_
+11	ex	ex	ADP	S4|vgr2	AdpType=Prep	12	case	_	_
+12	fine	finis	NOUN	C1|grn1|casF|gen1	Case=Abl|Degree=Pos|Gender=Masc|Number=Sing	13	obl	_	_
+13	sumi	sumo	VERB	L3|modQ|tem1	Tense=Pres|VerbForm=Inf|Voice=Pass	14	csubj	_	_
+14	necesse	necesse	ADJ	G1	_	0	root	_	_
+15	est	sum	AUX	N3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	14	cop	_	SpaceAfter=No
+16	:	:	PUNCT	Punc	_	14	punct	_	_
+
+# sent_id = ittb-scg-s7
+# text = tunc enim unaquaeque res optime disponitur cum ad suum finem convenienter ordinatur;
+1	tunc	tunc	ADV	O4	_	6	advmod	_	_
+2	enim	enim	ADV	O4	_	6	advmod	_	_
+3	unaquaeque	unusquisque	PRON	F1|grn1|casA|gen2|vgr1	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing|PronType=Ind	4	det	_	_
+4	res	res	NOUN	E1|grn1|casA|gen2	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	6	nsubj:pass	_	_
+5	optime	melius	ADV	B1|grn3|casG	Degree=Abs	6	advmod	_	_
+6	disponitur	dispono	VERB	L3|modJ|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	_
+7	cum	cum	SCONJ	S4|vgr1	_	12	mark	_	_
+8	ad	ad	ADP	S4	AdpType=Prep	10	case	_	_
+9	suum	suus	ADJ	B1|grn1|casD|gen1	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing|Poss=Yes	10	amod	_	_
+10	finem	finis	NOUN	C1|grn1|casD|gen1	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	12	obl:arg	_	_
+11	convenienter	convenienter	ADV	M2|modD|tem1|grp1|casG|vgr1	Degree=Pos	12	advmod	_	_
+12	ordinatur	ordino	VERB	J3|modJ|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	6	advcl	_	SpaceAfter=No
+13	;	;	PUNCT	Punc	_	6	punct	_	_
+
+# sent_id = ittb-scg-s8
+# text = finis enim est bonum uniuscuiusque.
+1	finis	finis	NOUN	C1|grn1|casA|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	4	nsubj	_	_
+2	enim	enim	ADV	O4	_	4	advmod	_	_
+3	est	sum	AUX	N3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	4	cop	_	_
+4	bonum	bonum	NOUN	B1|grn1|casA|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	0	root	_	_
+5	uniuscuiusque	unusquisque	PRON	F1|grn1|casB|gen3|vgr1	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing|PronType=Ind	4	nmod	_	SpaceAfter=No
+6	.	.	PUNCT	Punc	_	4	punct	_	_
+
+# sent_id = ittb-scg-s9
+# text = unde videmus in artibus unam alterius esse gubernativam et quasi principem, ad quam pertinet eius finis:
+1	unde	unde	ADV	O4	_	2	advmod	_	_
+2	videmus	video	VERB	K3|modA|tem1|gen7|vgr1	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+3	in	in	ADP	S4	AdpType=Prep	4	case	_	_
+4	artibus	ars	NOUN	C1|grn1|casO|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Plur	2	obl	_	_
+5	unam	unus	NUM	F1|grn1|casD|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing|NumType=Card	8	nsubj	_	_
+6	alterius	alter	PRON	F1|grn1|casB|gen2	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing|PronType=Ind	8	nmod	_	_
+7	esse	sum	AUX	N3|modH|tem1	Tense=Pres|VerbForm=Inf|Voice=Act	8	cop	_	_
+8	gubernativam	gubernativus	ADJ	A1|grn1|casD|gen2|vgr1	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	2	ccomp	_	_
+9	et	et	CCONJ	O4	_	11	cc	_	_
+10	quasi	quasi	ADV	O4	_	11	advmod:emph	_	_
+11	principem	princeps	ADJ	C1|grn1|casD|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	8	conj	_	SpaceAfter=No
+12	,	,	PUNCT	Punc	_	15	punct	_	_
+13	ad	ad	ADP	S4	AdpType=Prep	14	case	_	_
+14	quam	qui	PRON	F1|grn1|casD|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing|PronType=Rel	15	obl:arg	_	_
+15	pertinet	pertineo	VERB	K3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	6	acl:relcl	_	_
+16	eius	is	PRON	F1|grn1|casB|gen2|vgr2	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing|PronType=Dem,Prs	17	nmod	_	_
+17	finis	finis	NOUN	C1|grn1|casA|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	15	nsubj	_	SpaceAfter=No
+18	:	:	PUNCT	Punc	_	2	punct	_	_
+
+# sent_id = ittb-scg-s10
+# text = sicut medicinalis ars pigmentariae principatur et eam ordinat, propter hoc quod sanitas, circa quam medicinalis versatur, finis est omnium pigmentorum, quae arte pigmentaria conficiuntur.
+1	sicut	sicut	SCONJ	O4|vgr1	_	5	mark	_	_
+2	medicinalis	medicinalis	ADJ	C1|grn1|casA|gen2	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	3	amod	_	_
+3	ars	ars	NOUN	C1|grn1|casA|gen2	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	5	nsubj	_	_
+4	pigmentariae	pigmentarius	ADJ	A1|grn1|casC|gen2	Case=Dat|Degree=Pos|Gender=Fem|Number=Sing	5	obj	_	_
+5	principatur	principor	VERB	J3|modJ|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	_
+6	et	et	CCONJ	O4	_	8	cc	_	_
+7	eam	is	PRON	F1|grn1|casD|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing|PronType=Dem,Prs	8	obj	_	_
+8	ordinat	ordino	VERB	J3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	5	conj	_	SpaceAfter=No
+9	,	,	PUNCT	Punc	_	11	punct	_	_
+10	propter	propter	ADP	S4	AdpType=Prep	11	case	_	_
+11	hoc	hic	PRON	F1|grn1|casD|gen3	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing|PronType=Dem	5	obl	_	_
+12	quod	quod	SCONJ	O4	_	20	mark	_	_
+13	sanitas	sanitas	NOUN	C1|grn1|casA|gen2	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	20	nsubj	_	SpaceAfter=No
+14	,	,	PUNCT	Punc	_	18	punct	_	_
+15	circa	circa	ADP	S4	AdpType=Prep	16	case	_	_
+16	quam	qui	PRON	F1|grn1|casD|gen2	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing|PronType=Rel	18	obl	_	_
+17	medicinalis	medicinalis	ADJ	C1|grn1|casA|gen2	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	18	nsubj:pass	_	_
+18	versatur	verso	VERB	J3|modJ|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	13	acl:relcl	_	SpaceAfter=No
+19	,	,	PUNCT	Punc	_	18	punct	_	_
+20	finis	finis	NOUN	C1|grn1|casA|gen1	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	11	acl	_	_
+21	est	sum	AUX	N3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	20	cop	_	_
+22	omnium	omnis	PRON	C1|grn1|casK|gen3	Case=Gen|Degree=Pos|Gender=Neut|Number=Plur|PronType=Ind	23	det	_	_
+23	pigmentorum	pigmentum	NOUN	B1|grn1|casK|gen3	Case=Gen|Degree=Pos|Gender=Neut|Number=Plur	20	nmod	_	SpaceAfter=No
+24	,	,	PUNCT	Punc	_	28	punct	_	_
+25	quae	qui	PRON	F1|grn1|casJ|gen3|vgr1	Case=Nom|Degree=Pos|Gender=Neut|Number=Plur|PronType=Rel	28	nsubj:pass	_	_
+26	arte	ars	NOUN	C1|grn1|casF|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Sing	28	obl	_	_
+27	pigmentaria	pigmentarius	ADJ	A1|grn1|casF|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Sing	26	amod	_	_
+28	conficiuntur	conficio	VERB	L3|modJ|tem1|gen9	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	23	acl:relcl	_	SpaceAfter=No
+29	.	.	PUNCT	Punc	_	5	punct	_	_
+
+# sent_id = ittb-scg-s11
+# text = et simile apparet in arte gubernatoria respectu navifactivae;
+1	et	et	CCONJ	O4	_	3	cc	_	_
+2	simile	similis	ADJ	C1|grn1|casA|gen3	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	3	xcomp	_	_
+3	apparet	appareo	VERB	K3|modA|tem1|gen6	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+4	in	in	ADP	S4	AdpType=Prep	5	case	_	_
+5	arte	ars	NOUN	C1|grn1|casF|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Sing	3	obl	_	_
+6	gubernatoria	gubernatorius	ADJ	A1|grn1|casF|gen2	Case=Abl|Degree=Pos|Gender=Fem|Number=Sing	5	amod	_	_
+7	respectu	respectus	NOUN	D1|grn1|casF|gen1	Case=Abl|Degree=Pos|Gender=Masc|Number=Sing	3	obl	_	_
+8	navifactivae	navifactivus	ADJ	A1|grn1|casB|gen2|vgr1	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	7	nmod	_	SpaceAfter=No
+9	;	;	PUNCT	Punc	_	3	punct	_	_
+
+# sent_id = ittb-scg-s12
+# text = et in militari respectu equestris et omnis bellici apparatus.
+1	et	et	CCONJ	O4	_	3	cc	_	_
+2	in	in	ADP	S4	AdpType=Prep	3	case	_	_
+3	militari	militaris	ADJ	C1|grn1|casF|gen2	Case=Abl|Degree=Pos|Gender=Masc|Number=Sing	0	root	_	_
+4	respectu	respectus	NOUN	D1|grn1|casF|gen1	Case=Abl|Degree=Pos|Gender=Masc|Number=Sing	3	nmod	_	_
+5	equestris	equester	ADJ	C1|grn1|casB|gen2	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	4	nmod	_	_
+6	et	et	CCONJ	O4	_	9	cc	_	_
+7	omnis	omnis	PRON	C1|grn1|casB|gen1	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing|PronType=Ind	9	det	_	_
+8	bellici	bellicus	ADJ	B1|grn1|casB|gen1	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	9	amod	_	_
+9	apparatus	apparatus	NOUN	D1|grn1|casB|gen1	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	5	conj	_	SpaceAfter=No
+10	.	.	PUNCT	Punc	_	3	punct	_	_
+

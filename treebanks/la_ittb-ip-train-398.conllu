@@ -1,0 +1,398 @@
+# sent_id = IP-s91795
+# text = unde et philosophus dicit felicitatem esse operationem perfectam. 
+1	unde	adverb-unde	adverb	-	-	6	groups:Marker:clause	-	SpaceAfter=No
+2	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	3	groups:Deictic:group	-	SpaceAfter=No
+3	philosophus	noun-philosophus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	6	groups:Assigner:clause	-	SpaceAfter=No
+4	dicit	verb-dico	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	6	groups:Auxiliary:group	-	SpaceAfter=No
+5	felicitatem	noun-felicitas	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	6	groups:Identified:clause	-	SpaceAfter=No
+6	esse	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=re-branch	0	root	-	SpaceAfter=No
+7	operationem	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	6	groups:Identifier:clause	-	SpaceAfter=No
+8	perfectam	adjective-perfectus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=am-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=am-leaf|CASE-SEAM=accusative-seam	7	groups:Epithet:group	-	-
+9	.	punctuation-.	punctuation	-	-	6	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91796
+# text = perfectio autem operationis dependet ex quatuor. 
+1	perfectio	noun-perfectio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	4	groups:Carrier:clause	-	SpaceAfter=No
+2	autem	conjunction-autem	conjunction	-	CONJUNCTION-CLASS=linker	4	groups:Marker:clause	-	SpaceAfter=No
+3	operationis	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	1	groups:Possessor:group	-	SpaceAfter=No
+4	dependet	verb-dependeo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+5	ex	adposition-ex	adposition	-	-	4	groups:Marker:group	-	SpaceAfter=No
+6	quatuor	noun-quatuor	noun	-	NOUN-CLASS=common-noun|RHYME=um-rhyme|NUMERIC-CASE=cardinal|NUMERIC-MODULO=decimal|NUMERIC-PLACE=one|SEAMEDNESS=unseamed|CASE=ablative	4	groups:Attribute:clause	-	-
+7	.	punctuation-.	punctuation	-	-	4	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91797
+# text = primo, ex suo genere: ut scilicet sit manens in ipso operante. 
+1	primo	noun-primus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Marker:clause	-	-
+2	,	verb-,	verb	-	VERB-CLASS=lexical-verb	0	root	-	SpaceAfter=No
+3	ex	adposition-ex	adposition	-	-	2	groups:Marker:group	-	SpaceAfter=No
+4	suo	noun-suus	noun	-	NOUN-CLASS=pronoun|ADJECTIVE-BRANCHEDNESS=unbranched|SEAMEDNESS=seamed|AUMUS-FOLIAGE=ā-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=ō-leaf|CASE=genitive|CASE-SEAM=ablative-seam	5	groups:Possessor:group	-	SpaceAfter=No
+5	genere	noun-genus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Attribute:clause	-	-
+6	:	punctuation-:	punctuation	-	-	10	groups:Marker:clause	-	SpaceAfter=No
+7	ut	conjunction-ut	conjunction	-	CONJUNCTION-CLASS=binder	10	groups:Marker:clause	-	SpaceAfter=No
+8	scilicet	adverb-scilicet	adverb	-	-	10	groups:Marker:clause	-	SpaceAfter=No
+9	sit	verb-sum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	10	groups:Auxiliary:group	-	SpaceAfter=No
+10	manens	verb-maneo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nt-branch|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=a/am-seam	2	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+11	in	adposition-in	adposition	-	-	10	groups:Circumstance:clause	-	SpaceAfter=No
+12	ipso	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	13	groups:Deictic:group	-	SpaceAfter=No
+13	operante	noun-operor	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	11	groups:Minor-Range:phrase	-	-
+14	.	punctuation-.	punctuation	-	-	2	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91798
+# text = dico autem operationem in ipso manentem per quam non fit aliud praeter ipsam operationem: sicut videre et audire. 
+1	dico	verb-dico	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=ō-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=ō-leaf	0	root	-	SpaceAfter=No
+2	autem	conjunction-autem	conjunction	-	CONJUNCTION-CLASS=linker	1	groups:Marker:clause	-	SpaceAfter=No
+3	operationem	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	1	groups:Goal:clause	-	SpaceAfter=No
+4	in	adposition-in	adposition	-	-	6	groups:Circumstance:clause	-	SpaceAfter=No
+5	ipso	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	4	groups:Minor-Range:phrase	-	SpaceAfter=No
+6	manentem	verb-maneo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nt-branch|AUMUS-FOLIAGE=am-foliage|AUMUS-SEAM=a/am-seam	3	clauses:Qualifier:group	-	SpaceAfter=No
+7	per	adposition-per	adposition	-	-	10	groups:Circumstance:clause	-	SpaceAfter=No
+8	quam	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	7	groups:Minor-Range:phrase	-	SpaceAfter=No
+9	non	adverb-non	adverb	-	-	10	groups:Adjunct:group	-	SpaceAfter=No
+10	fit	verb-facio	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=or-foliage|ŌST-LEAF=tur-leaves	3	clauses:Qualifier:group	-	SpaceAfter=No
+11	aliud	noun-alius	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	10	groups:Goal:clause	-	SpaceAfter=No
+12	praeter	adposition-praeter	adposition	-	-	10	groups:Circumstance:clause	-	SpaceAfter=No
+13	ipsam	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	14	groups:Deictic:group	-	SpaceAfter=No
+14	operationem	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	12	groups:Minor-Range:phrase	-	-
+15	:	punctuation-:	punctuation	-	-	17	groups:Marker:clause	-	SpaceAfter=No
+16	sicut	conjunction-sicut	conjunction	-	CONJUNCTION-CLASS=binder	17	groups:Marker:clause	-	SpaceAfter=No
+17	videre	verb-video	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=re-branch	3	clauses:Qualifier:group	-	SpaceAfter=No
+18	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	19	groups:Marker:clause	-	SpaceAfter=No
+19	audire	verb-audio	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=re-branch	17	clauses:Extending:clause-complex	-	-
+20	.	punctuation-.	punctuation	-	-	1	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91799
+# text = huiusmodi enim sunt perfectiones eorum quorum sunt operationes, et possunt esse ultimum: quia non ordinantur ad aliquod factum quod sit finis. 
+1	huiusmodi	adverb-hujusmodi	adverb	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+2	enim	adverb-enim	adverb	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+3	sunt	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=nt-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=nt-leaf	0	root	-	SpaceAfter=No
+4	perfectiones	noun-perfectio	noun	-	NOUN-CLASS=common-noun|NUMBER=plural|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Existent:clause	-	SpaceAfter=No
+5	eorum	noun-is	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	4	groups:Possessor:group	-	SpaceAfter=No
+6	quorum	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	8	groups:Possessor:group	-	SpaceAfter=No
+7	sunt	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=nt-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=nt-leaf	5	clauses:Qualifier:group	-	SpaceAfter=No
+8	operationes	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=plural|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	7	groups:Attribute:clause	-	-
+9	,	punctuation-,	punctuation	-	-	12	groups:Marker:clause	-	SpaceAfter=No
+10	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	12	groups:Marker:clause	-	SpaceAfter=No
+11	possunt	verb-possum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=nt-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=nt-leaf	12	groups:Auxiliary:group	-	SpaceAfter=No
+12	esse	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=re-branch	3	clauses:Extending:clause-complex	-	SpaceAfter=No
+13	ultimum	adjective-ultimus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf|CASE-SEAM=nominative-seam	11	groups:Attribute:clause	-	-
+14	:	punctuation-:	punctuation	-	-	17	groups:Marker:clause	-	SpaceAfter=No
+15	quia	conjunction-quia	conjunction	-	CONJUNCTION-CLASS=binder	17	groups:Marker:clause	-	SpaceAfter=No
+16	non	adverb-non	adverb	-	-	17	groups:Adjunct:group	-	SpaceAfter=No
+17	ordinantur	verb-ordino	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=nt-seam|ŌST-FOLIAGE=or-foliage|ŌST-LEAF=ntur-leaves	12	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+18	ad	adposition-ad	adposition	-	-	17	groups:Circumstance:clause	-	SpaceAfter=No
+19	aliquod	noun-aliqui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=accusative	18	groups:Minor-Range:phrase	-	SpaceAfter=No
+20	factum	verb-facio	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ū-aspect|VERB-BRANCHEDNESS=unbranched|AUMUS-FOLIAGE=am-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf	19	clauses:Qualifier:group	-	SpaceAfter=No
+21	quod	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	22	groups:Identified:clause	-	SpaceAfter=No
+22	sit	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	19	clauses:Qualifier:group	-	SpaceAfter=No
+23	finis	noun-finis	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	22	groups:Identifier:clause	-	-
+24	.	punctuation-.	punctuation	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91800
+# text = operatio vero vel actio ex qua sequitur aliquid actum praeter ipsam, est perfectio operati, non operantis, et comparatur ad ipsum sicut ad finem. 
+1	operatio	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	13	groups:Identified:clause	-	SpaceAfter=No
+2	vero	adverb-vero	adverb	-	-	13	groups:Marker:clause	-	SpaceAfter=No
+3	vel	conjunction-vel	conjunction	-	CONJUNCTION-CLASS=linker	4	groups:Marker:group	-	SpaceAfter=No
+4	actio	noun-actio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	1	groups:Extending:group-complex	-	SpaceAfter=No
+5	ex	adposition-ex	adposition	-	-	7	groups:Circumstance:clause	-	SpaceAfter=No
+6	qua	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	5	groups:Minor-Range:phrase	-	SpaceAfter=No
+7	sequitur	verb-sequor	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=or-foliage|ŌST-LEAF=tur-leaves	1	clauses:Qualifier:group	-	SpaceAfter=No
+8	aliquid	noun-aliquis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	7	groups:Actor:clause	-	SpaceAfter=No
+9	actum	verb-ago	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nt-branch|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam	8	clauses:Qualifier:group	-	SpaceAfter=No
+10	praeter	adposition-praeter	adposition	-	-	9	groups:Circumstance:clause	-	SpaceAfter=No
+11	ipsam	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	10	groups:Minor-Range:phrase	-	-
+12	,	punctuation-,	punctuation	-	-	4	groups:Marker:clause	-	SpaceAfter=No
+13	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+14	perfectio	noun-perfectio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	13	groups:Identifier:clause	-	SpaceAfter=No
+15	operati	noun-operor	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	14	groups:Possessor:group	-	-
+16	,	punctuation-,	punctuation	-	-	18	groups:Marker:group	-	SpaceAfter=No
+17	non	adverb-non	adverb	-	-	18	groups:Marker:group	-	SpaceAfter=No
+18	operantis	noun-operor	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	15	groups:Extending:group-complex	-	-
+19	,	punctuation-,	punctuation	-	-	21	groups:Marker:clause	-	SpaceAfter=No
+20	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	21	groups:Marker:clause	-	SpaceAfter=No
+21	comparatur	verb-comparo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=or-foliage|ŌST-LEAF=tur-leaves	13	clauses:Extending:clause-complex	-	SpaceAfter=No
+22	ad	adposition-ad	adposition	-	-	21	groups:Circumstance:clause	-	SpaceAfter=No
+23	ipsum	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=accusative	22	groups:Minor-Range:phrase	-	SpaceAfter=No
+24	sicut	conjunction-sicut	conjunction	-	CONJUNCTION-CLASS=binder	21	clauses:Extending:clause-complex	-	SpaceAfter=No
+25	ad	adposition-ad	adposition	-	-	24	groups:Circumstance:clause	-	SpaceAfter=No
+26	finem	noun-finis	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=accusative	25	groups:Minor-Range:phrase	-	-
+27	.	punctuation-.	punctuation	-	-	13	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91801
+# text = et ideo talis operatio intellectualis naturae non est beatitudo sive felicitas. 
+1	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	8	groups:Marker:clause	-	SpaceAfter=No
+2	ideo	adverb-ideo	adverb	-	-	8	groups:Marker:clause	-	SpaceAfter=No
+3	talis	adjective-talis	adjective	-	PRONOUN-RELATIVITY=absolute|ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=unseamed|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=a-leaf	4	groups:Deictic:group	-	SpaceAfter=No
+4	operatio	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	8	groups:Identified:clause	-	SpaceAfter=No
+5	intellectualis	adjective-intellectualis	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=ae/ī-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=ae-leaf|CASE-SEAM=genitive-seam	6	groups:Epithet:group	-	SpaceAfter=No
+6	naturae	noun-natura	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	4	groups:Possessor:group	-	SpaceAfter=No
+7	non	adverb-non	adverb	-	-	8	groups:Adjunct:group	-	SpaceAfter=No
+8	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+9	beatitudo	noun-beatitudo	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	8	groups:Identifier:clause	-	SpaceAfter=No
+10	sive	conjunction-sive	conjunction	-	CONJUNCTION-CLASS=linker	11	groups:Marker:group	-	SpaceAfter=No
+11	felicitas	noun-felicitas	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	9	groups:Extending:group-complex	-	-
+12	.	punctuation-.	punctuation	-	-	8	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91802
+# text = secundo, ex principio operationis: ut sit altissimae potentiae. 
+1	secundo	noun-secundus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Marker:clause	-	-
+2	,	verb-,	verb	-	VERB-CLASS=lexical-verb	0	root	-	SpaceAfter=No
+3	ex	adposition-ex	adposition	-	-	2	groups:Marker:group	-	SpaceAfter=No
+4	principio	noun-principium	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Attribute:clause	-	SpaceAfter=No
+5	operationis	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	4	groups:Possessor:group	-	-
+6	:	punctuation-:	punctuation	-	-	8	groups:Marker:clause	-	SpaceAfter=No
+7	ut	conjunction-ut	conjunction	-	CONJUNCTION-CLASS=binder	8	groups:Marker:clause	-	SpaceAfter=No
+8	sit	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	2	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+9	altissimae	adjective-altus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=ae/ī-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=ae-leaf|CASE-SEAM=genitive-seam	10	groups:Epithet:group	-	SpaceAfter=No
+10	potentiae	noun-potentia	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	8	groups:Attribute:clause	-	-
+11	.	punctuation-.	punctuation	-	-	2	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91803
+# text = unde secundum operationem sensus non est in nobis felicitas, sed secundum operationem intellectus et per habitum perfecti. 
+1	unde	adverb-unde	adverb	-	-	6	groups:Marker:clause	-	SpaceAfter=No
+2	secundum	adposition-secundum	adposition	-	-	6	groups:Circumstance:clause	-	SpaceAfter=No
+3	operationem	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	2	groups:Minor-Range:phrase	-	SpaceAfter=No
+4	sensus	noun-sensus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=genitive	3	groups:Possessor:group	-	SpaceAfter=No
+5	non	adverb-non	adverb	-	-	6	groups:Adjunct:group	-	SpaceAfter=No
+6	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+7	in	adposition-in	adposition	-	-	6	groups:Circumstance:clause	-	SpaceAfter=No
+8	nobis	noun-nos	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=plural|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=ablative	7	groups:Minor-Range:phrase	-	SpaceAfter=No
+9	felicitas	noun-felicitas	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	6	groups:Existent:clause	-	-
+10	,	punctuation-,	punctuation	-	-	12	groups:Marker:clause	-	SpaceAfter=No
+11	sed	conjunction-sed	conjunction	-	CONJUNCTION-CLASS=linker	12	groups:Marker:group	-	SpaceAfter=No
+12	secundum	adposition-secundum	adposition	-	-	2	groups:Extending:group-complex	-	SpaceAfter=No
+13	operationem	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	12	groups:Minor-Range:phrase	-	SpaceAfter=No
+14	intellectus	noun-intellectus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=genitive	13	groups:Possessor:group	-	SpaceAfter=No
+15	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	16	groups:Marker:group	-	SpaceAfter=No
+16	per	adposition-per	adposition	-	-	12	groups:Extending:group-complex	-	SpaceAfter=No
+17	habitum	noun-habitus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=accusative	16	groups:Minor-Range:phrase	-	SpaceAfter=No
+18	perfecti	noun-perfectus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	17	groups:Possessor:group	-	-
+19	.	punctuation-.	punctuation	-	-	6	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91804
+# text = tertio, ex operationis obiecto. 
+1	tertio	noun-tertius	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Marker:clause	-	-
+2	,	verb-,	verb	-	VERB-CLASS=lexical-verb	0	root	-	SpaceAfter=No
+3	ex	adposition-ex	adposition	-	-	2	groups:Marker:group	-	SpaceAfter=No
+4	operationis	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	5	groups:Possessor:group	-	SpaceAfter=No
+5	obiecto	noun-objectum	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Attribute:clause	-	-
+6	.	punctuation-.	punctuation	-	-	2	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91805
+# text = et propter hoc in nobis ultima felicitas est in intelligendo altissimum intelligibile. 
+1	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	8	groups:Marker:clause	-	SpaceAfter=No
+2	propter	adposition-propter	adposition	-	-	8	groups:Circumstance:clause	-	SpaceAfter=No
+3	hoc	noun-hic	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=accusative	2	groups:Minor-Range:phrase	-	SpaceAfter=No
+4	in	adposition-in	adposition	-	-	8	groups:Circumstance:clause	-	SpaceAfter=No
+5	nobis	noun-nos	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=plural|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=ablative	4	groups:Minor-Range:phrase	-	SpaceAfter=No
+6	ultima	adjective-ultimus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=a-leaf|CASE-SEAM=nominative-seam	7	groups:Ordinator:group	-	SpaceAfter=No
+7	felicitas	noun-felicitas	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	8	groups:Existent:clause	-	SpaceAfter=No
+8	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+9	in	adposition-in	adposition	-	-	8	groups:Marker:clause	-	SpaceAfter=No
+10	intelligendo	verb-intellego	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nd-branch|SEAMEDNESS=unseamed|AUMUS-LEAF=ō-leaf	8	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+11	altissimum	adjective-altus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=am-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf|CASE-SEAM=accusative-seam	12	groups:Epithet:group	-	SpaceAfter=No
+12	intelligibile	noun-intelligibilis	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=accusative	10	groups:Goal:clause	-	-
+13	.	punctuation-.	punctuation	-	-	8	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91806
+# text = quarto, ex forma operationis: ut scilicet perfecte, faciliter, firmiter et delectabiliter operetur. 
+1	quarto	noun-quartus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Marker:clause	-	-
+2	,	verb-,	verb	-	VERB-CLASS=lexical-verb	0	root	-	SpaceAfter=No
+3	ex	adposition-ex	adposition	-	-	2	groups:Marker:group	-	SpaceAfter=No
+4	forma	noun-forma	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	2	groups:Attribute:clause	-	SpaceAfter=No
+5	operationis	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	4	groups:Possessor:group	-	-
+6	:	punctuation-:	punctuation	-	-	16	groups:Marker:clause	-	SpaceAfter=No
+7	ut	conjunction-ut	conjunction	-	CONJUNCTION-CLASS=binder	16	groups:Marker:clause	-	SpaceAfter=No
+8	scilicet	adverb-scilicet	adverb	-	-	16	groups:Marker:clause	-	SpaceAfter=No
+9	perfecte	adverb-perfecte	adverb	-	-	16	groups:Circumstance:clause	-	-
+10	,	punctuation-,	punctuation	-	-	11	groups:Marker:group	-	SpaceAfter=No
+11	faciliter	adverb-faciliter	adverb	-	-	9	groups:Extending:group-complex	-	-
+12	,	punctuation-,	punctuation	-	-	13	groups:Marker:group	-	SpaceAfter=No
+13	firmiter	adverb-firmiter	adverb	-	-	9	groups:Extending:group-complex	-	SpaceAfter=No
+14	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	15	groups:Marker:group	-	SpaceAfter=No
+15	delectabiliter	adverb-delectabiliter	adverb	-	-	9	groups:Extending:group-complex	-	SpaceAfter=No
+16	operetur	verb-operor	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=or-foliage|ŌST-LEAF=tur-leaves	2	clauses:Enhancing:clause-complex	-	-
+17	.	punctuation-.	punctuation	-	-	2	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91807
+# text = talis autem est dei operatio: cum sit intelligens; et suus intellectus altissima virtutum sit, nec indiget habitu perficiente, quia in seipso perfectus est, ut supra ostensum est; 
+1	talis	adjective-talis	adjective	-	PRONOUN-RELATIVITY=absolute|ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=unseamed|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=a-leaf	3	groups:Attribute:clause	-	SpaceAfter=No
+2	autem	conjunction-autem	conjunction	-	CONJUNCTION-CLASS=linker	3	groups:Marker:clause	-	SpaceAfter=No
+3	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+4	dei	noun-deus	noun	-	NOUN-CLASS=proper-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=genitive	5	groups:Possessor:group	-	SpaceAfter=No
+5	operatio	noun-operatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Carrier:clause	-	-
+6	:	punctuation-:	punctuation	-	-	9	groups:Marker:clause	-	SpaceAfter=No
+7	cum	conjunction-cum	conjunction	-	CONJUNCTION-CLASS=binder	9	groups:Marker:clause	-	SpaceAfter=No
+8	sit	verb-sum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	9	groups:Auxiliary:group	-	SpaceAfter=No
+9	intelligens	verb-intellego	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nt-branch|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam	3	clauses:Enhancing:clause-complex	-	-
+10	;	punctuation-;	punctuation	-	-	16	groups:Marker:clause	-	SpaceAfter=No
+11	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	16	groups:Marker:clause	-	SpaceAfter=No
+12	suus	noun-suus	noun	-	NOUN-CLASS=pronoun|ADJECTIVE-BRANCHEDNESS=unbranched|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE=genitive|CASE-SEAM=nominative-seam	13	groups:Possessor:group	-	SpaceAfter=No
+13	intellectus	noun-intellectus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	16	groups:Identified:clause	-	SpaceAfter=No
+14	altissima	adjective-altus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=a-leaf|CASE-SEAM=nominative-seam	16	groups:Identifier:clause	-	SpaceAfter=No
+15	virtutum	noun-virtus	noun	-	NOUN-CLASS=common-noun|NUMBER=plural|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=genitive	14	groups:Pool:group	-	SpaceAfter=No
+16	sit	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	9	clauses:Extending:clause-complex	-	-
+17	,	punctuation-,	punctuation	-	-	19	groups:Marker:clause	-	SpaceAfter=No
+18	nec	conjunction-nec	conjunction	-	CONJUNCTION-CLASS=linker	19	groups:Marker:clause	-	SpaceAfter=No
+19	indiget	verb-indigeo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	3	clauses:Extending:clause-complex	-	SpaceAfter=No
+20	habitu	noun-habitus	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=ablative	19	groups:Attribute:clause	-	SpaceAfter=No
+21	perficiente	verb-perficio	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nt-branch|AUMUS-FOLIAGE=ā-foliage|AUMUS-SEAM=us/um-seam	20	clauses:Qualifier:group	-	-
+22	,	punctuation-,	punctuation	-	-	27	groups:Marker:clause	-	SpaceAfter=No
+23	quia	conjunction-quia	conjunction	-	CONJUNCTION-CLASS=binder	27	groups:Marker:clause	-	SpaceAfter=No
+24	in	adposition-in	adposition	-	-	27	groups:Circumstance:clause	-	SpaceAfter=No
+25	seipso	noun-seipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=ablative	24	groups:Minor-Range:phrase	-	SpaceAfter=No
+26	perfectus	adjective-perfectus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE-SEAM=nominative-seam	27	groups:Attribute:clause	-	SpaceAfter=No
+27	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	19	clauses:Enhancing:clause-complex	-	-
+28	,	punctuation-,	punctuation	-	-	31	groups:Marker:clause	-	SpaceAfter=No
+29	ut	conjunction-ut	conjunction	-	CONJUNCTION-CLASS=binder	31	groups:Marker:clause	-	SpaceAfter=No
+30	supra	adverb-supra	adverb	-	-	31	groups:Circumstance:clause	-	SpaceAfter=No
+31	ostensum	verb-ostendo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ū-aspect|VERB-BRANCHEDNESS=unbranched|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf	27	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+32	est	verb-sum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	31	groups:Auxiliary:group	-	-
+33	;	punctuation-;	punctuation	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91808
+# text = ipse autem seipsum intelligit, qui est summum intelligibilium; perfecte, absque omni difficultate, et delectabiliter. 
+1	ipse	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	4	groups:Actor:clause	-	SpaceAfter=No
+2	autem	conjunction-autem	conjunction	-	CONJUNCTION-CLASS=linker	4	groups:Marker:clause	-	SpaceAfter=No
+3	seipsum	noun-seipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=accusative	4	groups:Goal:clause	-	SpaceAfter=No
+4	intelligit	verb-intellego	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	-
+5	,	punctuation-,	punctuation	-	-	7	groups:Marker:clause	-	SpaceAfter=No
+6	qui	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	7	groups:Identified:clause	-	SpaceAfter=No
+7	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	3	clauses:Qualifier:group	-	SpaceAfter=No
+8	summum	adjective-summus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf|CASE-SEAM=nominative-seam	7	groups:Identifier:clause	-	SpaceAfter=No
+9	intelligibilium	noun-intelligibilis	noun	-	NOUN-CLASS=common-noun|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	8	groups:Pool:group	-	-
+10	;	punctuation-;	punctuation	-	-	4	groups:Marker:clause	-	SpaceAfter=No
+11	perfecte	adverb-perfecte	adverb	-	-	4	groups:Circumstance:clause	-	-
+12	,	punctuation-,	punctuation	-	-	13	groups:Marker:clause	-	SpaceAfter=No
+13	absque	adposition-absque	adposition	-	-	11	groups:Extending:group-complex	-	SpaceAfter=No
+14	omni	noun-omnis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	15	groups:Deictic:group	-	SpaceAfter=No
+15	difficultate	noun-difficultas	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	13	groups:Minor-Range:phrase	-	-
+16	,	punctuation-,	punctuation	-	-	18	groups:Marker:group	-	SpaceAfter=No
+17	et	conjunction-et	conjunction	-	CONJUNCTION-CLASS=linker	18	groups:Marker:group	-	SpaceAfter=No
+18	delectabiliter	adverb-delectabiliter	adverb	-	-	11	groups:Extending:group-complex	-	-
+19	.	punctuation-.	punctuation	-	-	4	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91809
+# text = est igitur beatus. 
+1	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+2	igitur	adverb-igitur	adverb	-	-	1	groups:Marker:clause	-	SpaceAfter=No
+3	beatus	adjective-beatus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE-SEAM=nominative-seam	1	groups:Attribute:clause	-	-
+4	.	punctuation-.	punctuation	-	-	1	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91810
+# text = adhuc. 
+1	adhuc	adverb-adhuc	adverb	-	-	0	root	-	-
+2	.	punctuation-.	punctuation	-	-	1	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91811
+# text = per beatitudinem desiderium omne quietatur: quia, ea habita, non restat aliud desiderandum; cum sit ultimus finis. 
+1	per	adposition-per	adposition	-	-	5	groups:Circumstance:clause	-	SpaceAfter=No
+2	beatitudinem	noun-beatitudo	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	1	groups:Minor-Range:phrase	-	SpaceAfter=No
+3	desiderium	noun-desiderium	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	5	groups:Goal:clause	-	SpaceAfter=No
+4	omne	noun-omnis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Deictic:group	-	SpaceAfter=No
+5	quietatur	verb-quieto	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=or-foliage|ŌST-LEAF=tur-leaves	0	root	-	-
+6	:	punctuation-:	punctuation	-	-	13	groups:Marker:clause	-	SpaceAfter=No
+7	quia	conjunction-quia	conjunction	-	CONJUNCTION-CLASS=binder	13	groups:Marker:clause	-	-
+8	,	punctuation-,	punctuation	-	-	10	groups:Marker:clause	-	SpaceAfter=No
+9	ea	noun-is	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	10	groups:Goal:clause	-	SpaceAfter=No
+10	habita	verb-habeo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ū-aspect|VERB-BRANCHEDNESS=unbranched|AUMUS-FOLIAGE=ā-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=ā-leaf	13	clauses:Enhancing:clause-complex	-	-
+11	,	punctuation-,	punctuation	-	-	10	groups:Marker:clause	-	SpaceAfter=No
+12	non	adverb-non	adverb	-	-	13	groups:Adjunct:group	-	SpaceAfter=No
+13	restat	verb-resto	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	5	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+14	aliud	noun-alius	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	13	groups:Actor:clause	-	SpaceAfter=No
+15	desiderandum	verb-desidero	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=nd-branch|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf	14	clauses:Qualifier:group	-	-
+16	;	punctuation-;	punctuation	-	-	18	groups:Marker:clause	-	SpaceAfter=No
+17	cum	conjunction-cum	conjunction	-	CONJUNCTION-CLASS=binder	13	clauses:Extending:clause-complex	-	SpaceAfter=No
+18	sit	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	13	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+19	ultimus	adjective-ultimus	adjective	-	ADJECTIVE-BRANCHEDNESS=branched|ADJECTIVE-BRANCH=issim-branch|SCALAR-MODE=ordinative|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE-SEAM=nominative-seam	20	groups:Ordinator:group	-	SpaceAfter=No
+20	finis	noun-finis	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	18	groups:Attribute:clause	-	-
+21	.	punctuation-.	punctuation	-	-	5	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91812
+# text = oportet igitur eum esse beatum qui perfectus est quantum ad omnia quae desiderare potest: 
+1	oportet	verb-oportet	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	4	groups:Auxiliary:group	-	SpaceAfter=No
+2	igitur	adverb-igitur	adverb	-	-	4	groups:Marker:clause	-	SpaceAfter=No
+3	eum	noun-is	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=accusative	4	groups:Carrier:clause	-	SpaceAfter=No
+4	esse	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=re-branch	0	root	-	SpaceAfter=No
+5	beatum	adjective-beatus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=am-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=um-leaf|CASE-SEAM=accusative-seam	4	groups:Attribute:clause	-	SpaceAfter=No
+6	qui	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	8	groups:Carrier:clause	-	SpaceAfter=No
+7	perfectus	adjective-perfectus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE-SEAM=nominative-seam	8	groups:Attribute:clause	-	SpaceAfter=No
+8	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	3	clauses:Qualifier:group	-	SpaceAfter=No
+9	quantum	adverb-quantum	adverb	-	-	11	groups:Deictic:group	-	SpaceAfter=No
+10	ad	adposition-ad	adposition	-	-	8	groups:Circumstance:clause	-	SpaceAfter=No
+11	omnia	noun-omnis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=accusative	10	groups:Minor-Range:phrase	-	SpaceAfter=No
+12	quae	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=accusative	13	groups:Goal:clause	-	SpaceAfter=No
+13	desiderare	verb-desidero	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=re-branch	11	clauses:Qualifier:group	-	SpaceAfter=No
+14	potest	verb-possum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	13	groups:Auxiliary:group	-	-
+15	:	punctuation-:	punctuation	-	-	4	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91813
+# text = unde boetius dicit quod beatitudo est status omnium bonorum congregatione perfectus. 
+1	unde	adverb-unde	adverb	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+2	boetius	noun-boetius	noun	-	NOUN-CLASS=proper-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Actor:clause	-	SpaceAfter=No
+3	dicit	verb-dico	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+4	quod	conjunction-quod	conjunction	-	CONJUNCTION-CLASS=binder	6	groups:Marker:clause	-	SpaceAfter=No
+5	beatitudo	noun-beatitudo	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	6	groups:Identified:clause	-	SpaceAfter=No
+6	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	3	clauses:Locution:clause-complex	-	SpaceAfter=No
+7	status	noun-status	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	6	groups:Identifier:clause	-	SpaceAfter=No
+8	omnium	noun-omnis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	9	groups:Deictic:group	-	SpaceAfter=No
+9	bonorum	noun-bonum	noun	-	NOUN-CLASS=common-noun|NUMBER=plural|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=genitive	10	groups:Possessor:group	-	SpaceAfter=No
+10	congregatione	noun-congregatio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	11	groups:Tool:clause	-	SpaceAfter=No
+11	perfectus	verb-perficio	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ū-aspect|VERB-BRANCHEDNESS=unbranched|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf	7	clauses:Qualifier:group	-	-
+12	.	punctuation-.	punctuation	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91814
+# text = sed talis est divina perfectio quod omnem perfectionem in quadam simplicitate comprehendit, ut supra ostensum est. 
+1	sed	conjunction-sed	conjunction	-	CONJUNCTION-CLASS=linker	3	groups:Marker:clause	-	SpaceAfter=No
+2	talis	adjective-talis	adjective	-	PRONOUN-RELATIVITY=absolute|ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=unseamed|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=a-leaf	3	groups:Attribute:clause	-	SpaceAfter=No
+3	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+4	divina	noun-divinus	noun	-	NOUN-CLASS=proper-noun|ADJECTIVE-BRANCHEDNESS=unbranched|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=a/am-seam|AUMUS-LEAF=a-leaf|CASE=genitive|CASE-SEAM=nominative-seam	5	groups:Possessor:group	-	SpaceAfter=No
+5	perfectio	noun-perfectio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Carrier:clause	-	SpaceAfter=No
+6	quod	conjunction-quod	conjunction	-	CONJUNCTION-CLASS=binder	12	groups:Marker:clause	-	SpaceAfter=No
+7	omnem	noun-omnis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	8	groups:Deictic:group	-	SpaceAfter=No
+8	perfectionem	noun-perfectio	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=accusative	12	groups:Goal:clause	-	SpaceAfter=No
+9	in	adposition-in	adposition	-	-	12	groups:Circumstance:clause	-	SpaceAfter=No
+10	quadam	noun-quidam	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	11	groups:Deictic:group	-	SpaceAfter=No
+11	simplicitate	noun-simplicitas	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=a-rhyme|SEAMEDNESS=unseamed|CASE=ablative	9	groups:Minor-Range:phrase	-	SpaceAfter=No
+12	comprehendit	verb-comprehendo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	3	clauses:Enhancing:clause-complex	-	-
+13	,	punctuation-,	punctuation	-	-	16	groups:Marker:clause	-	SpaceAfter=No
+14	ut	conjunction-ut	conjunction	-	CONJUNCTION-CLASS=binder	16	groups:Marker:clause	-	SpaceAfter=No
+15	supra	adverb-supra	adverb	-	-	16	groups:Circumstance:clause	-	SpaceAfter=No
+16	ostensum	verb-ostendo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ū-aspect|VERB-BRANCHEDNESS=unbranched|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf	12	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+17	est	verb-sum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	16	groups:Auxiliary:group	-	-
+18	.	punctuation-.	punctuation	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91815
+# text = ipse igitur est vere beatus. 
+1	ipse	noun-ipse	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Carrier:clause	-	SpaceAfter=No
+2	igitur	adverb-igitur	adverb	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+3	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	SpaceAfter=No
+4	vere	adverb-vere	adverb	-	-	3	groups:Circumstance:clause	-	SpaceAfter=No
+5	beatus	adjective-beatus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE-SEAM=nominative-seam	3	groups:Attribute:clause	-	-
+6	.	punctuation-.	punctuation	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91816
+# text = item. 
+1	item	adverb-item	adverb	-	-	0	root	-	-
+2	.	punctuation-.	punctuation	-	-	1	groups:Marker:clause	-	SpaceAfter=No
+
+# sent_id = IP-s91817
+# text = quandiu alicui deest aliquid quo indigeat, nondum beatus est: quia eius desiderium nondum est quietatum. 
+1	quandiu	conjunction-quamdiu	conjunction	-	CONJUNCTION-CLASS=binder	3	groups:Marker:clause	-	SpaceAfter=No
+2	alicui	noun-aliquis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=dative	3	groups:Recipient:clause	-	SpaceAfter=No
+3	deest	verb-desum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	10	clauses:Enhancing:clause-complex	-	SpaceAfter=No
+4	aliquid	noun-aliquis	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	3	groups:Actor:clause	-	SpaceAfter=No
+5	quo	noun-qui	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=relative|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=ablative	6	groups:Attribute:clause	-	SpaceAfter=No
+6	indigeat	verb-indigeo	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=branched|VERB-Ō-BRANCH=ē-branch|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	4	clauses:Qualifier:group	-	-
+7	,	punctuation-,	punctuation	-	-	3	groups:Marker:clause	-	SpaceAfter=No
+8	nondum	adverb-nondum	adverb	-	-	9	groups:Intensifier:group	-	SpaceAfter=No
+9	beatus	adjective-beatus	adjective	-	ADJECTIVE-BRANCHEDNESS=unbranched|SCALAR-MODE=distributive|SEAMEDNESS=seamed|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=us/um-seam|AUMUS-LEAF=us-leaf|CASE-SEAM=nominative-seam	10	groups:Attribute:clause	-	SpaceAfter=No
+10	est	verb-sum	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	0	root	-	-
+11	:	punctuation-:	punctuation	-	-	17	groups:Marker:clause	-	SpaceAfter=No
+12	quia	conjunction-quia	conjunction	-	CONJUNCTION-CLASS=binder	17	groups:Marker:clause	-	SpaceAfter=No
+13	eius	noun-is	noun	-	NOUN-CLASS=pronoun|PRONOUN-RELATIVITY=absolute|NUMBER=singular|RHYME=us-rhyme|SEAMEDNESS=unseamed|CASE=genitive	14	groups:Possessor:group	-	SpaceAfter=No
+14	desiderium	noun-desiderium	noun	-	NOUN-CLASS=common-noun|NUMBER=singular|RHYME=um-rhyme|SEAMEDNESS=unseamed|CASE=nominative	17	groups:Goal:clause	-	SpaceAfter=No
+15	nondum	adverb-nondum	adverb	-	-	17	groups:Adjunct:group	-	SpaceAfter=No
+16	est	verb-sum	verb	-	VERB-CLASS=auxiliary-verb|VERB-FINITENESS=finite|FINITE-VERB-MODE=non-conjunctive|VERB-ASPECT=ō-aspect|VERB-BRANCHEDNESS=unbranched|VERB-Ō-PARADIGMS=ō-1st-paradigm|ŌST-SEAM=t-seam|ŌST-FOLIAGE=ō-foliage|ŌST-LEAF=t-leaf	17	groups:Auxiliary:group	-	SpaceAfter=No
+17	quietatum	verb-quieto	verb	-	VERB-CLASS=lexical-verb|VERB-FINITENESS=non-finite|VERB-ASPECT=ū-aspect|VERB-BRANCHEDNESS=unbranched|AUMUS-FOLIAGE=a-foliage|AUMUS-SEAM=um/um-seam|AUMUS-LEAF=um-leaf	10	clauses:Enhancing:clause-complex	-	-
+18	.	punctuation-.	punctuation	-	-	10	groups:Marker:clause	-	SpaceAfter=No
+
