@@ -77,8 +77,7 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 				break;
 			}
 			if (line.startsWith("##")) {
-				System.out.println();
-				System.out.println(line.substring(1));
+				break;
 			}
 		}
 	}
@@ -105,6 +104,11 @@ public class DuxCommandIterator implements Iterator<DuxCommand> {
 		if (line.equals("STOP")) {
 			this.advance();
 			return new DuxStop();
+		}
+		if (line.startsWith("##")) {
+			DuxPrint print = new DuxPrint(line.substring(2).trim());
+			this.advance();
+			return print;
 		}
 		if (line.startsWith("IMPORT")) {
 			String[] A = line.split(" ");

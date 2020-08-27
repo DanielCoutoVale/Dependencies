@@ -54,6 +54,10 @@ public class DuxFileApplier {
 		DuxFactory factory = new DuxFactory(descriptionMap, analysisMap);
 		Scanner scanner = new Scanner(System.in);
 		for (DuxCommand command : document) {
+			if (command instanceof DuxPrint) {
+				System.out.println(((DuxPrint) command).getOutput());
+				continue;
+			}
 			if (command instanceof DuxStop) {
 				System.out.println("Press ENTER to continue. Press Ctrl+D to stop.");
                 try {

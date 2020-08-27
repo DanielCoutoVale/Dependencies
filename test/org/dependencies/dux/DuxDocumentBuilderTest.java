@@ -9,7 +9,7 @@ public class DuxDocumentBuilderTest {
 	
 	@Test
 	public final void testSample() {
-		File home = new File(".");
+		File home = new File("test/org/dependencies/dux");
 		DuxDocumentBuilder builder = new DuxDocumentBuilder();
 		DuxDocument document = builder.parse(home, "sample");
 		for (DuxCommand command : document) {
