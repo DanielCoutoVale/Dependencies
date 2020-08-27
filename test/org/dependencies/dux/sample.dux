@@ -1,37 +1,31 @@
 
 # Comment
 
-## 
 ## Words
 [13492342] => +word
 [ITTB, Gentiles, 1, 2] => +word
 [aux #sum 'sit'] => +word
 
-## 
 ## Words II
 [aux #sum 'sit'] => +word
 [S:aux #sum 'sit'] => +word
 [T:verb #sum 'sit'] => +word
 
-## 
 ## Words III
 [WORD-CLASS:aux #sum 'sit'] => +word
 [S:WORD-CLASS:aux #sum 'sit'] => +word
 [T:WORD-CLASS:verb #sum 'sit'] => +word
 
-## 
 ## Words IV
 [verb] [noun] Actor(2,1) => +word
 [verb] [noun] [noun] Carrier(2,1) Attribute(3,1) => +word
 [noun] Carrier(1,3) [verb] [noun] Attribute(4,3) => +word
 
-## 
 ## Words V
 [WORD-CLASS:verb] [WORD-CLASS:noun] EXPERIENTIAL:Actor(2:groups,1:clause) => +word
 [T:WORD-CLASS:verb] [T:WORD-CLASS:noun] T:EXPERIENTIAL:Actor(2:groups,1:clause) => +word
 [S:WORD-CLASS:verb] [S:WORD-CLASS:noun] S:MIXED:Nsubj(2:word,1:word) => +word
 
-## 
 ## Word classes
 [S:verb]  => +T:verb +T:lexical-verb
 [S:aux]   => +T:verb +T:auxiliary-verb

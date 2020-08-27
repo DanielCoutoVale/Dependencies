@@ -55,6 +55,7 @@ public class DuxFileApplier {
 		Scanner scanner = new Scanner(System.in);
 		for (DuxCommand command : document) {
 			if (command instanceof DuxPrint) {
+				System.out.println();
 				System.out.println(((DuxPrint) command).getOutput());
 				continue;
 			}
