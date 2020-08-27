@@ -5,6 +5,11 @@ import org.dependencies.dux.DuxDocument;
 import org.dependencies.dux.DuxDocumentBuilder;
 import org.junit.jupiter.api.Test;
 
+/**
+ * A unit test to check if all structures can be correctly parsed by a DUX parser.
+ * 
+ * @author Daniel Couto-Vale
+ */
 public class DuxDocumentBuilderTest {
 	
 	@Test

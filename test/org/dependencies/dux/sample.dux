@@ -35,7 +35,6 @@
 [S:adj]   => +T:adjective
 [#primus] => -T:adjective +T:number +T:ordinal
 
-## 
 ## Word functions
 [T:verb] [T:noun] S:Nsubj(2,1) => +T:EXPERIENTIAL:Actor(2:groups,1:clause)
 [T:verb] [T:noun] S:Aux(1,2) => +T:EXPERIENTIAL:Attribute(2:groups,1:clause)
