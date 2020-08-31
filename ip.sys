@@ -43,6 +43,11 @@ system WORD-CLASS
 - quam
 - punctuation
 
+system ADVERB-MODE
+> adverb
+- injunctive-adverb
+- conjunctive-adverb
+
 system NOUN-CLASS
 > noun
 - proper-noun

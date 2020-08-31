@@ -1,21 +1,14 @@
-# ITTB VERB SYSTEMS
-# ASPECT: imp*, perf
-# CASE: nom, voc, acc, gen, dat, abl, loc
-# GENDER: fem, masc, neut
-# MOOD: imp, ind, sub
-# NUMBER: plur, sing
-# PERSON: 1, 2, 3
-# TENSE: fut, imp, past, pqp, pres
-# VERBFORM: fin, gdv, ger, inf, part
-# VOICE: act, pass
-# PRONTYPE: rel
 
 STOP
 IMPORT words
+
+STOP
 IMPORT verbal-groups
 IMPORT nominal-groups
 IMPORT adjectival-groups
 IMPORT group-complex
+
+STOP
 IMPORT participants
 IMPORT adverbial-groups
 IMPORT clause-complex

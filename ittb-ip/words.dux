@@ -379,4 +379,23 @@
 ## NOUNS #STEP 1
 [T:NOUN-CLASS:proper-noun] [T:CASE:genitive T:WORD-CLASS:noun] S:MIXED:Amod(2:word,1:word) => -T:NOUN-CLASS:proper-noun +T:NOUN-CLASS:common-noun
 
+## ADVERB
+[T:WORD-CLASS:adverb] => +T:ADVERB-MODE:injunctive-adverb
+[T:WORD-CLASS:adverb #adhuc] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #enim] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #ergo] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #hujusmodi] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #ideo] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #igitur] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #ita] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #item] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #iterum] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #praecipue] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #praeterea] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #sic] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #scilicet] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #tamen] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #tunc] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #vero] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
+[T:WORD-CLASS:adverb #unde] => -T:ADVERB-MODE:injunctive-adverb +T:ADVERB-MODE:conjunctive-adverb
 
