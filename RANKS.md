@@ -1,7 +1,7 @@
 # Ranks
 The motivation for adding ranks to dependencies.
 
-In the context of teaching Latin, wordings are represented as dependency structures for three end purposes:
+When teaching Latin, wordings are modelled as dependency structures for three end purposes:
 
 * for students to view and learn the dependencies between words
 * for automatically generating exercises on grammatical phenomena
