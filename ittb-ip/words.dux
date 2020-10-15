@@ -102,7 +102,7 @@
 [T:WORD-CLASS:adjective #quincuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #quintuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #sextuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
-[T:WORD-CLASS:adjective #septuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicativ +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
+[T:WORD-CLASS:adjective #septuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #octuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #nonuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one
 [T:WORD-CLASS:adjective #decuplex] => -T:WORD-CLASS:adjective +T:WORD-CLASS:number +T:NUMERIC-CASE:multiplicative +T:NUMERIC-MODULO:decimal +T:NUMERIC-PLACE:one

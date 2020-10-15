@@ -5,7 +5,7 @@ IMPORT words
 STOP
 IMPORT verbal-groups
 IMPORT nominal-groups
-IMPORT adjectival-groups
+IMPORT quality-groups
 IMPORT group-complex
 
 STOP
