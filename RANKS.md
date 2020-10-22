@@ -1,7 +1,7 @@
 # Ranks
 The motivation for adding ranks to dependencies.
 
-In the context of teaching Latin, wordings are represented as dependency structures for three end purposes:
+When teaching Latin, wordings are modelled as dependency structures for three end purposes:
 
 * for students to view and learn the dependencies between words
 * for automatically generating exercises on grammatical phenomena
@@ -51,6 +51,6 @@ In such cases, if we separate the clause rank from the clause complex rank, we a
 |:-------:|:----------:|:-------:|:--------------------------:|
 | Head... | Tail...    | ...Head | ...Tail                    |
 
-Such graphical representations where clauses are constituents are much simpler to understand than arrows relating different verbs in two structures. By viewing only the dependencies that take place at clause complex rank, students would be better able to focus on the logical relations between clauses than they currently are in the arrow representation.
+Such graphical representations where clauses are constituents are much simpler to understand than arrows relating different verbs in two structures. By viewing only the dependencies that take place at clause complex rank, students would be better able to focus on the logical relations between clauses than they currently are in the arrow representation. And by labelling the dependencies for rank, we are able to produce such graphical representations of wordings automatically.
 
   
