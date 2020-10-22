@@ -111,6 +111,7 @@ public class HtmlFileWriter {
 			index = - 2;
 			spans = new LinkedList<>();
 			indices = new LinkedList<>();
+			System.out.println(tree);
 			for (DepWord word : wording) {
 				long newIndex = tree.indexOf(word, "clause-complex");
 				if (index != newIndex) {
@@ -129,6 +130,8 @@ public class HtmlFileWriter {
 					indices.add(index);
 				}
 			}
+			System.out.println(spans);
+			System.out.println(indices);
 			printStructure(pw, tree, spans, indices, "Clauses", "clause-complex");
 			// Run through clause constituents
 			index = - 2;

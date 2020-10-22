@@ -80,8 +80,8 @@ IMPORT adpositional-phrases
 ## Existence
 [T:WORD-CLASS:verb #sum] [T:WORD-CLASS:noun T:CASE:nominative] T:EXPERIENTIAL:Actor(2:groups,1:clause) => -T:EXPERIENTIAL:Actor(2:groups,1:clause) +T:EXPERIENTIAL:Existent(2:groups,1:clause)
 
-
-
 IMPORT ellipsis
 
 IMPORT punctuation
+
+[T:verb] [T:verb] T:Actor(1,2) T:Auxiliary(2,1) => -T:EXPERIENTIAL:Actor(1:clauses,2:group)

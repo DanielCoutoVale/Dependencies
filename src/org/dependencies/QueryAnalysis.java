@@ -17,7 +17,7 @@ public class QueryAnalysis {
 	public static final void main(String[] args) {
 		if (args.length != 7) {
 			System.err.println("USAGE:");
-			System.err.println("java -jar export-analysis.jar [corpus] [language] [text] [description] [analysis] [file] [query]");
+			System.err.println("java -jar query-analysis.jar [corpus] [language] [text] [description] [analysis] [file] [query]");
 			System.exit(-1);
 		}
 		String corpusName = args[0];
@@ -31,7 +31,7 @@ public class QueryAnalysis {
 		ConlluFileWriter conlluFileWriter = new ConlluFileWriter();
 		HtmlFileWriter htmlFileWriter = new HtmlFileWriter();
 		try {
-			System.out.println(format("Exporting %s to %s", textTitle, fileName));
+			System.out.println(format("Querying %s and saving results to %s", textTitle, fileName));
 			DepSearchResult result = loader.searchForWordings(descriptionName, analysisName, corpusName, languageName,
 					textTitle, query);
 			if (fileName.endsWith(".conllu")) {
@@ -42,7 +42,7 @@ public class QueryAnalysis {
 				conlluFileWriter.writeConlluFile(result.getWordings(), result.getDescription(), fileName + ".conllu");
 				htmlFileWriter.writeHtmlFile(result.getWordings(), textTitle, result.getDescription(), fileName + ".html");
 			}
-			System.out.println("Exported!");
+			System.out.println("Queried!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("There is a bug in this script.");
